@@ -1,23 +1,24 @@
-import { throttle } from 'throttle-debounce'
-
 export function initStickyHeader() {
   const header = document.querySelector('[data-sticky-header]')
+  const headerAnchor = document.querySelector('[data-sticky-header-anchor]')
 
-  if (!header) return
+  if (!header || !headerAnchor) return
 
-  const handler = () => {
-    const currentPosition = window.scrollY
-    if (currentPosition > 100) {
-      header.dataset.stickyHeader = 'active'
-    } else {
-      header.dataset.stickyHeader = ''
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          header.dataset.stickyHeader = ''
+        } else {
+          header.dataset.stickyHeader = 'active'
+        }
+      })
+    },
+    {
+      root: null,
+      threshold: 0.5
     }
-  }
+  )
 
-  const optimizedHandler = throttle(100, handler)
-
-  window.addEventListener('scroll', optimizedHandler)
-  window.addEventListener('resize', optimizedHandler)
-
-  return
+  observer.observe(headerAnchor)
 }
