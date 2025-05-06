@@ -1,6 +1,6 @@
 /** @type {import('vite').UserConfig} */
 export default {
-  base: '/wp-content/themes/hrampokrova-wp-theme/dist/',
+  base: '/wp-content/themes/renovation-wp-theme/dist/',
   build: {
     rollupOptions: {
       output: {
