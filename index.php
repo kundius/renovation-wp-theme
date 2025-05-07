@@ -8,7 +8,7 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
 
-  <div class="flex flex-col min-h-screen bg-blue-100">
+  <div class="flex flex-col min-h-scree">
     <?php get_template_part('partials/header'); ?>
 
     <div class="flex-grow h-[2000px]">

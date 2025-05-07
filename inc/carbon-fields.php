@@ -18,7 +18,7 @@ add_action('admin_head', function () {
       right: 0;
       bottom: 0;
       border: .125em solid #6b6d89;
-      background: #f5f5f5;
+      background: #f0f0f0;
     }
 
     [data-type="carbon-fields/completion-date"] .cf-block__fields {
