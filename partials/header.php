@@ -34,9 +34,9 @@
     </a>
 
     <ul class="header__nav">
-      <li id="menu-item-4240" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-4240"><a href="https://rembrigada116.ru/uslugi">Услуги<span class="menu-toggle"></span></a>
+      <li id="menu-item-4240" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-4240"><a href="https://rembrigada116.ru/uslugi">Услуги</a>
       <ul class="sub-menu">
-      <li id="menu-item-5001" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5001"><a href="https://rembrigada116.ru/uslugi/vidy-remonta">Виды ремонта<span class="menu-toggle"></span></a>
+      <li id="menu-item-5001" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5001"><a href="https://rembrigada116.ru/uslugi/vidy-remonta">Виды ремонта</a>
       <ul class="sub-menu">
       <li id="menu-item-5006" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5006"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/chernovoj-remont-kvartir">Черновой ремонт</a></li>
       <li id="menu-item-5014" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5014"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/kosmeticheskij-remont-kvartiry">Косметический ремонт</a></li>
@@ -45,7 +45,7 @@
       <li id="menu-item-5035" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5035"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/dizajnerskij-remont-kvartir">Дизайнерский ремонт</a></li>
       </ul>
       </li>
-      <li id="menu-item-4831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4831"><a href="https://rembrigada116.ru/uslugi/remont-kvartir-pod-klyuch">Ремонт квартир<span class="menu-toggle"></span></a>
+      <li id="menu-item-4831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4831"><a href="https://rembrigada116.ru/uslugi/remont-kvartir-pod-klyuch">Ремонт квартир</a>
       <ul class="sub-menu">
       <li id="menu-item-4834" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4834"><a href="https://rembrigada116.ru/uslugi/remont-kvartir-pod-klyuch/remont-kvartiry-studii">Ремонт квартиры студии</a></li>
       <li id="menu-item-494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-494"><a href="https://rembrigada116.ru/uslugi/remont-kvartir-pod-klyuch/remont-odnokomnatnoj-kvartiry">1 комнатная квартира</a></li>
@@ -58,7 +58,7 @@
       <li id="menu-item-11796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11796"><a href="https://rembrigada116.ru/otdelka-kvartiry-pod-kljuch">Отделка квартир</a></li>
       </ul>
       </li>
-      <li id="menu-item-11849" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-11846 current_page_item menu-item-has-children menu-item-11849"><a href="https://rembrigada116.ru/uslugi/remont-domov" aria-current="page">Ремонт домов<span class="menu-toggle"></span></a>
+      <li id="menu-item-11849" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-11846 current_page_item menu-item-has-children menu-item-11849"><a href="https://rembrigada116.ru/uslugi/remont-domov" aria-current="page">Ремонт домов</a>
       <ul class="sub-menu">
       <li id="menu-item-11887" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11887"><a href="https://rembrigada116.ru/uslugi/remont-domov/chistovoj-remont-doma">Чистовой ремонт дома</a></li>
       <li id="menu-item-3147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3147"><a href="https://rembrigada116.ru/uslugi/remont-domov/remont-kottedzhei">Ремонт коттеджей под ключ</a></li>
@@ -75,7 +75,7 @@
       <li id="menu-item-2107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2107"><a href="https://rembrigada116.ru/uslugi/remont-vannoj-komnaty">Ремонт ванной</a></li>
       <li id="menu-item-5697" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5697"><a href="https://rembrigada116.ru/uslugi/polusuhaya-styazhka-pola">Полусухая стяжка</a></li>
       <li id="menu-item-5201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5201"><a href="https://rembrigada116.ru/uslugi/mehanizirovannaja-shtukaturka-sten">Механизированная штукатурка</a></li>
-      <li id="menu-item-5506" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5506"><a href="https://rembrigada116.ru/uslugi/santehnicheskie-raboty">Сантехнические работы<span class="menu-toggle"></span></a>
+      <li id="menu-item-5506" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5506"><a href="https://rembrigada116.ru/uslugi/santehnicheskie-raboty">Сантехнические работы</a>
       <ul class="sub-menu">
       <li id="menu-item-5511" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5511"><a href="https://rembrigada116.ru/uslugi/santehnicheskie-raboty/montazh-sistem-vodosnabzheniya">Монтаж систем водоснабжения</a></li>
       <li id="menu-item-5514" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5514"><a href="https://rembrigada116.ru/uslugi/santehnicheskie-raboty/montazh-sistem-otopleniya">Монтаж отопления</a></li>
@@ -84,7 +84,7 @@
       <li id="menu-item-5528" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5528"><a href="https://rembrigada116.ru/uslugi/santehnicheskie-raboty/zamena-trub">Замена труб водоснабжения</a></li>
       </ul>
       </li>
-      <li id="menu-item-5540" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5540"><a href="https://rembrigada116.ru/uslugi/elektromontazhnye-raboty">Электромонтажные работы<span class="menu-toggle"></span></a>
+      <li id="menu-item-5540" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5540"><a href="https://rembrigada116.ru/uslugi/elektromontazhnye-raboty">Электромонтажные работы</a>
       <ul class="sub-menu">
       <li id="menu-item-5567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5567"><a href="https://rembrigada116.ru/uslugi/elektromontazhnye-raboty/montazh-zamena-elektroprovodki">Монтаж электропроводки</a></li>
       </ul>
@@ -110,7 +110,7 @@
       <span class="header__phone__number">+7 (800) 123-45-67</span>
       <span class="header__phone__time">Ежедневно с 9-00 до 19-00</span>
     </a>
-    
+
     <a href="" class="header__callback">
       <span class="header__callback__icon"></span>
       <span class="header__callback__text">
