@@ -1,0 +1,29 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="71px" height="70px">
+<defs>
+<filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="71px" height="70px"  >
+    <feOffset in="SourceAlpha" dx="0" dy="3" />
+    <feGaussianBlur result="blurOut" stdDeviation="1.732" />
+    <feFlood flood-color="rgb(0, 0, 0)" result="floodOut" />
+    <feComposite operator="atop" in="floodOut" in2="blurOut" />
+    <feComponentTransfer><feFuncA type="linear" slope="0.09"/></feComponentTransfer>
+    <feMerge>
+    <feMergeNode/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+<filter id="Filter_1">
+    <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1" result="floodOut" />
+    <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+    <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+</filter>
+
+</defs>
+<g filter="url(#Filter_0)">
+<g filter="url(#Filter_1)">
+<path fill-rule="evenodd"  fill="rgb(159, 159, 159)"
+ d="M52.584,20.757 L47.943,24.989 L47.943,8.289 C47.943,6.252 46.246,4.578 44.183,4.578 L10.407,4.578 C8.344,4.578 6.648,6.252 6.648,8.289 L6.648,55.707 C6.648,57.743 8.344,59.417 10.407,59.417 L44.183,59.417 C46.246,59.417 47.943,57.743 47.943,55.707 L47.943,49.601 L52.584,45.354 L52.584,55.696 C52.584,60.260 48.807,63.997 44.183,63.997 L10.407,63.997 C5.783,63.997 2.008,60.271 2.008,55.707 L2.008,8.289 C2.008,3.724 5.783,-0.002 10.407,-0.002 L44.183,-0.002 C48.807,-0.002 52.582,3.724 52.582,8.289 L52.584,20.757 L52.584,20.757 ZM39.068,38.560 L60.002,19.975 C61.852,18.332 64.619,17.723 66.378,19.460 L66.379,19.460 C68.138,21.196 68.690,24.055 66.901,25.753 L38.561,52.655 L26.596,37.192 C25.087,35.242 25.669,32.668 27.429,30.932 L27.429,30.932 C29.188,29.196 32.259,29.809 33.772,31.753 L39.068,38.560 L39.068,38.560 ZM12.795,13.021 L41.795,13.021 L41.795,17.486 L12.795,17.486 L12.795,13.021 L12.795,13.021 ZM12.795,20.577 L41.795,20.577 L41.795,25.042 L12.795,25.042 L12.795,20.577 L12.795,20.577 Z"/>
+</g></g>
+</svg>

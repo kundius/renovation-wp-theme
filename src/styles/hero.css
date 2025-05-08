@@ -1,9 +1,13 @@
 .hero {
   position: relative;
   z-index: 1;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.header + * + .hero {
   margin-top: -96px;
   padding-top: 132px;
-  padding-bottom: 96px;
 }
 
 .hero__bg {
@@ -26,6 +30,7 @@
 .hero__layout__content {
   flex-grow: 1;
   padding-top: 42px;
+  padding-bottom: 42px;
 }
 
 .hero__layout__form {

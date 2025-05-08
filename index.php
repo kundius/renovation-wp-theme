@@ -83,6 +83,74 @@
       <img src="<?php bloginfo('template_url'); ?>/src/images/bg-intro.jpg" alt="" class="hero__bg">
     </div>
 
+    <div class="about">
+      <div class="container">
+        <div class="about__layout">
+          <div class="about__layout__content">
+            <div class="about__headline">
+              <div class="about__headline__primary">
+                Ремонт-под-ключ
+              </div>
+              <div class="about__headline__secondary">
+                — надежный ремонт квартир в Казани
+              </div>
+            </div>
+            <div class="about__cotent">
+              <p>Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков.</p>
+              <p>
+                Наши специалисты выполняют:<br>
+                <strong>- Черновой и чистовой ремонт</strong> (выравнивание стен, монтаж электрики, сантехники, укладка полов).<br>
+                <strong>- Отделочные работы</strong> (поклейка обоев, покраска, укладка плитки).<br>
+                <strong>- Дизайн-проектирование</strong> с учетом ваших пожеланий.<br>
+                <strong>- Авторский надзор</strong> для контроля качества.
+              </p>
+              <p>Мы работаем с проверенными материалами и предоставляем гарантию. Оставьте заявку на сайте или по телефону — и получите идеальный ремонт без лишних хлопот!</p>
+            </div>
+          </div>
+          <div class="about__layout__services">
+            <div class="about__services">
+              <div class="about__service">
+                <div class="about__service__icon" style="--image-url: url(<?php bloginfo(
+                  'template_url'
+                ); ?>/src/images/service-1.svg)">
+                </div>
+                <a href="#" class="about__service__title">
+                  Бесплатная консультация
+                </a>
+              </div>
+              <div class="about__service">
+                <div class="about__service__icon" style="--image-url: url(<?php bloginfo(
+                  'template_url'
+                ); ?>/src/images/service-2.png)">
+                </div>
+                <a href="#" class="about__service__title">
+                  Бесплатная консультация
+                </a>
+              </div>
+              <div class="about__service">
+                <div class="about__service__icon" style="--image-url: url(<?php bloginfo(
+                  'template_url'
+                ); ?>/src/images/service-3.svg)">
+                </div>
+                <div class="about__service__title">
+                  Бесплатная консультация
+                </div>
+              </div>
+              <div class="about__service">
+                <div class="about__service__icon" style="--image-url: url(<?php bloginfo(
+                  'template_url'
+                ); ?>/src/images/service-4.svg)">
+                </div>
+                <a href="#" class="about__service__title">
+                  Бесплатная консультация
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="flex-grow h-[2000px]">
     </div>
 

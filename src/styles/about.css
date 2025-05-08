@@ -1,0 +1,117 @@
+.about {
+  padding-top: 96px;
+  padding-bottom: 68px;
+}
+
+.about__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 68px;
+}
+
+.about__layout__content {
+}
+
+.about__layout__services {
+  display: flex;
+  padding-top: 8px;
+}
+
+.about__headline {
+}
+
+.about__headline__primary {
+  font-size: 62px;
+  color: #36495e;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.about__headline__secondary {
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  color: #3db6ff;
+  line-height: 1;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.about__cotent {
+  font-size: 18px;
+  color: #222222;
+  line-height: 1.333;
+  margin-top: 74px;
+  margin-bottom: 44px;
+}
+
+.about__cotent p {
+  margin: 0;
+}
+
+.about__cotent p + p {
+  margin-top: 24px;
+}
+
+.about__services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 32px;
+}
+
+.about__service {
+  border-radius: 24px;
+  background-color: rgb(240, 240, 244);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  position: relative;
+  transition: 300ms;
+}
+
+.about__service:has(a):hover {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 37.6px 2.4px rgba(0, 0, 0, 0.15);
+}
+
+.about__service__icon {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: var(--image-url);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.about__service:has(a):hover .about__service__icon {
+  background: #12afe5;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-image: var(--image-url);
+}
+
+.about__service:has(a):hover .about__service__title {
+  color: #3244a0;
+}
+
+.about__service__title {
+  font-size: 20px;
+  color: #465f7b;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+a.about__service__title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
