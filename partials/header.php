@@ -128,4 +128,3 @@
   <div class="header__anchor" data-sticky-header-anchor></div>
 </div>
 <div class="h-4"></div>
-<div class="h-96 bg-blue-50 -mt-24 border-b"></div>
