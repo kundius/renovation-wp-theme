@@ -38,7 +38,13 @@
       <ul class="sub-menu">
       <li id="menu-item-5001" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5001"><a href="https://rembrigada116.ru/uslugi/vidy-remonta">Виды ремонта</a>
       <ul class="sub-menu">
+      <li id="menu-item-5006" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5006 menu-item-has-children"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/chernovoj-remont-kvartir">Черновой ремонт</a>      <ul class="sub-menu">
       <li id="menu-item-5006" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5006"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/chernovoj-remont-kvartir">Черновой ремонт</a></li>
+      <li id="menu-item-5014" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5014"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/kosmeticheskij-remont-kvartiry">Косметический ремонт</a></li>
+      <li id="menu-item-5023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5023"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/kapitalnyj-remont-kvartir">Капитальный ремонт</a></li>
+      <li id="menu-item-5028" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5028"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/evroremont-kvartir-v-kazani">Евроремонт квартир</a></li>
+      <li id="menu-item-5035" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5035"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/dizajnerskij-remont-kvartir">Дизайнерский ремонт</a></li>
+      </ul></li>
       <li id="menu-item-5014" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5014"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/kosmeticheskij-remont-kvartiry">Косметический ремонт</a></li>
       <li id="menu-item-5023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5023"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/kapitalnyj-remont-kvartir">Капитальный ремонт</a></li>
       <li id="menu-item-5028" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5028"><a href="https://rembrigada116.ru/uslugi/vidy-remonta/evroremont-kvartir-v-kazani">Евроремонт квартир</a></li>
