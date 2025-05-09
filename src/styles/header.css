@@ -242,7 +242,8 @@
 }
 
 .header__calc:hover {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: #2b7fb2;
+  border-color: #2b7fb2;
 }
 
 .header__calc__icon {
@@ -269,10 +270,6 @@
   mask-image: var(--icon-calc);
 }
 
-.header__calc:hover .header__calc__icon::before {
-  background-color: #3db6ff;
-}
-
 .header__calc__text {
   font-size: 13px;
   letter-spacing: 0.025em;
@@ -280,10 +277,6 @@
   text-transform: uppercase;
   color: #fff;
   font-weight: 900;
-}
-
-.header__calc:hover .header__calc__text {
-  color: #3db6ff;
 }
 
 .header__phone {
@@ -338,7 +331,7 @@
 }
 
 .header__callback:hover {
-  background-color: #3db6ff;
+  background-color: rgb(206, 237, 255);
 }
 
 .header__callback__icon {
@@ -354,10 +347,6 @@
   margin-right: 4px;
 }
 
-.header__callback:hover .header__callback__icon {
-  background-color: #fff;
-}
-
 .header__callback__icon::before {
   content: '';
   width: 16px;
@@ -370,10 +359,6 @@
   mask-image: var(--icon-phone);
 }
 
-.header__callback:hover .header__callback__icon::before {
-  background-color: #3db6ff;
-}
-
 .header__callback__text {
   font-size: 13px;
   letter-spacing: 0.025em;
@@ -381,10 +366,6 @@
   text-transform: uppercase;
   color: #3db6ff;
   font-weight: 900;
-}
-
-.header__callback:hover .header__callback__text {
-  color: #fff;
 }
 
 .header__nav {

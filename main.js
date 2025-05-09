@@ -6,6 +6,7 @@ import './src/styles/footer.css'
 import './src/styles/modal.css'
 import './src/styles/hero.css'
 import './src/styles/about.css'
+import './src/styles/quiz.css'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'
