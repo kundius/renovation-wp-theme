@@ -142,7 +142,7 @@
   border-radius: 12px;
 }
 
-.city-select.open .city-select__list:hover {
+.city-select.open .city-select__list a:hover {
   color: #00aaff;
   background-color: rgba(61, 182, 255, 0.15);
 }

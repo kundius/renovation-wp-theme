@@ -16,12 +16,14 @@ import { initHeroForm } from './src/scripts/hero-form'
 // import { initHomePreachingCarousel } from './src/scripts/home-preaching-carousel'
 // import { initQuestionForm } from './src/scripts/question-form'
 import { Mask, MaskInput } from 'maska'
+import { initQuiz } from './src/scripts/quiz'
 
 new MaskInput('[data-maska]')
 
 initStickyHeader()
 initCitySelect()
 initHeroForm()
+initQuiz()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()
