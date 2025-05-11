@@ -14,7 +14,7 @@
     <div class="hero">
       <div class="container">
         <div class="hero__layout">
-          <div class="hero__layout__content">
+          <div class="hero__layout-content">
             <div class="hero__title">Ремонт квартир под ключ в Казани </div>
             <div class="hero__desc">Берем на себя всё: от согласований с&nbsp;управляющей компанией до комплектации мебелью и техникой</div>
             <ul class="hero__list">
@@ -27,14 +27,14 @@
               <button class="cta-button cta-button_primary cta-button_large cta-button_upper">Получить предложение</button>
             </div>
           </div>
-          <div class="hero__layout__form">
+          <div class="hero__layout-form">
             <form class="hero-form" data-hero-form>
               <div class="hero-form__title">
                 ПОЛУЧИТЕ ТОЧНУЮ СМЕТУ НА&nbsp;ВАШ РЕМОНТ
               </div>
               <div class="hero-form__type">
-                <div class="hero-form__type__label">Тип ремонта</div>
-                <div class="hero-form__type__items">
+                <div class="hero-form__type-label">Тип ремонта</div>
+                <div class="hero-form__type-items">
                   <label>
                     <input type="radio" name="type" value="КОСМЕТИЧЕСКИЙ" data-hero-form-type-price="1500" checked>
                     <span>КОСМЕТИЧЕСКИЙ</span>
@@ -54,21 +54,21 @@
                 </div>
               </div>
               <div class="hero-form__area">
-                <div class="hero-form__area__label">Площадь помещения (м<sup>2</sup>)</div>
-                <div class="hero-form__area__controls">
-                  <input type="range" name="area" value="25" min="0" max="300" class="hero-form__area__range">
-                  <div class="hero-form__area__display" data-hero-form-area-output></div>
-                  <button type="button" class="hero-form__area__plus" data-hero-form-area-plus>+</button>
-                  <button type="button" class="hero-form__area__minus" data-hero-form-area-minus>-</button>
+                <div class="hero-form__area-label">Площадь помещения (м<sup>2</sup>)</div>
+                <div class="hero-form__area-controls">
+                  <input type="range" name="area" value="25" min="0" max="300" class="hero-form__area-range">
+                  <div class="hero-form__area-display" data-hero-form-area-output></div>
+                  <button type="button" class="hero-form__area-plus" data-hero-form-area-plus>+</button>
+                  <button type="button" class="hero-form__area-minus" data-hero-form-area-minus>-</button>
                 </div>
               </div>
               <div class="hero-form__price">
-                <div class="hero-form__price__label">Итого: </div>
-                <div class="hero-form__price__value" data-hero-form-price-output></div>
+                <div class="hero-form__price-label">Итого: </div>
+                <div class="hero-form__price-value" data-hero-form-price-output></div>
               </div>
               <div class="hero-form__phone">
-                <label class="hero-form__phone__label" for="herophone">Ваш номер телефона</label>
-                <input class="hero-form__phone__input" type="text" id="herophone" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+                <label class="hero-form__phone-label" for="herophone">Ваш номер телефона</label>
+                <input class="hero-form__phone-input" type="text" id="herophone" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
               </div>
               <div class="hero-form__rules">
                 Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
@@ -86,12 +86,12 @@
     <div class="about">
       <div class="container">
         <div class="about__layout">
-          <div class="about__layout__content">
+          <div class="about__layout-content">
             <div class="about__headline">
-              <div class="about__headline__primary">
+              <div class="about__headline-primary">
                 Ремонт-под-ключ
               </div>
-              <div class="about__headline__secondary">
+              <div class="about__headline-secondary">
                 — надежный ремонт квартир в Казани
               </div>
             </div>
@@ -107,41 +107,41 @@
               <p>Мы работаем с проверенными материалами и предоставляем гарантию. Оставьте заявку на сайте или по телефону — и получите идеальный ремонт без лишних хлопот!</p>
             </div>
           </div>
-          <div class="about__layout__services">
+          <div class="about__layout-services">
             <div class="about__services">
-              <div class="about__service">
-                <div class="about__service__icon" style="--image-url: url(<?php bloginfo(
+              <div class="about-service">
+                <div class="about-service__icon" style="--image-url: url(<?php bloginfo(
                   'template_url'
                 ); ?>/src/images/service-1.svg)">
                 </div>
-                <a href="#" class="about__service__title">
+                <a href="#" class="about-service__title">
                   Бесплатная консультация
                 </a>
               </div>
-              <div class="about__service">
-                <div class="about__service__icon" style="--image-url: url(<?php bloginfo(
+              <div class="about-service">
+                <div class="about-service__icon" style="--image-url: url(<?php bloginfo(
                   'template_url'
                 ); ?>/src/images/service-2.png)">
                 </div>
-                <a href="#" class="about__service__title">
+                <a href="#" class="about-service__title">
                   Бесплатная консультация
                 </a>
               </div>
-              <div class="about__service">
-                <div class="about__service__icon" style="--image-url: url(<?php bloginfo(
+              <div class="about-service">
+                <div class="about-service__icon" style="--image-url: url(<?php bloginfo(
                   'template_url'
                 ); ?>/src/images/service-3.svg)">
                 </div>
-                <div class="about__service__title">
+                <div class="about-service__title">
                   Бесплатная консультация
                 </div>
               </div>
-              <div class="about__service">
-                <div class="about__service__icon" style="--image-url: url(<?php bloginfo(
+              <div class="about-service">
+                <div class="about-service__icon" style="--image-url: url(<?php bloginfo(
                   'template_url'
                 ); ?>/src/images/service-4.svg)">
                 </div>
-                <a href="#" class="about__service__title">
+                <a href="#" class="about-service__title">
                   Бесплатная консультация
                 </a>
               </div>
@@ -159,47 +159,47 @@
             Узнайте стоимость Вашего ремонта за 1 минуту <span>+ подарок!</span>
           </div>
 
-          <div class="quiz__progress">
-            <div class="quiz__progress__number">
+          <div class="quiz-progress" data-quiz-progress>
+            <div class="quiz-progress__number">
               1
             </div>
-            <div class="quiz__progress__number">
+            <div class="quiz-progress__number">
               2
             </div>
-            <div class="quiz__progress__number">
+            <div class="quiz-progress__number">
               3
             </div>
-            <div class="quiz__progress__number">
+            <div class="quiz-progress__number">
               4
             </div>
-            <div class="quiz__progress__number">
+            <div class="quiz-progress__number">
               5
             </div>
-            <div class="quiz__progress__number">
+            <div class="quiz-progress__number">
               6
             </div>
-            <div class="quiz__progress__number">
+            <div class="quiz-progress__number">
               7
             </div>
-            <div class="quiz__progress__final">
+            <div class="quiz-progress__final">
               <img src="<?php bloginfo('template_url'); ?>/src/images/quiz-gift.svg" alt="">
             </div>
           </div>
 
-          <div class="quiz__panes">
+          <div class="quiz__panes" data-quiz-panes>
 
             <div class="quiz__pane">
-              <div class="quiz__step">
-                <div class="quiz__step__image">
+              <div class="quiz-step">
+                <div class="quiz-step__image">
                   <img src="<?php bloginfo('template_url'); ?>/src/images/quiz-step-1.jpg" alt="">
                 </div>
-                <div class="quiz__step__form">
-                  <div class="quiz__form">
-                    <div class="quiz__form__title">
-                      <div class="quiz__form__title__number">1.</div>
+                <div class="quiz-step__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                      <div class="quiz-form__title__number">1.</div>
                       <span class="uppercase">Укажите тип<br>Вашего дома<span>
                     </div>
-                    <div class="quiz__form__fields">
+                    <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="Укажите тип Вашего дома" value="Новостройка" checked>
                         <span></span>
@@ -221,33 +221,33 @@
                         <span>Другое</span>
                       </label>
                     </div>
-                    <div class="quiz__form__actions">
-                      <button type="button" class="quiz__form__action quiz__form__action_prev">Назад</button>
-                      <button type="button" class="quiz__form__action quiz__form__action_next">Следующий шаг</button>
+                    <div class="quiz-form__actions">
+                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
+                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
                     </div>
                   </div>
                 </div>
-                <div class="quiz__step__bonus">
-                  <div class="quiz__bonus">
-                    <div class="quiz__bonus__title">Ваши бонусы<br>в конце теста:</div>
-                    <div class="quiz__bonus__items">
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                <div class="quiz-step__bonus">
+                  <div class="quiz-bonus">
+                    <div class="quiz-bonus__title">Ваши бонусы<br>в конце теста:</div>
+                    <div class="quiz-bonus__items">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-1.svg" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           Расчет стоимости и&nbsp;прайс-лист
                         </div>
                       </div>
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-2.png" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           1 из 3 подарков на&nbsp;выбор
                         </div>
                       </div>
@@ -256,19 +256,19 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="quiz__pane">
-              <div class="quiz__step">
-                <div class="quiz__step__image">
+              <div class="quiz-step">
+                <div class="quiz-step__image">
                   <img src="<?php bloginfo('template_url'); ?>/src/images/quiz-step-2.jpg" alt="">
                 </div>
-                <div class="quiz__step__form">
-                  <div class="quiz__form">
-                    <div class="quiz__form__title">
-                    <div class="quiz__form__title__number">2.</div>
+                <div class="quiz-step__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                    <div class="quiz-form__title__number">2.</div>
                       <span class="uppercase">Укажите общую площадь помещения<span>
                     </div>
-                    <div class="quiz__form__fields">
+                    <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="Укажите общую площадь помещения" value="До 30 м2" checked>
                         <span></span>
@@ -294,33 +294,33 @@
                         </span>
                       </label>
                     </div>
-                    <div class="quiz__form__actions">
-                      <button type="button" class="quiz__form__action quiz__form__action_prev">Назад</button>
-                      <button type="button" class="quiz__form__action quiz__form__action_next">Следующий шаг</button>
+                    <div class="quiz-form__actions">
+                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
+                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
                     </div>
                   </div>
                 </div>
-                <div class="quiz__step__bonus">
-                  <div class="quiz__bonus">
-                    <div class="quiz__bonus__title">Ваши бонусы<br>в конце теста:</div>
-                    <div class="quiz__bonus__items">
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                <div class="quiz-step__bonus">
+                  <div class="quiz-bonus">
+                    <div class="quiz-bonus__title">Ваши бонусы<br>в конце теста:</div>
+                    <div class="quiz-bonus__items">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-1.svg" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           Расчет стоимости и&nbsp;прайс-лист
                         </div>
                       </div>
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-2.png" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           1 из 3 подарков на&nbsp;выбор
                         </div>
                       </div>
@@ -331,17 +331,17 @@
             </div>
 
             <div class="quiz__pane">
-              <div class="quiz__step">
-                <div class="quiz__step__image">
+              <div class="quiz-step">
+                <div class="quiz-step__image">
                   <img src="<?php bloginfo('template_url'); ?>/src/images/quiz-step-3.jpg" alt="">
                 </div>
-                <div class="quiz__step__form">
-                  <div class="quiz__form">
-                    <div class="quiz__form__title">
-                    <div class="quiz__form__title__number">3.</div>
+                <div class="quiz-step__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                    <div class="quiz-form__title__number">3.</div>
                       <span class="uppercase">Какой вид ремонта требуется?<span>
                     </div>
-                    <div class="quiz__form__fields">
+                    <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="Какой вид ремонта требуется?" value="Черновой ремонт" checked>
                         <span></span>
@@ -363,33 +363,33 @@
                         <span>Элитный  ремонт</span>
                       </label>
                     </div>
-                    <div class="quiz__form__actions">
-                      <button type="button" class="quiz__form__action quiz__form__action_prev">Назад</button>
-                      <button type="button" class="quiz__form__action quiz__form__action_next">Следующий шаг</button>
+                    <div class="quiz-form__actions">
+                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
+                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
                     </div>
                   </div>
                 </div>
-                <div class="quiz__step__bonus">
-                  <div class="quiz__bonus">
-                    <div class="quiz__bonus__title">Ваши бонусы<br>в конце теста:</div>
-                    <div class="quiz__bonus__items">
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                <div class="quiz-step__bonus">
+                  <div class="quiz-bonus">
+                    <div class="quiz-bonus__title">Ваши бонусы<br>в конце теста:</div>
+                    <div class="quiz-bonus__items">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-1.svg" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           Расчет стоимости и&nbsp;прайс-лист
                         </div>
                       </div>
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-2.png" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           1 из 3 подарков на&nbsp;выбор
                         </div>
                       </div>
@@ -400,17 +400,17 @@
             </div>
 
             <div class="quiz__pane">
-              <div class="quiz__step">
-                <div class="quiz__step__image">
+              <div class="quiz-step">
+                <div class="quiz-step__image">
                   <img src="<?php bloginfo('template_url'); ?>/src/images/quiz-step-4.jpg" alt="">
                 </div>
-                <div class="quiz__step__form">
-                  <div class="quiz__form">
-                    <div class="quiz__form__title">
-                    <div class="quiz__form__title__number">4.</div>
+                <div class="quiz-step__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                    <div class="quiz-form__title__number">4.</div>
                       <span class="uppercase">У вас уже есть дизайн - проект?<span>
                     </div>
-                    <div class="quiz__form__fields">
+                    <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="У вас уже есть дизайн - проект?" value="Да" checked>
                         <span></span>
@@ -432,33 +432,33 @@
                         <span>В разработке</span>
                       </label>
                     </div>
-                    <div class="quiz__form__actions">
-                      <button type="button" class="quiz__form__action quiz__form__action_prev">Назад</button>
-                      <button type="button" class="quiz__form__action quiz__form__action_next">Следующий шаг</button>
+                    <div class="quiz-form__actions">
+                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
+                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
                     </div>
                   </div>
                 </div>
-                <div class="quiz__step__bonus">
-                  <div class="quiz__bonus">
-                    <div class="quiz__bonus__title">Ваши бонусы<br>в конце теста:</div>
-                    <div class="quiz__bonus__items">
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                <div class="quiz-step__bonus">
+                  <div class="quiz-bonus">
+                    <div class="quiz-bonus__title">Ваши бонусы<br>в конце теста:</div>
+                    <div class="quiz-bonus__items">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-1.svg" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           Расчет стоимости и&nbsp;прайс-лист
                         </div>
                       </div>
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-2.png" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           1 из 3 подарков на&nbsp;выбор
                         </div>
                       </div>
@@ -469,17 +469,17 @@
             </div>
 
             <div class="quiz__pane">
-              <div class="quiz__step">
-                <div class="quiz__step__image">
+              <div class="quiz-step">
+                <div class="quiz-step__image">
                   <img src="<?php bloginfo('template_url'); ?>/src/images/quiz-step-5.jpg" alt="">
                 </div>
-                <div class="quiz__step__form">
-                  <div class="quiz__form">
-                    <div class="quiz__form__title">
-                    <div class="quiz__form__title__number">5.</div>
+                <div class="quiz-step__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                    <div class="quiz-form__title__number">5.</div>
                       <span class="uppercase">Когда вы планируете начать ремонт<span>
                     </div>
-                    <div class="quiz__form__fields">
+                    <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="Когда вы планируете начать ремонт" value="В течение 3х-дней" checked>
                         <span></span>
@@ -501,33 +501,33 @@
                         <span>Более длительный срок</span>
                       </label>
                     </div>
-                    <div class="quiz__form__actions">
-                      <button type="button" class="quiz__form__action quiz__form__action_prev">Назад</button>
-                      <button type="button" class="quiz__form__action quiz__form__action_next">Следующий шаг</button>
+                    <div class="quiz-form__actions">
+                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
+                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
                     </div>
                   </div>
                 </div>
-                <div class="quiz__step__bonus">
-                  <div class="quiz__bonus">
-                    <div class="quiz__bonus__title">Ваши бонусы<br>в конце теста:</div>
-                    <div class="quiz__bonus__items">
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                <div class="quiz-step__bonus">
+                  <div class="quiz-bonus">
+                    <div class="quiz-bonus__title">Ваши бонусы<br>в конце теста:</div>
+                    <div class="quiz-bonus__items">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-1.svg" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           Расчет стоимости и&nbsp;прайс-лист
                         </div>
                       </div>
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-2.png" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           1 из 3 подарков на&nbsp;выбор
                         </div>
                       </div>
@@ -538,17 +538,17 @@
             </div>
 
             <div class="quiz__pane">
-              <div class="quiz__step">
-                <div class="quiz__step__image">
+              <div class="quiz-step">
+                <div class="quiz-step__image">
                   <img src="<?php bloginfo('template_url'); ?>/src/images/quiz-step-6.jpg" alt="">
                 </div>
-                <div class="quiz__step__form">
-                  <div class="quiz__form">
-                    <div class="quiz__form__title">
-                    <div class="quiz__form__title__number">6.</div>
+                <div class="quiz-step__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                    <div class="quiz-form__title__number">6.</div>
                       <span class="uppercase">Какой бы вам хотелось получить подарок после ремонта<span>
                     </div>
-                    <div class="quiz__form__fields">
+                    <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="Какой бы вам хотелось получить подарок после ремонта" value="Каталог дизайн-проектов" checked>
                         <span></span>
@@ -570,33 +570,33 @@
                         <span>Другое</span>
                       </label>
                     </div>
-                    <div class="quiz__form__actions">
-                      <button type="button" class="quiz__form__action quiz__form__action_prev">Назад</button>
-                      <button type="button" class="quiz__form__action quiz__form__action_next">Следующий шаг</button>
+                    <div class="quiz-form__actions">
+                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
+                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
                     </div>
                   </div>
                 </div>
-                <div class="quiz__step__bonus">
-                  <div class="quiz__bonus">
-                    <div class="quiz__bonus__title">Ваши бонусы<br>в конце теста:</div>
-                    <div class="quiz__bonus__items">
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                <div class="quiz-step__bonus">
+                  <div class="quiz-bonus">
+                    <div class="quiz-bonus__title">Ваши бонусы<br>в конце теста:</div>
+                    <div class="quiz-bonus__items">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-1.svg" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           Расчет стоимости и&nbsp;прайс-лист
                         </div>
                       </div>
-                      <div class="quiz__bonus__item">
-                        <div class="quiz__bonus__item__icon">
+                      <div class="quiz-bonus__item">
+                        <div class="quiz-bonus__item-icon">
                           <img src="<?php bloginfo(
                             'template_url'
                           ); ?>/src/images/quiz-bonus-2.png" alt="">
                         </div>
-                        <div class="quiz__bonus__item__title">
+                        <div class="quiz-bonus__item-title">
                           1 из 3 подарков на&nbsp;выбор
                         </div>
                       </div>
@@ -607,16 +607,16 @@
             </div>
 
             <div class="quiz__pane">
-              <div class="quiz__ending">
-                <div class="quiz__ending__hedline">
-                  <div class="quiz__ending__hedline__primary">
+              <div class="quiz-ending">
+                <div class="quiz-ending__hedline">
+                  <div class="quiz-ending__title">
                     Мы уже приступили к расчету!
                   </div>
-                  <div class="quiz__ending__hedline__secondary">
+                  <div class="quiz-ending__desc">
                     За Вами закреплена скидка. Куда отправлять результат?
                   </div>
                 </div>
-                <div class="quiz__ending__fields">
+                <div class="quiz-ending__fields">
                   <label class="radio-field">
                     <input type="radio" name="Мы уже приступили к расчету!" value="Перезвоните мне, у меня остались вопросы" checked>
                     <span></span>
@@ -633,10 +633,10 @@
                     <span>Пришлите мне все в Telegram </span>
                   </label>
                 </div>
-                <div class="quiz__ending__form">
-                  <div class="quiz__phone">
-                    <label class="quiz__phone__label" for="quizphone">Ваш номер телефона</label>
-                    <input class="quiz__phone__input" type="text" id="quizphone" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+                <div class="quiz-ending__form">
+                  <div class="quiz-phone">
+                    <label class="quiz-phone__label" for="quizphone">Ваш номер телефона</label>
+                    <input class="quiz-phone__input" type="text" id="quizphone" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
                   </div>
                   <div class="quiz__submit">
                     <button type="submit" class="cta-button cta-button_primary">
@@ -648,10 +648,10 @@
                     </button>
                   </div>
                 </div>
-                <div class="quiz__ending__rules">
+                <div class="quiz-ending__rules">
                   Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
                 </div>
-                <div class="quiz__ending__image">
+                <div class="quiz-ending__image">
                   <img src="<?php bloginfo('template_url'); ?>/src/images/quiz-step-7.jpg" alt="">
                 </div>
               </div>
@@ -669,6 +669,78 @@
             <button type="button" class="quiz__success__close" data-quiz-reset>Закрыть</button>
           </div>
         </form>
+
+      </div>
+    </div>
+
+    <div class="portfolio">
+      <div class="container-lg">
+
+        <div class="portfolio__headline">
+          <div class="portfolio__title">
+            В прошлом году выполнили 18 ремонтов
+          </div>
+          <div class="portfolio__desc">
+            С клиентами  - от начала до новоселья
+          </div>
+        </div>
+
+        <div class="portfolio__items">
+          <div class="portfolio-embla" data-portfolio-embla>
+            <div class="portfolio-embla__viewport">
+              <div class="portfolio-embla__container">
+                <div class="portfolio-embla__slide">
+                  <div>1</div>
+                </div>
+                <div class="portfolio-embla__slide">
+                  <div>2</div>
+                </div>
+                <div class="portfolio-embla__slide">
+                  <div>3</div>
+                </div>
+                <div class="portfolio-embla__slide">
+                  <div>4</div>
+                </div>
+                <div class="portfolio-embla__slide">
+                  <div>5</div>
+                </div>
+                <div class="portfolio-embla__slide">
+                  <div>6</div>
+                </div>
+                <div class="portfolio-embla__slide">
+                  <div>7</div>
+                </div>
+                <div class="portfolio-embla__slide">
+                  <div>8</div>
+                </div>
+                <div class="portfolio-embla__slide">
+                  <div>9</div>
+                </div>
+                <div class="portfolio-embla__slide">
+                  <div>10</div>
+                </div>
+              </div>
+            </div>
+
+            <button class="portfolio-embla__nav portfolio-embla__nav--prev" type="button" data-portfolio-embla-prev>
+              <svg viewBox="0 0 532 532">
+                <path
+                  fill="currentColor"
+                  d="M355.66 11.354c13.793-13.805 36.208-13.805 50.001 0 13.785 13.804 13.785 36.238 0 50.034L201.22 266l204.442 204.61c13.785 13.805 13.785 36.239 0 50.044-13.793 13.796-36.208 13.796-50.002 0a5994246.277 5994246.277 0 0 0-229.332-229.454 35.065 35.065 0 0 1-10.326-25.126c0-9.2 3.393-18.26 10.326-25.2C172.192 194.973 332.731 34.31 355.66 11.354Z"
+                ></path>
+              </svg>
+            </button>
+
+            <button class="portfolio-embla__nav portfolio-embla__nav--next" type="button" data-portfolio-embla-next>
+              <svg viewBox="0 0 532 532">
+                <path
+                  fill="currentColor"
+                  d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
 
       </div>
     </div>

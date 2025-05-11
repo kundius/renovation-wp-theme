@@ -9,10 +9,10 @@
   gap: 68px;
 }
 
-.about__layout__content {
+.about__layout-content {
 }
 
-.about__layout__services {
+.about__layout-services {
   display: flex;
   padding-top: 8px;
 }
@@ -20,14 +20,14 @@
 .about__headline {
 }
 
-.about__headline__primary {
+.about__headline-primary {
   font-size: 62px;
   color: #36495e;
   font-weight: bold;
   line-height: 1;
 }
 
-.about__headline__secondary {
+.about__headline-secondary {
   font-size: 24px;
   letter-spacing: 0.1em;
   color: #3db6ff;
@@ -59,7 +59,7 @@
   row-gap: 32px;
 }
 
-.about__service {
+.about-service {
   border-radius: 24px;
   background-color: rgb(240, 240, 244);
   display: flex;
@@ -71,12 +71,12 @@
   transition: 300ms;
 }
 
-.about__service:has(a):hover {
+.about-service:has(a):hover {
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 37.6px 2.4px rgba(0, 0, 0, 0.15);
 }
 
-.about__service__icon {
+.about-service__icon {
   width: 128px;
   height: 128px;
   margin-bottom: 20px;
@@ -88,18 +88,18 @@
   background-repeat: no-repeat;
 }
 
-.about__service:has(a):hover .about__service__icon {
+.about-service:has(a):hover .about-service__icon {
   background: #12afe5;
   mask-repeat: no-repeat;
   mask-position: center;
   mask-image: var(--image-url);
 }
 
-.about__service:has(a):hover .about__service__title {
+.about-service:has(a):hover .about-service__title {
   color: #3244a0;
 }
 
-.about__service__title {
+.about-service__title {
   font-size: 20px;
   color: #465f7b;
   text-align: center;
@@ -107,7 +107,7 @@
   line-height: 1.2;
 }
 
-a.about__service__title::after {
+a.about-service__title::after {
   content: '';
   position: absolute;
   left: 0;

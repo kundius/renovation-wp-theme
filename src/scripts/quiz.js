@@ -1,7 +1,12 @@
-export function initQuiz() {
-  const root = document.querySelector('[data-quiz]')
-
-  if (!root) return
+export function applyQuiz(root) {
+  const progressNode = root.querySelector('[data-quiz-progress]')
+  const numberNodes = progressNode ? Array.from(progressNode.children) : []
+  const panesNode = root.querySelector('[data-quiz-panes]')
+  const paneNodes = panesNode ? Array.from(panesNode.children) : []
+  const actionPrevNodes = Array.from(root.querySelectorAll('[data-quiz-prev]'))
+  const actionNextNodes = Array.from(root.querySelectorAll('[data-quiz-next]'))
+  const fieldNodes = Array.from(root.querySelectorAll('.radio-field'))
+  const resetNodes = Array.from(root.querySelectorAll('[data-quiz-reset]'))
 
   let step = 0
 
@@ -9,16 +14,16 @@ export function initQuiz() {
     step = n
     numberNodes.forEach((numberNode, i) => {
       if (i <= step) {
-        numberNode.classList.add('quiz__progress__number_active')
+        numberNode.classList.add('active')
       } else {
-        numberNode.classList.remove('quiz__progress__number_active')
+        numberNode.classList.remove('active')
       }
     })
     paneNodes.forEach((paneNode, i) => {
       if (i == step) {
-        paneNode.classList.add('quiz__pane_active')
+        paneNode.classList.add('active')
       } else {
-        paneNode.classList.remove('quiz__pane_active')
+        paneNode.classList.remove('active')
       }
     })
   }
@@ -31,19 +36,12 @@ export function initQuiz() {
     setStep(step + 1)
   }
 
-  const numberNodes = Array.from(root.querySelectorAll('.quiz__progress__number'))
-  const paneNodes = Array.from(root.querySelectorAll('.quiz__pane'))
-  const actionPrevNodes = Array.from(root.querySelectorAll('.quiz__form__action_prev'))
-  const actionNextNodes = Array.from(root.querySelectorAll('.quiz__form__action_next'))
-  const fieldNodes = Array.from(root.querySelectorAll('.radio-field'))
-  const resetNodes = Array.from(root.querySelectorAll('[data-quiz-reset]'))
-
   setStep(0)
 
-  actionPrevNodes.forEach(actionPrevNode => actionPrevNode.addEventListener('click', prev))
-  actionNextNodes.forEach(actionNextNode => actionNextNode.addEventListener('click', next))
+  actionPrevNodes.forEach((actionPrevNode) => actionPrevNode.addEventListener('click', prev))
+  actionNextNodes.forEach((actionNextNode) => actionNextNode.addEventListener('click', next))
 
-  fieldNodes.forEach(fieldNode => {
+  fieldNodes.forEach((fieldNode) => {
     const radio = fieldNode.querySelector('[type="radio"]')
     const text = fieldNode.querySelector('[type="text"]')
     if (text && radio) {
@@ -54,23 +52,28 @@ export function initQuiz() {
     }
   })
 
-  resetNodes.forEach(resetNode => {
+  resetNodes.forEach((resetNode) => {
     resetNode.addEventListener('click', () => {
       root.removeAttribute('data-quiz-success')
       setStep(0)
     })
   })
 
-  root.addEventListener('submit', e => {
+  root.addEventListener('submit', (e) => {
     e.preventDefault()
-    var formData = new FormData(root);
+    var formData = new FormData(root)
     // output as an object
-    console.log(Object.fromEntries(formData));
+    console.log(Object.fromEntries(formData))
     // ...or iterate through the name-value pairs
     for (var pair of formData.entries()) {
-      console.log(pair[0] + ": " + pair[1]);
+      console.log(pair[0] + ': ' + pair[1])
     }
 
     root.setAttribute('data-quiz-success', '')
   })
+}
+
+export function initQuiz() {
+  const nodes = Array.from(document.querySelectorAll('[data-quiz]'))
+  nodes.forEach(applyQuiz)
 }

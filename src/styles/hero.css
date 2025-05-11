@@ -27,13 +27,13 @@
   gap: 120px;
 }
 
-.hero__layout__content {
+.hero__layout-content {
   flex-grow: 1;
   padding-top: 42px;
   padding-bottom: 42px;
 }
 
-.hero__layout__form {
+.hero__layout-form {
   width: 40%;
   flex-shrink: 0;
 }
@@ -137,7 +137,7 @@
   margin: 28px 6px;
 }
 
-.hero-form__type__label {
+.hero-form__type-label {
   font-weight: bold;
   font-size: 16px;
   line-height: 1;
@@ -146,20 +146,20 @@
   margin-bottom: 12px;
 }
 
-.hero-form__type__items {
+.hero-form__type-items {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4px;
 }
 
-.hero-form__type__items label {
+.hero-form__type-items label {
   display: block;
   position: relative;
   cursor: pointer;
   z-index: 1;
 }
 
-.hero-form__type__items input {
+.hero-form__type-items input {
   position: absolute;
   left: 0;
   right: 0;
@@ -170,7 +170,7 @@
   z-index: -1;
 }
 
-.hero-form__type__items input + span {
+.hero-form__type-items input + span {
   font-size: 12px;
   letter-spacing: 0.05em;
   display: block;
@@ -181,7 +181,7 @@
   border-radius: 10px;
 }
 
-.hero-form__type__items input:checked + span {
+.hero-form__type-items input:checked + span {
   background: #d4f1ff;
 }
 
@@ -189,7 +189,7 @@
   margin: 28px 6px;
 }
 
-.hero-form__area__label {
+.hero-form__area-label {
   font-weight: bold;
   font-size: 16px;
   line-height: 1;
@@ -198,13 +198,13 @@
   margin-bottom: 12px;
 }
 
-.hero-form__area__controls {
+.hero-form__area-controls {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
 }
 
-.hero-form__area__range {
+.hero-form__area-range {
   width: 100%;
   appearance: none;
   background: none;
@@ -212,21 +212,21 @@
   margin-bottom: 6px;
 }
 
-.hero-form__area__range::-webkit-slider-runnable-track {
+.hero-form__area-range::-webkit-slider-runnable-track {
   box-sizing: border-box;
   height: 6px;
   background-image: linear-gradient(90deg, #00aaff var(--progress, 0%), #ababab 0);
   border-radius: 6px;
 }
 
-.hero-form__area__range::-moz-range-track {
+.hero-form__area-range::-moz-range-track {
   box-sizing: border-box;
   height: 6px;
   background-image: linear-gradient(90deg, #00aaff var(--progress, 0%), #ababab 0);
   border-radius: 6px;
 }
 
-.hero-form__area__range::-webkit-slider-thumb {
+.hero-form__area-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 24px;
   height: 24px;
@@ -237,7 +237,7 @@
   box-shadow: 0px 0px 9.4px 0.6px rgba(0, 123, 185, 0.54);
 }
 
-.hero-form__area__range::-moz-range-thumb {
+.hero-form__area-range::-moz-range-thumb {
   width: 24px;
   height: 24px;
   margin-top: 0;
@@ -247,7 +247,7 @@
   box-shadow: 0px 0px 9.4px 0.6px rgba(0, 123, 185, 0.54);
 }
 
-.hero-form__area__display {
+.hero-form__area-display {
   border-radius: 10px;
   background-color: rgb(243, 245, 248);
   height: 36px;
@@ -261,8 +261,8 @@
   margin-right: 6px;
 }
 
-.hero-form__area__plus,
-.hero-form__area__minus {
+.hero-form__area-plus,
+.hero-form__area-minus {
   border-radius: 10px;
   background-color: rgb(243, 245, 248);
   width: 36px;
@@ -284,14 +284,14 @@
   margin: 28px 6px;
 }
 
-.hero-form__price__label {
+.hero-form__price-label {
   font-weight: bold;
   font-size: 16px;
   color: #7d8798;
   line-height: 20px;
 }
 
-.hero-form__price__value {
+.hero-form__price-value {
   font-size: 24px;
   font-weight: 900;
   color: #00aaff;
@@ -305,7 +305,7 @@
   margin: 28px 6px 8px;
 }
 
-.hero-form__phone__label {
+.hero-form__phone-label {
   font-size: 11px;
   text-transform: uppercase;
   font-weight: 900;
@@ -318,7 +318,7 @@
   top: 8px;
 }
 
-.hero-form__phone__input {
+.hero-form__phone-input {
   font-family: 'Gilroy';
   width: 100%;
   font-size: 18px;
@@ -330,7 +330,7 @@
   padding: 12px 20px 0;
 }
 
-.hero-form__phone__input::placeholder {
+.hero-form__phone-input::placeholder {
   color: #2d2d2d;
 }
 

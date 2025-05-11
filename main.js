@@ -7,6 +7,7 @@ import './src/styles/modal.css'
 import './src/styles/hero.css'
 import './src/styles/about.css'
 import './src/styles/quiz.css'
+import './src/styles/portfolio.css'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'
@@ -17,6 +18,7 @@ import { initHeroForm } from './src/scripts/hero-form'
 // import { initQuestionForm } from './src/scripts/question-form'
 import { Mask, MaskInput } from 'maska'
 import { initQuiz } from './src/scripts/quiz'
+import { initPortfolioEmbla } from './src/scripts/portfolio-embla'
 
 new MaskInput('[data-maska]')
 
@@ -24,6 +26,7 @@ initStickyHeader()
 initCitySelect()
 initHeroForm()
 initQuiz()
+initPortfolioEmbla()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()
