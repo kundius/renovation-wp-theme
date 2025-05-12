@@ -11,7 +11,7 @@
   <div class="flex flex-col min-h-scree">
     <?php get_template_part('partials/header'); ?>
 
-    <div class="hero">
+    <div class="hero" hidden>
       <div class="container">
         <div class="hero__layout">
           <div class="hero__layout-content">
@@ -83,7 +83,7 @@
       <img src="<?php bloginfo('template_url'); ?>/src/images/bg-intro.jpg" alt="" class="hero__bg">
     </div>
 
-    <div class="about">
+    <div class="about" hidden>
       <div class="container">
         <div class="about__layout">
           <div class="about__layout-content">
@@ -151,7 +151,7 @@
       </div>
     </div>
 
-    <div class="quiz-section">
+    <div class="quiz-section" hidden>
       <div class="container">
 
         <form class="quiz" data-quiz>
@@ -644,7 +644,7 @@
                         Отправить расчет<br>
                         и получить подарок
                       </span>
-                      <span class="icon-gift w-9 h-9 ml-1 -mr-1"></span>
+                      <span class="icon icon-gift w-9 h-9 ml-1 -mr-1"></span>
                     </button>
                   </div>
                 </div>
@@ -681,64 +681,260 @@
             В прошлом году выполнили 18 ремонтов
           </div>
           <div class="portfolio__desc">
-            С клиентами  - от начала до новоселья
+            С клиентами - от начала до новоселья
           </div>
         </div>
 
         <div class="portfolio__items">
           <div class="portfolio-embla" data-portfolio-embla>
-            <div class="portfolio-embla__viewport">
+            <div class="portfolio-embla__viewport" data-portfolio-embla-viewport>
               <div class="portfolio-embla__container">
                 <div class="portfolio-embla__slide">
-                  <div>1</div>
+                  <div class="portfolio-item">
+                    <div class="portfolio-item__gallery">
+                      <div class="portfolio-gallery" data-portfolio-gallery>
+                        <div class="portfolio-gallery__main">
+                          <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                        </div>
+                        <div class="portfolio-gallery__carousel">
+                          <div class="portfolio-gallery__carousel-viewport" data-portfolio-gallery-viewport>
+                            <div class="portfolio-gallery__carousel-container">
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="portfolio-gallery__nav portfolio-gallery__nav--prev" type="button" data-portfolio-gallery-prev></button>
+                          <button class="portfolio-gallery__nav portfolio-gallery__nav--next" type="button" data-portfolio-gallery-next></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-item__title">
+                      <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg">
+                        Дизайнерский ремонт в 1-комнатной квартире
+                      </a>
+                    </div>
+                    <div class="flex items-start justify-between mt-4 gap-2">
+                      <div class="flex flex-wrap gap-1 items-start">
+                        <div class="portfolio-item__detail">
+                          Сроки ремонта : 25 дней
+                        </div>
+                        <div class="portfolio-item__detail">
+                          Площадь: 68 м2
+                        </div>
+                      </div>
+                      <div class="portfolio-item__price">
+                        <div class="portfolio-item__price-label">Цена: </div>
+                        <div class="portfolio-item__price-value">112 500 ₽</div>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <button type="button" class="control-button">
+                        Рассчитать похожий
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="portfolio-embla__slide">
-                  <div>2</div>
+                  <div class="portfolio-item">
+                    <div class="portfolio-item__gallery">
+                      <div class="portfolio-gallery" data-portfolio-gallery>
+                        <div class="portfolio-gallery__main">
+                          <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                        </div>
+                        <div class="portfolio-gallery__carousel">
+                          <div class="portfolio-gallery__carousel-viewport" data-portfolio-gallery-viewport>
+                            <div class="portfolio-gallery__carousel-container">
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="portfolio-gallery__nav portfolio-gallery__nav--prev" type="button" data-portfolio-gallery-prev></button>
+                          <button class="portfolio-gallery__nav portfolio-gallery__nav--next" type="button" data-portfolio-gallery-next></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-item__title">
+                      <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg">
+                        Дизайнерский ремонт в 1-комнатной квартире
+                      </a>
+                    </div>
+                    <div class="flex items-start justify-between mt-4 gap-2">
+                      <div class="flex flex-wrap gap-1 items-start">
+                        <div class="portfolio-item__detail">
+                          Сроки ремонта : 25 дней
+                        </div>
+                        <div class="portfolio-item__detail">
+                          Площадь: 68 м2
+                        </div>
+                      </div>
+                      <div class="portfolio-item__price">
+                        <div class="portfolio-item__price-label">Цена: </div>
+                        <div class="portfolio-item__price-value">112 500 ₽</div>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <button type="button" class="control-button">Рассчитать похожий</button>
+                    </div>
+                  </div>
                 </div>
                 <div class="portfolio-embla__slide">
-                  <div>3</div>
+                  <div class="portfolio-item">
+                    <div class="portfolio-item__gallery">
+                      <div class="portfolio-gallery" data-portfolio-gallery>
+                        <div class="portfolio-gallery__main">
+                          <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                        </div>
+                        <div class="portfolio-gallery__carousel">
+                          <div class="portfolio-gallery__carousel-viewport" data-portfolio-gallery-viewport>
+                            <div class="portfolio-gallery__carousel-container">
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="portfolio-gallery__nav portfolio-gallery__nav--prev" type="button" data-portfolio-gallery-prev></button>
+                          <button class="portfolio-gallery__nav portfolio-gallery__nav--next" type="button" data-portfolio-gallery-next></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-item__title">
+                      <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg">
+                        Дизайнерский ремонт в 1-комнатной квартире
+                      </a>
+                    </div>
+                    <div class="flex items-start justify-between mt-4 gap-2">
+                      <div class="flex flex-wrap gap-1 items-start">
+                        <div class="portfolio-item__detail">
+                          Сроки ремонта : 25 дней
+                        </div>
+                        <div class="portfolio-item__detail">
+                          Площадь: 68 м2
+                        </div>
+                      </div>
+                      <div class="portfolio-item__price">
+                        <div class="portfolio-item__price-label">Цена: </div>
+                        <div class="portfolio-item__price-value">112 500 ₽</div>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <button type="button" class="control-button">Рассчитать похожий</button>
+                    </div>
+                  </div>
                 </div>
                 <div class="portfolio-embla__slide">
-                  <div>4</div>
-                </div>
-                <div class="portfolio-embla__slide">
-                  <div>5</div>
-                </div>
-                <div class="portfolio-embla__slide">
-                  <div>6</div>
-                </div>
-                <div class="portfolio-embla__slide">
-                  <div>7</div>
-                </div>
-                <div class="portfolio-embla__slide">
-                  <div>8</div>
-                </div>
-                <div class="portfolio-embla__slide">
-                  <div>9</div>
-                </div>
-                <div class="portfolio-embla__slide">
-                  <div>10</div>
+                  <div class="portfolio-item">
+                    <div class="portfolio-item__gallery">
+                      <div class="portfolio-gallery" data-portfolio-gallery>
+                        <div class="portfolio-gallery__main">
+                          <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                        </div>
+                        <div class="portfolio-gallery__carousel">
+                          <div class="portfolio-gallery__carousel-viewport" data-portfolio-gallery-viewport>
+                            <div class="portfolio-gallery__carousel-container">
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                              <div class="portfolio-gallery__carousel-slide">
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="portfolio-gallery__nav portfolio-gallery__nav--prev" type="button" data-portfolio-gallery-prev></button>
+                          <button class="portfolio-gallery__nav portfolio-gallery__nav--next" type="button" data-portfolio-gallery-next></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-item__title">
+                      <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg">
+                        Дизайнерский ремонт в 1-комнатной квартире
+                      </a>
+                    </div>
+                    <div class="flex items-start justify-between mt-4 gap-2">
+                      <div class="flex flex-wrap gap-1 items-start">
+                        <div class="portfolio-item__detail">
+                          Сроки ремонта : 25 дней
+                        </div>
+                        <div class="portfolio-item__detail">
+                          Площадь: 68 м2
+                        </div>
+                      </div>
+                      <div class="portfolio-item__price">
+                        <div class="portfolio-item__price-label">Цена: </div>
+                        <div class="portfolio-item__price-value">112 500 ₽</div>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <button type="button" class="control-button">Рассчитать похожий</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <button class="portfolio-embla__nav portfolio-embla__nav--prev" type="button" data-portfolio-embla-prev>
-              <svg viewBox="0 0 532 532">
-                <path
-                  fill="currentColor"
-                  d="M355.66 11.354c13.793-13.805 36.208-13.805 50.001 0 13.785 13.804 13.785 36.238 0 50.034L201.22 266l204.442 204.61c13.785 13.805 13.785 36.239 0 50.044-13.793 13.796-36.208 13.796-50.002 0a5994246.277 5994246.277 0 0 0-229.332-229.454 35.065 35.065 0 0 1-10.326-25.126c0-9.2 3.393-18.26 10.326-25.2C172.192 194.973 332.731 34.31 355.66 11.354Z"
-                ></path>
-              </svg>
-            </button>
-
-            <button class="portfolio-embla__nav portfolio-embla__nav--next" type="button" data-portfolio-embla-next>
-              <svg viewBox="0 0 532 532">
-                <path
-                  fill="currentColor"
-                  d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
-                ></path>
-              </svg>
-            </button>
+            <button class="portfolio-embla__nav portfolio-embla__nav--prev" type="button" data-portfolio-embla-prev></button>
+            <button class="portfolio-embla__nav portfolio-embla__nav--next" type="button" data-portfolio-embla-next></button>
           </div>
         </div>
 

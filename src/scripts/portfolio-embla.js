@@ -1,12 +1,14 @@
 import EmblaCarousel from 'embla-carousel'
 import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
 
-export function applyPortfolioEmbla(emblaNode) {
-  const options = { loop: false, slidesToScroll: 'auto' }
-  const emblaApi = EmblaCarousel(emblaNode, options)
+export function applyPortfolioEmbla(root) {
+  const viewportNode = root.querySelector('[data-portfolio-embla-viewport]')
 
-  const prevBtnNode = document.querySelector('[data-portfolio-embla-prev]')
-  const nextBtnNode = document.querySelector('[data-portfolio-embla-next]')
+  const options = { loop: true, slidesToScroll: 'auto' }
+  const emblaApi = EmblaCarousel(viewportNode, options)
+
+  const prevBtnNode = root.querySelector('[data-portfolio-embla-prev]')
+  const nextBtnNode = root.querySelector('[data-portfolio-embla-next]')
 
   if (prevBtnNode && nextBtnNode) {
     const removePrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
@@ -20,6 +22,6 @@ export function applyPortfolioEmbla(emblaNode) {
 }
 
 export function initPortfolioEmbla() {
-  const emblaNodes = Array.from(document.querySelectorAll('[data-portfolio-embla]'))
-  emblaNodes.forEach(applyPortfolioEmbla)
+  const nodes = Array.from(document.querySelectorAll('[data-portfolio-embla]'))
+  nodes.forEach(applyPortfolioEmbla)
 }

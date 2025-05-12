@@ -19,6 +19,7 @@ import { initHeroForm } from './src/scripts/hero-form'
 import { Mask, MaskInput } from 'maska'
 import { initQuiz } from './src/scripts/quiz'
 import { initPortfolioEmbla } from './src/scripts/portfolio-embla'
+import { initPortfolioGallery } from './src/scripts/portfolio-gallery'
 
 new MaskInput('[data-maska]')
 
@@ -27,6 +28,7 @@ initCitySelect()
 initHeroForm()
 initQuiz()
 initPortfolioEmbla()
+initPortfolioGallery()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()
