@@ -24,7 +24,7 @@
               <li>Все мастера - граждане РФ</li>
             </ul>
             <div class="hero__button">
-              <button class="cta-button cta-button_primary cta-button_large cta-button_upper">Получить предложение</button>
+              <button class="primary-button primary-button_alt primary-button_large primary-button_upper">Получить предложение</button>
             </div>
           </div>
           <div class="hero__layout-form">
@@ -74,7 +74,7 @@
                 Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
               </div>
               <div class="hero-form__submit">
-                <button class="cta-button">Отправить</button>
+                <button class="primary-button">Отправить</button>
               </div>
             </form>
           </div>
@@ -639,7 +639,7 @@
                     <input class="quiz-phone__input" type="text" id="quizphone" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
                   </div>
                   <div class="quiz__submit">
-                    <button type="submit" class="cta-button cta-button_primary">
+                    <button type="submit" class="primary-button primary-button_alt">
                       <span class="text-lg leading-none">
                         Отправить расчет<br>
                         и получить подарок
@@ -941,23 +941,127 @@
       </div>
     </div>
 
-    <div class="comparison-section">
+    <div class="comparison-section" hidden>
       <div class="container-lg">
         <div class="comparison-section__title">
           От голых стен до готового ремонта<br>
           за ХХ дней
         </div>
-        <div class="comparison-section__body">
-          <div class="comparison-carousel">
-            <div class="comparison-carousel">
-              <div class="comparison-carousel__viewport">
-                <div class="comparison-carousel__container">
-                  <div class="comparison-carousel__slide"></div>
-                  <div class="comparison-carousel__slide"></div>
+        <div class="comparison-carousel" data-comparison-carousel>
+          <div class="comparison-carousel__viewport" data-comparison-carousel-viewport>
+            <div class="comparison-carousel__container">
+              <div class="comparison-carousel__slide">
+                <div class="comparison" style="--progress: 30%" data-comparison>
+                  <div class="comparison__before">
+                    <div class="comparison__before-label">до</div>
+                    <img src="<?php bloginfo(
+                      'template_url'
+                    ); ?>/src/images/comparison.jpg" alt="" style="filter: grayscale(80%)">
+                  </div>
+                  <div class="comparison__after">
+                    <div class="comparison__after-label">после</div>
+                    <img src="<?php bloginfo('template_url'); ?>/src/images/comparison.jpg" alt="">
+                  </div>
+                  <input class="comparison__range" type="range" name="progress" value="300" min="0" max="1000">
+                  <div class="comparison__handle"></div>
+                  <div class="comparison__line"></div>
                 </div>
               </div>
-              <button class="comparison-carousel__nav comparison-carousel__nav--prev" type="button" data-comparison-carousel-prev></button>
-              <button class="comparison-carousel__nav comparison-carousel__nav--next" type="button" data-comparison-carousel-next></button>
+              <div class="comparison-carousel__slide">
+                <div class="comparison" style="--progress: 30%" data-comparison>
+                  <div class="comparison__before">
+                    <div class="comparison__before-label">до</div>
+                    <img src="<?php bloginfo(
+                      'template_url'
+                    ); ?>/src/images/comparison.jpg" alt="" style="filter: grayscale(80%)">
+                  </div>
+                  <div class="comparison__after">
+                    <div class="comparison__after-label">после</div>
+                    <img src="<?php bloginfo('template_url'); ?>/src/images/comparison.jpg" alt="">
+                  </div>
+                  <input class="comparison__range" type="range" name="progress" value="300" min="0" max="1000">
+                  <div class="comparison__handle"></div>
+                  <div class="comparison__line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="comparison-carousel__nav comparison-carousel__nav--prev" type="button" data-comparison-carousel-prev></button>
+          <button class="comparison-carousel__nav comparison-carousel__nav--next" type="button" data-comparison-carousel-next></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="prices-section">
+      <div class="container">
+        <div class="prices-section__headline">
+          <div class="prices-section__title">
+            Цены ремонта квартир<br>
+            в Казани
+          </div>
+          <div class="prices-section__desc">
+            Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков
+          </div>
+        </div>
+        <div class="prices-section__grid">
+          <div class="prices-group">
+            <div class="prices-group__sheet">Бонус - предложение</div>
+            <div class="prices-group__title">Косметический ремонт</div>
+            <div class="prices-group__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+            <div class="prices-group__list">
+              <ul>
+              <li>Вид работ 1</li>
+              <li>Вид выполняемых работ 2</li>
+              <li>Вид выполняемых работ 3</li>
+              <li>Вид выполняемых работ 4</li>
+              <li>Вид выполняемых работ 5</li>
+              <li>Вид выполняемых работ 6</li>
+              </ul>
+            </div>
+            <div class="prices-group__time">От 20 дней</div>
+            <div class="prices-group__price">от 4 500 ₽/м2</div>
+            <div class="prices-group__order">
+              <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
+            </div>
+          </div>
+          <div class="prices-group">
+            <div class="prices-group__sheet">Бонус - предложение</div>
+            <div class="prices-group__title">Капитальный ремонт</div>
+            <div class="prices-group__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+            <div class="prices-group__list">
+              <ul>
+              <li>Вид работ 1</li>
+              <li>Вид выполняемых работ 2</li>
+              <li>Вид выполняемых работ 3</li>
+              <li>Вид выполняемых работ 4</li>
+              <li>Вид выполняемых работ 5</li>
+              <li>Вид выполняемых работ 6</li>
+              </ul>
+            </div>
+            <div class="prices-group__time">От 20 дней</div>
+            <div class="prices-group__price">от 4 500 ₽/м2</div>
+            <div class="prices-group__order">
+              <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
+            </div>
+          </div>
+          <div class="prices-group">
+            <div class="prices-group__sheet">Бонус - предложение</div>
+            <div class="prices-group__title">Дизайнерский ремонт</div>
+            <div class="prices-group__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+            <div class="prices-group__list">
+              <ul>
+              <li>Вид работ 1</li>
+              <li>Вид выполняемых работ 2</li>
+              <li>Вид выполняемых работ 3</li>
+              <li>Вид выполняемых работ 4</li>
+              <li>Вид выполняемых работ 5</li>
+              <li>Вид выполняемых работ 6</li>
+              </ul>
+            </div>
+            <div class="prices-group__time">От 20 дней</div>
+            <div class="prices-group__price">от 4 500 ₽/м2</div>
+            <div class="prices-group__order">
+              <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
             </div>
           </div>
         </div>

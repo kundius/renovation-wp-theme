@@ -4,8 +4,7 @@ import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
 export function applyPortfolioEmbla(root) {
   const viewportNode = root.querySelector('[data-portfolio-embla-viewport]')
 
-  const options = { loop: true, slidesToScroll: 'auto' }
-  const emblaApi = EmblaCarousel(viewportNode, options)
+  const emblaApi = EmblaCarousel(viewportNode, { loop: true, slidesToScroll: 'auto' })
 
   const prevBtnNode = root.querySelector('[data-portfolio-embla-prev]')
   const nextBtnNode = root.querySelector('[data-portfolio-embla-next]')

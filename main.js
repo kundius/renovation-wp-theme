@@ -9,6 +9,7 @@ import './src/styles/about.css'
 import './src/styles/quiz.css'
 import './src/styles/portfolio.css'
 import './src/styles/comparison.css'
+import './src/styles/prices.css'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'
@@ -21,6 +22,8 @@ import { Mask, MaskInput } from 'maska'
 import { initQuiz } from './src/scripts/quiz'
 import { initPortfolioEmbla } from './src/scripts/portfolio-embla'
 import { initPortfolioGallery } from './src/scripts/portfolio-gallery'
+import { initComparisonCarousel } from './src/scripts/comparison-carousel'
+import { initComparison } from './src/scripts/comparison'
 
 new MaskInput('[data-maska]')
 
@@ -30,6 +33,8 @@ initHeroForm()
 initQuiz()
 initPortfolioEmbla()
 initPortfolioGallery()
+initComparisonCarousel()
+initComparison()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()
