@@ -673,7 +673,7 @@
       </div>
     </div>
 
-    <div class="portfolio">
+    <div class="portfolio" hidden>
       <div class="container-lg">
 
         <div class="portfolio__headline">
@@ -938,6 +938,29 @@
           </div>
         </div>
 
+      </div>
+    </div>
+
+    <div class="comparison-section">
+      <div class="container-lg">
+        <div class="comparison-section__title">
+          От голых стен до готового ремонта<br>
+          за ХХ дней
+        </div>
+        <div class="comparison-section__body">
+          <div class="comparison-carousel">
+            <div class="comparison-carousel">
+              <div class="comparison-carousel__viewport">
+                <div class="comparison-carousel__container">
+                  <div class="comparison-carousel__slide"></div>
+                  <div class="comparison-carousel__slide"></div>
+                </div>
+              </div>
+              <button class="comparison-carousel__nav comparison-carousel__nav--prev" type="button" data-comparison-carousel-prev></button>
+              <button class="comparison-carousel__nav comparison-carousel__nav--next" type="button" data-comparison-carousel-next></button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

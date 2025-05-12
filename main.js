@@ -8,6 +8,7 @@ import './src/styles/hero.css'
 import './src/styles/about.css'
 import './src/styles/quiz.css'
 import './src/styles/portfolio.css'
+import './src/styles/comparison.css'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'
