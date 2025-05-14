@@ -34,3 +34,16 @@ export const chunkArray = (array, chunkSize) => {
     return array.slice(index * chunkSize, (index + 1) * chunkSize)
   })
 }
+
+export function truncateString(str, maxLength = 10, separator = '...') {
+  const sepLength = separator.length
+
+  if (str.length <= maxLength) return str
+
+  const availableLength = maxLength - sepLength
+
+  const headLength = Math.ceil(availableLength / 2)
+  const tailLength = Math.floor(availableLength / 2)
+
+  return str.slice(0, headLength) + separator + str.slice(-tailLength)
+}

@@ -69,10 +69,10 @@
                 <div class="hero-form__price-value" data-hero-form-price-output></div>
               </div>
               <div class="hero-form__phone">
-                <div class="phone-field">
-                  <label class="phone-field__label" for="herophone">Ваш номер телефона</label>
-                  <input class="phone-field__input" type="text" id="herophone" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
-                </div>
+                <label class="phone-field">
+                  <span class="phone-field__label">Ваш номер телефона</span>
+                  <input class="phone-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+                </label>
               </div>
               <div class="hero-form__rules">
                 Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
@@ -1179,13 +1179,13 @@
       </div>
     </div>
 
-    <div class="calc-section calc-section--has-title">
+    <div class="calc-section calc-section--has-title" hidden>
       <div class="container">
         <div class="calc-section__title">
           Калькулятор стоимости ремонта с точностью до <span>96%</span>
         </div>
 
-        <div class="calc">
+        <form class="calc" data-calc>
           <div class="calc__left">
             <div class="calc__field">
               <div class="calc__field-label">
@@ -1193,15 +1193,15 @@
               </div>
               <div class="calc__field-house-type">
                 <label class="radio-field">
-                  <input type="radio" name="Тип Вашего дома" value="Новостройка" checked>
+                  <input type="radio" name="house-type" data-calc-repair-price="500" data-calc-materials-price="220" value="Новостройка" checked>
                   <span>Новостройка</span>
                 </label>
                 <label class="radio-field">
-                  <input type="radio" name="Тип Вашего дома" value="Вторичное жилье">
+                  <input type="radio" name="house-type" data-calc-repair-price="700" data-calc-materials-price="300" value="Вторичное жилье">
                   <span>Вторичное жилье</span>
                 </label>
                 <label class="radio-field">
-                  <input type="radio" name="Тип Вашего дома" value="Старый фонд">
+                  <input type="radio" name="house-type" data-calc-repair-price="1000" data-calc-materials-price="400" value="Старый фонд">
                   <span>Старый фонд</span>
                 </label>
               </div>
@@ -1213,27 +1213,27 @@
               </div>
               <div class="calc__field-room-count">
                 <label class="radio-field">
-                  <input type="radio" name="Количество комнат" value="Студия" checked>
+                  <input type="radio" name="room-count" data-calc-repair-price="150%" data-calc-materials-price="150%" value="Студия" checked>
                   <span>Студия</span>
                 </label>
                 <label class="radio-field">
-                  <input type="radio" name="Количество комнат" value="1">
+                  <input type="radio" name="room-count" data-calc-repair-price="100%" data-calc-materials-price="100%" value="1">
                   <span>1</span>
                 </label>
                 <label class="radio-field">
-                  <input type="radio" name="Количество комнат" value="2">
+                  <input type="radio" name="room-count" data-calc-repair-price="190%" data-calc-materials-price="190%" value="2">
                   <span>2</span>
                 </label>
                 <label class="radio-field">
-                  <input type="radio" name="Количество комнат" value="3">
+                  <input type="radio" name="room-count" data-calc-repair-price="270%" data-calc-materials-price="270%" value="3">
                   <span>3</span>
                 </label>
                 <label class="radio-field">
-                  <input type="radio" name="Количество комнат" value="4">
+                  <input type="radio" name="room-count" data-calc-repair-price="340%" data-calc-materials-price="340%" value="4">
                   <span>4</span>
                 </label>
                 <label class="radio-field">
-                  <input type="radio" name="Количество комнат" value="5">
+                  <input type="radio" name="room-count" data-calc-repair-price="400%" data-calc-materials-price="400%" value="5">
                   <span>5</span>
                 </label>
               </div>
@@ -1245,19 +1245,19 @@
               </div>
               <div class="calc__field-repair-type">
                 <label class="radio-button">
-                  <input type="radio" name="type" value="КОСМЕТИЧЕСКИЙ" name="Тип ремонта" checked>
+                  <input type="radio" name="repair-type" value="КОСМЕТИЧЕСКИЙ" data-calc-repair-price="500" data-calc-materials-price="220" name="Тип ремонта" checked>
                   <span>КОСМЕТИЧЕСКИЙ</span>
                 </label>
                 <label class="radio-button">
-                  <input type="radio" name="type" value="КАПИТАЛЬНЫЙ" name="Тип ремонта">
+                  <input type="radio" name="repair-type" value="КАПИТАЛЬНЫЙ" data-calc-repair-price="1000" data-calc-materials-price="700" name="Тип ремонта">
                   <span>КАПИТАЛЬНЫЙ</span>
                 </label>
                 <label class="radio-button">
-                  <input type="radio" name="type" value="ЧЕРНОВОЙ" name="Тип ремонта">
+                  <input type="radio" name="repair-type" value="ЧЕРНОВОЙ" data-calc-repair-price="400" data-calc-materials-price="200" name="Тип ремонта">
                   <span>ЧЕРНОВОЙ</span>
                 </label>
                 <label class="radio-button">
-                  <input type="radio" name="type" value="ПО ДИЗАЙН-ПРОЕКТУ" name="Тип ремонта">
+                  <input type="radio" name="repair-type" value="ПО ДИЗАЙН-ПРОЕКТУ" data-calc-repair-price="1200" data-calc-materials-price="800" name="Тип ремонта">
                   <span>ПО ДИЗАЙН-ПРОЕКТУ</span>
                 </label>
               </div>
@@ -1268,7 +1268,27 @@
                 4. Загрузите план квартиры или дома для получения точной сметы ремонта <span>(в формате .doc, .docx, .xlsx, .pdf, .jpeg, .png)</span>
               </div>
               <div class="calc__field-attachments">
+                <div class="attachments-field" data-attachments-field data-attachments-field-count="1">
+                  <div class="attachments-field__row" data-attachments-field-row>
+                    <label class="attachment-field" data-attachment-field>
+                      <input type="file" name="file" class="attachment-field__input" data-attachment-field-input />
+                      <span class="attachment-field__label control-button">
+                        <span data-attachment-field-label>Выберите файл</span>
+                        <span class="icon icon-pin"></span>
+                      </span>
+                    </label>
 
+                    <button type="button" class="attachments-field__remove" data-attachments-field-remove>
+                      <span>Убрать</span>
+                      <span></span>
+                    </button>
+
+                    <button type="button" class="attachments-field__add" data-attachments-field-add>
+                      <span>Добавить ещё</span>
+                      <span></span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -1290,24 +1310,18 @@
           <div class="calc__right">
             <div class="calc__repair">
               <div class="calc__repair-title">
-                Примерная стоимость<br>
-                ремонта
+                Примерная стоимость ремонта
               </div>
               <div class="calc__repair-desc">
                 без учета материалов:
               </div>
-              <div class="calc__repair-price">
-                112 500 ₽
-              </div>
+              <div class="calc__repair-price" data-calc-repair-cost></div>
             </div>
             <div class="calc__materials">
               <div class="calc__materials-title">
-                Стоимость<br>
-                черновых материалов
+                Стоимость <span class="inline-block">черновых материалов</span>
               </div>
-              <div class="calc__materials-price">
-                45 500 ₽
-              </div>
+              <div class="calc__materials-price" data-calc-materials-cost></div>
             </div>
             <div class="calc__line"></div>
             <div class="calc__message">
@@ -1316,8 +1330,8 @@
             </div>
             <div class="calc__phone">
               <label class="phone-field">
-                <span class="phone-field__label" for="herophone">Ваш номер телефона</span>
-                <input class="phone-field__input" type="text" id="herophone" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+                <span class="phone-field__label">Ваш номер телефона</span>
+                <input class="phone-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
               </label>
             </div>
             <div class="calc__rules">
@@ -1327,7 +1341,17 @@
               <button class="primary-button primary-button_alt">Отправить</button>
             </div>
           </div>
-        </div>
+
+          <div class="calc-success">
+            <div class="calc-success__title">
+              Сообщение отправлено!
+            </div>
+            <div class="calc-success__desc">
+              Тут нужно что-то написать
+            </div>
+            <button type="button" class="calc-success__close" data-calc-reset>Закрыть</button>
+          </div>
+        </form>
       </div>
     </div>
 

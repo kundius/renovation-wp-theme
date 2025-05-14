@@ -27,6 +27,9 @@ import { initPortfolioGallery } from './src/scripts/portfolio-gallery'
 import { initComparisonCarousel } from './src/scripts/comparison-carousel'
 import { initComparison } from './src/scripts/comparison'
 import { initRangeField } from './src/scripts/range-field'
+import { initAttachmentField } from './src/scripts/attachment-field'
+import { initAttachmentsField } from './src/scripts/attachments-field'
+import { initCalc } from './src/scripts/calc'
 
 new MaskInput('[data-maska]')
 
@@ -39,6 +42,9 @@ initPortfolioGallery()
 initComparisonCarousel()
 initComparison()
 initRangeField()
+initAttachmentField()
+initAttachmentsField()
+initCalc()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()
