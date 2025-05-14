@@ -34,20 +34,20 @@
               </div>
               <div class="hero-form__type">
                 <div class="hero-form__type-label">Тип ремонта</div>
-                <div class="hero-form__type-items">
-                  <label>
+                <div class="hero-form__type-controls">
+                  <label class="radio-button">
                     <input type="radio" name="type" value="КОСМЕТИЧЕСКИЙ" data-hero-form-type-price="1500" checked>
                     <span>КОСМЕТИЧЕСКИЙ</span>
                   </label>
-                  <label>
+                  <label class="radio-button">
                     <input type="radio" name="type" value="КАПИТАЛЬНЫЙ" data-hero-form-type-price="2500">
                     <span>КАПИТАЛЬНЫЙ</span>
                   </label>
-                  <label>
+                  <label class="radio-button">
                     <input type="radio" name="type" value="ЧЕРНОВОЙ" data-hero-form-type-price="1000">
                     <span>ЧЕРНОВОЙ</span>
                   </label>
-                  <label>
+                  <label class="radio-button">
                     <input type="radio" name="type" value="ЭЛИТНЫЙ" data-hero-form-type-price="5000">
                     <span>ЭЛИТНЫЙ</span>
                   </label>
@@ -56,10 +56,12 @@
               <div class="hero-form__area">
                 <div class="hero-form__area-label">Площадь помещения (м<sup>2</sup>)</div>
                 <div class="hero-form__area-controls">
-                  <input type="range" name="area" value="25" min="0" max="300" class="hero-form__area-range">
-                  <div class="hero-form__area-display" data-hero-form-area-output></div>
-                  <button type="button" class="hero-form__area-plus" data-hero-form-area-plus>+</button>
-                  <button type="button" class="hero-form__area-minus" data-hero-form-area-minus>-</button>
+                  <div class="range-field" data-range-field>
+                    <input type="range" name="area" value="25" min="0" max="300" class="range-field__input" data-range-field-input>
+                    <div class="range-field__display" data-range-field-display="# м<sup>2</sup>"></div>
+                    <button type="button" class="range-field__plus" data-range-field-plus>+</button>
+                    <button type="button" class="range-field__minus" data-range-field-minus>-</button>
+                  </div>
                 </div>
               </div>
               <div class="hero-form__price">
@@ -67,8 +69,10 @@
                 <div class="hero-form__price-value" data-hero-form-price-output></div>
               </div>
               <div class="hero-form__phone">
-                <label class="hero-form__phone-label" for="herophone">Ваш номер телефона</label>
-                <input class="hero-form__phone-input" type="text" id="herophone" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+                <div class="phone-field">
+                  <label class="phone-field__label" for="herophone">Ваш номер телефона</label>
+                  <input class="phone-field__input" type="text" id="herophone" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+                </div>
               </div>
               <div class="hero-form__rules">
                 Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
@@ -202,22 +206,18 @@
                     <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="Укажите тип Вашего дома" value="Новостройка" checked>
-                        <span></span>
                         <span>Новостройка</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Укажите тип Вашего дома" value="Вторичное жилье">
-                        <span></span>
                         <span>Вторичное жилье</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Укажите тип Вашего дома" value="Дом или коттедж">
-                        <span></span>
                         <span>Дом или коттедж</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Укажите тип Вашего дома" value="Введите площадь">
-                        <span></span>
                         <span>Другое</span>
                       </label>
                     </div>
@@ -271,23 +271,19 @@
                     <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="Укажите общую площадь помещения" value="До 30 м2" checked>
-                        <span></span>
                         <span>До 30 м<sup>2</sup></span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Укажите общую площадь помещения" value="От 30 до 60 м2">
-                        <span></span>
                         <span>От 30 до 60 м<sup>2</sup></span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Укажите общую площадь помещения" value="Более 60 м2">
-                        <span></span>
                         <span>Более 60 м<sup>2</sup></span>
                       </label>
                       <label class="radio-field">
                         <!-- input:"Введите площадь" м<sup>2</sup> -->
                         <input type="radio" name="Укажите общую площадь помещения" value="# м2">
-                        <span></span>
                         <span>
                           <input type="text" value="" placeholder="Введите площадь">
                           м<sup>2</sup>
@@ -344,22 +340,18 @@
                     <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="Какой вид ремонта требуется?" value="Черновой ремонт" checked>
-                        <span></span>
                         <span>Черновой ремонт</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Какой вид ремонта требуется?" value="Косметический ремонт">
-                        <span></span>
                         <span>Косметический ремонт</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Какой вид ремонта требуется?" value="Капитальный  ремонт">
-                        <span></span>
                         <span>Капитальный  ремонт</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Какой вид ремонта требуется?" value="Элитный  ремонт">
-                        <span></span>
                         <span>Элитный  ремонт</span>
                       </label>
                     </div>
@@ -413,22 +405,18 @@
                     <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="У вас уже есть дизайн - проект?" value="Да" checked>
-                        <span></span>
                         <span>Да</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="У вас уже есть дизайн - проект?" value="Нет">
-                        <span></span>
                         <span>Нет</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="У вас уже есть дизайн - проект?" value="Планирую заказать">
-                        <span></span>
                         <span>Планирую заказать</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="У вас уже есть дизайн - проект?" value="В разработке">
-                        <span></span>
                         <span>В разработке</span>
                       </label>
                     </div>
@@ -482,22 +470,18 @@
                     <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="Когда вы планируете начать ремонт" value="В течение 3х-дней" checked>
-                        <span></span>
                         <span>В течение 3х-дней</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Когда вы планируете начать ремонт" value="В течение месяца">
-                        <span></span>
                         <span>В течение месяца</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Когда вы планируете начать ремонт" value="В течение полугода">
-                        <span></span>
                         <span>В течение полугода</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Когда вы планируете начать ремонт" value="Более длительный срок">
-                        <span></span>
                         <span>Более длительный срок</span>
                       </label>
                     </div>
@@ -551,22 +535,18 @@
                     <div class="quiz-form__fields">
                       <label class="radio-field">
                         <input type="radio" name="Какой бы вам хотелось получить подарок после ремонта" value="Каталог дизайн-проектов" checked>
-                        <span></span>
                         <span>Каталог дизайн-проектов</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Какой бы вам хотелось получить подарок после ремонта" value="Фотосессия после ремонта">
-                        <span></span>
                         <span>Фотосессия после ремонта</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Какой бы вам хотелось получить подарок после ремонта" value="Мне не нужен подарок">
-                        <span></span>
                         <span>Мне не нужен подарок</span>
                       </label>
                       <label class="radio-field">
                         <input type="radio" name="Какой бы вам хотелось получить подарок после ремонта" value="Другое">
-                        <span></span>
                         <span>Другое</span>
                       </label>
                     </div>
@@ -619,17 +599,14 @@
                 <div class="quiz-ending__fields">
                   <label class="radio-field">
                     <input type="radio" name="Мы уже приступили к расчету!" value="Перезвоните мне, у меня остались вопросы" checked>
-                    <span></span>
                     <span>Перезвоните мне, у меня остались вопросы</span>
                   </label>
                   <label class="radio-field">
                     <input type="radio" name="Мы уже приступили к расчету!" value="Пришлите мне все в Whatsapp">
-                    <span></span>
                     <span>Пришлите мне все в Whatsapp</span>
                   </label>
                   <label class="radio-field">
                     <input type="radio" name="Мы уже приступили к расчету!" value="Пришлите мне все в Telegram ">
-                    <span></span>
                     <span>Пришлите мне все в Telegram </span>
                   </label>
                 </div>
@@ -992,7 +969,7 @@
       </div>
     </div>
 
-    <div class="prices-section">
+    <div class="prices-section" hidden>
       <div class="container">
         <div class="prices-section__headline">
           <div class="prices-section__title">
@@ -1004,64 +981,350 @@
           </div>
         </div>
         <div class="prices-section__grid">
-          <div class="prices-group">
-            <div class="prices-group__sheet">Бонус - предложение</div>
-            <div class="prices-group__title">Косметический ремонт</div>
-            <div class="prices-group__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-            <div class="prices-group__list">
-              <ul>
-              <li>Вид работ 1</li>
-              <li>Вид выполняемых работ 2</li>
-              <li>Вид выполняемых работ 3</li>
-              <li>Вид выполняемых работ 4</li>
-              <li>Вид выполняемых работ 5</li>
-              <li>Вид выполняемых работ 6</li>
-              </ul>
+          <div class="prices-card">
+            <div class="prices-card__sheet">Бонус - предложение</div>
+            <div class="prices-card__title">Косметический ремонт</div>
+            <div class="prices-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+            <div class="prices-card__list">
+              <div class="prices-card__list-inner">
+                <ul>
+                  <li>Вид работ 1</li>
+                  <li>Вид выполняемых работ 2</li>
+                  <li>Вид выполняемых работ 3</li>
+                  <li>Вид выполняемых работ 4</li>
+                  <li>Вид выполняемых работ 5</li>
+                  <li>Вид выполняемых работ 6</li>
+                  <li>Вид работ 1</li>
+                  <li>Вид выполняемых работ 2</li>
+                  <li>Вид выполняемых работ 3</li>
+                  <li>Вид выполняемых работ 4</li>
+                  <li>Вид выполняемых работ 5</li>
+                  <li>Вид выполняемых работ 6</li>
+                </ul>
+              </div>
             </div>
-            <div class="prices-group__time">От 20 дней</div>
-            <div class="prices-group__price">от 4 500 ₽/м2</div>
-            <div class="prices-group__order">
+            <div class="prices-card__time">От 20 дней</div>
+            <div class="prices-card__price">от 4 500 ₽/м2</div>
+            <div class="prices-card__order">
               <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
             </div>
           </div>
-          <div class="prices-group">
-            <div class="prices-group__sheet">Бонус - предложение</div>
-            <div class="prices-group__title">Капитальный ремонт</div>
-            <div class="prices-group__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-            <div class="prices-group__list">
-              <ul>
-              <li>Вид работ 1</li>
-              <li>Вид выполняемых работ 2</li>
-              <li>Вид выполняемых работ 3</li>
-              <li>Вид выполняемых работ 4</li>
-              <li>Вид выполняемых работ 5</li>
-              <li>Вид выполняемых работ 6</li>
-              </ul>
+          <div class="prices-card">
+            <div class="prices-card__sheet">Бонус - предложение</div>
+            <div class="prices-card__title">Капитальный ремонт</div>
+            <div class="prices-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+            <div class="prices-card__list">
+              <div class="prices-card__list-inner">
+                <ul>
+                <li>Вид работ 1</li>
+                <li>Вид выполняемых работ 2</li>
+                <li>Вид выполняемых работ 3</li>
+                <li>Вид выполняемых работ 4</li>
+                <li>Вид выполняемых работ 5</li>
+                <li>Вид выполняемых работ 6</li>
+                </ul>
+              </div>
             </div>
-            <div class="prices-group__time">От 20 дней</div>
-            <div class="prices-group__price">от 4 500 ₽/м2</div>
-            <div class="prices-group__order">
+            <div class="prices-card__time">От 20 дней</div>
+            <div class="prices-card__price">от 4 500 ₽/м2</div>
+            <div class="prices-card__order">
               <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
             </div>
           </div>
-          <div class="prices-group">
-            <div class="prices-group__sheet">Бонус - предложение</div>
-            <div class="prices-group__title">Дизайнерский ремонт</div>
-            <div class="prices-group__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-            <div class="prices-group__list">
-              <ul>
-              <li>Вид работ 1</li>
-              <li>Вид выполняемых работ 2</li>
-              <li>Вид выполняемых работ 3</li>
-              <li>Вид выполняемых работ 4</li>
-              <li>Вид выполняемых работ 5</li>
-              <li>Вид выполняемых работ 6</li>
-              </ul>
+          <div class="prices-card">
+            <div class="prices-card__sheet">Бонус - предложение</div>
+            <div class="prices-card__title">Дизайнерский ремонт</div>
+            <div class="prices-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+            <div class="prices-card__list">
+              <div class="prices-card__list-inner">
+                <ul>
+                <li>Вид работ 1</li>
+                <li>Вид выполняемых работ 2</li>
+                <li>Вид выполняемых работ 3</li>
+                <li>Вид выполняемых работ 4</li>
+                <li>Вид выполняемых работ 5</li>
+                <li>Вид выполняемых работ 6</li>
+                </ul>
+              </div>
             </div>
-            <div class="prices-group__time">От 20 дней</div>
-            <div class="prices-group__price">от 4 500 ₽/м2</div>
-            <div class="prices-group__order">
+            <div class="prices-card__time">От 20 дней</div>
+            <div class="prices-card__price">от 4 500 ₽/м2</div>
+            <div class="prices-card__order">
               <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="terms-section" hidden>
+      <div class="container">
+        <div class="terms-section__title">
+          Средние сроки выполнения ремонта квартир
+        </div>
+        <div class="terms-section__grid">
+          <div class="terms-card">
+            <div class="terms-card__title">
+              Объект
+            </div>
+            <div class="terms-card__list">
+              <div class="terms-card__head">
+                <div>Студия <span>18 - 32 м<sup>2</sup></span></div>
+              </div>
+              <div class="terms-card__head">
+                <div>1 - комнатная квартира</div>
+              </div>
+              <div class="terms-card__head">
+                <div>2 - комнатная квартира</div>
+              </div>
+              <div class="terms-card__head">
+                <div>3 - комнатная квартира</div>
+              </div>
+              <div class="terms-card__head">
+                <div>4 - комнатная квартира <span>80 - 120 м<sup>2</sup></span></div>
+              </div>
+              <div class="terms-card__head">
+                <div>Частный дом <span>120 - 200 м<sup>2</sup></span></div>
+              </div>
+              <div class="terms-card__head">
+                <div>Коттедж <span>140 - 350 м<sup>2</sup></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="terms-card">
+            <div class="terms-card__title terms-card__title--colored">
+              Косметический
+            </div>
+            <div class="terms-card__list">
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+            </div>
+          </div>
+          <div class="terms-card">
+            <div class="terms-card__title terms-card__title--colored">
+              Капитальный
+            </div>
+            <div class="terms-card__list">
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+            </div>
+          </div>
+          <div class="terms-card">
+            <div class="terms-card__title terms-card__title--colored">
+              Дизайнерский
+            </div>
+            <div class="terms-card__list">
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+              <div class="terms-card__data">
+                <div>15- 30 дней</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-section calc-section--has-title">
+      <div class="container">
+        <div class="calc-section__title">
+          Калькулятор стоимости ремонта с точностью до <span>96%</span>
+        </div>
+
+        <div class="calc">
+          <div class="calc__left">
+            <div class="calc__field">
+              <div class="calc__field-label">
+                1. Тип Вашего дома
+              </div>
+              <div class="calc__field-house-type">
+                <label class="radio-field">
+                  <input type="radio" name="Тип Вашего дома" value="Новостройка" checked>
+                  <span>Новостройка</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="Тип Вашего дома" value="Вторичное жилье">
+                  <span>Вторичное жилье</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="Тип Вашего дома" value="Старый фонд">
+                  <span>Старый фонд</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="calc__field">
+              <div class="calc__field-label">
+                2. Количество комнат
+              </div>
+              <div class="calc__field-room-count">
+                <label class="radio-field">
+                  <input type="radio" name="Количество комнат" value="Студия" checked>
+                  <span>Студия</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="Количество комнат" value="1">
+                  <span>1</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="Количество комнат" value="2">
+                  <span>2</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="Количество комнат" value="3">
+                  <span>3</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="Количество комнат" value="4">
+                  <span>4</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="Количество комнат" value="5">
+                  <span>5</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="calc__field">
+              <div class="calc__field-label">
+                3. Тип ремонта
+              </div>
+              <div class="calc__field-repair-type">
+                <label class="radio-button">
+                  <input type="radio" name="type" value="КОСМЕТИЧЕСКИЙ" name="Тип ремонта" checked>
+                  <span>КОСМЕТИЧЕСКИЙ</span>
+                </label>
+                <label class="radio-button">
+                  <input type="radio" name="type" value="КАПИТАЛЬНЫЙ" name="Тип ремонта">
+                  <span>КАПИТАЛЬНЫЙ</span>
+                </label>
+                <label class="radio-button">
+                  <input type="radio" name="type" value="ЧЕРНОВОЙ" name="Тип ремонта">
+                  <span>ЧЕРНОВОЙ</span>
+                </label>
+                <label class="radio-button">
+                  <input type="radio" name="type" value="ПО ДИЗАЙН-ПРОЕКТУ" name="Тип ремонта">
+                  <span>ПО ДИЗАЙН-ПРОЕКТУ</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="calc__field">
+              <div class="calc__field-label">
+                4. Загрузите план квартиры или дома для получения точной сметы ремонта <span>(в формате .doc, .docx, .xlsx, .pdf, .jpeg, .png)</span>
+              </div>
+              <div class="calc__field-attachments">
+
+              </div>
+            </div>
+
+            <div class="calc__field calc__field--area">
+              <div class="calc__field-label">
+                Площадь помещения (м<sup>2</sup>)
+              </div>
+              <div class="calc__field-area">
+                <div class="range-field" data-range-field>
+                  <input type="range" name="area" value="25" min="0" max="300" class="range-field__input" data-range-field-input>
+                  <div class="range-field__display" data-range-field-display="# м<sup>2</sup>"></div>
+                  <button type="button" class="range-field__plus" data-range-field-plus>+</button>
+                  <button type="button" class="range-field__minus" data-range-field-minus>-</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc__right">
+            <div class="calc__repair">
+              <div class="calc__repair-title">
+                Примерная стоимость<br>
+                ремонта
+              </div>
+              <div class="calc__repair-desc">
+                без учета материалов:
+              </div>
+              <div class="calc__repair-price">
+                112 500 ₽
+              </div>
+            </div>
+            <div class="calc__materials">
+              <div class="calc__materials-title">
+                Стоимость<br>
+                черновых материалов
+              </div>
+              <div class="calc__materials-price">
+                45 500 ₽
+              </div>
+            </div>
+            <div class="calc__line"></div>
+            <div class="calc__message">
+              Мы уже приступили к точному расчету, напишите ваш телефон и получите смету
+              в течении 3 часов!
+            </div>
+            <div class="calc__phone">
+              <label class="phone-field">
+                <span class="phone-field__label" for="herophone">Ваш номер телефона</span>
+                <input class="phone-field__input" type="text" id="herophone" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+              </label>
+            </div>
+            <div class="calc__rules">
+              Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
+            </div>
+            <div class="calc__submit">
+              <button class="primary-button primary-button_alt">Отправить</button>
             </div>
           </div>
         </div>

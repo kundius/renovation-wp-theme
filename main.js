@@ -10,6 +10,8 @@ import './src/styles/quiz.css'
 import './src/styles/portfolio.css'
 import './src/styles/comparison.css'
 import './src/styles/prices.css'
+import './src/styles/terms.css'
+import './src/styles/calc.css'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'
@@ -24,6 +26,7 @@ import { initPortfolioEmbla } from './src/scripts/portfolio-embla'
 import { initPortfolioGallery } from './src/scripts/portfolio-gallery'
 import { initComparisonCarousel } from './src/scripts/comparison-carousel'
 import { initComparison } from './src/scripts/comparison'
+import { initRangeField } from './src/scripts/range-field'
 
 new MaskInput('[data-maska]')
 
@@ -35,6 +38,7 @@ initPortfolioEmbla()
 initPortfolioGallery()
 initComparisonCarousel()
 initComparison()
+initRangeField()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()
