@@ -1,0 +1,57 @@
+.experts-section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.experts-section__title {
+  font-size: 42px;
+  line-height: 48px;
+  color: #252e36;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.experts-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.experts-item {
+  border: 1px solid #eff2f9;
+  margin: -1px 0 0 -1px;
+  padding: 40px 60px 24px;
+}
+
+.experts-item__image {
+  display: flex;
+}
+
+.experts-item__name {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: bold;
+  color: #40b7ff;
+}
+
+.experts-item__job {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1;
+  color: #151618;
+}
+
+.experts-item__experience {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: #222222;
+  min-height: 30px;
+  border-radius: 10px;
+  background-color: #d4f1ff;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+}

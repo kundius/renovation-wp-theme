@@ -1612,7 +1612,7 @@
       </div>
     </div>
 
-    <div class="problems-section">
+    <div class="problems-section" hidden>
       <div class="container">
         <div class="problems-section__title">
           Возьмем на себя <span>все проблемы</span>
@@ -1666,6 +1666,40 @@
             <div class="problems-item__desc">
               Заказываем контейнер и утилизируем на свалку
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="experts-section">
+      <div class="container">
+        <div class="experts-section__title">
+          Наши мастера в процессе работы
+        </div>
+        <div class="experts-section__grid">
+          <div class="experts-item">
+            <div class="experts-item__image">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/experts-1.png" alt="">
+            </div>
+            <div class="experts-item__name">Имя</div>
+            <div class="experts-item__job">Мастер-плиточник</div>
+            <div class="experts-item__experience">Стаж: 6 лет</div>
+          </div>
+          <div class="experts-item">
+            <div class="experts-item__image">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/experts-2.png" alt="">
+            </div>
+            <div class="experts-item__name">Имя</div>
+            <div class="experts-item__job">Мастер-плиточник</div>
+            <div class="experts-item__experience">Стаж: 8 лет</div>
+          </div>
+          <div class="experts-item">
+            <div class="experts-item__image">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/experts-3.png" alt="">
+            </div>
+            <div class="experts-item__name">Имя</div>
+            <div class="experts-item__job">Мастер-плиточник</div>
+            <div class="experts-item__experience">Стаж: 6 лет</div>
           </div>
         </div>
       </div>

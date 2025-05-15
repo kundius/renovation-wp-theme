@@ -73,15 +73,15 @@
   font-weight: 900;
 }
 
-.prices-card:nth-child(3n-2) {
+.prices-card:nth-child(3n-2) .prices-card__sheet {
   background: #49c9ff;
 }
 
-.prices-card:nth-child(3n-1) {
+.prices-card:nth-child(3n-1) .prices-card__sheet {
   background: #29aeff;
 }
 
-.prices-card:nth-child(3n) {
+.prices-card:nth-child(3n) .prices-card__sheet {
   background: #3d6fff;
 }
 
