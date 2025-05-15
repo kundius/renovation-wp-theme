@@ -969,24 +969,24 @@
       </div>
     </div>
 
-    <div class="prices-section" hidden>
+    <div class="services-section" hidden>
       <div class="container">
-        <div class="prices-section__headline">
-          <div class="prices-section__title">
+        <div class="services-section__headline">
+          <div class="services-section__title">
             Цены ремонта квартир<br>
             в Казани
           </div>
-          <div class="prices-section__desc">
+          <div class="services-section__desc">
             Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков
           </div>
         </div>
-        <div class="prices-section__grid">
-          <div class="prices-card">
-            <div class="prices-card__sheet">Бонус - предложение</div>
-            <div class="prices-card__title">Косметический ремонт</div>
-            <div class="prices-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-            <div class="prices-card__list">
-              <div class="prices-card__list-inner">
+        <div class="services-section__grid">
+          <div class="services-card">
+            <div class="services-card__sheet">Бонус - предложение</div>
+            <div class="services-card__title">Косметический ремонт</div>
+            <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+            <div class="services-card__list">
+              <div class="services-card__list-inner">
                 <ul>
                   <li>Вид работ 1</li>
                   <li>Вид выполняемых работ 2</li>
@@ -1003,18 +1003,18 @@
                 </ul>
               </div>
             </div>
-            <div class="prices-card__time">От 20 дней</div>
-            <div class="prices-card__price">от 4 500 ₽/м2</div>
-            <div class="prices-card__order">
+            <div class="services-card__time">От 20 дней</div>
+            <div class="services-card__price">от 4 500 ₽/м2</div>
+            <div class="services-card__order">
               <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
             </div>
           </div>
-          <div class="prices-card">
-            <div class="prices-card__sheet">Бонус - предложение</div>
-            <div class="prices-card__title">Капитальный ремонт</div>
-            <div class="prices-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-            <div class="prices-card__list">
-              <div class="prices-card__list-inner">
+          <div class="services-card">
+            <div class="services-card__sheet">Бонус - предложение</div>
+            <div class="services-card__title">Капитальный ремонт</div>
+            <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+            <div class="services-card__list">
+              <div class="services-card__list-inner">
                 <ul>
                 <li>Вид работ 1</li>
                 <li>Вид выполняемых работ 2</li>
@@ -1025,18 +1025,18 @@
                 </ul>
               </div>
             </div>
-            <div class="prices-card__time">От 20 дней</div>
-            <div class="prices-card__price">от 4 500 ₽/м2</div>
-            <div class="prices-card__order">
+            <div class="services-card__time">От 20 дней</div>
+            <div class="services-card__price">от 4 500 ₽/м2</div>
+            <div class="services-card__order">
               <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
             </div>
           </div>
-          <div class="prices-card">
-            <div class="prices-card__sheet">Бонус - предложение</div>
-            <div class="prices-card__title">Дизайнерский ремонт</div>
-            <div class="prices-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-            <div class="prices-card__list">
-              <div class="prices-card__list-inner">
+          <div class="services-card">
+            <div class="services-card__sheet">Бонус - предложение</div>
+            <div class="services-card__title">Дизайнерский ремонт</div>
+            <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+            <div class="services-card__list">
+              <div class="services-card__list-inner">
                 <ul>
                 <li>Вид работ 1</li>
                 <li>Вид выполняемых работ 2</li>
@@ -1047,9 +1047,9 @@
                 </ul>
               </div>
             </div>
-            <div class="prices-card__time">От 20 дней</div>
-            <div class="prices-card__price">от 4 500 ₽/м2</div>
-            <div class="prices-card__order">
+            <div class="services-card__time">От 20 дней</div>
+            <div class="services-card__price">от 4 500 ₽/м2</div>
+            <div class="services-card__order">
               <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
             </div>
           </div>
@@ -1703,6 +1703,10 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="price-section">
+
     </div>
 
     <div class="flex-grow h-[2000px]">

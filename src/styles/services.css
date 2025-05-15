@@ -1,34 +1,34 @@
-.prices-section {
+.services-section {
   padding-top: 96px;
   padding-bottom: 80px;
 }
 
-.prices-section__headline {
+.services-section__headline {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 112px;
 }
 
-.prices-section__title {
+.services-section__title {
   color: #7c9cb6;
   font-weight: bold;
   font-size: 42px;
   line-height: 48px;
 }
 
-.prices-section__desc {
+.services-section__desc {
   font-size: 16px;
   line-height: 22px;
   padding-top: 6px;
 }
 
-.prices-section__grid {
+.services-section__grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
 
-.prices-card {
+.services-card {
   padding: 44px 24px;
   position: relative;
   display: flex;
@@ -37,7 +37,7 @@
   z-index: 1;
 }
 
-.prices-card::before {
+.services-card::before {
   content: '';
   position: absolute;
   left: 0;
@@ -50,7 +50,7 @@
   z-index: -1;
 }
 
-.prices-card__sheet {
+.services-card__sheet {
   position: absolute;
   z-index: -2;
   bottom: 100%;
@@ -73,19 +73,19 @@
   font-weight: 900;
 }
 
-.prices-card:nth-child(3n-2) .prices-card__sheet {
+.services-card:nth-child(3n-2) .services-card__sheet {
   background: #49c9ff;
 }
 
-.prices-card:nth-child(3n-1) .prices-card__sheet {
+.services-card:nth-child(3n-1) .services-card__sheet {
   background: #29aeff;
 }
 
-.prices-card:nth-child(3n) .prices-card__sheet {
+.services-card:nth-child(3n) .services-card__sheet {
   background: #3d6fff;
 }
 
-.prices-card__title {
+.services-card__title {
   text-align: center;
   font-size: 24px;
   color: rgb(38, 54, 67);
@@ -95,13 +95,13 @@
   margin-bottom: 32px;
 }
 
-.prices-card__desc {
+.services-card__desc {
   text-align: center;
   font-size: 18px;
   line-height: 22px;
 }
 
-.prices-card__list {
+.services-card__list {
   width: 100%;
   border-radius: 12px;
   background-color: #f3f5f8;
@@ -133,12 +133,12 @@
   }
 }
 
-.prices-card__list-inner {
+.services-card__list-inner {
   max-height: 200px;
   overflow: auto;
 }
 
-.prices-card__time {
+.services-card__time {
   border-radius: 10px;
   background-color: rgba(243, 245, 248, 0.8);
   padding: 0 10px;
@@ -149,7 +149,7 @@
   text-align: center;
 }
 
-.prices-card__price {
+.services-card__price {
   text-align: center;
   font-size: 24px;
   letter-spacing: 0.025em;
@@ -161,6 +161,6 @@
   margin-bottom: 16px;
 }
 
-.prices-card__order .secondary-button {
+.services-card__order .secondary-button {
   min-width: 200px;
 }
