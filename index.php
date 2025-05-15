@@ -1359,7 +1359,7 @@
       </div>
     </div>
 
-    <div class="actions-section">
+    <div class="actions-section" hidden>
       <div class="container-lg">
         <div class="actions-section__title">
           Акции и скидки от нашей компании
@@ -1459,6 +1459,214 @@
             <button class="actions-carousel__nav actions-carousel__nav--next" type="button" data-actions-carousel-next></button>
           </div>
           <div class="actions-carousel__dots" data-actions-carousel-dots></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-section" hidden>
+      <div class="container">
+        <div class="reviews-section__title">
+          Видеоотзывы о выполненных проектах
+        </div>
+        <div class="reviews-section__grid">
+          <div class="reviews-item">
+            <div class="reviews-item__title">
+              Дизайнерский ремонт в 1-комнатной квартире
+            </div>
+            <a href="#video-1" class="reviews-item__preview">
+              <img class="reviews-item__image" src="https://rembrigada116.ru/wp-content/uploads/2019/06/DSC01865.jpeg" />
+              <span class="reviews-item__play"></span>
+            </a>
+            <div class="hidden">
+              <iframe src="https://rutube.ru/play/embed/348b982ea960ac5b6617870116bd781e/" id="video-1" width="1920px" height="1080px" frameborder="0" allow="fullscreen" allowfullscreen=""></iframe>
+            </div>
+          </div>
+          <div class="reviews-item">
+            <div class="reviews-item__title">
+              Дизайнерский ремонт в 1-комнатной квартире
+            </div>
+            <a href="#video-2" class="reviews-item__preview">
+              <img class="reviews-item__image" src="https://rembrigada116.ru/wp-content/uploads/2019/06/DSC01865.jpeg" />
+              <span class="reviews-item__play"></span>
+            </a>
+            <div class="hidden">
+              <iframe src="https://rutube.ru/play/embed/348b982ea960ac5b6617870116bd781e/" id="video-2" width="1920px" height="1080px" frameborder="0" allow="fullscreen" allowfullscreen=""></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="reviews-section__more">
+          <a href="#" class="control-button">
+            <span>Показать ещё</span>
+            <span class="icon icon-chevron-right"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reasons-section" hidden>
+      <div class="container">
+        <div class="reasons-section__headline">
+          <div class="reasons-section__title">
+            Почему <span>Вам понравится</span> работать с нами
+          </div>
+          <div class="reasons-section__desc">
+            Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков
+          </div>
+        </div>
+        <div class="reasons-section__grid">
+          <div class="reasons-item">
+            <div class="reasons-item__headline">
+              <div class="reasons-item__title">
+                Официальный
+                договор
+              </div>
+              <div class="reasons-item__image">
+                <img src="<?php bloginfo('template_url'); ?>/src/images/reasons-1.svg" />
+              </div>
+            </div>
+            <div class="reasons-item__desc">
+              Перед началом ремонта подписываем договор на все работы, где учтены сроки ремонта, сумма платежей и гарантийные обязательства
+            </div>
+          </div>
+          <div class="reasons-item">
+            <div class="reasons-item__headline">
+              <div class="reasons-item__title">
+                Строго по плану и в срок
+              </div>
+              <div class="reasons-item__image">
+                <img src="<?php bloginfo('template_url'); ?>/src/images/reasons-2.svg" />
+              </div>
+            </div>
+            <div class="reasons-item__desc">
+              Мы осуществляем отделочные работы в квартирах и домах четко в срок не нарушая технологического процесса
+            </div>
+          </div>
+          <div class="reasons-item">
+            <div class="reasons-item__headline">
+              <div class="reasons-item__title">
+                Гарантия качества
+              </div>
+              <div class="reasons-item__image">
+                <img src="<?php bloginfo('template_url'); ?>/src/images/reasons-3.svg" />
+              </div>
+            </div>
+            <div class="reasons-item__desc">
+              Мы даем гарантию 5 лет на электромонтаж, сантехнику и 2 года
+              на общестроительные и ремонтные работы
+            </div>
+          </div>
+          <div class="reasons-item">
+            <div class="reasons-item__headline">
+              <div class="reasons-item__title">
+                Фиксированные цены
+              </div>
+              <div class="reasons-item__image">
+                <img src="<?php bloginfo('template_url'); ?>/src/images/reasons-4.svg" />
+              </div>
+            </div>
+            <div class="reasons-item__desc">
+              Мы не меняем стоимость ремонта, она фиксирована в смете и договоре. Исключение составляют изменения
+              по желанию клиента
+            </div>
+          </div>
+          <div class="reasons-item">
+            <div class="reasons-item__headline">
+              <div class="reasons-item__title">
+                Доставка материалов
+              </div>
+              <div class="reasons-item__image">
+                <img src="<?php bloginfo('template_url'); ?>/src/images/reasons-5.svg" />
+              </div>
+            </div>
+            <div class="reasons-item__desc">
+              Мы осуществляем отделочные работы в квартирах и домах четко в срок не нарушая технологического процесса
+            </div>
+          </div>
+          <div class="reasons-item">
+            <div class="reasons-item__headline">
+              <div class="reasons-item__title">
+                Качественный ремонт
+              </div>
+              <div class="reasons-item__image">
+                <img src="<?php bloginfo('template_url'); ?>/src/images/reasons-6.svg" />
+              </div>
+            </div>
+            <div class="reasons-item__desc">
+              Мы работаем, соблюдая требования к проведению отделки, используем современное и профессиональное оборудование
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="measurement-section" hidden>
+      <div class="container">
+        <div class="measurement-section__title">
+          <div class="measurement-section__title-inner">
+            Бесплатно приедем, замерим, рассчитаем
+          </div>
+        </div>
+        <div class="measurement-section__order">
+          <button type="button" class="primary-button primary-button_alt primary-button_large">Получить замер</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="problems-section">
+      <div class="container">
+        <div class="problems-section__title">
+          Возьмем на себя <span>все проблемы</span>
+        </div>
+        <div class="problems-section__grid">
+          <div class="problems-item">
+            <div class="problems-item__image">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/problems-1.svg" />
+            </div>
+            <div class="problems-item__title">
+              Защищаем
+              мебель
+            </div>
+            <div class="problems-item__desc">
+              Если нужно переносим мебель и укрываем пленкой
+            </div>
+          </div>
+          <div class="problems-item">
+            <div class="problems-item__image">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/problems-2.svg" />
+            </div>
+            <div class="problems-item__title">
+              Решаем вопросы с управляющей компанией
+            </div>
+            <div class="problems-item__desc">
+              Согласуем отключение
+              воды и газа
+            </div>
+          </div>
+          <div class="problems-item">
+            <div class="problems-item__image">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/problems-3.svg" />
+            </div>
+            <div class="problems-item__title">
+              Закупаем и привозим
+              стройматериалы
+            </div>
+            <div class="problems-item__desc">
+              предварительно
+              согласовывая с Вами
+            </div>
+          </div>
+          <div class="problems-item">
+            <div class="problems-item__image">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/problems-4.svg" />
+            </div>
+            <div class="problems-item__title">
+              Убираем и вывозим
+              мусор
+            </div>
+            <div class="problems-item__desc">
+              Заказываем контейнер и утилизируем на свалку
+            </div>
+          </div>
         </div>
       </div>
     </div>

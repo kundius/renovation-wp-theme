@@ -58,7 +58,6 @@
   position: relative;
 }
 
-.actions-carousel__dots .embla__dot::before,
 .actions-carousel__dots .embla__dot::after {
   content: '';
   width: 10px;
@@ -72,16 +71,11 @@
   transition: 300ms;
 }
 
-.actions-carousel__dots .embla__dot.embla__dot--selected::before {
-  background: rgba(61, 182, 255, 0.302);
-  width: 26px;
-  height: 26px;
-}
-
 .actions-carousel__dots .embla__dot.embla__dot--selected::after {
   background: #3db6ff;
   width: 18px;
   height: 18px;
+  box-shadow: 0 0 0 4px rgba(61, 182, 255, 0.302);
 }
 
 .actions-carousel__nav {
