@@ -24,14 +24,18 @@ export function applyAttachmentsField(root) {
           </span>
         </label>
 
-        <button type="button" class="attachments-field__remove" data-attachments-field-remove>
-          <span>Убрать</span>
-          <span></span>
+        <button type="button" class="more-button attachments-field__remove" data-attachments-field-remove>
+          <span class="more-button__text">Убрать</span>
+          <span class="more-button__icon">
+            <span class="icon icon-minus"></span>
+          </span>
         </button>
 
-        <button type="button" class="attachments-field__add" data-attachments-field-add>
-          <span>Добавить ещё</span>
-          <span></span>
+        <button type="button" class="more-button attachments-field__add" data-attachments-field-add>
+          <span class="more-button__text">Добавить ещё</span>
+          <span class="more-button__icon">
+            <span class="icon icon-plus"></span>
+          </span>
         </button>
       `
       root.prepend(row)

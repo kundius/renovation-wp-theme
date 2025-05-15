@@ -1278,14 +1278,18 @@
                       </span>
                     </label>
 
-                    <button type="button" class="attachments-field__remove" data-attachments-field-remove>
-                      <span>Убрать</span>
-                      <span></span>
+                    <button type="button" class="more-button attachments-field__remove" data-attachments-field-remove>
+                      <span class="more-button__text">Убрать</span>
+                      <span class="more-button__icon">
+                        <span class="icon icon-minus"></span>
+                      </span>
                     </button>
 
-                    <button type="button" class="attachments-field__add" data-attachments-field-add>
-                      <span>Добавить ещё</span>
-                      <span></span>
+                    <button type="button" class="more-button attachments-field__add" data-attachments-field-add>
+                      <span class="more-button__text">Добавить ещё</span>
+                      <span class="more-button__icon">
+                        <span class="icon icon-plus"></span>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -1352,6 +1356,110 @@
             <button type="button" class="calc-success__close" data-calc-reset>Закрыть</button>
           </div>
         </form>
+      </div>
+    </div>
+
+    <div class="actions-section">
+      <div class="container-lg">
+        <div class="actions-section__title">
+          Акции и скидки от нашей компании
+        </div>
+
+        <div class="actions-carousel" data-actions-carousel>
+          <div class="actions-carousel__wrap">
+            <div class="actions-carousel__viewport" data-actions-carousel-viewport>
+              <div class="actions-carousel__container">
+                <div class="actions-carousel__slide">
+                  <div class="actions-item">
+                    <img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" class="actions-item__image" width="" height="" />
+                    <div class="actions-item__content">
+                      <div class="actions-item__title">
+                        Косметический ремонт - акция1
+                      </div>
+                      <div class="actions-item__desc">
+                        Краткое описание акции
+                      </div>
+                      <div class="actions-item__more">
+                        <a href="" class="more-button">
+                          <span class="more-button__text">Узнать больше</span>
+                          <span class="more-button__icon">
+                            <span class="icon icon-arrow-right"></span>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="actions-carousel__slide">
+                  <div class="actions-item">
+                    <img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" class="actions-item__image" width="" height="" />
+                    <div class="actions-item__content">
+                      <div class="actions-item__title">
+                        Косметический ремонт - акция1
+                      </div>
+                      <div class="actions-item__desc">
+                        Краткое описание акции
+                      </div>
+                      <div class="actions-item__more">
+                        <a href="" class="more-button">
+                          <span class="more-button__text">Узнать больше</span>
+                          <span class="more-button__icon">
+                            <span class="icon icon-arrow-right"></span>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="actions-carousel__slide">
+                  <div class="actions-item">
+                    <img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" class="actions-item__image" width="" height="" />
+                    <div class="actions-item__content">
+                      <div class="actions-item__title">
+                        Косметический ремонт - акция1
+                      </div>
+                      <div class="actions-item__desc">
+                        Краткое описание акции
+                      </div>
+                      <div class="actions-item__more">
+                        <a href="" class="more-button">
+                          <span class="more-button__text">Узнать больше</span>
+                          <span class="more-button__icon">
+                            <span class="icon icon-arrow-right"></span>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="actions-carousel__slide">
+                  <div class="actions-item">
+                    <img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" class="actions-item__image" width="" height="" />
+                    <div class="actions-item__content">
+                      <div class="actions-item__title">
+                        Косметический ремонт - акция1
+                      </div>
+                      <div class="actions-item__desc">
+                        Краткое описание акции
+                      </div>
+                      <div class="actions-item__more">
+                        <a href="" class="more-button">
+                          <span class="more-button__text">Узнать больше</span>
+                          <span class="more-button__icon">
+                            <span class="icon icon-arrow-right"></span>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="actions-carousel__nav actions-carousel__nav--prev" type="button" data-actions-carousel-prev></button>
+            <button class="actions-carousel__nav actions-carousel__nav--next" type="button" data-actions-carousel-next></button>
+          </div>
+          <div class="actions-carousel__dots" data-actions-carousel-dots></div>
+        </div>
       </div>
     </div>
 

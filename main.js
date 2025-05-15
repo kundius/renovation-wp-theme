@@ -12,6 +12,7 @@ import './src/styles/comparison.css'
 import './src/styles/prices.css'
 import './src/styles/terms.css'
 import './src/styles/calc.css'
+import './src/styles/actions.css'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'
@@ -30,6 +31,7 @@ import { initRangeField } from './src/scripts/range-field'
 import { initAttachmentField } from './src/scripts/attachment-field'
 import { initAttachmentsField } from './src/scripts/attachments-field'
 import { initCalc } from './src/scripts/calc'
+import { initActionsCarousel } from './src/scripts/actions-carousel'
 
 new MaskInput('[data-maska]')
 
@@ -45,6 +47,7 @@ initRangeField()
 initAttachmentField()
 initAttachmentsField()
 initCalc()
+initActionsCarousel()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()
