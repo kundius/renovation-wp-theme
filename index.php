@@ -1711,7 +1711,7 @@
           Цены на отдельные услуги при ремонте
         </div>
 
-        <div class="prices">
+        <div class="prices" data-prices>
           <div class="prices-tabs">
             <button class="prices-tabs__item active" data-prices-tab="Демонтажные работы">Демонтажные работы</button>
             <button class="prices-tabs__item" data-prices-tab="Монтажные работы">Монтажные работы</button>

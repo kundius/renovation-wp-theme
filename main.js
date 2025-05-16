@@ -38,6 +38,7 @@ import { initAttachmentField } from './src/scripts/attachment-field'
 import { initAttachmentsField } from './src/scripts/attachments-field'
 import { initCalc } from './src/scripts/calc'
 import { initActionsCarousel } from './src/scripts/actions-carousel'
+import { initPrices } from './src/scripts/prices'
 
 new MaskInput('[data-maska]')
 
@@ -54,6 +55,7 @@ initAttachmentField()
 initAttachmentsField()
 initCalc()
 initActionsCarousel()
+initPrices()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()
