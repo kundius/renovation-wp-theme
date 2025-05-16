@@ -1671,7 +1671,7 @@
       </div>
     </div>
 
-    <div class="experts-section">
+    <div class="experts-section" hidden>
       <div class="container">
         <div class="experts-section__title">
           Наши мастера в процессе работы
@@ -1705,8 +1705,211 @@
       </div>
     </div>
 
-    <div class="price-section">
+    <div class="prices-section">
+      <div class="container">
+        <div class="prices-section__title">
+          Цены на отдельные услуги при ремонте
+        </div>
 
+        <div class="prices">
+          <div class="prices-tabs">
+            <button class="prices-tabs__item active" data-prices-tab="Демонтажные работы">Демонтажные работы</button>
+            <button class="prices-tabs__item" data-prices-tab="Монтажные работы">Монтажные работы</button>
+            <button class="prices-tabs__item" data-prices-tab="Выравнивание пола">Выравнивание пола</button>
+            <button class="prices-tabs__item" data-prices-tab="Выравнивание стен">Выравнивание стен</button>
+            <button class="prices-tabs__item" data-prices-tab="Малярные работы">Малярные работы</button>
+            <button class="prices-tabs__item" data-prices-tab="Электромонтажные работы">Электромонтажные работы</button>
+            <button class="prices-tabs__item" data-prices-tab="Сантехнические работы">Сантехнические работы</button>
+            <button class="prices-tabs__item" data-prices-tab="Плиточные работы">Плиточные работы</button>
+            <button class="prices-tabs__item" data-prices-tab="Гипсокартонные работы">Гипсокартонные работы</button>
+            <button class="prices-tabs__item" data-prices-tab="Укладка ламината">Укладка ламината</button>
+            <button class="prices-tabs__item" data-prices-tab="Установка дверей">Установка дверей</button>
+            <button class="prices-tabs__item" data-prices-tab="Шумоизоляция">Шумоизоляция</button>
+            <button class="prices-tabs__item" data-prices-tab="Дизайн интерьера">Дизайн интерьера</button>
+            <button class="prices-tabs__item" data-prices-tab="Натяжные потолки">Натяжные потолки</button>
+          </div>
+
+          <div class="prices-table">
+            <div class="prices-table__head">
+              <div class="prices-table__head-cell">
+                Наименование работ
+              </div>
+              <div class="prices-table__head-cell">
+                Ед. изм
+              </div>
+              <div class="prices-table__head-cell">
+                Цена
+              </div>
+            </div>
+
+            <div class="prices-table__body">
+              <div class="prices-panes">
+                <div class="prices-panes__item active" data-prices-pane="Демонтажные работы">
+                  <div class="prices-list">
+                    <div class="prices-list__title">
+                      Наименование вида услуги при ремонте
+                    </div>
+                    <div class="prices-list__row" data-prices-row>
+                      <div class="prices-list__enable">
+                        <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
+                      </div>
+                      <div class="prices-list__name">
+                        Наименование вида услуги при ремонте 1
+                      </div>
+                      <div class="prices-list__units">
+                        м<sup>2</sup>
+                      </div>
+                      <div class="prices-list__price" data-prices-row-price="470">
+                        470 руб.
+                      </div>
+                    </div>
+                    <div class="prices-list__row" data-prices-row>
+                      <div class="prices-list__enable">
+                        <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
+                      </div>
+                      <div class="prices-list__name">
+                        Наименование вида услуги при ремонте 1
+                      </div>
+                      <div class="prices-list__units">
+                        м<sup>2</sup>
+                      </div>
+                      <div class="prices-list__price" data-prices-row-price="470">
+                        470 руб.
+                      </div>
+                    </div>
+                    <div class="prices-list__title">
+                      Наименование вида услуги при ремонте
+                    </div>
+                    <div class="prices-list__row" data-prices-row>
+                      <div class="prices-list__enable">
+                        <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
+                      </div>
+                      <div class="prices-list__name">
+                        Наименование вида услуги при ремонте 1
+                      </div>
+                      <div class="prices-list__quantity">
+                        <input class="prices-list__quantity-input" type="text" name="quantity" min="1" value="1" data-prices-row-quantity />
+                      </div>
+                      <div class="prices-list__units">
+                        м<sup>2</sup>
+                      </div>
+                      <div class="prices-list__price" data-prices-row-price="470">
+                        470 руб.
+                      </div>
+                    </div>
+                    <div class="prices-list__row" data-prices-row>
+                      <div class="prices-list__enable">
+                        <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
+                      </div>
+                      <div class="prices-list__name">
+                        Наименование вида услуги при ремонте 1
+                      </div>
+                      <div class="prices-list__quantity">
+                        <input class="prices-list__quantity-input" type="text" name="quantity" min="1" value="1" data-prices-row-quantity />
+                      </div>
+                      <div class="prices-list__units">
+                        м<sup>2</sup>
+                      </div>
+                      <div class="prices-list__price" data-prices-row-price="470">
+                        470 руб.
+                      </div>
+                    </div>
+                    <div class="prices-list__row" data-prices-row>
+                      <div class="prices-list__enable">
+                        <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
+                      </div>
+                      <div class="prices-list__name">
+                        Наименование вида услуги при ремонте 1
+                      </div>
+                      <div class="prices-list__quantity">
+                        <input class="prices-list__quantity-input" type="text" name="quantity" min="1" value="1" data-prices-row-quantity />
+                      </div>
+                      <div class="prices-list__units">
+                        м<sup>2</sup>
+                      </div>
+                      <div class="prices-list__price" data-prices-row-price="470">
+                        470 руб.
+                      </div>
+                    </div>
+                    <div class="prices-list__row" data-prices-row>
+                      <div class="prices-list__enable">
+                        <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
+                      </div>
+                      <div class="prices-list__name">
+                        Наименование вида услуги при ремонте 1
+                      </div>
+                      <div class="prices-list__quantity">
+                        <input class="prices-list__quantity-input" type="text" name="quantity" min="1" value="1" data-prices-row-quantity />
+                      </div>
+                      <div class="prices-list__units">
+                        м<sup>2</sup>
+                      </div>
+                      <div class="prices-list__price" data-prices-row-price="470">
+                        470 руб.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Монтажные работы">
+                  Монтажные работы
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Выравнивание пола">
+                  Выравнивание пола
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Выравнивание стен">
+                  Выравнивание стен
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Малярные работы">
+                  Малярные работы
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Электромонтажные работы">
+                  Электромонтажные работы
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Сантехнические работы">
+                  Сантехнические работы
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Плиточные работы">
+                  Плиточные работы
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Гипсокартонные работы">
+                  Гипсокартонные работы
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Укладка ламината">
+                  Укладка ламината
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Установка дверей">
+                  Установка дверей
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Шумоизоляция">
+                  Шумоизоляция
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Дизайн интерьера">
+                  Дизайн интерьера
+                </div>
+                <div class="prices-panes__item" data-prices-pane="Натяжные потолки">
+                  Натяжные потолки
+                </div>
+              </div>
+            </div>
+
+            <div class="prices-table__footer">
+              <button type="button" class="control-button" data-prices-download>
+                <span>Скачать расчет стоимости</span>
+                <span class="icon icon-download"></span>
+              </button>
+
+              <div class="prices-total">
+                <div class="prices-total__label">
+                  Итого:
+                </div>
+                <div class="prices-total__value" data-prices-total>
+                  123 123
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="flex-grow h-[2000px]">

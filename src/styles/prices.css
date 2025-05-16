@@ -1,0 +1,218 @@
+.prices-section {
+  background: url('../images/bg-prices.jpg') no-repeat 50% 0;
+  padding-top: 80px;
+  padding-bottom: 48px;
+}
+
+.prices-section__title {
+  text-align: center;
+  font-size: 42px;
+  line-height: 48px;
+  font-weight: 700;
+  color: #252e36;
+  margin-bottom: 48px;
+}
+
+.prices-section__title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 5px;
+  background: #3db6ff;
+  margin: 20px auto 0;
+}
+
+.prices {
+}
+
+.prices-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.prices-tabs__item {
+  letter-spacing: 0.05em;
+  font-size: 12px;
+  line-height: 1;
+  display: flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  border-radius: 10px;
+  background-color: rgb(254, 254, 254);
+}
+
+.prices-tabs__item:hover {
+  background-color: rgb(212, 241, 255);
+}
+
+.prices-tabs__item.active {
+  color: #ffffff;
+  background-color: rgb(0, 170, 255);
+}
+
+.prices-table {
+  border-radius: 24px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 3px 49px 0px rgba(0, 50, 92, 0.15);
+}
+
+.prices-table__head {
+  background: linear-gradient(to bottom, #ffffff 0, #e6f6ff 100%);
+  border-radius: 24px 24px 0 0;
+  display: flex;
+  padding: 0 40px;
+}
+
+.prices-table__head-cell {
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #00aaff;
+  font-weight: bold;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 120px;
+}
+
+.prices-table__head-cell:first-child {
+  flex-grow: 1;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.prices-table__body {
+  padding: 20px 40px;
+}
+
+.prices-table__footer {
+  padding: 20px 40px 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 40px;
+}
+
+.prices-total {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.prices-total__label {
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 700;
+  color: #222222;
+  letter-spacing: 0.05em;
+}
+
+.prices-total__value {
+  color: #00aaff;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: 0.025em;
+  font-family: 'Gilroy';
+}
+
+.prices-panes {
+  max-height: 600px;
+  overflow: auto;
+}
+
+.prices-panes__item {
+  display: none;
+}
+
+.prices-panes__item.active {
+  display: block;
+}
+
+.prices-list__title {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #3db6ff;
+  padding: 4px 12px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f2f9;
+}
+
+.prices-list__row {
+  min-height: 48px;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f2f9;
+}
+
+.prices-list__enable {
+  padding: 0 8px;
+  display: flex;
+}
+
+.prices-list__checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cfcfcf;
+  background-color: #f4f8fa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.prices-list__checkbox:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='12px' height='9px'%3E%3Cpath fill-rule='evenodd' fill='rgb(0, 170, 255)' d='M11.743,1.488 L4.655,8.579 C4.655,8.580 4.654,8.580 4.654,8.580 C4.621,8.625 4.599,8.677 4.556,8.717 C4.196,9.053 3.626,9.041 3.281,8.689 L0.251,5.672 C-0.093,5.321 -0.080,4.763 0.280,4.427 C0.640,4.090 1.210,4.103 1.555,4.454 L3.911,6.801 L10.440,0.270 C10.784,-0.081 11.355,-0.094 11.715,0.243 C12.075,0.579 12.087,1.137 11.743,1.488 Z'/%3E%3C/svg%3E");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.prices-list__name {
+  flex-grow: 1;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.prices-list__units {
+  font-size: 16px;
+  line-height: 20px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.prices-list__quantity {
+  font-size: 16px;
+  line-height: 20px;
+  width: 88px;
+}
+
+.prices-list__quantity-input {
+  width: 100%;
+  font-size: 18px;
+  letter-spacing: 0.025em;
+  text-align: center;
+  color: #2d2d2d;
+  font-family: 'Gilroy';
+  background-color: rgb(243, 245, 248);
+  height: 36px;
+  border-radius: 18px;
+}
+
+.prices-list__price {
+  font-size: 16px;
+  line-height: 20px;
+  font-family: 'Gilroy';
+  min-width: 120px;
+  text-align: center;
+}
