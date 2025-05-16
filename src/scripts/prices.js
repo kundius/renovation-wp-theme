@@ -3,8 +3,10 @@ export function applyPrices(root) {
   const tabs = Array.from(root.querySelectorAll('[data-prices-tab]'))
   const panes = Array.from(root.querySelectorAll('[data-prices-pane]'))
   const rows = Array.from(root.querySelectorAll('[data-prices-row]'))
-  const download = root.querySelector('[data-prices-download]')
+  const downloadButton = root.querySelector('[data-prices-download]')
   const total = root.querySelector('[data-prices-total]')
+
+  let priceList = {}
 
   const calc = () => {
     let cost = 0
@@ -32,7 +34,6 @@ export function applyPrices(root) {
       currency: 'RUB',
       maximumFractionDigits: 0
     })
-    console.log('calc')
   }
 
   const showTab = (name) => {
@@ -52,7 +53,12 @@ export function applyPrices(root) {
     })
   }
 
+  const download = () => {
+
+  }
+
   document.addEventListener('DOMContentLoaded', calc)
+  downloadButton.addEventListener('click', download)
   inputs.forEach((input) => input.addEventListener('input', calc))
   tabs.forEach((tab) => tab.addEventListener('click', () => showTab(tab.dataset.pricesTab)))
 }
