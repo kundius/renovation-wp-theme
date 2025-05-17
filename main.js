@@ -19,6 +19,7 @@ import './src/styles/measurement.css'
 import './src/styles/problems.css'
 import './src/styles/experts.css'
 import './src/styles/prices.css'
+import './src/styles/estimate.css'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'

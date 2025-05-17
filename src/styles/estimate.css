@@ -1,0 +1,161 @@
+.estimate-section {
+  background: #f3f8fc;
+}
+
+.estimate-section__layout {
+  display: flex;
+  background: #9db3c9;
+}
+
+.estimate-section__content {
+  flex-shrink: 0;
+  width: 50%;
+  padding-left: 120px;
+  padding-top: 44px;
+  padding-right: 60px;
+  padding-bottom: 60px;
+}
+
+.estimate-section__form {
+  flex-shrink: 0;
+  width: 50%;
+  background: url('../images/bg-estimate.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.estimate-section__title {
+  margin-bottom: 72px;
+  font-size: 36px;
+  line-height: 1;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.estimate-section__expert {
+  padding: 0 20px;
+}
+
+.estimate-section__example-wrap {
+  margin-top: 64px;
+}
+
+.estimate-section__example-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 16px;
+  margin: 0 -12px;
+  span {
+    border-bottom: 1px dashed currentColor;
+  }
+  &::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: currentColor;
+    display: inline-block;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    mask-image: var(--icon-estimate);
+  }
+  &:hover {
+    background: #7d8798;
+  }
+}
+
+.estimate-form {
+  width: 300px;
+  max-width: 100%;
+}
+
+.estimate-form__phone {
+}
+
+.estimate-form__rules {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.025em;
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  a {
+    color: inherit;
+    text-decoration: underline;
+    &:hover {
+      color: #000000;
+    }
+  }
+}
+
+.estimate-form__submit {
+  margin-top: 24px;
+  > .primary-button {
+    width: 100%;
+  }
+}
+
+.estimate-expert {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.estimate-expert__image {
+  width: calc(100% / 3);
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.estimate-expert__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.estimate-expert__name {
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.estimate-expert__experience {
+  min-height: 20px;
+  border-radius: 10px;
+  background-color: #d4f1ff;
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 1;
+  color: #000000;
+  font-weight: 700;
+}
+
+.estimate-expert__desc {
+  font-size: 12px;
+  line-height: 20px;
+  color: #fcfdff;
+  margin-top: 20px;
+}

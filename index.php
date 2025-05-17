@@ -1705,7 +1705,7 @@
       </div>
     </div>
 
-    <div class="prices-section">
+    <div class="prices-section" hidden>
       <div class="container">
         <div class="prices-section__title">
           Цены на отдельные услуги при ремонте
@@ -1923,6 +1923,59 @@
                 <div class="prices-total__value" data-prices-total>
                   123 123
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="estimate-section">
+      <div class="container-lg">
+        <div class="estimate-section__layout">
+          <div class="estimate-section__content">
+            <div class="estimate-section__title">
+              Получите подробную смету
+              и точную стоимость ремонта
+            </div>
+            <div class="estimate-section__expert">
+              <div class="estimate-expert">
+                <div class="estimate-expert__image">
+                  <img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt="" />
+                </div>
+                <div class="estimate-expert__body">
+                  <div class="estimate-expert__name">
+                    ФИ, общается с клиентами
+                  </div>
+                  <div class="estimate-expert__experience">
+                    Опыт работы 15 лет
+                  </div>
+                  <div class="estimate-expert__desc">
+                    Ведущий инженер сметчик бесплатно  проконсультирует и проведет точные замеры
+                    для расчета ремонта
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="estimate-section__example-wrap">
+              <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" class="estimate-section__example-link">
+                <span>Посмотреть пример сметы</span>
+              </a>
+            </div>
+          </div>
+          <div class="estimate-section__form">
+            <div class="estimate-form">
+              <div class="estimate-form__phone">
+                <label class="phone-field phone-field--centered">
+                  <span class="phone-field__label">Ваш номер телефона</span>
+                  <input class="phone-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+                </label>
+              </div>
+              <div class="estimate-form__rules">
+                Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
+              </div>
+              <div class="estimate-form__submit">
+                <button class="primary-button primary-button_alt">Отправить</button>
               </div>
             </div>
           </div>
