@@ -1753,10 +1753,10 @@
                       <div class="prices-list__enable">
                         <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
                       </div>
-                      <div class="prices-list__name">
+                      <div class="prices-list__name" data-prices-row-name>
                         Наименование вида услуги при ремонте 1
                       </div>
-                      <div class="prices-list__units">
+                      <div class="prices-list__units" data-prices-row-units>
                         м<sup>2</sup>
                       </div>
                       <div class="prices-list__price" data-prices-row-price="470">
@@ -1767,10 +1767,10 @@
                       <div class="prices-list__enable">
                         <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
                       </div>
-                      <div class="prices-list__name">
+                      <div class="prices-list__name" data-prices-row-name>
                         Наименование вида услуги при ремонте 1
                       </div>
-                      <div class="prices-list__units">
+                      <div class="prices-list__units" data-prices-row-units>
                         м<sup>2</sup>
                       </div>
                       <div class="prices-list__price" data-prices-row-price="470">
@@ -1784,13 +1784,13 @@
                       <div class="prices-list__enable">
                         <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
                       </div>
-                      <div class="prices-list__name">
+                      <div class="prices-list__name" data-prices-row-name>
                         Наименование вида услуги при ремонте 1
                       </div>
                       <div class="prices-list__quantity">
                         <input class="prices-list__quantity-input" type="text" name="quantity" min="1" value="1" data-prices-row-quantity />
                       </div>
-                      <div class="prices-list__units">
+                      <div class="prices-list__units" data-prices-row-units>
                         м<sup>2</sup>
                       </div>
                       <div class="prices-list__price" data-prices-row-price="470">
@@ -1801,13 +1801,13 @@
                       <div class="prices-list__enable">
                         <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
                       </div>
-                      <div class="prices-list__name">
+                      <div class="prices-list__name" data-prices-row-name>
                         Наименование вида услуги при ремонте 1
                       </div>
                       <div class="prices-list__quantity">
                         <input class="prices-list__quantity-input" type="text" name="quantity" min="1" value="1" data-prices-row-quantity />
                       </div>
-                      <div class="prices-list__units">
+                      <div class="prices-list__units" data-prices-row-units>
                         м<sup>2</sup>
                       </div>
                       <div class="prices-list__price" data-prices-row-price="470">
@@ -1818,13 +1818,13 @@
                       <div class="prices-list__enable">
                         <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
                       </div>
-                      <div class="prices-list__name">
+                      <div class="prices-list__name" data-prices-row-name>
                         Наименование вида услуги при ремонте 1
                       </div>
                       <div class="prices-list__quantity">
                         <input class="prices-list__quantity-input" type="text" name="quantity" min="1" value="1" data-prices-row-quantity />
                       </div>
-                      <div class="prices-list__units">
+                      <div class="prices-list__units" data-prices-row-units>
                         м<sup>2</sup>
                       </div>
                       <div class="prices-list__price" data-prices-row-price="470">
@@ -1835,13 +1835,13 @@
                       <div class="prices-list__enable">
                         <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
                       </div>
-                      <div class="prices-list__name">
+                      <div class="prices-list__name" data-prices-row-name>
                         Наименование вида услуги при ремонте 1
                       </div>
                       <div class="prices-list__quantity">
                         <input class="prices-list__quantity-input" type="text" name="quantity" min="1" value="1" data-prices-row-quantity />
                       </div>
-                      <div class="prices-list__units">
+                      <div class="prices-list__units" data-prices-row-units>
                         м<sup>2</sup>
                       </div>
                       <div class="prices-list__price" data-prices-row-price="470">
@@ -1851,7 +1851,25 @@
                   </div>
                 </div>
                 <div class="prices-panes__item" data-prices-pane="Монтажные работы">
-                  Монтажные работы
+                  <div class="prices-list">
+                    <div class="prices-list__row" data-prices-row>
+                      <div class="prices-list__enable">
+                        <input class="prices-list__checkbox" type="checkbox" name="enable" value="1" data-prices-row-enable />
+                      </div>
+                      <div class="prices-list__name" data-prices-row-name>
+                        Наименование вида услуги при ремонте 1
+                      </div>
+                      <div class="prices-list__quantity">
+                        <input class="prices-list__quantity-input" type="text" name="quantity" min="1" value="1" data-prices-row-quantity />
+                      </div>
+                      <div class="prices-list__units" data-prices-row-units>
+                        м<sup>2</sup>
+                      </div>
+                      <div class="prices-list__price" data-prices-row-price="470">
+                        470 руб.
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="prices-panes__item" data-prices-pane="Выравнивание пола">
                   Выравнивание пола
