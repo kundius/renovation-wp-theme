@@ -23,7 +23,7 @@
 .hiw-card {
   border: 1px solid #eff2f9;
   margin: 0 0 -1px -1px;
-  padding: 44px 20px;
+  padding: 44px 20px 96px;
 }
 
 .hiw-card__headline {
@@ -31,15 +31,19 @@
   align-items: center;
   gap: 20px;
   margin-bottom: 54px;
+  position: relative;
+  padding-bottom: 40px;
 }
 
 .hiw-card__headline::after {
   content: '';
   height: 5px;
   width: 40px;
-  margin-top: 36px;
   display: block;
   background: #c5e8e2;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .hiw-card__title {
@@ -58,7 +62,7 @@
   height: 32px;
   border-radius: 50%;
   flex-shrink: 0;
-  box-shadow: 0 0 0 7px rgba(0,170,255,0.2);
+  box-shadow: 0 0 0 7px rgba(0, 170, 255, 0.2);
   background: #00aaff;
   display: flex;
   align-items: center;
@@ -72,8 +76,9 @@
 
 .hiw-card-call__label {
   font-size: 16px;
-line-height: 1;
-color: #00273f;
+  line-height: 1;
+  color: #00273f;
+  margin-bottom: 12px;
 }
 
 .hiw-card-call__phone {
@@ -82,16 +87,27 @@ color: #00273f;
   line-height: 1;
   color: #00273f;
   font-weight: bold;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
 }
 
 .hiw-card-call__desc {
+  font-size: 14px;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.76);
+  margin-top: 20px;
+  width: 280px;
+  max-width: 100%;
 }
 
 .hiw-card-call__or {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-top: 40px;
 }
 
 .hiw-card-call__order {
+  margin-top: 24px;
 }
 
 .hiw-card-visit {
@@ -99,9 +115,52 @@ color: #00273f;
 }
 
 .hiw-card-visit__desc {
+  font-size: 14px;
+  line-height: 1.2;
+  color: #00273f;
+  width: 280px;
+  max-width: 100%;
+  margin-bottom: 36px;
 }
 
 .hiw-card-visit__list {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #00273f;
+  font-weight: 700;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  li {
+    position: relative;
+    padding-left: 48px;
+    &::before {
+      content: '';
+      width: 22px;
+      height: 22px;
+      background: #6fb7e3;
+      border-radius: 50%;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      margin-top: -11px;
+    }
+    &::after {
+      content: '';
+      width: 22px;
+      height: 22px;
+      background: #fff;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      margin-top: -11px;
+      display: inline-block;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      mask-image: var(--icon-check);
+    }
+  }
 }
 
 .hiw-card-start {
@@ -110,7 +169,17 @@ color: #00273f;
 }
 
 .hiw-card-start__title {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #00273f;
+  font-weight: 700;
 }
 
 .hiw-card-start__desc {
+  font-size: 14px;
+  line-height: 1.2;
+  color: #00273f;
+  width: 280px;
+  max-width: 100%;
+  margin-top: 34px;
 }

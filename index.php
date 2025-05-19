@@ -24,7 +24,7 @@
               <li>Все мастера - граждане РФ</li>
             </ul>
             <div class="hero__button">
-              <button class="primary-button primary-button_alt primary-button_large text-lg uppercase">Получить предложение</button>
+              <button class="primary-button primary-button--alt primary-button--large text-lg uppercase">Получить предложение</button>
             </div>
           </div>
           <div class="hero__layout-form">
@@ -616,7 +616,7 @@
                     <input class="quiz-phone__input" type="text" id="quizphone" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
                   </div>
                   <div class="quiz__submit">
-                    <button type="submit" class="primary-button primary-button_alt">
+                    <button type="submit" class="primary-button primary-button--alt">
                       <span class="text-lg leading-none">
                         Отправить расчет<br>
                         и получить подарок
@@ -1006,7 +1006,7 @@
             <div class="services-card__time">От 20 дней</div>
             <div class="services-card__price">от 4 500 ₽/м2</div>
             <div class="services-card__order">
-              <button type="button" class="primary-button primary-button_small primary-button_alt">Заказать</button>
+              <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
             </div>
           </div>
           <div class="services-card">
@@ -1028,7 +1028,7 @@
             <div class="services-card__time">От 20 дней</div>
             <div class="services-card__price">от 4 500 ₽/м2</div>
             <div class="services-card__order">
-              <button type="button" class="primary-button primary-button_small primary-button_alt">Заказать</button>
+              <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
             </div>
           </div>
           <div class="services-card">
@@ -1050,7 +1050,7 @@
             <div class="services-card__time">От 20 дней</div>
             <div class="services-card__price">от 4 500 ₽/м2</div>
             <div class="services-card__order">
-              <button type="button" class="primary-button primary-button_small primary-button_alt">Заказать</button>
+              <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
             </div>
           </div>
         </div>
@@ -1342,7 +1342,7 @@
               Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
             </div>
             <div class="calc__submit">
-              <button class="primary-button primary-button_alt">Отправить</button>
+              <button class="primary-button primary-button--alt">Отправить</button>
             </div>
           </div>
 
@@ -1607,7 +1607,7 @@
           </div>
         </div>
         <div class="measurement-section__order">
-          <button type="button" class="primary-button primary-button_alt primary-button_large">Получить замер</button>
+          <button type="button" class="primary-button primary-button--alt primary-button--large">Получить замер</button>
         </div>
       </div>
     </div>
@@ -1975,7 +1975,7 @@
                 Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
               </div>
               <div class="estimate-form__submit">
-                <button class="primary-button primary-button_alt">Отправить</button>
+                <button class="primary-button primary-button--alt">Отправить</button>
               </div>
             </div>
           </div>
@@ -1983,7 +1983,7 @@
       </div>
     </div>
 
-    <div class="hiw-section">
+    <div class="hiw-section" hidden>
       <div class="container">
         <div class="hiw-section__title">
           Всего 3 простых шага,<br>
@@ -2006,13 +2006,13 @@
               +7 (800) 123-45-67
             </div>
             <div class="hiw-card-call__desc">
-              Познакомимся, проконсультируем и согласуем встречу на объекте или у нас в офисе
+              Познакомимся, проконсультируем и согласуем встречу на объекте или у&nbsp;нас в&nbsp;офисе
             </div>
             <div class="hiw-card-call__or">
               Или оставляйте заявку на сайте
             </div>
             <div class="hiw-card-call__order">
-              <button type="button" class="primary-button primary-button_small w-56">Оставить заявку</button>
+              <button type="button" class="primary-button primary-button--small w-56">Оставить заявку</button>
             </div>
           </div>
           <div class="hiw-card hiw-card-visit">
@@ -2044,10 +2044,149 @@
               </div>
             </div>
             <div class="hiw-card-start__title">
-              Приступаем к ремонту
+              Приступаем<br>
+              к ремонту
             </div>
             <div class="hiw-card-start__desc">
               По очередности работ начинаем работы на вашем объекте
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-section" hidden>
+      <div class="container">
+        <div class="team-section__title">
+          Над каждым проектом<br>
+          <span>работает сплоченная команда</span>
+        </div>
+        <div class="team-section__grid">
+          <div class="team-card">
+            <div class="team-card__image">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/team-1.jpg" alt="">
+            </div>
+            <div class="team-card__body">
+              <div class="team-card__name">
+                Имя
+              </div>
+              <div class="team-card__job">
+                Мастер-плиточник
+              </div>
+              <div class="team-card__experience">
+                Стаж: 6 лет
+              </div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-card__image">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/team-2.jpg" alt="">
+            </div>
+            <div class="team-card__body">
+              <div class="team-card__name">
+                Имя
+              </div>
+              <div class="team-card__job">
+                Мастер-плиточник
+              </div>
+              <div class="team-card__experience">
+                Стаж: 6 лет
+              </div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-card__image">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/team-3.jpg" alt="">
+            </div>
+            <div class="team-card__body">
+              <div class="team-card__name">
+                Имя
+              </div>
+              <div class="team-card__job">
+                Мастер-плиточник
+              </div>
+              <div class="team-card__experience">
+                Стаж: 6 лет
+              </div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-card__image">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/team-4.jpg" alt="">
+            </div>
+            <div class="team-card__body">
+              <div class="team-card__name">
+                Имя
+              </div>
+              <div class="team-card__job">
+                Мастер-плиточник
+              </div>
+              <div class="team-card__experience">
+                Стаж: 6 лет
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trust-section">
+      <div class="container">
+        <div class="trust-section__layout">
+          <div class="trust-section__layout-left">
+            <div class="trust-section__title">
+              Вы можете нам довериться
+            </div>
+            <div class="trust-section__desc">
+              И быть спокойны за качество и сроки ремонта
+            </div>
+            <div class="trust-section__grid">
+              <div class="trust-card">
+                <div class="trust-card__check"><span class="icon icon-check"></span></div>
+                <div class="trust-card__title">Экономим ваш бюджет</div>
+                <div class="trust-card__desc">Покупаем материалы по лучшим ценам у проверенных поставщиков</div>
+              </div>
+              <div class="trust-card">
+                <div class="trust-card__check"><span class="icon icon-check"></span></div>
+                <div class="trust-card__title">Не дёргаем по пустякам</div>
+                <div class="trust-card__desc">Сами закупаем,<br>доставляем, разгружаем</div>
+              </div>
+              <div class="trust-card">
+                <div class="trust-card__check"><span class="icon icon-check"></span></div>
+                <div class="trust-card__title">Используем ваш материал</div>
+                <div class="trust-card__desc">При наличии/желании будем работать с вашим материалом</div>
+              </div>
+              <div class="trust-card">
+                <div class="trust-card__check"><span class="icon icon-check"></span></div>
+                <div class="trust-card__title">Собственное оборудование</div>
+                <div class="trust-card__desc">Оборудование для выполнения ремонта в наличии, вам не нужно беспокоиться</div>
+              </div>
+              <div class="trust-card">
+                <div class="trust-card__check"><span class="icon icon-check"></span></div>
+                <div class="trust-card__title">Стоимость фиксирована</div>
+                <div class="trust-card__desc">Составляем смету и фиксируем финальную стоимость</div>
+              </div>
+              <div class="trust-card">
+                <div class="trust-card__check"><span class="icon icon-check"></span></div>
+                <div class="trust-card__title">Налиный или безналичный расчёт</div>
+                <div class="trust-card__desc">Поэтапная оплата</div>
+              </div>
+            </div>
+          </div>
+          <div class="trust-section__layout-right">
+            <div class="trust-contract">
+              <div class="trust-contract__desc">
+                Заключаем договор на выполнение ремонтных работ с заказчиком, оказываем ремонтные услуги для юридических лиц
+              </div>
+              <div class="trust-contract__figure">
+                <img src="<?php bloginfo(
+                  'template_url'
+                ); ?>/src/images/contract.jpg" class="trust-contract__image" />
+                <button type="button" class="primary-button primary-button--small trust-contract__download">
+                  <span>Скачать договор</span>
+                  <span class="icon icon-download"></span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
