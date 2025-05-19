@@ -24,7 +24,7 @@
               <li>Все мастера - граждане РФ</li>
             </ul>
             <div class="hero__button">
-              <button class="primary-button primary-button_alt primary-button_large primary-button_upper">Получить предложение</button>
+              <button class="primary-button primary-button_alt primary-button_large text-lg uppercase">Получить предложение</button>
             </div>
           </div>
           <div class="hero__layout-form">
@@ -1006,7 +1006,7 @@
             <div class="services-card__time">От 20 дней</div>
             <div class="services-card__price">от 4 500 ₽/м2</div>
             <div class="services-card__order">
-              <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
+              <button type="button" class="primary-button primary-button_small primary-button_alt">Заказать</button>
             </div>
           </div>
           <div class="services-card">
@@ -1028,7 +1028,7 @@
             <div class="services-card__time">От 20 дней</div>
             <div class="services-card__price">от 4 500 ₽/м2</div>
             <div class="services-card__order">
-              <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
+              <button type="button" class="primary-button primary-button_small primary-button_alt">Заказать</button>
             </div>
           </div>
           <div class="services-card">
@@ -1050,7 +1050,7 @@
             <div class="services-card__time">От 20 дней</div>
             <div class="services-card__price">от 4 500 ₽/м2</div>
             <div class="services-card__order">
-              <button type="button" class="secondary-button secondary-button_alt">Заказать</button>
+              <button type="button" class="primary-button primary-button_small primary-button_alt">Заказать</button>
             </div>
           </div>
         </div>
@@ -1930,7 +1930,7 @@
       </div>
     </div>
 
-    <div class="estimate-section">
+    <div class="estimate-section" hidden>
       <div class="container-lg">
         <div class="estimate-section__layout">
           <div class="estimate-section__content">
@@ -1977,6 +1977,77 @@
               <div class="estimate-form__submit">
                 <button class="primary-button primary-button_alt">Отправить</button>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hiw-section">
+      <div class="container">
+        <div class="hiw-section__title">
+          Всего 3 простых шага,<br>
+          <span>чтобы начать с нами работать</span>
+        </div>
+        <div class="hiw-section__grid">
+          <div class="hiw-card hiw-card-call">
+            <div class="hiw-card__headline">
+              <div class="hiw-card__title">
+                Шаг
+              </div>
+              <div class="hiw-card__num">
+                1
+              </div>
+            </div>
+            <div class="hiw-card-call__label">
+              Звоните:
+            </div>
+            <div class="hiw-card-call__phone">
+              +7 (800) 123-45-67
+            </div>
+            <div class="hiw-card-call__desc">
+              Познакомимся, проконсультируем и согласуем встречу на объекте или у нас в офисе
+            </div>
+            <div class="hiw-card-call__or">
+              Или оставляйте заявку на сайте
+            </div>
+            <div class="hiw-card-call__order">
+              <button type="button" class="primary-button primary-button_small w-56">Оставить заявку</button>
+            </div>
+          </div>
+          <div class="hiw-card hiw-card-visit">
+            <div class="hiw-card__headline">
+              <div class="hiw-card__title">
+                Шаг
+              </div>
+              <div class="hiw-card__num">
+                2
+              </div>
+            </div>
+            <div class="hiw-card-visit__desc">
+              Выедем на объект для полного замера и составления точной сметы
+            </div>
+            <ul class="hiw-card-visit__list">
+              <li>Обсудим вашу задачу</li>
+              <li>Наметим план</li>
+              <li>Составим смету</li>
+              <li>Заключим договор</li>
+            </ul>
+          </div>
+          <div class="hiw-card hiw-card-start">
+            <div class="hiw-card__headline">
+              <div class="hiw-card__title">
+                Шаг
+              </div>
+              <div class="hiw-card__num">
+                2
+              </div>
+            </div>
+            <div class="hiw-card-start__title">
+              Приступаем к ремонту
+            </div>
+            <div class="hiw-card-start__desc">
+              По очередности работ начинаем работы на вашем объекте
             </div>
           </div>
         </div>
