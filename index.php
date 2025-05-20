@@ -2130,7 +2130,7 @@
       </div>
     </div>
 
-    <div class="trust-section">
+    <div class="trust-section" hidden>
       <div class="container">
         <div class="trust-section__layout">
           <div class="trust-section__layout-left">
@@ -2189,6 +2189,62 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section" data-faq>
+      <div class="container">
+        <div class="faq-section__title">
+          Часто задаваемые вопросы<br>
+          <span>и ответы на них</span>
+        </div>
+        <div class="faq-section__grid">
+          <div class="faq-card" data-faq-item>
+            <button class="faq-card__question" data-faq-trigger>
+              С чего нужно начинать ремонт в квартире?
+              <span class="faq-card__indicator"></span>
+            </button>
+            <div class="faq-card__answer">
+              Ответ на вопрос с чего нужно.
+              В зависимости от количества текста в ответе изменяется высота блока с ответом
+            </div>
+          </div>
+          <div class="faq-card" data-faq-item>
+            <button class="faq-card__question" data-faq-trigger>
+              С чего нужно начинать ремонт в квартире?
+              <span class="faq-card__indicator"></span>
+            </button>
+            <div class="faq-card__answer">
+              Ответ на вопрос с чего нужно.
+              В зависимости от количества текста в ответе изменяется высота блока с ответом
+            </div>
+          </div>
+          <div class="faq-card" data-faq-item>
+            <button class="faq-card__question" data-faq-trigger>
+              С чего нужно начинать ремонт в квартире?
+              <span class="faq-card__indicator"></span>
+            </button>
+            <div class="faq-card__answer">
+              Ответ на вопрос с чего нужно.
+              В зависимости от количества текста в ответе изменяется высота блока с ответом
+            </div>
+          </div>
+          <div class="faq-card" data-faq-item>
+            <button class="faq-card__question" data-faq-trigger>
+              С чего нужно начинать ремонт в квартире?
+              <span class="faq-card__indicator"></span>
+            </button>
+            <div class="faq-card__answer">
+              Ответ на вопрос с чего нужно.
+              В зависимости от количества текста в ответе изменяется высота блока с ответом
+            </div>
+          </div>
+        </div>
+        <div class="faq-section__button">
+          <button type="button" class="primary-button primary-button--small">
+            Задать свой вопрос
+          </button>
         </div>
       </div>
     </div>

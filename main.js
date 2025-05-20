@@ -23,6 +23,7 @@ import './src/styles/estimate.css'
 import './src/styles/hiw.css'
 import './src/styles/team.css'
 import './src/styles/trust.css'
+import './src/styles/faq.css'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'
@@ -43,6 +44,7 @@ import { initAttachmentsField } from './src/scripts/attachments-field'
 import { initCalc } from './src/scripts/calc'
 import { initActionsCarousel } from './src/scripts/actions-carousel'
 import { initPrices } from './src/scripts/prices'
+import { initFaq } from './src/scripts/faq'
 
 new MaskInput('[data-maska]')
 
@@ -60,6 +62,7 @@ initAttachmentsField()
 initCalc()
 initActionsCarousel()
 initPrices()
+initFaq()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()

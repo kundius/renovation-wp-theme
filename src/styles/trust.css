@@ -54,6 +54,7 @@
   color: #fff;
   background: #00aaff;
   margin-bottom: 24px;
+  margin-left: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +85,7 @@
   line-height: 1.5;
   color: #00273f;
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 
 .trust-contract__figure {

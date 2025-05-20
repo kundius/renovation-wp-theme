@@ -1,0 +1,124 @@
+.faq-section {
+  background: #f3f8fc;
+  padding-bottom: 60px;
+  padding-top: 96px;
+}
+
+.faq-section__title {
+  font-size: 42px;
+  line-height: 48px;
+  color: #252e36;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 74px;
+  span {
+    color: #7c9cb6;
+  }
+}
+
+.faq-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 96px;
+  row-gap: 0;
+}
+
+.faq-section__button {
+  margin-top: 44px;
+  display: flex;
+  justify-content: center;
+}
+
+.faq-card {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid #e8eaed;
+  border-bottom: 1px solid #e8eaed;
+  margin-top: -1px;
+}
+
+.faq-card.active {
+  z-index: 2;
+}
+
+.faq-card__question {
+  font-size: 20px;
+  color: rgb(31, 33, 42);
+  line-height: 1.3;
+  padding: 16px 1px;
+  padding-right: 40px;
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.faq-card__question:hover {
+  background: #e8eaed;
+}
+
+.faq-card.active .faq-card__question {
+  color: #000;
+}
+
+.faq-card__answer {
+  font-size: 16px;
+  color: rgb(31, 33, 42);
+  line-height: 1.625;
+  position: absolute;
+  padding: 30px 40px 40px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 12px 0px rgba(0, 50, 92, 0.2);
+  border-radius: 0 0 24px 24px;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+
+.faq-card.active .faq-card__answer {
+  display: block;
+}
+
+.faq-card__indicator {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #4bbbff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(196, 233, 255, 0.8);
+  right: 6px;
+  top: 32px;
+  transform: translateY(-50%);
+}
+
+.faq-card__indicator::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 2px;
+  background: #fff;
+}
+
+.faq-card__indicator::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 14px;
+  background: #fff;
+}
+
+.faq-card.active .faq-card__indicator::after {
+  display: none;
+}
+
+.faq-card__question:hover .faq-card__indicator {
+  background: #177cc9;
+  box-shadow: 0 0 0 5px rgba(23, 124, 201, 0.302);
+}
