@@ -11,7 +11,7 @@
   <div class="flex flex-col min-h-scree">
     <?php get_template_part('partials/header'); ?>
 
-    <section class="hero" hidden>
+    <section class="hero">
       <div class="container">
         <div class="hero__layout">
           <div class="hero__layout-content">
@@ -87,7 +87,7 @@
       <img src="<?php bloginfo('template_url'); ?>/src/images/bg-intro.jpg" alt="" class="hero__bg">
     </section>
 
-    <section class="about" hidden>
+    <section class="about">
       <div class="container">
         <div class="about__layout">
           <div class="about__layout-content">
@@ -155,7 +155,7 @@
       </div>
     </section>
 
-    <section class="quiz-section" hidden>
+    <section class="quiz-section">
       <div class="container">
 
         <form class="quiz" data-quiz>
@@ -650,8 +650,8 @@
       </div>
     </section>
 
-    <section class="portfolio" hidden>
-      <div class="container-lg">
+    <section class="portfolio">
+      <div class="container container--lg">
 
         <div class="portfolio__headline">
           <div class="portfolio__title">
@@ -918,8 +918,8 @@
       </div>
     </section>
 
-    <section class="comparison-section" hidden>
-      <div class="container-lg">
+    <section class="comparison-section">
+      <div class="container container--lg">
         <div class="comparison-section__title">
           От голых стен до готового ремонта<br>
           за ХХ дней
@@ -969,7 +969,7 @@
       </div>
     </section>
 
-    <section class="services-section" hidden>
+    <section class="services-section">
       <div class="container">
         <div class="services-section__headline">
           <div class="services-section__title">
@@ -1057,7 +1057,7 @@
       </div>
     </section>
 
-    <section class="terms-section" hidden>
+    <section class="terms-section">
       <div class="container">
         <div class="terms-section__title">
           Средние сроки выполнения ремонта квартир
@@ -1179,7 +1179,7 @@
       </div>
     </section>
 
-    <section class="calc-section calc-section--has-title" hidden>
+    <section class="calc-section calc-section--has-title">
       <div class="container">
         <div class="calc-section__title">
           Калькулятор стоимости ремонта с точностью до <span>96%</span>
@@ -1359,8 +1359,8 @@
       </div>
     </section>
 
-    <section class="actions-section" hidden>
-      <div class="container-lg">
+    <section class="actions-section">
+      <div class="container container--lg">
         <div class="actions-section__title">
           Акции и скидки от нашей компании
         </div>
@@ -1463,7 +1463,7 @@
       </div>
     </section>
 
-    <section class="reviews-section" hidden>
+    <section class="reviews-section">
       <div class="container">
         <div class="reviews-section__title">
           Видеоотзывы о выполненных проектах
@@ -1503,7 +1503,7 @@
       </div>
     </section>
 
-    <section class="reasons-section" hidden>
+    <section class="reasons-section">
       <div class="container">
         <div class="reasons-section__headline">
           <div class="reasons-section__title">
@@ -1599,7 +1599,7 @@
       </div>
     </section>
 
-    <section class="measurement-section" hidden>
+    <section class="measurement-section">
       <div class="container">
         <div class="measurement-section__title">
           <div class="measurement-section__title-inner">
@@ -1612,7 +1612,7 @@
       </div>
     </section>
 
-    <section class="problems-section" hidden>
+    <section class="problems-section">
       <div class="container">
         <div class="problems-section__title">
           Возьмем на себя <span>все проблемы</span>
@@ -1671,7 +1671,7 @@
       </div>
     </section>
 
-    <section class="experts-section" hidden>
+    <section class="experts-section">
       <div class="container">
         <div class="experts-section__title">
           Наши мастера в процессе работы
@@ -1705,7 +1705,7 @@
       </div>
     </section>
 
-    <section class="prices-section" hidden>
+    <section class="prices-section">
       <div class="container">
         <div class="prices-section__title">
           Цены на отдельные услуги при ремонте
@@ -1930,8 +1930,8 @@
       </div>
     </section>
 
-    <section class="estimate-section" hidden>
-      <div class="container-lg">
+    <section class="estimate-section">
+      <div class="container container--lg">
         <div class="estimate-section__layout">
           <div class="estimate-section__content">
             <div class="estimate-section__title">
@@ -1983,7 +1983,7 @@
       </div>
     </section>
 
-    <section class="hiw-section" hidden>
+    <section class="hiw-section">
       <div class="container">
         <div class="hiw-section__title">
           Всего 3 простых шага,<br>
@@ -2055,7 +2055,7 @@
       </div>
     </section>
 
-    <section class="team-section" hidden>
+    <section class="team-section">
       <div class="container">
         <div class="team-section__title">
           Над каждым проектом<br>
@@ -2130,7 +2130,7 @@
       </div>
     </section>
 
-    <section class="trust-section" hidden>
+    <section class="trust-section">
       <div class="container">
         <div class="trust-section__layout">
           <div class="trust-section__layout-left">
@@ -2322,17 +2322,14 @@
               <div class="consultation-form__rules">
                 Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
               </div>
-              <div class="consultation-form__phone">
-                <button class="primary-button font-bold">Получить консультацию</button>
+              <div class="consultation-form__submit">
+                <button class="primary-button font-bold w-80">Получить консультацию</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <div class="flex-grow h-[2000px]">
-    </div>
 
     <?php get_template_part('partials/footer'); ?>
   </div>

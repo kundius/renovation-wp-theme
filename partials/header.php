@@ -1,5 +1,5 @@
 <div class="extra-header">
-  <div class="container-xl extra-header__container">
+  <div class="container container--xl extra-header__container">
     <div class="extra-header__city">
       <div class="city-select" data-city-select role="combobox" aria-expanded="false" aria-haspopup="true" aria-label="Выбор города">
         <button class="city-select__trigger" data-city-select-trigger>
@@ -27,7 +27,7 @@
 
 <div class="h-4"></div>
 <div class="header" data-sticky-header data-mobile-menu-state="closed">
-  <div class="container-xl header__container">
+  <div class="container container--xl header__container">
     <a href="/" class="header__logo">
       <span class="header__logo__name">РЕМОНТ-ПОД-КЛЮЧ</span>
       <span class="header__logo__desc">Ремонт квартир под ключ в Казани</span>

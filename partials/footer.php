@@ -1,94 +1,91 @@
-<section class="underground" itemscope itemtype="https://schema.org/Organization">
-  <div class="container underground-layout">
-    <div class="underground-layout__left">
-      <div class="underground-logo">
-        <a href="/" class="header-logo" title="<?php bloginfo('name'); ?>">
-          <img src="<?php bloginfo('template_url') ?>/dist/assets/logo-small.png" class="header-logo__image" width="68" height="68" />
-          <span class="header-logo__text">
-            <span class="header-logo__text__first">Русская Православная Церковь</span>
-            <span class="header-logo__text__second">
-              Храм Покрова<br>
-              Пресвятой Богородицы
-            </span>
-          </span>
-        </a>
-      </div>
-
-      <div class="underground-contacts">
-        <div class="underground-contacts__address">
-          <div class="underground-contacts__address-title">
-            Адрес:
+<div class="footer">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-layout__contacts">
+        <div class="footer-contacts">
+          <div class="footer-contacts__title">
+            Контактная информация
           </div>
-          <div class="underground-contacts__address-content">
-            <?php echo nl2br(carbon_get_theme_option('crb_theme_address')); ?>
+          <div class="footer-contacts__text">
+            Наш телефон: +7 (800) 123-45-67<br>
+            <br>
+            Пн - Пт,  9:00 - 18:00,<br>
+            перерыв с  13:00 - 14:00
+          </div>
+          <div class="footer-contacts__call">
+            <button type="button" class="control-button">
+              <span>Заказать звонок</span>
+              <span class="icon icon-phone"></span>
+            </button>
+          </div>
+          <div class="footer-contacts__address">
+            <strong>Адрес офиса:</strong><br>
+            Казань, ул. Космонавтов, 47А, 33
           </div>
         </div>
-
-        <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone'); ?>" class="underground-contacts__phone">
-          <span class="underground-contacts__phone-icon">
-            <?php icon('phone'); ?>
-          </span>
-          <span class="underground-contacts__phone-value">
-            <?php echo carbon_get_theme_option('crb_theme_phone'); ?>
-          </span>
-        </a>
-
-        <a href="mailto:<?php echo carbon_get_theme_option('crb_theme_email'); ?>" class="underground-contacts__email">
-          <span class="underground-contacts__email-icon">
-            <?php icon('mail'); ?>
-          </span>
-          <span class="underground-contacts__email-value">
-            <?php echo carbon_get_theme_option('crb_theme_email'); ?>
-          </span>
-        </a>
       </div>
-    </div>
-
-    <div class="underground-layout__middle">
-      <?php wp_nav_menu([
-        'container' => '',
-        'menu_class' => 'underground-menu',
-        'theme_location' => 'menu-footer',
-      ]); ?>
-    </div>
-
-    <div class="underground-layout__right">
-      <div class="underground-share">
-        <div class="underground-share__title">Поделиться:</div>
-        <div class="underground-share__items">
-          <script src="https://yastatic.net/share2/share.js"></script>
-          <div class="ya-share2" data-curtain data-size="l" data-services="messenger,vkontakte,odnoklassniki,telegram"></div>
+      <div class="footer-layout__nav">
+        <div class="footer-menu">
+          <div class="footer-menu__title">
+            Ремонт и отделка
+          </div>
+          <ul class="footer-menu__menu">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-menu">
+          <div class="footer-menu__title">
+            Отдельные услуги
+          </div>
+          <ul class="footer-menu__menu">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-menu">
+          <div class="footer-menu__title">
+            Инженерные работы
+          </div>
+          <ul class="footer-menu__menu">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-menu">
+          <div class="footer-menu__title">
+            О компании
+          </div>
+          <ul class="footer-menu__menu">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
         </div>
       </div>
-
-      <?php wp_nav_menu([
-        'container' => '',
-        'menu_class' => 'underground-links',
-        'theme_location' => 'menu-footer-links',
-      ]); ?>
     </div>
   </div>
-</section>
+</div>
 
-<section class="footer">
-  <div class="container footer__container">
-    <div class="footer__copyright">
-      <?php echo carbon_get_theme_option('crb_theme_copyright'); ?>
+<div class="footer-bottom">
+  <div class="container footer-bottom__container">
+    <div class="footer-bottom__copyright">
+      © 2025, Все права защищены.
     </div>
-
-    <div class="footer__middle">
-      <div class="footer__counters">
-        <?php echo carbon_get_theme_option('crb_theme_counters'); ?>
-      </div>
-      <a href="<?php the_permalink(128); ?>" class="footer__sitemap">Карта сайта</a>
+    <div class="footer-bottom__links">
+      <a href="#">Политика конфиденциальности</a>
     </div>
-
-    <a href="https://domenart-studio.ru/" target="_blank" class="footer__creator">
-      <img src="<?php bloginfo('template_url'); ?>/src/images/creator.png" alt="Разработка и продвижение сайтов «ДоменАРТ»" />
-    </a>
+    <div class="footer-bottom__info">
+      Сайт не является публичной офертой и носит информационный характер
+    </div>
   </div>
-</section>
-
-<button class="scroll-up" type="button"></button>
+</div>
 
 <?php wp_footer(); ?>
