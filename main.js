@@ -24,6 +24,8 @@ import './src/styles/hiw.css'
 import './src/styles/team.css'
 import './src/styles/trust.css'
 import './src/styles/faq.css'
+import './src/styles/text.css'
+import './src/styles/consultation.css'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'

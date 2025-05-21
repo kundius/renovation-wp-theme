@@ -11,7 +11,7 @@
   <div class="flex flex-col min-h-scree">
     <?php get_template_part('partials/header'); ?>
 
-    <div class="hero" hidden>
+    <section class="hero" hidden>
       <div class="container">
         <div class="hero__layout">
           <div class="hero__layout-content">
@@ -85,9 +85,9 @@
         </div>
       </div>
       <img src="<?php bloginfo('template_url'); ?>/src/images/bg-intro.jpg" alt="" class="hero__bg">
-    </div>
+    </section>
 
-    <div class="about" hidden>
+    <section class="about" hidden>
       <div class="container">
         <div class="about__layout">
           <div class="about__layout-content">
@@ -153,9 +153,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="quiz-section" hidden>
+    <section class="quiz-section" hidden>
       <div class="container">
 
         <form class="quiz" data-quiz>
@@ -648,9 +648,9 @@
         </form>
 
       </div>
-    </div>
+    </section>
 
-    <div class="portfolio" hidden>
+    <section class="portfolio" hidden>
       <div class="container-lg">
 
         <div class="portfolio__headline">
@@ -916,9 +916,9 @@
         </div>
 
       </div>
-    </div>
+    </section>
 
-    <div class="comparison-section" hidden>
+    <section class="comparison-section" hidden>
       <div class="container-lg">
         <div class="comparison-section__title">
           От голых стен до готового ремонта<br>
@@ -967,9 +967,9 @@
           <button class="comparison-carousel__nav comparison-carousel__nav--next" type="button" data-comparison-carousel-next></button>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="services-section" hidden>
+    <section class="services-section" hidden>
       <div class="container">
         <div class="services-section__headline">
           <div class="services-section__title">
@@ -1055,9 +1055,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="terms-section" hidden>
+    <section class="terms-section" hidden>
       <div class="container">
         <div class="terms-section__title">
           Средние сроки выполнения ремонта квартир
@@ -1177,9 +1177,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="calc-section calc-section--has-title" hidden>
+    <section class="calc-section calc-section--has-title" hidden>
       <div class="container">
         <div class="calc-section__title">
           Калькулятор стоимости ремонта с точностью до <span>96%</span>
@@ -1357,9 +1357,9 @@
           </div>
         </form>
       </div>
-    </div>
+    </section>
 
-    <div class="actions-section" hidden>
+    <section class="actions-section" hidden>
       <div class="container-lg">
         <div class="actions-section__title">
           Акции и скидки от нашей компании
@@ -1461,9 +1461,9 @@
           <div class="actions-carousel__dots" data-actions-carousel-dots></div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="reviews-section" hidden>
+    <section class="reviews-section" hidden>
       <div class="container">
         <div class="reviews-section__title">
           Видеоотзывы о выполненных проектах
@@ -1501,9 +1501,9 @@
           </a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="reasons-section" hidden>
+    <section class="reasons-section" hidden>
       <div class="container">
         <div class="reasons-section__headline">
           <div class="reasons-section__title">
@@ -1597,9 +1597,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="measurement-section" hidden>
+    <section class="measurement-section" hidden>
       <div class="container">
         <div class="measurement-section__title">
           <div class="measurement-section__title-inner">
@@ -1610,9 +1610,9 @@
           <button type="button" class="primary-button primary-button--alt primary-button--large">Получить замер</button>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="problems-section" hidden>
+    <section class="problems-section" hidden>
       <div class="container">
         <div class="problems-section__title">
           Возьмем на себя <span>все проблемы</span>
@@ -1669,9 +1669,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="experts-section" hidden>
+    <section class="experts-section" hidden>
       <div class="container">
         <div class="experts-section__title">
           Наши мастера в процессе работы
@@ -1703,9 +1703,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="prices-section" hidden>
+    <section class="prices-section" hidden>
       <div class="container">
         <div class="prices-section__title">
           Цены на отдельные услуги при ремонте
@@ -1928,9 +1928,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="estimate-section" hidden>
+    <section class="estimate-section" hidden>
       <div class="container-lg">
         <div class="estimate-section__layout">
           <div class="estimate-section__content">
@@ -1981,9 +1981,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="hiw-section" hidden>
+    <section class="hiw-section" hidden>
       <div class="container">
         <div class="hiw-section__title">
           Всего 3 простых шага,<br>
@@ -2053,9 +2053,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="team-section" hidden>
+    <section class="team-section" hidden>
       <div class="container">
         <div class="team-section__title">
           Над каждым проектом<br>
@@ -2128,9 +2128,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="trust-section" hidden>
+    <section class="trust-section" hidden>
       <div class="container">
         <div class="trust-section__layout">
           <div class="trust-section__layout-left">
@@ -2191,9 +2191,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="faq-section" data-faq>
+    <section class="faq-section" data-faq>
       <div class="container">
         <div class="faq-section__title">
           Часто задаваемые вопросы<br>
@@ -2247,7 +2247,89 @@
           </button>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="text-section">
+      <div class="container">
+        <h1 class="text-section__title">
+          Высококачественный <span>ремонт квартир</span>
+        </h1>
+        <div class="text-section__content">
+          <p>Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. </p>
+          <p>Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроковКомпания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроковКомпания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. </p>
+          <p>Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков. </p>
+          <p>Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="consultation-section">
+      <div class="container">
+        <div class="consultation-section__layout">
+          <div class="consultation-section__layout-content">
+            <div class="consultation-headline">
+              <div class="consultation-headline__title">
+                Получите консультацию специалиста
+              </div>
+              <div class="consultation-headline__desc">
+                По телефону через несколько минут
+              </div>
+            </div>
+            <div class="consultation-contact">
+              <div class="consultation-contact__label">Звоните Пн-Пт с 09:00 - 18:00</div>
+              <div class="consultation-contact__content">
+                <a href="#" class="consultation-phone">
+                  <span class="consultation-phone__icon">
+                    <span class="icon icon-phone"></span>
+                  </span>
+                  <span class="consultation-phone__value">+7 (800) 123-45-67</span>
+                </a>
+              </div>
+            </div>
+            <div class="consultation-contact">
+              <div class="consultation-contact__label">Пишите нам в мессенджеры</div>
+              <div class="consultation-contact__content">
+                <div class="consultation-social">
+                  <a href="#" class="consultation-social__telegram">
+                    <span class="icon icon-telegram"></span>
+                  </a>
+                  <a href="#" class="consultation-social__whatsapp">
+                    <span class="icon icon-whatsapp"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="consultation-section__layout-form">
+            <div class="consultation-form">
+              <div class="consultation-form__title">
+                Заполните форму,<br>
+                и мы вам перезвоним
+              </div>
+              <ul class="consultation-form__list">
+                <li>Выясним ваши идеи и замыслы</li>
+                <li>Узнаете с чего начать</li>
+                <li>Обговорим бюджет</li>
+                <li>Расскажем, что входит в стоимость</li>
+                <li>Ответим на ваши вопросы</li>
+              </ul>
+              <div class="consultation-form__phone">
+                <label class="phone-field">
+                  <span class="phone-field__label">Ваш номер телефона</span>
+                  <input class="phone-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+                </label>
+              </div>
+              <div class="consultation-form__rules">
+                Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
+              </div>
+              <div class="consultation-form__phone">
+                <button class="primary-button font-bold">Получить консультацию</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="flex-grow h-[2000px]">
     </div>
