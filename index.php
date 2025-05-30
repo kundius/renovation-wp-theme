@@ -651,7 +651,7 @@
     </section>
 
     <section class="portfolio">
-      <div class="container container--lg">
+      <div class="container container--large">
 
         <div class="portfolio__headline">
           <div class="portfolio__title">
@@ -919,7 +919,7 @@
     </section>
 
     <section class="comparison-section">
-      <div class="container container--lg">
+      <div class="container container--large">
         <div class="comparison-section__title">
           От голых стен до готового ремонта<br>
           за ХХ дней
@@ -1360,7 +1360,7 @@
     </section>
 
     <section class="actions-section">
-      <div class="container container--lg">
+      <div class="container container--large">
         <div class="actions-section__title">
           Акции и скидки от нашей компании
         </div>
@@ -1931,7 +1931,7 @@
     </section>
 
     <section class="estimate-section">
-      <div class="container container--lg">
+      <div class="container container--large">
         <div class="estimate-section__layout">
           <div class="estimate-section__content">
             <div class="estimate-section__title">

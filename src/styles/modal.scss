@@ -1,3 +1,5 @@
+@use 'responsive' as *;
+
 .modal {
   display: none;
 
@@ -49,7 +51,7 @@
   &:hover {
     background: #32333d;
   }
-  @media (--max-md) {
+  @include max-md {
     color: #000;
     right: 4px;
     top: 4px;
@@ -72,7 +74,7 @@
   grid-template-columns: 1fr minmax(300px, 400px) 1fr;
   justify-content: center;
 
-  @media (--max-md) {
+  @include max-md {
     padding: 12px;
   }
 }
@@ -91,7 +93,7 @@
   background-color: rgba(255, 255, 255, 0.851);
   backdrop-filter: blur(6px);
 
-  @media (--max-md) {
+  @include max-md {
     padding: 24px;
   }
 }

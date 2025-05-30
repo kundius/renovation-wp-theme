@@ -7,7 +7,7 @@ module.exports = {
       center: true,
       screens: {
         DEFAULT: '100%',
-        sm: '100%',
+        sm: '480px',
         md: '768px',
         lg: '1024px',
         xl: '1224px'
@@ -19,7 +19,15 @@ module.exports = {
         lg: '24px',
         xl: '32px'
       }
-    }
+    },
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1224px',
+      '2xl': '1464px',
+      '3xl': '1792px'
+    },
   },
   plugins: []
 }
