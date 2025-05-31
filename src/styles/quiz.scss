@@ -1,3 +1,5 @@
+@use 'responsive' as *;
+
 .quiz-section {
   padding-top: 96px;
   padding-bottom: 96px;
@@ -165,6 +167,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
+
+  @include max-xl {
+    gap: 12px;
+    grid-template-columns: 9fr 12fr 9fr;
+  }
 }
 
 .quiz-step__image {
@@ -181,6 +188,14 @@
     top: 50%;
     transform: translate(-50%, -50%);
     max-width: unset;
+  }
+
+  @include max-xl {
+    margin-bottom: 24px;
+
+    img {
+      transform: translate(-50%, -50%) scale(0.8);
+    }
   }
 }
 
@@ -202,6 +217,10 @@
   justify-content: center;
   align-items: center;
   padding: 24px 24px 44px;
+
+  @include max-xl {
+    padding: 16px 16px 32px;
+  }
 }
 
 .quiz-bonus__title {
@@ -211,12 +230,21 @@
   line-height: 1.333;
   text-align: center;
   margin-bottom: 30px;
+
+  @include max-xl {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
 }
 
 .quiz-bonus__items {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+
+  @include max-xl {
+    gap: 16px;
+  }
 }
 
 .quiz-bonus__item {
@@ -233,6 +261,15 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+
+  @include max-xl {
+    width: 48px;
+    height: 48px;
+
+    img {
+      transform: scale(0.8);
+    }
+  }
 }
 
 .quiz-bonus__item-title {
@@ -241,10 +278,13 @@
   font-weight: bold;
   line-height: 1.286;
   text-align: center;
+
+  @include max-xl {
+    font-size: 12px;
+  }
 }
 
-.quiz-form {
-}
+.quiz-form {}
 
 .quiz-form__title {
   color: #3db6ff;
@@ -254,6 +294,11 @@
   position: relative;
   margin-bottom: 24px;
   min-height: 3em;
+
+  @include max-xl {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
 }
 
 .quiz-form__title__number {
@@ -277,6 +322,10 @@
   margin-top: 36px;
   display: flex;
   gap: 5px;
+
+  @include max-xl {
+    margin-top: 20px;
+  }
 }
 
 .quiz-form__action {
@@ -325,6 +374,11 @@
   padding-right: calc(40% + 28px);
   position: relative;
   padding-top: 40px;
+  z-index: 1;
+
+  @include max-xl {
+    padding-right: calc(25% + 28px);
+  }
 }
 
 .quiz-ending__image {
@@ -333,12 +387,18 @@
   top: 40px;
   bottom: 0;
   width: 40%;
+  z-index: -1;
+
   img {
     max-width: unset;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  @include max-xl {
+    width: 25%;
   }
 }
 
@@ -402,9 +462,11 @@
   line-height: 1.2;
   margin-top: 18px;
   text-align: center;
+
   a {
     color: currentColor;
     text-decoration: underline;
+
     &:hover {
       color: rgba(0, 0, 0, 1);
     }

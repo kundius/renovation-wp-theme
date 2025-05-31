@@ -1,3 +1,5 @@
+@use 'responsive' as *;
+
 .experts-section {
   padding-top: 96px;
   padding-bottom: 96px;
@@ -5,11 +7,16 @@
 
 .experts-section__title {
   font-size: 42px;
-  line-height: 48px;
+  line-height: 1.15;
   color: #252e36;
   font-weight: 700;
   text-align: center;
   margin-bottom: 56px;
+
+  @include max-xl {
+    font-size: 36px;
+    margin-bottom: 48px;
+  }
 }
 
 .experts-section__grid {
@@ -21,6 +28,10 @@
   border: 1px solid #eff2f9;
   margin: -1px 0 0 -1px;
   padding: 40px 60px 24px;
+
+  @include max-xl {
+    padding: 32px 36px 32px;
+  }
 }
 
 .experts-item__image {

@@ -1,3 +1,5 @@
+@use 'responsive' as *;
+
 .trust-section {
   padding-top: 80px;
   padding-bottom: 30px;
@@ -25,17 +27,28 @@
   color: #252e36;
   font-weight: 700;
   margin-bottom: 32px;
+
   span {
     color: #7c9cb6;
+  }
+
+  @include max-xl {
+    font-size: 36px;
+    margin-bottom: 24px;
   }
 }
 
 .trust-section__desc {
   font-size: 24px;
-  line-height: 32px;
+  line-height: 1.333;
   color: #3db6ff;
   font-weight: bold;
   margin-bottom: 84px;
+
+  @include max-xl {
+    font-size: 20px;
+    margin-bottom: 64px;
+  }
 }
 
 .trust-section__grid {
@@ -45,8 +58,7 @@
   row-gap: 84px;
 }
 
-.trust-card {
-}
+.trust-card {}
 
 .trust-card__check {
   width: 32px;
@@ -77,8 +89,7 @@
   line-height: 1.5;
 }
 
-.trust-contract {
-}
+.trust-contract {}
 
 .trust-contract__desc {
   font-size: 16px;

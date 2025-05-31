@@ -9,13 +9,19 @@
 .extra-header__container {
   display: flex;
   justify-content: space-between;
-  height: 30px;
+  min-height: 30px;
   align-items: center;
 }
 
 .extra-header__container::after {
   content: '';
   width: 120px;
+
+
+
+  @include max-xl {
+    display: none;
+  }
 }
 
 .extra-header__city {
@@ -40,6 +46,13 @@
   mask-position: center;
   mask-size: contain;
   mask-image: var(--icon-hands);
+
+  @include max-xl {
+    width: 28px;
+    height: 28px;
+    margin-top: -4px;
+    margin-bottom: -4px;
+  }
 }
 
 .extra-header__offer__message {
@@ -50,6 +63,10 @@
   font-weight: 700;
   margin-left: 8px;
   margin-right: 24px;
+
+  @include max-xl {
+    font-size: 12px;
+  }
 }
 
 .extra-header__offer__button {
@@ -63,6 +80,7 @@
   background-color: #d4f1ff;
   text-decoration: none;
   display: inline-flex;
+  white-space: nowrap;
 }
 
 .extra-header__offer__button:hover {
@@ -206,6 +224,10 @@
   @include max-2xl {
     zoom: 0.9;
   }
+
+  @include max-xl {
+    zoom: 0.8;
+  }
 }
 
 .header__logo::before {
@@ -257,6 +279,7 @@
   border-width: 1px;
   border-color: #3db6ff;
   border-radius: 28px;
+  flex-shrink: 0;
   background-color: #3db6ff;
   padding: 12px 16px;
   display: flex;
@@ -264,6 +287,11 @@
 
   @include max-2xl {
     zoom: 0.9;
+  }
+
+  @include max-xl {
+    zoom: initial;
+    padding: 0;
   }
 }
 
@@ -282,6 +310,12 @@
   justify-content: center;
   margin-left: -4px;
   margin-right: 4px;
+
+  @include max-xl {
+    width: 42px;
+    height: 42px;
+    margin: 0;
+  }
 }
 
 .header__calc__icon::before {
@@ -307,6 +341,10 @@
   @include max-3xl {
     font-size: 12px;
   }
+
+  @include max-xl {
+    display: none;
+  }
 }
 
 .header__phone {
@@ -321,6 +359,10 @@
   @include max-2xl {
     margin-left: 0;
     zoom: 0.9;
+  }
+
+  @include max-xl {
+    zoom: 0.8;
   }
 }
 
@@ -482,7 +524,10 @@
 
   @include max-2xl {
     font-size: 16px;
-    // padding: 0 10px;
+  }
+
+  @include max-xl {
+    font-size: 14px;
   }
 }
 
@@ -519,7 +564,11 @@
 
   @include max-2xl {
     font-size: 18px;
-    // gap: 8px;
+  }
+
+  @include max-xl {
+    font-size: 16px;
+    gap: 8px;
   }
 }
 

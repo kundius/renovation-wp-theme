@@ -1,20 +1,25 @@
+@use 'responsive' as *;
+
 .reviews-section {
   padding-top: 64px;
   padding-bottom: 44px;
-  background-image: linear-gradient(
-    30deg,
-    rgba(230, 246, 255, 0.9999999999999999) 0%,
-    rgba(230, 246, 255, 0) 100%
-  );
+  background-image: linear-gradient(30deg,
+      rgba(230, 246, 255, 0.9999999999999999) 0%,
+      rgba(230, 246, 255, 0) 100%);
 }
 
 .reviews-section__title {
   margin-bottom: 60px;
   font-size: 42px;
-  line-height: 48px;
+  line-height: 1.15;
   color: #546a7c;
   font-weight: bold;
   text-align: center;
+
+  @include max-xl {
+    margin-bottom: 48px;
+    font-size: 36px;
+  }
 }
 
 .reviews-section__grid {

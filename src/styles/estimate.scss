@@ -1,3 +1,5 @@
+@use 'responsive' as *;
+
 .estimate-section {
   background: #f3f8fc;
 }
@@ -14,6 +16,10 @@
   padding-top: 44px;
   padding-right: 60px;
   padding-bottom: 60px;
+
+  @include max-xl {
+    padding: 32px 36px 36px 36px;
+  }
 }
 
 .estimate-section__form {
@@ -31,6 +37,11 @@
   line-height: 1;
   color: #ffffff;
   font-weight: 700;
+
+  @include max-xl {
+    margin-bottom: 56px;
+    font-size: 32px;
+  }
 }
 
 .estimate-section__expert {
@@ -39,6 +50,10 @@
 
 .estimate-section__example-wrap {
   margin-top: 60px;
+
+  @include max-xl {
+    margin-top: 48px;
+  }
 }
 
 .estimate-section__example-link {
@@ -51,9 +66,11 @@
   padding: 4px 12px;
   border-radius: 16px;
   margin: 0 -12px;
+
   span {
     border-bottom: 1px dashed currentColor;
   }
+
   &::after {
     content: '';
     width: 12px;
@@ -65,6 +82,7 @@
     mask-size: contain;
     mask-image: var(--icon-estimate);
   }
+
   &:hover {
     background: #7d8798;
   }
@@ -75,8 +93,7 @@
   max-width: 100%;
 }
 
-.estimate-form__phone {
-}
+.estimate-form__phone {}
 
 .estimate-form__rules {
   margin-top: 18px;
@@ -85,9 +102,11 @@
   letter-spacing: 0.025em;
   color: rgba(0, 0, 0, 0.7);
   text-align: center;
+
   a {
     color: inherit;
     text-decoration: underline;
+
     &:hover {
       color: #000000;
     }
@@ -96,7 +115,8 @@
 
 .estimate-form__submit {
   margin-top: 28px;
-  > .primary-button {
+
+  >.primary-button {
     width: 100%;
   }
 }
@@ -113,11 +133,13 @@
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+
   &::before {
     content: '';
     display: block;
     padding-bottom: 100%;
   }
+
   img {
     position: absolute;
     left: 0;

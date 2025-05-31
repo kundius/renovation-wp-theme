@@ -1,3 +1,5 @@
+@use 'responsive' as *;
+
 .footer {
   background: #dae5ef;
   padding-top: 34px;
@@ -19,8 +21,7 @@
   justify-content: space-around;
 }
 
-.footer-contacts {
-}
+.footer-contacts {}
 
 .footer-contacts__title {
   font-size: 16px;
@@ -53,8 +54,7 @@
   line-height: 1.2;
 }
 
-.footer-menu {
-}
+.footer-menu {}
 
 .footer-menu__title {
   font-size: 16px;
@@ -71,9 +71,11 @@
   line-height: 1.2;
   color: #000000;
   text-align: center;
-  li + li {
+
+  li+li {
     margin-top: 28px;
   }
+
   a {
     text-decoration: underline;
     color: inherit;
@@ -103,9 +105,11 @@
   font-size: 12px;
   line-height: 1.2;
   color: #222222;
+
   a {
     text-decoration: underline;
     color: inherit;
+
     &:hover {
       color: #000000;
     }

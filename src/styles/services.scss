@@ -1,3 +1,5 @@
+@use 'responsive' as *;
+
 .services-section {
   padding-top: 96px;
   padding-bottom: 80px;
@@ -13,12 +15,16 @@
   color: #7c9cb6;
   font-weight: bold;
   font-size: 42px;
-  line-height: 48px;
+  line-height: 1.15;
+
+  @include max-xl {
+    font-size: 36px;
+  }
 }
 
 .services-section__desc {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 1.333; // 22px
   padding-top: 6px;
 }
 
@@ -35,6 +41,11 @@
   flex-direction: column;
   align-items: center;
   z-index: 1;
+
+  @include max-xl {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
 }
 
 .services-card::before {
@@ -71,6 +82,12 @@
   text-shadow: -0.914px 0.407px 1px rgba(0, 0, 0, 0.25);
   letter-spacing: 0.05em;
   font-weight: 900;
+
+  @include max-xl {
+    font-size: 16px;
+    min-height: 44px;
+    min-width: 260px;
+  }
 }
 
 .services-card:nth-child(3n-2) .services-card__sheet {
@@ -90,15 +107,24 @@
   font-size: 24px;
   color: rgb(38, 54, 67);
   font-weight: bold;
-  line-height: 1.083;
+  line-height: 1;
   text-align: center;
   margin-bottom: 32px;
+
+  @include max-xl {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
 }
 
 .services-card__desc {
   text-align: center;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 1.2;
+
+  @include max-xl {
+    font-size: 16px;
+  }
 }
 
 .services-card__list {
@@ -113,8 +139,7 @@
   line-height: 1.778;
   flex-grow: 1;
 
-  ul {
-  }
+  ul {}
 
   ul li {
     position: relative;
@@ -130,6 +155,22 @@
     position: absolute;
     left: 14px;
     top: 14px;
+  }
+
+  @include max-xl {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    padding: 16px 12px;
+    font-size: 16px;
+
+    ul li {
+      padding-left: 24px;
+    }
+
+    ul li::before {
+      left: 8px;
+      top: 12px;
+    }
   }
 }
 

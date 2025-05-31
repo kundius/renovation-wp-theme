@@ -1,3 +1,5 @@
+@use 'responsive' as *;
+
 .hero {
   position: relative;
   z-index: 1;
@@ -5,7 +7,7 @@
   padding-bottom: 96px;
 }
 
-.header + * + .hero {
+.header+*+.hero {
   margin-top: -96px;
   padding-top: 132px;
 }
@@ -25,6 +27,10 @@
 .hero__layout {
   display: flex;
   gap: 120px;
+
+  @include max-xl {
+    gap: 64px;
+  }
 }
 
 .hero__layout-content {
@@ -43,6 +49,10 @@
   color: rgb(0, 39, 63);
   font-weight: bold;
   line-height: 1;
+
+  @include max-xl {
+    font-size: 56px;
+  }
 }
 
 .hero__desc {
@@ -50,6 +60,10 @@
   color: rgb(0, 39, 63);
   line-height: 1.333;
   margin-top: 28px;
+
+  @include max-xl {
+    font-size: 22px;
+  }
 }
 
 .hero__list {
@@ -57,7 +71,7 @@
   width: 356px;
 }
 
-.hero__list li + li {
+.hero__list li+li {
   margin-top: 10px;
 }
 
@@ -105,7 +119,7 @@
   margin-top: 14px;
 }
 
-.hero__button > * {
+.hero__button>* {
   width: 348px;
 }
 
@@ -113,13 +127,17 @@
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 27.26px 1.74px rgba(0, 0, 0, 0.25);
   padding: 48px 64px 56px;
+
+  @include max-xl {
+    padding: 24px 36px;
+  }
 }
 
 .hero-form__title {
   font-weight: 900;
   color: #00aaff;
   font-size: 24px;
-  line-height: 30px;
+  line-height: 1.25;
   letter-spacing: -0.01em;
   margin-bottom: 34px;
 }
@@ -215,6 +233,6 @@
   justify-content: center;
 }
 
-.hero-form__submit > * {
+.hero-form__submit>* {
   width: 300px;
 }

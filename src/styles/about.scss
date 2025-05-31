@@ -1,3 +1,5 @@
+@use 'responsive' as *;
+
 .about {
   padding-top: 96px;
   padding-bottom: 68px;
@@ -7,24 +9,30 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 68px;
+
+  @include max-xl {
+    gap: 48px;
+  }
 }
 
-.about__layout-content {
-}
+.about__layout-content {}
 
 .about__layout-services {
   display: flex;
   padding-top: 8px;
 }
 
-.about__headline {
-}
+.about__headline {}
 
 .about__headline-primary {
   font-size: 62px;
   color: #36495e;
   font-weight: bold;
   line-height: 1;
+
+  @include max-xl {
+    font-size: 52px;
+  }
 }
 
 .about__headline-secondary {
@@ -34,6 +42,10 @@
   line-height: 1;
   font-weight: 500;
   margin-top: 12px;
+
+  @include max-xl {
+    font-size: 20px;
+  }
 }
 
 .about__cotent {
@@ -42,13 +54,19 @@
   line-height: 1.333;
   margin-top: 74px;
   margin-bottom: 44px;
+
+  @include max-xl {
+    margin-top: 56px;
+    margin-bottom: 32px;
+    font-size: 16px;
+  }
 }
 
 .about__cotent p {
   margin: 0;
 }
 
-.about__cotent p + p {
+.about__cotent p+p {
   margin-top: 24px;
 }
 
@@ -105,6 +123,10 @@
   text-align: center;
   font-weight: bold;
   line-height: 1.2;
+
+  @include max-xl {
+    font-size: 18px;
+  }
 }
 
 a.about-service__title::after {
