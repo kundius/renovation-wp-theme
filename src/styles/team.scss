@@ -5,6 +5,10 @@
   background-size: cover;
   padding-top: 96px;
   padding-bottom: 48px;
+
+  @include max-lg {
+    padding-top: 64px;
+  }
 }
 
 .team-section__title {
@@ -21,6 +25,11 @@
 
   @include max-xl {
     font-size: 36px;
+    margin-bottom: 56px;
+  }
+
+  @include max-lg {
+    font-size: 32px;
     margin-bottom: 48px;
   }
 }
@@ -29,6 +38,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 16px;
+
+  @include max-lg {
+    gap: 12px;
+  }
 }
 
 .team-card {}
@@ -40,6 +53,11 @@
   overflow: hidden;
   display: flex;
   margin-bottom: 16px;
+
+  @include max-lg {
+    border-radius: 16px;
+    margin-bottom: 12px;
+  }
 }
 
 .team-card__body {
@@ -51,6 +69,10 @@
   color: #40b7ff;
   font-size: 20px;
   line-height: 1.2;
+
+  @include max-lg {
+    font-size: 16px;
+  }
 }
 
 .team-card__job {
@@ -58,6 +80,10 @@
   line-height: 1.2;
   color: #151618;
   margin-top: 6px;
+
+  @include max-lg {
+    font-size: 12px;
+  }
 }
 
 .team-card__experience {
@@ -72,4 +98,9 @@
   display: inline-flex;
   align-items: center;
   margin-top: 8px;
+
+  @include max-lg {
+    padding: 0 8px;
+    min-height: 24px;
+  }
 }

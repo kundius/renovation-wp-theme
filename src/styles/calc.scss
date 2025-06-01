@@ -4,23 +4,37 @@
   padding-top: 96px;
   padding-bottom: 96px;
   background: #ffffff;
+
+  @include max-lg {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 
 .calc-section--has-title {
   padding-top: 48px;
+
+  @include max-lg {
+    padding-top: 36px;
+  }
 }
 
 .calc-section__title {
   margin-bottom: 20px;
   padding-left: 40px;
   font-size: 24px;
-  line-height: 28px;
+  line-height: 1.15;
   font-weight: 900;
   color: #5a6879;
 
   span {
     color: #5abeff;
     font-family: 'Gilroy';
+  }
+
+  @include max-lg {
+    font-size: 22px;
+    padding-left: 24px;
   }
 }
 
@@ -35,6 +49,16 @@
 
   @include max-xl {
     gap: 48px;
+  }
+
+  @include max-lg {
+    gap: 0;
+    border-radius: 14px;
+  }
+
+  @include max-md {
+    flex-direction: column;
+    gap: 0;
   }
 }
 
@@ -110,7 +134,11 @@
   padding-bottom: 60px;
 
   @include max-xl {
-    padding: 32px;
+    padding: 48px 32px;
+  }
+
+  @include max-lg {
+    padding: 24px 24px;
   }
 }
 
@@ -122,7 +150,13 @@
   flex-shrink: 0;
 
   @include max-xl {
-    padding: 32px;
+    padding: 48px 32px;
+  }
+
+  @include max-lg {
+    width: 50%;
+    padding: 36px 24px;
+    border-radius: 0 14px 14px 0;
   }
 }
 
@@ -142,6 +176,10 @@
   color: #222;
   font-weight: bold;
   text-transform: uppercase;
+
+  @include max-lg {
+    font-size: 14px;
+  }
 }
 
 .calc__repair-desc {
@@ -160,8 +198,16 @@
   white-space: nowrap;
   font-weight: bold;
   font-size: 26px;
-  line-height: 20px;
+  line-height: 1;
   letter-spacing: 0.025em;
+
+  @include max-lg {
+    font-size: 20px;
+  }
+
+  @include max-md {
+    font-size: 20px;
+  }
 }
 
 .calc__materials {
@@ -179,6 +225,10 @@
   color: #222;
   font-weight: bold;
   text-transform: uppercase;
+
+  @include max-lg {
+    font-size: 14px;
+  }
 }
 
 .calc__materials-price {
@@ -189,6 +239,14 @@
   font-size: 18px;
   line-height: 1;
   letter-spacing: 0.025em;
+
+  @include max-lg {
+    font-size: 15px;
+  }
+
+  @include max-md {
+    font-size: 15px;
+  }
 }
 
 .calc__line {
@@ -206,9 +264,21 @@
   line-height: 1.2;
   color: #222;
   margin: 36px 0;
+
+  @include max-lg {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-.calc__phone {}
+.calc__phone {
+  @include max-lg {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .calc__rules {
   margin-top: 6px;
@@ -225,6 +295,10 @@
       color: rgba(0, 0, 0, 1);
     }
   }
+
+  @include max-lg {
+    font-size: 10px;
+  }
 }
 
 .calc__submit {
@@ -236,14 +310,30 @@
     width: 300px;
     max-width: 100%;
   }
+
+  @include max-lg {
+    margin-top: 32px;
+  }
+}
+
+.calc__field {
+  font-size: 16px;
 }
 
 .calc__field+.calc__field {
   margin-top: 36px;
+
+  @include max-lg {
+    margin-top: 24px;
+  }
 }
 
 .calc__field+.calc__field--area {
   margin-top: 48px;
+
+  @include max-lg {
+    margin-top: 24px;
+  }
 }
 
 .calc__field-label {
@@ -258,13 +348,24 @@
     font-weight: normal;
     font-size: 14px;
   }
+
+  @include max-lg {
+    margin-bottom: 8px;
+  }
 }
+
+.calc__field-control {}
 
 .calc__field-house-type {
   display: flex;
   column-gap: 24px;
   row-gap: 6px;
   flex-wrap: wrap;
+
+  @include max-lg {
+    row-gap: 2px;
+    column-gap: 16px;
+  }
 }
 
 .calc__field-room-count {
@@ -272,10 +373,19 @@
   column-gap: 24px;
   row-gap: 6px;
   flex-wrap: wrap;
+
+  @include max-lg {
+    row-gap: 2px;
+    column-gap: 16px;
+  }
 }
 
 .calc__field-repair-type {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
+
+  @include max-lg {
+    gap: 4px;
+  }
 }

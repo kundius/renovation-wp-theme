@@ -3,22 +3,34 @@
 .portfolio {
   padding-top: 96px;
   padding-bottom: 132px;
+
+  @include max-lg {
+    padding-top: 64px;
+    padding-bottom: 96px;
+  }
 }
 
 .portfolio__headline {
   margin-bottom: 68px;
+
+  @include max-lg {
+    margin-bottom: 48px;
+  }
 }
 
 .portfolio__title {
   text-align: center;
   font-size: 42px;
-  line-height: 48px;
+  line-height: 1.15;
   font-weight: 700;
   color: #7c9cb6;
 
   @include max-xl {
     font-size: 36px;
-    line-height: 40px;
+  }
+
+  @include max-lg {
+    font-size: 32px;
   }
 }
 
@@ -31,6 +43,11 @@
   @include max-xl {
     font-size: 20px;
     margin-top: 24px;
+  }
+
+  @include max-lg {
+    font-size: 18px;
+    margin-top: 20px;
   }
 }
 
@@ -48,6 +65,12 @@
     --slide-spacing: 24px;
     padding-left: 80px;
     padding-right: 80px;
+  }
+
+  @include max-lg {
+    --slide-spacing: 16px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -106,6 +129,10 @@
 
 .portfolio-embla__nav--prev {
   left: 12px;
+
+  @include max-lg {
+    left: -12px;
+  }
 }
 
 .portfolio-embla__nav--prev::before {
@@ -114,6 +141,10 @@
 
 .portfolio-embla__nav--next {
   right: 12px;
+
+  @include max-lg {
+    right: -12px;
+  }
 }
 
 .portfolio-embla__nav--next::before {
@@ -132,6 +163,10 @@
 
   @include max-xl {
     padding: 24px;
+  }
+
+  @include max-lg {
+    border-radius: 12px;
   }
 }
 
@@ -193,6 +228,10 @@
     img {
       display: block;
     }
+  }
+
+  @include max-lg {
+    border-radius: 12px 12px 0 0;
   }
 }
 

@@ -3,6 +3,11 @@
 .about {
   padding-top: 96px;
   padding-bottom: 68px;
+
+  @include max-lg {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 
 .about__layout {
@@ -12,6 +17,10 @@
 
   @include max-xl {
     gap: 48px;
+  }
+
+  @include max-lg {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -60,6 +69,11 @@
     margin-bottom: 32px;
     font-size: 16px;
   }
+
+  @include max-lg {
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
 }
 
 .about__cotent p {
@@ -75,6 +89,12 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 24px;
   row-gap: 32px;
+
+  @include max-lg {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 16px;
+  }
 }
 
 .about-service {
@@ -87,6 +107,11 @@
   padding: 32px;
   position: relative;
   transition: 300ms;
+
+  @include max-lg {
+    border-radius: 12px;
+    padding: 24px;
+  }
 }
 
 .about-service:has(a):hover {
@@ -104,6 +129,12 @@
   background-image: var(--image-url);
   background-position: 50% 50%;
   background-repeat: no-repeat;
+
+  @include max-lg {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 12px;
+  }
 }
 
 .about-service:has(a):hover .about-service__icon {
@@ -126,6 +157,10 @@
 
   @include max-xl {
     font-size: 18px;
+  }
+
+  @include max-lg {
+    font-size: 16px;
   }
 }
 

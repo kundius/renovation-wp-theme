@@ -7,6 +7,10 @@
   background-size: auto 100%;
   padding-top: 48px;
   padding-bottom: 20px;
+
+  @include max-lg {
+    background-position: 53% 50%;
+  }
 }
 
 .consultation-section__layout {
@@ -15,6 +19,10 @@
 
   @include max-xl {
     gap: 64px;
+  }
+
+  @include max-lg {
+    gap: 32px;
   }
 }
 
@@ -25,6 +33,10 @@
 .consultation-section__layout-form {
   width: 40%;
   flex-shrink: 0;
+
+  @include max-lg {
+    width: 50%;
+  }
 }
 
 .consultation-headline {
@@ -46,6 +58,11 @@
     font-size: 36px;
     margin-bottom: 24px;
   }
+
+  @include max-lg {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
 }
 
 .consultation-headline__desc {
@@ -60,6 +77,11 @@
     font-size: 20px;
     padding-bottom: 12px;
   }
+
+  @include max-lg {
+    font-size: 18px;
+    padding-bottom: 8px;
+  }
 }
 
 .consultation-form {
@@ -70,16 +92,25 @@
   @include max-xl {
     padding: 24px 32px;
   }
+
+  @include max-lg {
+    box-shadow: 0px 0px 17.86px 1.14px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .consultation-form__title {
   font-size: 22px;
-  line-height: 30px;
+  line-height: 1.333;
   letter-spacing: -0.01em;
   font-weight: 900;
   color: #00aaff;
   margin-bottom: 20px;
   text-transform: uppercase;
+
+  @include max-lg {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
 }
 
 .consultation-form__title::after {
@@ -89,6 +120,10 @@
   display: block;
   margin-top: 16px;
   background-color: rgb(197, 232, 226);
+
+  @include max-lg {
+    margin-top: 12px;
+  }
 }
 
 .consultation-form__list {

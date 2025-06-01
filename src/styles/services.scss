@@ -3,12 +3,23 @@
 .services-section {
   padding-top: 96px;
   padding-bottom: 80px;
+
+  @include max-lg {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 
 .services-section__headline {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 112px;
+
+  @include max-lg {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: calc(32px + 44px);
+  }
 }
 
 .services-section__title {
@@ -26,12 +37,35 @@
   font-size: 16px;
   line-height: 1.333; // 22px
   padding-top: 6px;
+
+  @include max-lg {
+    padding-top: 0;
+  }
 }
 
 .services-section__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  --gap-x: 20px;
+  --gap-y: 20px;
+  --columns: 3;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: calc(var(--gap-y) * -1);
+  margin-left: calc(var(--gap-x) * -1);
+
+  @include max-lg {
+    --gap-x: 16px;
+    --gap-y: 68px;
+    --columns: 2;
+  }
+}
+
+.services-section__grid-cell {
+  display: flex;
+  width: calc(100% / var(--columns));
+  padding-top: var(--gap-y);
+  padding-left: var(--gap-x);
 }
 
 .services-card {
@@ -59,6 +93,10 @@
   box-shadow: 0 0 6px rgba(0, 50, 92, 0.2);
   background-color: #ffffff;
   z-index: -1;
+
+  @include max-lg {
+    border-radius: 14px;
+  }
 }
 
 .services-card__sheet {
@@ -72,7 +110,7 @@
   border-radius: 24px 24px 0 0;
   font-size: 18px;
   line-height: 1;
-  padding: 0.25em 1.5em;
+  padding: 0.25em 0.5em;
   color: #fff;
   min-width: 280px;
   display: flex;
@@ -84,9 +122,10 @@
   font-weight: 900;
 
   @include max-xl {
+    border-radius: 14px 14px 0 0;
     font-size: 16px;
     min-height: 44px;
-    min-width: 260px;
+    min-width: 224px;
   }
 }
 
@@ -112,7 +151,7 @@
   margin-bottom: 32px;
 
   @include max-xl {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 24px;
   }
 }

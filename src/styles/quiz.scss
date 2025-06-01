@@ -4,6 +4,11 @@
   padding-top: 96px;
   padding-bottom: 96px;
   background: #f6f7f9;
+
+  @include max-lg {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 
 .quiz__success {
@@ -86,6 +91,7 @@
   font-size: 24px;
   line-height: 1;
   margin-bottom: 28px;
+  text-wrap: balance;
 
   span {
     color: #5abeff;
@@ -172,6 +178,10 @@
     gap: 12px;
     grid-template-columns: 9fr 12fr 9fr;
   }
+
+  @include max-lg {
+    grid-template-columns: 2fr 3fr;
+  }
 }
 
 .quiz-step__image {
@@ -207,6 +217,10 @@
 
 .quiz-step__bonus {
   display: flex;
+
+  @include max-lg {
+    display: none;
+  }
 }
 
 .quiz-bonus {
@@ -378,6 +392,11 @@
 
   @include max-xl {
     padding-right: calc(25% + 28px);
+  }
+
+  @include max-lg {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

@@ -9,7 +9,12 @@
 
 .header+*+.hero {
   margin-top: -96px;
-  padding-top: 132px;
+  padding-top: calc(96px + 36px);
+
+  @include max-lg {
+    padding-top: calc(96px + 64px);
+    padding-bottom: 64px;
+  }
 }
 
 .hero__bg {
@@ -37,11 +42,25 @@
   flex-grow: 1;
   padding-top: 42px;
   padding-bottom: 42px;
+
+  @include max-xl {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  @include max-lg {
+    max-width: 540px;
+    padding: 0;
+  }
 }
 
 .hero__layout-form {
   width: 40%;
   flex-shrink: 0;
+
+  @include max-lg {
+    display: none;
+  }
 }
 
 .hero__title {
@@ -140,6 +159,11 @@
   line-height: 1.25;
   letter-spacing: -0.01em;
   margin-bottom: 34px;
+
+  @include max-xl {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
 }
 
 .hero-form__title::after {
@@ -153,6 +177,11 @@
 
 .hero-form__type {
   margin: 28px 6px;
+
+  @include max-xl {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 .hero-form__type-label {
@@ -172,6 +201,11 @@
 
 .hero-form__area {
   margin: 28px 6px;
+
+  @include max-xl {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 .hero-form__area-label {
@@ -189,6 +223,11 @@
   align-items: flex-end;
   gap: 12px;
   margin: 28px 6px;
+
+  @include max-xl {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 .hero-form__price-label {
@@ -209,6 +248,10 @@
 
 .hero-form__phone {
   margin: 28px 6px 8px;
+
+  @include max-xl {
+    margin-top: 24px;
+  }
 }
 
 .hero-form__rules {

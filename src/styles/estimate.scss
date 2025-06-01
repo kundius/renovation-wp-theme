@@ -20,6 +20,10 @@
   @include max-xl {
     padding: 32px 36px 36px 36px;
   }
+
+  @include max-lg {
+    padding: 32px 24px 12px 24px;
+  }
 }
 
 .estimate-section__form {
@@ -42,10 +46,19 @@
     margin-bottom: 56px;
     font-size: 32px;
   }
+
+  @include max-lg {
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
 }
 
 .estimate-section__expert {
   padding: 0 20px;
+
+  @include max-lg {
+    padding: 0;
+  }
 }
 
 .estimate-section__example-wrap {
@@ -53,6 +66,10 @@
 
   @include max-xl {
     margin-top: 48px;
+  }
+
+  @include max-lg {
+    margin-top: 24px;
   }
 }
 
@@ -125,6 +142,10 @@
   display: flex;
   gap: 32px;
   align-items: center;
+
+  @include max-lg {
+    gap: 16px;
+  }
 }
 
 .estimate-expert__image {
@@ -162,6 +183,11 @@
   margin-bottom: 10px;
   font-weight: bold;
   color: #fff;
+
+  @include max-lg {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
 }
 
 .estimate-expert__experience {
@@ -173,6 +199,13 @@
   line-height: 1;
   color: #000000;
   font-weight: 700;
+
+  @include max-lg {
+    padding: 2px 4px;
+    font-size: 10px;
+    min-height: 16px;
+    border-radius: 6px;
+  }
 }
 
 .estimate-expert__desc {
@@ -180,4 +213,10 @@
   line-height: 20px;
   color: #fcfdff;
   margin-top: 24px;
+
+  @include max-lg {
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 16px;
+  }
 }

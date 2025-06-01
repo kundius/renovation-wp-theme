@@ -27,6 +27,11 @@
   font-weight: 700;
   text-align: center;
   padding: 4px 48px;
+
+  @include max-lg {
+    padding: 4px 24px;
+    font-size: 24px;
+  }
 }
 
 .measurement-section__order {
@@ -38,5 +43,9 @@
     width: 348px;
     font-size: 22px;
     text-transform: uppercase;
+  }
+
+  @include max-lg {
+    margin-top: 24px;
   }
 }

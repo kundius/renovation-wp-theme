@@ -3,6 +3,10 @@
 .hiw-section {
   padding-top: 96px;
   padding-bottom: 48px;
+
+  @include max-lg {
+    padding-top: 64px;
+  }
 }
 
 .hiw-section__title {
@@ -18,20 +22,35 @@
   }
 
   @include max-xl {
-    margin-bottom: 48px;
+    margin-bottom: 56px;
     font-size: 36px;
+  }
+
+  @include max-lg {
+    margin-bottom: 48px;
+    font-size: 32px;
   }
 }
 
 .hiw-section__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hiw-section__grid-cell {
+  width: calc(100% / 3);
+  display: flex;
+
+  @include max-lg {
+    width: calc(100% / 2);
+  }
 }
 
 .hiw-card {
   border: 1px solid #eff2f9;
-  margin: 0 0 -1px -1px;
   padding: 44px 20px 96px;
+  width: 100%;
 }
 
 .hiw-card__headline {

@@ -700,7 +700,7 @@
                         Дизайнерский ремонт в 1-комнатной квартире
                       </a>
                     </div>
-                    <div class="flex items-start justify-between mt-4 gap-2">
+                    <div class="flex items-start justify-between mt-4 gap-2 max-lg:flex-col">
                       <div class="flex flex-wrap gap-1 items-start">
                         <div class="portfolio-item__detail">
                           Сроки ремонта : 25 дней
@@ -764,7 +764,7 @@
                         Дизайнерский ремонт в 1-комнатной квартире
                       </a>
                     </div>
-                    <div class="flex items-start justify-between mt-4 gap-2">
+                    <div class="flex items-start justify-between mt-4 gap-2 max-lg:flex-col">
                       <div class="flex flex-wrap gap-1 items-start">
                         <div class="portfolio-item__detail">
                           Сроки ремонта : 25 дней
@@ -826,7 +826,7 @@
                         Дизайнерский ремонт в 1-комнатной квартире
                       </a>
                     </div>
-                    <div class="flex items-start justify-between mt-4 gap-2">
+                    <div class="flex items-start justify-between mt-4 gap-2 max-lg:flex-col">
                       <div class="flex flex-wrap gap-1 items-start">
                         <div class="portfolio-item__detail">
                           Сроки ремонта : 25 дней
@@ -888,7 +888,7 @@
                         Дизайнерский ремонт в 1-комнатной квартире
                       </a>
                     </div>
-                    <div class="flex items-start justify-between mt-4 gap-2">
+                    <div class="flex items-start justify-between mt-4 gap-2 max-lg:flex-col">
                       <div class="flex flex-wrap gap-1 items-start">
                         <div class="portfolio-item__detail">
                           Сроки ремонта : 25 дней
@@ -981,76 +981,82 @@
           </div>
         </div>
         <div class="services-section__grid">
-          <div class="services-card">
-            <div class="services-card__sheet">Бонус - предложение</div>
-            <div class="services-card__title">Косметический ремонт</div>
-            <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-            <div class="services-card__list">
-              <div class="services-card__list-inner">
-                <ul>
+          <div class="services-section__grid-cell">
+            <div class="services-card">
+              <div class="services-card__sheet">Бонус - предложение</div>
+              <div class="services-card__title">Косметический ремонт</div>
+              <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+              <div class="services-card__list">
+                <div class="services-card__list-inner">
+                  <ul>
+                    <li>Вид работ 1</li>
+                    <li>Вид выполняемых работ 2</li>
+                    <li>Вид выполняемых работ 3</li>
+                    <li>Вид выполняемых работ 4</li>
+                    <li>Вид выполняемых работ 5</li>
+                    <li>Вид выполняемых работ 6</li>
+                    <li>Вид работ 1</li>
+                    <li>Вид выполняемых работ 2</li>
+                    <li>Вид выполняемых работ 3</li>
+                    <li>Вид выполняемых работ 4</li>
+                    <li>Вид выполняемых работ 5</li>
+                    <li>Вид выполняемых работ 6</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="services-card__time">От 20 дней</div>
+              <div class="services-card__price">от 4 500 ₽/м2</div>
+              <div class="services-card__order">
+                <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
+              </div>
+            </div>
+          </div>
+          <div class="services-section__grid-cell">
+            <div class="services-card">
+              <div class="services-card__sheet">Бонус - предложение</div>
+              <div class="services-card__title">Капитальный ремонт</div>
+              <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+              <div class="services-card__list">
+                <div class="services-card__list-inner">
+                  <ul>
                   <li>Вид работ 1</li>
                   <li>Вид выполняемых работ 2</li>
                   <li>Вид выполняемых работ 3</li>
                   <li>Вид выполняемых работ 4</li>
                   <li>Вид выполняемых работ 5</li>
                   <li>Вид выполняемых работ 6</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="services-card__time">От 20 дней</div>
+              <div class="services-card__price">от 4 500 ₽/м2</div>
+              <div class="services-card__order">
+                <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
+              </div>
+            </div>
+          </div>
+          <div class="services-section__grid-cell">
+            <div class="services-card">
+              <div class="services-card__sheet">Бонус - предложение</div>
+              <div class="services-card__title">Дизайнерский ремонт</div>
+              <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+              <div class="services-card__list">
+                <div class="services-card__list-inner">
+                  <ul>
                   <li>Вид работ 1</li>
                   <li>Вид выполняемых работ 2</li>
                   <li>Вид выполняемых работ 3</li>
                   <li>Вид выполняемых работ 4</li>
                   <li>Вид выполняемых работ 5</li>
                   <li>Вид выполняемых работ 6</li>
-                </ul>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="services-card__time">От 20 дней</div>
-            <div class="services-card__price">от 4 500 ₽/м2</div>
-            <div class="services-card__order">
-              <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
-            </div>
-          </div>
-          <div class="services-card">
-            <div class="services-card__sheet">Бонус - предложение</div>
-            <div class="services-card__title">Капитальный ремонт</div>
-            <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-            <div class="services-card__list">
-              <div class="services-card__list-inner">
-                <ul>
-                <li>Вид работ 1</li>
-                <li>Вид выполняемых работ 2</li>
-                <li>Вид выполняемых работ 3</li>
-                <li>Вид выполняемых работ 4</li>
-                <li>Вид выполняемых работ 5</li>
-                <li>Вид выполняемых работ 6</li>
-                </ul>
+              <div class="services-card__time">От 20 дней</div>
+              <div class="services-card__price">от 4 500 ₽/м2</div>
+              <div class="services-card__order">
+                <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
               </div>
-            </div>
-            <div class="services-card__time">От 20 дней</div>
-            <div class="services-card__price">от 4 500 ₽/м2</div>
-            <div class="services-card__order">
-              <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
-            </div>
-          </div>
-          <div class="services-card">
-            <div class="services-card__sheet">Бонус - предложение</div>
-            <div class="services-card__title">Дизайнерский ремонт</div>
-            <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-            <div class="services-card__list">
-              <div class="services-card__list-inner">
-                <ul>
-                <li>Вид работ 1</li>
-                <li>Вид выполняемых работ 2</li>
-                <li>Вид выполняемых работ 3</li>
-                <li>Вид выполняемых работ 4</li>
-                <li>Вид выполняемых работ 5</li>
-                <li>Вид выполняемых работ 6</li>
-                </ul>
-              </div>
-            </div>
-            <div class="services-card__time">От 20 дней</div>
-            <div class="services-card__price">от 4 500 ₽/м2</div>
-            <div class="services-card__order">
-              <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
             </div>
           </div>
         </div>
@@ -1191,7 +1197,7 @@
               <div class="calc__field-label">
                 1. Тип Вашего дома
               </div>
-              <div class="calc__field-house-type">
+              <div class="calc__field-control calc__field-house-type">
                 <label class="radio-field">
                   <input type="radio" name="house-type" data-calc-repair-price="500" data-calc-materials-price="220" value="Новостройка" checked>
                   <span>Новостройка</span>
@@ -1211,7 +1217,7 @@
               <div class="calc__field-label">
                 2. Количество комнат
               </div>
-              <div class="calc__field-room-count">
+              <div class="calc__field-control calc__field-room-count">
                 <label class="radio-field">
                   <input type="radio" name="room-count" data-calc-repair-price="150%" data-calc-materials-price="150%" value="Студия" checked>
                   <span>Студия</span>
@@ -1243,7 +1249,7 @@
               <div class="calc__field-label">
                 3. Тип ремонта
               </div>
-              <div class="calc__field-repair-type">
+              <div class="calc__field-control calc__field-repair-type">
                 <label class="radio-button">
                   <input type="radio" name="repair-type" value="КОСМЕТИЧЕСКИЙ" data-calc-repair-price="500" data-calc-materials-price="220" name="Тип ремонта" checked>
                   <span>КОСМЕТИЧЕСКИЙ</span>
@@ -1267,7 +1273,7 @@
               <div class="calc__field-label">
                 4. Загрузите план квартиры или дома для получения точной сметы ремонта <span>(в формате .doc, .docx, .xlsx, .pdf, .jpeg, .png)</span>
               </div>
-              <div class="calc__field-attachments">
+              <div class="calc__field-control calc__field-attachments">
                 <div class="attachments-field" data-attachments-field data-attachments-field-count="1">
                   <div class="attachments-field__row" data-attachments-field-row>
                     <label class="attachment-field" data-attachment-field>
@@ -1300,7 +1306,7 @@
               <div class="calc__field-label">
                 Площадь помещения (м<sup>2</sup>)
               </div>
-              <div class="calc__field-area">
+              <div class="calc__field-control calc__field-area">
                 <div class="range-field" data-range-field>
                   <input type="range" name="area" value="25" min="0" max="300" class="range-field__input" data-range-field-input>
                   <div class="range-field__display" data-range-field-display="# м<sup>2</sup>"></div>
@@ -1990,65 +1996,71 @@
           <span>чтобы начать с нами работать</span>
         </div>
         <div class="hiw-section__grid">
-          <div class="hiw-card hiw-card-call">
-            <div class="hiw-card__headline">
-              <div class="hiw-card__title">
-                Шаг
+          <div class="hiw-section__grid-cell">
+            <div class="hiw-card hiw-card-call">
+              <div class="hiw-card__headline">
+                <div class="hiw-card__title">
+                  Шаг
+                </div>
+                <div class="hiw-card__num">
+                  1
+                </div>
               </div>
-              <div class="hiw-card__num">
-                1
+              <div class="hiw-card-call__label">
+                Звоните:
               </div>
-            </div>
-            <div class="hiw-card-call__label">
-              Звоните:
-            </div>
-            <div class="hiw-card-call__phone">
-              +7 (800) 123-45-67
-            </div>
-            <div class="hiw-card-call__desc">
-              Познакомимся, проконсультируем и согласуем встречу на объекте или у&nbsp;нас в&nbsp;офисе
-            </div>
-            <div class="hiw-card-call__or">
-              Или оставляйте заявку на сайте
-            </div>
-            <div class="hiw-card-call__order">
-              <button type="button" class="primary-button primary-button--small w-56">Оставить заявку</button>
+              <div class="hiw-card-call__phone">
+                +7 (800) 123-45-67
+              </div>
+              <div class="hiw-card-call__desc">
+                Познакомимся, проконсультируем и согласуем встречу на объекте или у&nbsp;нас в&nbsp;офисе
+              </div>
+              <div class="hiw-card-call__or">
+                Или оставляйте заявку на сайте
+              </div>
+              <div class="hiw-card-call__order">
+                <button type="button" class="primary-button primary-button--small w-56">Оставить заявку</button>
+              </div>
             </div>
           </div>
-          <div class="hiw-card hiw-card-visit">
-            <div class="hiw-card__headline">
-              <div class="hiw-card__title">
-                Шаг
+          <div class="hiw-section__grid-cell">
+            <div class="hiw-card hiw-card-visit">
+              <div class="hiw-card__headline">
+                <div class="hiw-card__title">
+                  Шаг
+                </div>
+                <div class="hiw-card__num">
+                  2
+                </div>
               </div>
-              <div class="hiw-card__num">
-                2
+              <div class="hiw-card-visit__desc">
+                Выедем на объект для полного замера и составления точной сметы
               </div>
+              <ul class="hiw-card-visit__list">
+                <li>Обсудим вашу задачу</li>
+                <li>Наметим план</li>
+                <li>Составим смету</li>
+                <li>Заключим договор</li>
+              </ul>
             </div>
-            <div class="hiw-card-visit__desc">
-              Выедем на объект для полного замера и составления точной сметы
-            </div>
-            <ul class="hiw-card-visit__list">
-              <li>Обсудим вашу задачу</li>
-              <li>Наметим план</li>
-              <li>Составим смету</li>
-              <li>Заключим договор</li>
-            </ul>
           </div>
-          <div class="hiw-card hiw-card-start">
-            <div class="hiw-card__headline">
-              <div class="hiw-card__title">
-                Шаг
+          <div class="hiw-section__grid-cell">
+            <div class="hiw-card hiw-card-start">
+              <div class="hiw-card__headline">
+                <div class="hiw-card__title">
+                  Шаг
+                </div>
+                <div class="hiw-card__num">
+                  2
+                </div>
               </div>
-              <div class="hiw-card__num">
-                2
+              <div class="hiw-card-start__title">
+                Приступаем<br>
+                к ремонту
               </div>
-            </div>
-            <div class="hiw-card-start__title">
-              Приступаем<br>
-              к ремонту
-            </div>
-            <div class="hiw-card-start__desc">
-              По очередности работ начинаем работы на вашем объекте
+              <div class="hiw-card-start__desc">
+                По очередности работ начинаем работы на вашем объекте
+              </div>
             </div>
           </div>
         </div>

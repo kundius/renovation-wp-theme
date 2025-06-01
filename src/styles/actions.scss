@@ -4,6 +4,11 @@
   background: #f4f8fa;
   padding-top: 96px;
   padding-bottom: 48px;
+
+  @include max-lg {
+    padding-top: 64px;
+    padding-bottom: 36px;
+  }
 }
 
 .actions-section__title {
@@ -16,6 +21,11 @@
 
   @include max-xl {
     font-size: 36px;
+    margin-bottom: 56px;
+  }
+
+  @include max-lg {
+    font-size: 32px;
     margin-bottom: 48px;
   }
 }
@@ -25,7 +35,15 @@
   --slide-size: 33.33%;
 
   @include max-xl {
-    --slide-spacing: 12px;
+    --slide-size: 50%;
+  }
+
+  @include max-lg {
+    --slide-spacing: 16px;
+  }
+
+  @include max-md {
+    --slide-size: 100%;
   }
 }
 
@@ -37,6 +55,11 @@
   @include max-xl {
     padding-left: 80px;
     padding-right: 80px;
+  }
+
+  @include max-lg {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -64,6 +87,10 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  @include max-lg {
+    margin-top: 32px;
+  }
 }
 
 .actions-carousel__dots .embla__dot {
@@ -131,6 +158,10 @@
 
 .actions-carousel__nav--prev {
   left: 12px;
+
+  @include max-lg {
+    left: -12px;
+  }
 }
 
 .actions-carousel__nav--prev::before {
@@ -139,6 +170,10 @@
 
 .actions-carousel__nav--next {
   right: 12px;
+
+  @include max-lg {
+    right: -12px;
+  }
 }
 
 .actions-carousel__nav--next::before {
@@ -204,9 +239,8 @@
   align-items: flex-start;
   padding: 30px 0 40px 30px;
 
-  @include max-xl {
-    padding: 20px 0 20px 20px;
-    width: 80%;
+  @include max-2xl {
+    padding: 24px 0 32px 24px;
   }
 }
 

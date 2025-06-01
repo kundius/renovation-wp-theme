@@ -18,8 +18,8 @@
         ВЫГОДНОЕ СОТРУДНИЧЕСТВО ДЛЯ КОМПАНИЙ, БРИГАД И ЧАСТНЫХ МАСТЕРОВ
       </div>
       <a href="#" class="extra-header__offer__button">
-        <span class="md:hidden">Заявка на сотрудничество</span>
-        <span class="max-md:hidden">Оставить заявку</span>
+        <span class="lg:hidden">Заявка на сотрудничество</span>
+        <span class="max-lg:hidden">Оставить заявку</span>
       </a>
     </div>
   </div>
@@ -29,7 +29,10 @@
 <div class="header" data-sticky-header data-mobile-menu-state="closed">
   <div class="container container--larger header__container">
     <a href="/" class="header__logo">
-      <span class="header__logo__name">РЕМОНТ-<span>ПОД-КЛЮЧ</span></span>
+      <span class="header__logo__name">
+        РЕМОНТ-
+        <span class="whitespace-nowrap">ПОД-КЛЮЧ</span>
+      </span>
       <span class="header__logo__desc">Ремонт квартир под ключ в Казани</span>
     </a>
 
@@ -124,6 +127,10 @@
         обратный звонок
       </span>
     </a>
+
+    <button type="button" class="header__toggle">
+      <span class="icon icon-menu"></span>
+    </button>
   </div>
   <div class="header__anchor" data-sticky-header-anchor></div>
 </div>
