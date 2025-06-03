@@ -222,8 +222,14 @@
                       </label>
                     </div>
                     <div class="quiz-form__actions">
-                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
-                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
+                      <button type="button" class="control-button quiz-form__action_prev" data-quiz-prev>
+                        <span class="icon icon-chevron-left"></span>
+                        <span>Назад</span>
+                      </button>
+                      <button type="button" class="control-button quiz-form__action_next" data-quiz-next>
+                        <span>Следующий шаг</span>
+                        <span class="icon icon-chevron-right"></span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -291,8 +297,8 @@
                       </label>
                     </div>
                     <div class="quiz-form__actions">
-                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
-                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
+                      <button type="button" class="control-button quiz-form__action_prev" data-quiz-prev>Назад</button>
+                      <button type="button" class="control-button quiz-form__action_next" data-quiz-next>Следующий шаг</button>
                     </div>
                   </div>
                 </div>
@@ -356,8 +362,8 @@
                       </label>
                     </div>
                     <div class="quiz-form__actions">
-                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
-                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
+                      <button type="button" class="control-button quiz-form__action_prev" data-quiz-prev>Назад</button>
+                      <button type="button" class="control-button quiz-form__action_next" data-quiz-next>Следующий шаг</button>
                     </div>
                   </div>
                 </div>
@@ -421,8 +427,8 @@
                       </label>
                     </div>
                     <div class="quiz-form__actions">
-                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
-                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
+                      <button type="button" class="control-button quiz-form__action_prev" data-quiz-prev>Назад</button>
+                      <button type="button" class="control-button quiz-form__action_next" data-quiz-next>Следующий шаг</button>
                     </div>
                   </div>
                 </div>
@@ -486,8 +492,8 @@
                       </label>
                     </div>
                     <div class="quiz-form__actions">
-                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
-                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
+                      <button type="button" class="control-button quiz-form__action_prev" data-quiz-prev>Назад</button>
+                      <button type="button" class="control-button quiz-form__action_next" data-quiz-next>Следующий шаг</button>
                     </div>
                   </div>
                 </div>
@@ -551,8 +557,8 @@
                       </label>
                     </div>
                     <div class="quiz-form__actions">
-                      <button type="button" class="quiz-form__action quiz-form__action_prev" data-quiz-prev>Назад</button>
-                      <button type="button" class="quiz-form__action quiz-form__action_next" data-quiz-next>Следующий шаг</button>
+                      <button type="button" class="control-button quiz-form__action_prev" data-quiz-prev>Назад</button>
+                      <button type="button" class="control-button quiz-form__action_next" data-quiz-next>Следующий шаг</button>
                     </div>
                   </div>
                 </div>
@@ -700,8 +706,8 @@
                         Дизайнерский ремонт в 1-комнатной квартире
                       </a>
                     </div>
-                    <div class="flex items-start justify-between mt-4 gap-2 max-lg:flex-col">
-                      <div class="flex flex-wrap gap-1 items-start">
+                    <div class="flex items-start justify-between mt-3 max-lg:flex-col md:gap-2 md:mt-4">
+                      <div class="flex flex-wrap gap-1 items-start max-md:-mx-1.5">
                         <div class="portfolio-item__detail">
                           Сроки ремонта : 25 дней
                         </div>
@@ -714,7 +720,7 @@
                         <div class="portfolio-item__price-value">112 500 ₽</div>
                       </div>
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3 max-md:mt-2">
                       <button type="button" class="control-button">
                         Рассчитать похожий
                       </button>
@@ -764,8 +770,8 @@
                         Дизайнерский ремонт в 1-комнатной квартире
                       </a>
                     </div>
-                    <div class="flex items-start justify-between mt-4 gap-2 max-lg:flex-col">
-                      <div class="flex flex-wrap gap-1 items-start">
+                    <div class="flex items-start justify-between mt-3 max-lg:flex-col md:gap-2 md:mt-4">
+                      <div class="flex flex-wrap gap-1 items-start max-md:-mx-1.5">
                         <div class="portfolio-item__detail">
                           Сроки ремонта : 25 дней
                         </div>
@@ -778,7 +784,7 @@
                         <div class="portfolio-item__price-value">112 500 ₽</div>
                       </div>
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3 max-md:mt-2">
                       <button type="button" class="control-button">Рассчитать похожий</button>
                     </div>
                   </div>
@@ -826,8 +832,8 @@
                         Дизайнерский ремонт в 1-комнатной квартире
                       </a>
                     </div>
-                    <div class="flex items-start justify-between mt-4 gap-2 max-lg:flex-col">
-                      <div class="flex flex-wrap gap-1 items-start">
+                    <div class="flex items-start justify-between mt-3 max-lg:flex-col md:gap-2 md:mt-4">
+                      <div class="flex flex-wrap gap-1 items-start max-md:-mx-1.5">
                         <div class="portfolio-item__detail">
                           Сроки ремонта : 25 дней
                         </div>
@@ -840,7 +846,7 @@
                         <div class="portfolio-item__price-value">112 500 ₽</div>
                       </div>
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3 max-md:mt-2">
                       <button type="button" class="control-button">Рассчитать похожий</button>
                     </div>
                   </div>
@@ -888,8 +894,8 @@
                         Дизайнерский ремонт в 1-комнатной квартире
                       </a>
                     </div>
-                    <div class="flex items-start justify-between mt-4 gap-2 max-lg:flex-col">
-                      <div class="flex flex-wrap gap-1 items-start">
+                    <div class="flex items-start justify-between mt-3 max-lg:flex-col md:gap-2 md:mt-4">
+                      <div class="flex flex-wrap gap-1 items-start max-md:-mx-1.5">
                         <div class="portfolio-item__detail">
                           Сроки ремонта : 25 дней
                         </div>
@@ -902,7 +908,7 @@
                         <div class="portfolio-item__price-value">112 500 ₽</div>
                       </div>
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3 max-md:mt-2">
                       <button type="button" class="control-button">Рассчитать похожий</button>
                     </div>
                   </div>
@@ -933,11 +939,15 @@
                     <div class="comparison__before-label">до</div>
                     <img src="<?php bloginfo(
                       'template_url'
-                    ); ?>/src/images/comparison.jpg" alt="" style="filter: grayscale(80%)">
+                    ); ?>/src/images/comparison.jpg" alt="" style="filter: grayscale(80%)" class="comparison__after-image max-md:hidden">
+                    <img src="<?php bloginfo(
+                      'template_url'
+                    ); ?>/src/images/comparison-mobile.jpg" alt="" style="filter: grayscale(80%)" class="comparison__after-image md:hidden">
                   </div>
                   <div class="comparison__after">
                     <div class="comparison__after-label">после</div>
-                    <img src="<?php bloginfo('template_url'); ?>/src/images/comparison.jpg" alt="">
+                    <img src="<?php bloginfo('template_url'); ?>/src/images/comparison.jpg" alt="" class="comparison__after-image max-md:hidden">
+                    <img src="<?php bloginfo('template_url'); ?>/src/images/comparison-mobile.jpg" alt="" class="comparison__after-image md:hidden">
                   </div>
                   <input class="comparison__range" type="range" name="progress" value="300" min="0" max="1000">
                   <div class="comparison__handle"></div>
@@ -950,11 +960,15 @@
                     <div class="comparison__before-label">до</div>
                     <img src="<?php bloginfo(
                       'template_url'
-                    ); ?>/src/images/comparison.jpg" alt="" style="filter: grayscale(80%)">
+                    ); ?>/src/images/comparison.jpg" alt="" style="filter: grayscale(80%)" class="comparison__after-image max-md:hidden">
+                    <img src="<?php bloginfo(
+                      'template_url'
+                    ); ?>/src/images/comparison-mobile.jpg" alt="" style="filter: grayscale(80%)" class="comparison__after-image md:hidden">
                   </div>
                   <div class="comparison__after">
                     <div class="comparison__after-label">после</div>
-                    <img src="<?php bloginfo('template_url'); ?>/src/images/comparison.jpg" alt="">
+                    <img src="<?php bloginfo('template_url'); ?>/src/images/comparison.jpg" alt="" class="comparison__after-image max-md:hidden">
+                    <img src="<?php bloginfo('template_url'); ?>/src/images/comparison-mobile.jpg" alt="" class="comparison__after-image md:hidden">
                   </div>
                   <input class="comparison__range" type="range" name="progress" value="300" min="0" max="1000">
                   <div class="comparison__handle"></div>
@@ -980,82 +994,84 @@
             Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков
           </div>
         </div>
-        <div class="services-section__grid">
-          <div class="services-section__grid-cell">
-            <div class="services-card">
-              <div class="services-card__sheet">Бонус - предложение</div>
-              <div class="services-card__title">Косметический ремонт</div>
-              <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-              <div class="services-card__list">
-                <div class="services-card__list-inner">
-                  <ul>
+        <div class="services-section__grid-wrap">
+          <div class="services-section__grid">
+            <div class="services-section__grid-cell">
+              <div class="services-card">
+                <div class="services-card__sheet">Бонус - предложение</div>
+                <div class="services-card__title">Косметический ремонт</div>
+                <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+                <div class="services-card__list">
+                  <div class="services-card__list-inner">
+                    <ul>
+                      <li>Вид работ 1</li>
+                      <li>Вид выполняемых работ 2</li>
+                      <li>Вид выполняемых работ 3</li>
+                      <li>Вид выполняемых работ 4</li>
+                      <li>Вид выполняемых работ 5</li>
+                      <li>Вид выполняемых работ 6</li>
+                      <li>Вид работ 1</li>
+                      <li>Вид выполняемых работ 2</li>
+                      <li>Вид выполняемых работ 3</li>
+                      <li>Вид выполняемых работ 4</li>
+                      <li>Вид выполняемых работ 5</li>
+                      <li>Вид выполняемых работ 6</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="services-card__time">От 20 дней</div>
+                <div class="services-card__price">от 4 500 ₽/м2</div>
+                <div class="services-card__order">
+                  <button type="button" class="primary-button primary-button--small primary-button--alt w-52 max-md:w-48">Заказать</button>
+                </div>
+              </div>
+            </div>
+            <div class="services-section__grid-cell">
+              <div class="services-card">
+                <div class="services-card__sheet">Бонус - предложение</div>
+                <div class="services-card__title">Капитальный ремонт</div>
+                <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+                <div class="services-card__list">
+                  <div class="services-card__list-inner">
+                    <ul>
                     <li>Вид работ 1</li>
                     <li>Вид выполняемых работ 2</li>
                     <li>Вид выполняемых работ 3</li>
                     <li>Вид выполняемых работ 4</li>
                     <li>Вид выполняемых работ 5</li>
                     <li>Вид выполняемых работ 6</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="services-card__time">От 20 дней</div>
+                <div class="services-card__price">от 4 500 ₽/м2</div>
+                <div class="services-card__order">
+                  <button type="button" class="primary-button primary-button--small primary-button--alt w-52 max-md:w-48">Заказать</button>
+                </div>
+              </div>
+            </div>
+            <div class="services-section__grid-cell">
+              <div class="services-card">
+                <div class="services-card__sheet">Бонус - предложение</div>
+                <div class="services-card__title">Дизайнерский ремонт</div>
+                <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
+                <div class="services-card__list">
+                  <div class="services-card__list-inner">
+                    <ul>
                     <li>Вид работ 1</li>
                     <li>Вид выполняемых работ 2</li>
                     <li>Вид выполняемых работ 3</li>
                     <li>Вид выполняемых работ 4</li>
                     <li>Вид выполняемых работ 5</li>
                     <li>Вид выполняемых работ 6</li>
-                  </ul>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div class="services-card__time">От 20 дней</div>
-              <div class="services-card__price">от 4 500 ₽/м2</div>
-              <div class="services-card__order">
-                <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
-              </div>
-            </div>
-          </div>
-          <div class="services-section__grid-cell">
-            <div class="services-card">
-              <div class="services-card__sheet">Бонус - предложение</div>
-              <div class="services-card__title">Капитальный ремонт</div>
-              <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-              <div class="services-card__list">
-                <div class="services-card__list-inner">
-                  <ul>
-                  <li>Вид работ 1</li>
-                  <li>Вид выполняемых работ 2</li>
-                  <li>Вид выполняемых работ 3</li>
-                  <li>Вид выполняемых работ 4</li>
-                  <li>Вид выполняемых работ 5</li>
-                  <li>Вид выполняемых работ 6</li>
-                  </ul>
+                <div class="services-card__time">От 20 дней</div>
+                <div class="services-card__price">от 4 500 ₽/м2</div>
+                <div class="services-card__order">
+                  <button type="button" class="primary-button primary-button--small primary-button--alt w-52 max-md:w-48">Заказать</button>
                 </div>
-              </div>
-              <div class="services-card__time">От 20 дней</div>
-              <div class="services-card__price">от 4 500 ₽/м2</div>
-              <div class="services-card__order">
-                <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
-              </div>
-            </div>
-          </div>
-          <div class="services-section__grid-cell">
-            <div class="services-card">
-              <div class="services-card__sheet">Бонус - предложение</div>
-              <div class="services-card__title">Дизайнерский ремонт</div>
-              <div class="services-card__desc">Компания «Ремонт-под-ключ» предлагает профессиональные услуги по комплексному ремонту квартир в Казани. Мы берем на себя все этапы работ — от дизайн-проекта до финальной уборки, гарантируя качество и соблюдение сроков</div>
-              <div class="services-card__list">
-                <div class="services-card__list-inner">
-                  <ul>
-                  <li>Вид работ 1</li>
-                  <li>Вид выполняемых работ 2</li>
-                  <li>Вид выполняемых работ 3</li>
-                  <li>Вид выполняемых работ 4</li>
-                  <li>Вид выполняемых работ 5</li>
-                  <li>Вид выполняемых работ 6</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="services-card__time">От 20 дней</div>
-              <div class="services-card__price">от 4 500 ₽/м2</div>
-              <div class="services-card__order">
-                <button type="button" class="primary-button primary-button--small primary-button--alt w-52">Заказать</button>
               </div>
             </div>
           </div>
@@ -1068,118 +1084,117 @@
         <div class="terms-section__title">
           Средние сроки выполнения ремонта квартир
         </div>
-        <div class="terms-section__grid">
-          <div class="terms-card">
-            <div class="terms-card__title">
-              Объект
-            </div>
-            <div class="terms-card__list">
-              <div class="terms-card__head">
-                <div>Студия <span>18 - 32 м<sup>2</sup></span></div>
-              </div>
-              <div class="terms-card__head">
-                <div>1 - комнатная квартира</div>
-              </div>
-              <div class="terms-card__head">
-                <div>2 - комнатная квартира</div>
-              </div>
-              <div class="terms-card__head">
-                <div>3 - комнатная квартира</div>
-              </div>
-              <div class="terms-card__head">
-                <div>4 - комнатная квартира <span>80 - 120 м<sup>2</sup></span></div>
-              </div>
-              <div class="terms-card__head">
-                <div>Частный дом <span>120 - 200 м<sup>2</sup></span></div>
-              </div>
-              <div class="terms-card__head">
-                <div>Коттедж <span>140 - 350 м<sup>2</sup></span></div>
-              </div>
-            </div>
+
+        <div class="terms-grid">
+          <div class="terms-cards">
+            <div class="terms-cards__item"></div>
+            <div class="terms-cards__item"></div>
+            <div class="terms-cards__item"></div>
+            <div class="terms-cards__item"></div>
           </div>
-          <div class="terms-card">
-            <div class="terms-card__title terms-card__title--colored">
-              Косметический
-            </div>
-            <div class="terms-card__list">
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-            </div>
+
+          <div class="terms-card__title">
+            Объект
           </div>
-          <div class="terms-card">
-            <div class="terms-card__title terms-card__title--colored">
-              Капитальный
-            </div>
-            <div class="terms-card__list">
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-            </div>
+          <div class="terms-card__title terms-card__title--colored">
+            Космети&shy;ческий
           </div>
-          <div class="terms-card">
-            <div class="terms-card__title terms-card__title--colored">
-              Дизайнерский
-            </div>
-            <div class="terms-card__list">
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-              <div class="terms-card__data">
-                <div>15- 30 дней</div>
-              </div>
-            </div>
+          <div class="terms-card__title terms-card__title--colored">
+            Капи&shy;тальный
+          </div>
+          <div class="terms-card__title terms-card__title--colored">
+            Дизай&shy;нерский
+          </div>
+
+          <div class="terms-card__head">
+            <div>Студия <i>18 - 32&nbsp;м<sup>2</sup></i></div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+
+          <div class="terms-card__head">
+            <div><span class="text-nowrap">1 - комнатная</span> квартира</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+
+          <div class="terms-card__head">
+            <div><span class="text-nowrap">2 - комнатная</span> квартира</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+
+          <div class="terms-card__head">
+            <div><span class="text-nowrap">3 - комнатная</span> квартира</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+
+          <div class="terms-card__head">
+            <div><span class="text-nowrap">4 - комнатная</span> квартира <i>80 - 120&nbsp;м<sup>2</sup></i></div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+
+          <div class="terms-card__head">
+            <div>Частный дом <i>120 - 200&nbsp;м<sup>2</sup></i></div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+
+          <div class="terms-card__head">
+            <div>Коттедж <i>140 - 350&nbsp;м<sup>2</sup></i></div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
+          </div>
+          <div class="terms-card__data">
+            <div>15- 30&shy; дней</div>
           </div>
         </div>
       </div>
@@ -1678,34 +1693,51 @@
     </section>
 
     <section class="experts-section">
-      <div class="container">
+      <div class="container container--large">
         <div class="experts-section__title">
           Наши мастера в процессе работы
         </div>
-        <div class="experts-section__grid">
-          <div class="experts-item">
-            <div class="experts-item__image">
-              <img src="<?php bloginfo('template_url'); ?>/src/images/experts-1.png" alt="">
+        <div class="experts__items">
+          <div class="experts-embla" data-experts-embla>
+            <div class="experts-embla__wrap">
+              <div class="experts-embla__viewport" data-experts-embla-viewport>
+                <div class="experts-embla__container">
+                  <div class="experts-embla__slide">
+                    <div class="experts-item">
+                      <div class="experts-item__image">
+                        <img src="<?php bloginfo('template_url'); ?>/src/images/experts-1.png" alt="">
+                      </div>
+                      <div class="experts-item__name">Имя</div>
+                      <div class="experts-item__job">Мастер-плиточник</div>
+                      <div class="experts-item__experience">Стаж: 6 лет</div>
+                    </div>
+                  </div>
+                  <div class="experts-embla__slide">
+                    <div class="experts-item">
+                      <div class="experts-item__image">
+                        <img src="<?php bloginfo('template_url'); ?>/src/images/experts-2.png" alt="">
+                      </div>
+                      <div class="experts-item__name">Имя</div>
+                      <div class="experts-item__job">Мастер-плиточник</div>
+                      <div class="experts-item__experience">Стаж: 6 лет</div>
+                    </div>
+                  </div>
+                  <div class="experts-embla__slide">
+                    <div class="experts-item">
+                      <div class="experts-item__image">
+                        <img src="<?php bloginfo('template_url'); ?>/src/images/experts-3.png" alt="">
+                      </div>
+                      <div class="experts-item__name">Имя</div>
+                      <div class="experts-item__job">Мастер-плиточник</div>
+                      <div class="experts-item__experience">Стаж: 6 лет</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="experts-embla__nav experts-embla__nav--prev" type="button" data-experts-embla-prev></button>
+              <button class="experts-embla__nav experts-embla__nav--next" type="button" data-experts-embla-next></button>
             </div>
-            <div class="experts-item__name">Имя</div>
-            <div class="experts-item__job">Мастер-плиточник</div>
-            <div class="experts-item__experience">Стаж: 6 лет</div>
-          </div>
-          <div class="experts-item">
-            <div class="experts-item__image">
-              <img src="<?php bloginfo('template_url'); ?>/src/images/experts-2.png" alt="">
-            </div>
-            <div class="experts-item__name">Имя</div>
-            <div class="experts-item__job">Мастер-плиточник</div>
-            <div class="experts-item__experience">Стаж: 8 лет</div>
-          </div>
-          <div class="experts-item">
-            <div class="experts-item__image">
-              <img src="<?php bloginfo('template_url'); ?>/src/images/experts-3.png" alt="">
-            </div>
-            <div class="experts-item__name">Имя</div>
-            <div class="experts-item__job">Мастер-плиточник</div>
-            <div class="experts-item__experience">Стаж: 6 лет</div>
+            <div class="experts-carousel__dots" data-experts-carousel-dots></div>
           </div>
         </div>
       </div>

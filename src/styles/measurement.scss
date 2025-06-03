@@ -5,6 +5,11 @@
   background-size: cover;
   padding-top: 52px;
   padding-bottom: 44px;
+
+  @include max-md {
+    padding-top: 44px;
+    padding-bottom: 36px;
+  }
 }
 
 .measurement-section__title {
@@ -32,6 +37,12 @@
     padding: 4px 24px;
     font-size: 24px;
   }
+
+  @include max-md {
+    padding: 22px 4px;
+    font-size: 24px;
+    line-height: 1.15;
+  }
 }
 
 .measurement-section__order {
@@ -47,5 +58,13 @@
 
   @include max-lg {
     margin-top: 24px;
+  }
+
+  @include max-md {
+    margin-top: 36px;
+
+    >.primary-button {
+      font-size: 20px;
+    }
   }
 }

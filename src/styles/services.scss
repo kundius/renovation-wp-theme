@@ -8,6 +8,11 @@
     padding-top: 64px;
     padding-bottom: 64px;
   }
+
+  @include max-md {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
 }
 
 .services-section__headline {
@@ -20,6 +25,10 @@
     gap: 32px;
     margin-bottom: calc(32px + 44px);
   }
+
+  @include max-md {
+    margin-bottom: calc(32px + 38px);
+  }
 }
 
 .services-section__title {
@@ -31,6 +40,10 @@
   @include max-xl {
     font-size: 36px;
   }
+
+  @include max-md {
+    font-size: 24px;
+  }
 }
 
 .services-section__desc {
@@ -40,6 +53,17 @@
 
   @include max-lg {
     padding-top: 0;
+  }
+
+  @include max-md {
+    font-size: 14px;
+  }
+}
+
+.services-section__grid-wrap {
+  @include max-md {
+    margin-left: -8px;
+    margin-right: -8px;
   }
 }
 
@@ -58,6 +82,11 @@
     --gap-x: 16px;
     --gap-y: 68px;
     --columns: 2;
+  }
+
+  @include max-md {
+    --columns: 1;
+    --gap-y: 56px;
   }
 }
 
@@ -79,6 +108,12 @@
   @include max-xl {
     padding-top: 36px;
     padding-bottom: 36px;
+  }
+
+  @include max-md {
+    padding-bottom: 30px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -125,7 +160,11 @@
     border-radius: 14px 14px 0 0;
     font-size: 16px;
     min-height: 44px;
-    min-width: 224px;
+    min-width: 232px;
+  }
+
+  @include max-md {
+    min-height: 40px;
   }
 }
 
@@ -154,6 +193,10 @@
     font-size: 22px;
     margin-bottom: 24px;
   }
+
+  @include max-md {
+    margin-bottom: 28px;
+  }
 }
 
 .services-card__desc {
@@ -163,6 +206,10 @@
 
   @include max-xl {
     font-size: 16px;
+  }
+
+  @include max-md {
+    font-size: 15px;
   }
 }
 
@@ -199,7 +246,7 @@
   @include max-xl {
     margin-top: 32px;
     margin-bottom: 16px;
-    padding: 16px 12px;
+    padding: 16px 18px;
     font-size: 16px;
 
     ul li {
@@ -210,6 +257,11 @@
       left: 8px;
       top: 12px;
     }
+  }
+
+  @include max-md {
+    font-size: 14px;
+    margin-top: 28px;
   }
 }
 
@@ -223,10 +275,16 @@
   background-color: rgba(243, 245, 248, 0.8);
   padding: 0 10px;
   min-height: 32px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  @include max-md {
+    font-size: 11px;
+    min-height: 26px;
+  }
 }
 
 .services-card__price {
@@ -239,4 +297,10 @@
   color: #00aaff;
   margin-top: 6px;
   margin-bottom: 16px;
+
+  @include max-md {
+    font-size: 20px;
+    margin-top: 2px;
+    margin-bottom: 14px;
+  }
 }

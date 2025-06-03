@@ -8,6 +8,10 @@
   @include max-lg {
     padding-top: 64px;
   }
+
+  @include max-md {
+    padding-top: 32px;
+  }
 }
 
 .prices-section__title {

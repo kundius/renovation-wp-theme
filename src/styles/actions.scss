@@ -9,6 +9,11 @@
     padding-top: 64px;
     padding-bottom: 36px;
   }
+
+  @include max-md {
+    padding-top: 32px;
+    padding-bottom: 56px;
+  }
 }
 
 .actions-section__title {
@@ -28,17 +33,19 @@
     font-size: 32px;
     margin-bottom: 48px;
   }
+
+  @include max-md {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 .actions-carousel {
   --slide-spacing: 20px;
   --slide-size: 33.33%;
 
-  @include max-xl {
-    --slide-size: 50%;
-  }
-
   @include max-lg {
+    --slide-size: 50%;
     --slide-spacing: 16px;
   }
 
@@ -52,12 +59,7 @@
   padding-left: 120px;
   padding-right: 120px;
 
-  @include max-xl {
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-
-  @include max-lg {
+  @include max-2xl {
     padding-left: 0;
     padding-right: 0;
   }
@@ -90,6 +92,10 @@
 
   @include max-lg {
     margin-top: 32px;
+  }
+
+  @include max-md {
+    margin-top: 28px;
   }
 }
 
@@ -185,11 +191,14 @@
   background-color: #ffffff;
   filter: drop-shadow(0px 0 12px rgba(0, 50, 92, 0.2));
   position: relative;
-  /* overflow: hidden; */
   aspect-ratio: 380 / 320;
 
   .actions-carousel & {
     filter: none;
+  }
+
+  @include max-xl {
+    aspect-ratio: 288 / 320;
   }
 }
 
@@ -239,7 +248,7 @@
   align-items: flex-start;
   padding: 30px 0 40px 30px;
 
-  @include max-2xl {
+  @include max-md {
     padding: 24px 0 32px 24px;
   }
 }

@@ -223,6 +223,10 @@
 .header[data-sticky-header='active'] {
   background: #fff;
   box-shadow: 0 4px 2.5px rgba(0, 53, 79, 0.16);
+
+  @include max-md {
+    background: #fff;
+  }
 }
 
 .header__anchor {
