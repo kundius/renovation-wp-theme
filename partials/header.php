@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<div class="h-4"></div>
+<div class="h-4 max-md:hidden"></div>
 <div class="header" data-sticky-header data-mobile-menu-state="closed">
   <div class="container container--larger header__container">
     <a href="/" class="header__logo">
@@ -128,10 +128,10 @@
       </span>
     </a>
 
-    <button type="button" class="header__toggle">
+    <button type="button" class="header__toggle" data-drawer-open="nav">
       <span class="icon icon-menu"></span>
     </button>
   </div>
   <div class="header__anchor" data-sticky-header-anchor></div>
 </div>
-<div class="h-4"></div>
+<div class="h-4 max-md:hidden"></div>

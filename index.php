@@ -24,7 +24,7 @@
               <li>Все мастера - граждане РФ</li>
             </ul>
             <div class="hero__button">
-              <button class="primary-button primary-button--alt primary-button--large text-lg uppercase">Получить предложение</button>
+              <button class="primary-button primary-button--alt primary-button--large text-lg uppercase max-md:text-base">Получить предложение</button>
             </div>
           </div>
           <div class="hero__layout-form">
@@ -1484,7 +1484,7 @@
               <span class="reviews-item__play"></span>
             </a>
             <div class="hidden">
-              <iframe src="https://rutube.ru/play/embed/348b982ea960ac5b6617870116bd781e/" id="video-1" width="1920px" height="1080px" frameborder="0" allow="fullscreen" allowfullscreen=""></iframe>
+              <!-- <iframe src="https://rutube.ru/play/embed/348b982ea960ac5b6617870116bd781e/" id="video-1" width="1920px" height="1080px" frameborder="0" allow="fullscreen" allowfullscreen=""></iframe> -->
             </div>
           </div>
           <div class="reviews-item">
@@ -1496,7 +1496,7 @@
               <span class="reviews-item__play"></span>
             </a>
             <div class="hidden">
-              <iframe src="https://rutube.ru/play/embed/348b982ea960ac5b6617870116bd781e/" id="video-2" width="1920px" height="1080px" frameborder="0" allow="fullscreen" allowfullscreen=""></iframe>
+              <!-- <iframe src="https://rutube.ru/play/embed/348b982ea960ac5b6617870116bd781e/" id="video-2" width="1920px" height="1080px" frameborder="0" allow="fullscreen" allowfullscreen=""></iframe> -->
             </div>
           </div>
         </div>

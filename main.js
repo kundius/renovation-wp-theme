@@ -26,6 +26,7 @@ import './src/styles/trust.scss'
 import './src/styles/faq.scss'
 import './src/styles/text.scss'
 import './src/styles/consultation.scss'
+import './src/styles/drawer.scss'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'
@@ -47,6 +48,7 @@ import { initCalc } from './src/scripts/calc'
 import { initActionsCarousel } from './src/scripts/actions-carousel'
 import { initPrices } from './src/scripts/prices'
 import { initFaq } from './src/scripts/faq'
+import { initDrawer } from './src/scripts/drawer'
 
 new MaskInput('[data-maska]')
 
@@ -65,6 +67,7 @@ initCalc()
 initActionsCarousel()
 initPrices()
 initFaq()
+initDrawer()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()

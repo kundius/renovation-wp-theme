@@ -88,4 +88,51 @@
   </div>
 </div>
 
+<div class="drawer" data-drawer="nav">
+  <div class="drawer__body">
+    <button class="drawer__close" data-drawer-close>
+      закрыть меню
+      <span class="icon icon-close"></span>
+    </button>
+    <div class="drawer__content">
+      <div class="drawer__nav" data-drawer-nav></div>
+
+      <div class="drawer__region">
+        <div class="drawer-region">
+          <div class="drawer-region__label">Ваш регион:</div>
+          <div class="drawer-region__select">
+            <div class="drawer-region-select" data-city-select role="combobox" aria-expanded="false" aria-haspopup="true" aria-label="Выбор города">
+              <button class="drawer-region-select__trigger" data-city-select-trigger>
+                <span>Воронеж</span>
+              </button>
+              <div class="drawer-region-select__list" role="listbox" data-city-select-listbox>
+                <a href="#" role="option" tabindex="-1">Москва</a>
+                <a href="#" role="option" tabindex="-1">Санкт-Петербург</a>
+                <a href="#" role="option" tabindex="-1">Казань</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer__contacts">
+        <div class="drawer-social">
+          <a href="#" class="drawer-social__telegram">
+            <span class="icon icon-telegram"></span>
+          </a>
+          <a href="#" class="drawer-social__whatsapp">
+            <span class="icon icon-whatsapp"></span>
+          </a>
+        </div>
+        
+        <a href="" class="drawer-phone">
+          <span class="drawer-phone__number">+7 (800) 123-45-67</span>
+          <span class="drawer-phone__time">Пн - Пт,  9:00 - 18:00</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer__overlay" data-drawer-close></div>
+</div>
+
 <?php wp_footer(); ?>

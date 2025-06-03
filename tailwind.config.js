@@ -13,7 +13,7 @@ module.exports = {
         xl: '1224px'
       },
       padding: {
-        DEFAULT: '8px',
+        DEFAULT: '12px',
         sm: '12px',
         md: '16px',
         lg: '24px',

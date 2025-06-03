@@ -15,6 +15,12 @@
     padding-top: calc(96px + 64px);
     padding-bottom: 64px;
   }
+
+  @include max-md {
+    padding-top: 128px;
+    margin-top: -51px;
+    padding-bottom: 20px;
+  }
 }
 
 .hero__bg {
@@ -42,6 +48,7 @@
   flex-grow: 1;
   padding-top: 42px;
   padding-bottom: 42px;
+  min-width: 0;
 
   @include max-xl {
     padding-top: 32px;
@@ -49,7 +56,6 @@
   }
 
   @include max-lg {
-    max-width: 540px;
     padding: 0;
   }
 }
@@ -72,6 +78,15 @@
   @include max-xl {
     font-size: 56px;
   }
+
+  @include max-lg {
+    max-width: 540px;
+  }
+
+  @include max-md {
+    font-size: 24px;
+    max-width: 256px;
+  }
 }
 
 .hero__desc {
@@ -83,11 +98,24 @@
   @include max-xl {
     font-size: 22px;
   }
+
+  @include max-lg {
+    max-width: 540px;
+  }
+
+  @include max-md {
+    font-size: 14px;
+    max-width: 256px;
+  }
 }
 
 .hero__list {
   margin-top: 32px;
-  width: 356px;
+  max-width: 356px;
+
+  @include max-md {
+    margin-top: 26px;
+  }
 }
 
 .hero__list li+li {
@@ -123,19 +151,28 @@
 .hero__list li {
   background-color: rgb(232, 238, 251);
   border-radius: 21px;
-  padding-right: 20px;
-  padding-top: 11px;
-  padding-bottom: 11px;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
   font-size: 16px;
   color: rgb(0, 39, 63);
   line-height: 1.25;
   font-weight: 500;
   position: relative;
+  padding-right: 20px;
   padding-left: 42px;
+
+  @include max-md {
+    font-size: 12px;
+  }
 }
 
 .hero__button {
   margin-top: 14px;
+
+  @include max-md {
+    margin-top: 26px;
+  }
 }
 
 .hero__button>* {

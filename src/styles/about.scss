@@ -8,6 +8,11 @@
     padding-top: 64px;
     padding-bottom: 64px;
   }
+
+  @include max-md {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 }
 
 .about__layout {
@@ -22,6 +27,10 @@
   @include max-lg {
     grid-template-columns: 1fr;
   }
+
+  @include max-md {
+    gap: 24px;
+  }
 }
 
 .about__layout-content {}
@@ -29,6 +38,10 @@
 .about__layout-services {
   display: flex;
   padding-top: 8px;
+
+  @include max-md {
+    padding-top: 0;
+  }
 }
 
 .about__headline {}
@@ -42,6 +55,10 @@
   @include max-xl {
     font-size: 52px;
   }
+
+  @include max-md {
+    font-size: 30px;
+  }
 }
 
 .about__headline-secondary {
@@ -54,6 +71,11 @@
 
   @include max-xl {
     font-size: 20px;
+  }
+
+  @include max-md {
+    font-size: 16px;
+    margin-top: 8px;
   }
 }
 
@@ -74,6 +96,11 @@
     margin-top: 48px;
     margin-bottom: 0;
   }
+
+  @include max-md {
+    margin-top: 36px;
+    font-size: 14px;
+  }
 }
 
 .about__cotent p {
@@ -89,11 +116,18 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 24px;
   row-gap: 32px;
+  width: 100%;
 
   @include max-lg {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 16px;
     row-gap: 16px;
+  }
+
+  @include max-md {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+    row-gap: 12px;
   }
 }
 
@@ -109,8 +143,12 @@
   transition: 300ms;
 
   @include max-lg {
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 24px;
+  }
+
+  @include max-md {
+    padding: 16px;
   }
 }
 
@@ -131,9 +169,11 @@
   background-repeat: no-repeat;
 
   @include max-lg {
-    width: 96px;
-    height: 96px;
-    margin-bottom: 12px;
+    zoom: 0.75;
+  }
+
+  @include max-md {
+    zoom: 0.5;
   }
 }
 
@@ -161,6 +201,10 @@
 
   @include max-lg {
     font-size: 16px;
+  }
+
+  @include max-md {
+    font-size: 14px;
   }
 }
 
