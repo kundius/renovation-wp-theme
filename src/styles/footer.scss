@@ -4,10 +4,20 @@
   background: #dae5ef;
   padding-top: 34px;
   padding-bottom: 36px;
+
+  @include max-md {
+    padding-top: 40px;
+    padding-bottom: 24px;
+  }
 }
 
 .footer-layout {
   display: flex;
+
+  @include max-md {
+    flex-direction: column;
+    gap: 56px;
+  }
 }
 
 .footer-layout__contacts {
@@ -16,6 +26,10 @@
 
   @include max-lg {
     width: 30%;
+  }
+
+  @include max-md {
+    width: 100%;
   }
 }
 
@@ -26,6 +40,17 @@
 
   @include max-lg {
     width: 70%;
+  }
+
+  @include max-md {
+    width: calc(100% + 16px);
+    margin-left: -8px;
+    margin-right: -8px;
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8px;
+    row-gap: 48px;
   }
 }
 
@@ -43,6 +68,12 @@
 
   @include max-lg {
     font-size: 12px;
+  }
+
+  @include max-md {
+    font-size: 14px;
+    margin-bottom: 12px;
+    min-height: initial;
   }
 }
 
@@ -95,6 +126,10 @@
   @include max-lg {
     font-size: 12px;
   }
+
+  @include max-md {
+    font-size: 14px;
+  }
 }
 
 .footer-menu__menu {
@@ -112,6 +147,10 @@
 
     @include max-lg {
       margin-top: 24px;
+    }
+
+    @include max-md {
+      margin-top: 8px;
     }
   }
 
@@ -137,6 +176,11 @@
     flex-wrap: wrap;
     gap: 12px;
   }
+
+  @include max-md {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 .footer-bottom__copyright {
@@ -149,6 +193,10 @@
   font-size: 12px;
   line-height: 1.2;
   color: #222222;
+
+  @include max-md {
+    order: -3;
+  }
 
   a {
     text-decoration: underline;
@@ -164,4 +212,8 @@
   font-size: 12px;
   line-height: 1.2;
   color: #222222;
+
+  @include max-md {
+    order: -2;
+  }
 }

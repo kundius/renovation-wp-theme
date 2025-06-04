@@ -7,6 +7,12 @@
 .estimate-section__layout {
   display: flex;
   background: #9db3c9;
+
+  @include max-md {
+    margin-left: -16px;
+    margin-right: -16px;
+    flex-wrap: wrap;
+  }
 }
 
 .estimate-section__content {
@@ -24,6 +30,11 @@
   @include max-lg {
     padding: 32px 24px 12px 24px;
   }
+
+  @include max-md {
+    width: 100%;
+    padding: 32px 16px 8px;
+  }
 }
 
 .estimate-section__form {
@@ -33,6 +44,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include max-md {
+    width: 100%;
+    padding: 48px 16px 36px;
+    background-image: url('../images/bg-estimate-mobile.jpg');
+  }
 }
 
 .estimate-section__title {
@@ -51,6 +68,11 @@
     margin-bottom: 30px;
     font-size: 24px;
   }
+
+  @include max-md {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 .estimate-section__expert {
@@ -58,6 +80,10 @@
 
   @include max-lg {
     padding: 0;
+  }
+
+  @include max-md {
+    padding: 0 8px;
   }
 }
 
@@ -135,6 +161,10 @@
 
   >.primary-button {
     width: 100%;
+  }
+
+  @include max-md {
+    margin-top: 24px;
   }
 }
 

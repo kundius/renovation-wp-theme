@@ -11,6 +11,8 @@
 
   @include max-md {
     padding-top: 32px;
+    padding-bottom: 24px;
+    background: #f5fcff;
   }
 }
 
@@ -31,6 +33,11 @@
     margin-bottom: 36px;
     font-size: 32px;
   }
+
+  @include max-md {
+    margin-bottom: 28px;
+    font-size: 24px;
+  }
 }
 
 .prices-section__title::after {
@@ -48,19 +55,86 @@
   @include max-lg {
     margin-top: 12px;
   }
+
+  @include max-md {
+    margin-top: 8px;
+    width: 28px;
+    height: 4px;
+  }
 }
 
-.prices {}
+.prices {
+  @include max-md {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+}
 
 .prices-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  position: relative;
   margin-bottom: 20px;
 
   @include max-lg {
-    gap: 6px;
     margin-bottom: 16px;
+  }
+
+  @include max-md {
+    margin-bottom: 12px;
+    max-height: 108px;
+    overflow: hidden;
+
+    [data-prices-expanded] & {
+      max-height: initial;
+    }
+  }
+}
+
+.prices-tabs__show {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 11px;
+  color: rgb(61, 182, 255);
+  font-weight: bold;
+  line-height: 1;
+  padding: 0 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(61, 182, 255);
+  background-color: rgb(254, 254, 254);
+  min-height: 24px;
+  border-radius: 12px;
+
+  &:hover {
+    color: rgb(254, 254, 254);
+    background-color: rgb(61, 182, 255);
+  }
+
+  @include min-md {
+    display: none;
+  }
+}
+
+.prices-tabs__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  @include max-lg {
+    gap: 6px;
+  }
+
+  @include max-md {
+    gap: 4px;
+  }
+
+  @include max-md {
+    &::after {
+      content: '';
+      width: 90px;
+      height: 24px;
+      display: inline-block;
+    }
   }
 }
 
@@ -80,6 +154,11 @@
     min-height: 30px;
     padding: 0 8px;
     border-radius: 8px;
+  }
+
+  @include max-md {
+    font-size: 11px;
+    min-height: 24px;
   }
 }
 
@@ -129,7 +208,11 @@
 
   @include max-lg {
     padding: 0 24px;
-    border-radius: 16px 16px 0 0;
+    border-radius: 14px 14px 0 0;
+  }
+
+  @include max-md {
+    padding: 0;
   }
 }
 
@@ -151,6 +234,13 @@
     font-size: 14px;
     min-width: 80px;
   }
+
+  @include max-md {
+    font-size: 11px;
+    height: 56px;
+    min-width: 56px;
+    padding: 0 8px;
+  }
 }
 
 .prices-table__head-cell:first-child {
@@ -168,6 +258,10 @@
 
   @include max-lg {
     padding: 12px 24px;
+  }
+
+  @include max-md {
+    padding: 0;
   }
 }
 
@@ -187,12 +281,23 @@
     padding: 12px 24px 24px;
     gap: 24px;
   }
+
+  @include max-md {
+    padding: 12px 8px 24px;
+    gap: 12px;
+    flex-direction: column;
+  }
 }
 
 .prices-total {
   display: flex;
   align-items: center;
   gap: 16px;
+
+  @include max-md {
+    order: -1;
+    align-self: flex-end;
+  }
 }
 
 .prices-total__label {
@@ -206,6 +311,10 @@
   @include max-lg {
     font-size: 14px;
   }
+
+  @include max-md {
+    font-size: 11px;
+  }
 }
 
 .prices-total__value {
@@ -218,6 +327,10 @@
 
   @include max-lg {
     font-size: 24px;
+  }
+
+  @include max-md {
+    font-size: 18px;
   }
 }
 
@@ -236,7 +349,7 @@
 
 .prices-list__title {
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25;
   font-weight: 700;
   color: #3db6ff;
   padding: 4px 12px;
@@ -248,8 +361,13 @@
   @include max-lg {
     padding: 2px 8px;
     font-size: 14px;
-    line-height: 18px;
     min-height: 40px;
+  }
+
+  @include max-md {
+    padding: 2px 8px;
+    font-size: 12px;
+    min-height: 32px;
   }
 }
 
@@ -291,34 +409,48 @@
 .prices-list__name {
   flex-grow: 1;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25;
 
   @include max-lg {
     font-size: 14px;
-    line-height: 18px;
+  }
+
+  @include max-md {
+    font-size: 12px;
   }
 }
 
 .prices-list__units {
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25;
   min-width: 120px;
   text-align: center;
+  flex-shrink: 0;
 
   @include max-lg {
     min-width: 80px;
     font-size: 14px;
-    line-height: 18px;
+  }
+
+  @include max-md {
+    font-size: 12px;
+    min-width: 56px;
   }
 }
 
 .prices-list__quantity {
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25;
+  flex-shrink: 0;
   width: 88px;
 
   @include max-lg {
     width: 64px;
+  }
+
+  @include max-md {
+    font-size: 12px;
+    width: 36px;
   }
 }
 
@@ -338,18 +470,29 @@
     height: 30px;
     border-radius: 15px;
   }
+
+  @include max-md {
+    font-size: 12px;
+    height: 24px;
+    border-radius: 12px;
+  }
 }
 
 .prices-list__price {
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25;
   font-family: 'Gilroy';
   min-width: 120px;
   text-align: center;
+  flex-shrink: 0;
 
   @include max-lg {
     min-width: 80px;
     font-size: 14px;
-    line-height: 18px;
+  }
+
+  @include max-md {
+    min-width: 56px;
+    font-size: 12px;
   }
 }

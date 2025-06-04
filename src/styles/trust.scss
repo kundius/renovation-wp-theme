@@ -8,6 +8,13 @@
   @include max-lg {
     padding-top: 64px;
   }
+
+  @include max-md {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-image: url('../images/bg-trust-mobile.jpg');
+    background-size: auto;
+  }
 }
 
 .trust-section__layout {
@@ -19,6 +26,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 24px;
   }
+
+  @include max-md {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
 }
 
 .trust-section__layout-left {
@@ -26,6 +38,10 @@
 
   @include max-lg {
     grid-column: 1 / 4;
+  }
+
+  @include max-md {
+    grid-column: 1 / 2;
   }
 }
 
@@ -36,6 +52,11 @@
   @include max-lg {
     grid-column: 4 / 6;
     padding-top: 48px;
+  }
+
+  @include max-md {
+    grid-column: 1 / 2;
+    padding-top: 0;
   }
 }
 
@@ -59,6 +80,11 @@
     font-size: 32px;
     margin-bottom: 16px;
   }
+
+  @include max-md {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
 }
 
 .trust-section__desc {
@@ -77,6 +103,11 @@
     font-size: 16px;
     margin-bottom: 32px;
   }
+
+  @include max-md {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
 }
 
 .trust-section__grid {
@@ -88,6 +119,12 @@
   @include max-lg {
     column-gap: 16px;
     row-gap: 36px;
+  }
+
+  @include max-md {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 20px;
   }
 }
 
@@ -110,6 +147,15 @@
   @include max-lg {
     margin-bottom: 16px;
   }
+
+  @include max-md {
+    margin-bottom: 12px;
+    font-size: 12px;
+    margin-left: 5px;
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 0 0 5px rgba(0, 170, 255, 0.2);
+  }
 }
 
 .trust-card__title {
@@ -118,6 +164,11 @@
   font-weight: bold;
   line-height: 1.2;
   margin-bottom: 12px;
+
+  @include max-md {
+    margin-bottom: 8px;
+    font-size: 11px;
+  }
 }
 
 .trust-card__desc {
@@ -128,6 +179,10 @@
   @include max-lg {
     font-size: 14px;
     line-height: 1.25;
+  }
+
+  @include max-md {
+    font-size: 12px;
   }
 }
 
@@ -144,6 +199,10 @@
     font-size: 14px;
     line-height: 1.25;
     margin-bottom: 20px;
+  }
+
+  @include max-md {
+    margin-bottom: 16px;
   }
 }
 

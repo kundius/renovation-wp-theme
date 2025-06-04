@@ -9,6 +9,11 @@
     padding-bottom: 48px;
     padding-top: 64px;
   }
+
+  @include max-md {
+    padding-top: 36px;
+    padding-bottom: 32px;
+  }
 }
 
 .faq-section__title {
@@ -32,6 +37,11 @@
     font-size: 32px;
     margin-bottom: 48px;
   }
+
+  @include max-md {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 }
 
 .faq-section__grid {
@@ -43,6 +53,10 @@
   @include max-lg {
     column-gap: 48px;
   }
+
+  @include max-md {
+    grid-template-columns: 1fr;
+  }
 }
 
 .faq-section__button {
@@ -52,6 +66,10 @@
 
   @include max-lg {
     margin-top: 24px;
+  }
+
+  @include max-md {
+    margin-top: 32px;
   }
 }
 
@@ -85,6 +103,11 @@
   @include max-lg {
     font-size: 16px;
   }
+
+  @include max-md {
+    font-size: 14px;
+    padding: 10px 1px;
+  }
 }
 
 .faq-card__question:hover {
@@ -115,6 +138,12 @@
 
   @include max-lg {
     line-height: 1.333;
+    border-radius: 0 0 14px 14px;
+  }
+
+  @include max-md {
+    font-size: 14px;
+    padding: 16px;
   }
 }
 

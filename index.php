@@ -1751,20 +1751,23 @@
 
         <div class="prices" data-prices>
           <div class="prices-tabs">
-            <button class="prices-tabs__item active" data-prices-tab="Демонтажные работы">Демонтажные работы</button>
-            <button class="prices-tabs__item" data-prices-tab="Монтажные работы">Монтажные работы</button>
-            <button class="prices-tabs__item" data-prices-tab="Выравнивание пола">Выравнивание пола</button>
-            <button class="prices-tabs__item" data-prices-tab="Выравнивание стен">Выравнивание стен</button>
-            <button class="prices-tabs__item" data-prices-tab="Малярные работы">Малярные работы</button>
-            <button class="prices-tabs__item" data-prices-tab="Электромонтажные работы">Электромонтажные работы</button>
-            <button class="prices-tabs__item" data-prices-tab="Сантехнические работы">Сантехнические работы</button>
-            <button class="prices-tabs__item" data-prices-tab="Плиточные работы">Плиточные работы</button>
-            <button class="prices-tabs__item" data-prices-tab="Гипсокартонные работы">Гипсокартонные работы</button>
-            <button class="prices-tabs__item" data-prices-tab="Укладка ламината">Укладка ламината</button>
-            <button class="prices-tabs__item" data-prices-tab="Установка дверей">Установка дверей</button>
-            <button class="prices-tabs__item" data-prices-tab="Шумоизоляция">Шумоизоляция</button>
-            <button class="prices-tabs__item" data-prices-tab="Дизайн интерьера">Дизайн интерьера</button>
-            <button class="prices-tabs__item" data-prices-tab="Натяжные потолки">Натяжные потолки</button>
+            <div class="prices-tabs__content">
+              <button class="prices-tabs__item active" data-prices-tab="Демонтажные работы">Демонтажные работы</button>
+              <button class="prices-tabs__item" data-prices-tab="Монтажные работы">Монтажные работы</button>
+              <button class="prices-tabs__item" data-prices-tab="Выравнивание пола">Выравнивание пола</button>
+              <button class="prices-tabs__item" data-prices-tab="Выравнивание стен">Выравнивание стен</button>
+              <button class="prices-tabs__item" data-prices-tab="Малярные работы">Малярные работы</button>
+              <button class="prices-tabs__item" data-prices-tab="Электромонтажные работы">Электромонтажные работы</button>
+              <button class="prices-tabs__item" data-prices-tab="Сантехнические работы">Сантехнические работы</button>
+              <button class="prices-tabs__item" data-prices-tab="Плиточные работы">Плиточные работы</button>
+              <button class="prices-tabs__item" data-prices-tab="Гипсокартонные работы">Гипсокартонные работы</button>
+              <button class="prices-tabs__item" data-prices-tab="Укладка ламината">Укладка ламината</button>
+              <button class="prices-tabs__item" data-prices-tab="Установка дверей">Установка дверей</button>
+              <button class="prices-tabs__item" data-prices-tab="Шумоизоляция">Шумоизоляция</button>
+              <button class="prices-tabs__item" data-prices-tab="Дизайн интерьера">Дизайн интерьера</button>
+              <button class="prices-tabs__item" data-prices-tab="Натяжные потолки">Натяжные потолки</button>
+            </div>
+            <button type="button" class="prices-tabs__show" data-prices-tabs-show data-prices-tabs-show-alt="Свернуть">Показать все</button>
           </div>
 
           <div class="prices-table">

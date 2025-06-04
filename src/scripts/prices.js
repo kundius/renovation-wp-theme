@@ -26,6 +26,7 @@ const formatPrice = (value) => {
 
 export function applyPrices(root) {
   const inputs = Array.from(root.querySelectorAll('input'))
+  const toggleTabsShow = root.querySelector('[data-prices-tabs-show]')
   const tabs = Array.from(root.querySelectorAll('[data-prices-tab]'))
   const panes = Array.from(root.querySelectorAll('[data-prices-pane]'))
   const rows = Array.from(root.querySelectorAll('[data-prices-row]'))
@@ -75,15 +76,15 @@ export function applyPrices(root) {
             price: rowPrice * rowQuantity
           })
         }
+      }
+    })
 
-        // пометить вкладку измененной
-        tabs.forEach((tab) => {
-          if (priceList[tab.dataset.pricesTab]) {
-            tab.classList.add('dirty')
-          } else {
-            tab.classList.remove('dirty')
-          }
-        })
+    // пометить вкладку измененной
+    tabs.forEach((tab) => {
+      if (priceList[tab.dataset.pricesTab]) {
+        tab.classList.add('dirty')
+      } else {
+        tab.classList.remove('dirty')
       }
     })
 
@@ -124,6 +125,21 @@ export function applyPrices(root) {
   downloadButton.addEventListener('click', download)
   inputs.forEach((input) => input.addEventListener('input', calc))
   tabs.forEach((tab) => tab.addEventListener('click', () => showTab(tab.dataset.pricesTab)))
+
+  if (toggleTabsShow) {
+    toggleTabsShow.addEventListener('click', () => {
+      const labelNew = toggleTabsShow.dataset.pricesTabsShowAlt
+      const labelOld = toggleTabsShow.textContent
+      toggleTabsShow.dataset.pricesTabsShowAlt = labelOld
+      toggleTabsShow.textContent = labelNew
+
+      if (root.hasAttribute('data-prices-expanded')) {
+        root.removeAttribute('data-prices-expanded')
+      } else {
+        root.setAttribute('data-prices-expanded', '')
+      }
+    })
+  }
 }
 
 export function initPrices() {
