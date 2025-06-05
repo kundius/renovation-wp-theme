@@ -23,8 +23,8 @@ export function applyOrderButton(button) {
       Array.from(descNodes).forEach(descNode => descNode.textContent = button.dataset.orderButtonDesc || null)
     }
 
-    if (button.dataset.orderButtonText) {
-      Array.from(textNodes).forEach(textNode => textNode.textContent = button.dataset.orderButtonText || 'Заказать звонок')
+    if (button.dataset.orderButtonAction) {
+      Array.from(textNodes).forEach(textNode => textNode.textContent = button.dataset.orderButtonAction || 'Заказать звонок')
     }
 
     if (button.dataset.orderButtonGoal) {

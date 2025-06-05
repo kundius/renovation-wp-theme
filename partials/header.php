@@ -18,11 +18,11 @@
         <?php echo carbon_get_theme_option('crb_fixed_message'); ?>
       </div>
       <button
-        class="extra-header__offer__button" 
-        data-order-button 
+        class="extra-header__offer__button"
+        data-order-button
         data-order-button-title="<?php echo carbon_get_theme_option('crb_fixed_modal_title'); ?>"
         data-order-button-desc="<?php echo carbon_get_theme_option('crb_fixed_modal_desc'); ?>"
-        data-order-button-text="<?php echo carbon_get_theme_option('crb_fixed_modal_button'); ?>"
+        data-order-button-action="<?php echo carbon_get_theme_option('crb_fixed_modal_action'); ?>"
       >
         <?php echo carbon_get_theme_option('crb_fixed_button'); ?>
       </button>

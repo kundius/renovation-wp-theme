@@ -4,6 +4,8 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 use Carbon_Fields\Block;
 
+$theme_options_container = null;
+
 add_action('after_setup_theme', function () {
   \Carbon_Fields\Carbon_Fields::boot();
 });
@@ -91,6 +93,8 @@ add_action('admin_head', function () {
 });
 
 function create_block($key, $name, $fields) {
+  global $theme_options_container;
+  
   foreach ($fields as $field) {
     // добавить к простым названиям название блока, чтобы в опциях они были уникальны
     $field->set_base_name($key . '_' . $field->get_base_name());
@@ -121,7 +125,7 @@ function create_block($key, $name, $fields) {
   ], $fields);
 
   Container::make('theme_options', $name)
-    ->set_page_parent('themes.php')
+    ->set_page_parent($theme_options_container)
     ->add_fields($theme_options_fields);
 
   Block::make('block_' . $key, $name)
@@ -129,10 +133,25 @@ function create_block($key, $name, $fields) {
     ->set_category('layout')
     ->set_mode('edit')
     ->set_render_callback(function ($fields, $attributes, $inner_blocks) use ($key) {
+      $block_name = $fields[$key . '_block_name'];
+      $block_fields = $fields[$key . '_block_fields'];
+
+      unset($fields[$key . '_block_name']);
+      unset($fields[$key . '_block_fields']);
+
+      $args_fields = [];
+
+      foreach ($fields as $field_key => $field_value) {
+        $short_key = str_replace($key . '_', '', $field_key);
+        if (in_array($field_key, $block_fields)) {
+          $args_fields[$short_key] = $field_value;
+        } else {
+          $args_fields[$short_key] = carbon_get_theme_option($field_key);
+        }
+      }
+
       get_template_part('blocks/' . $key, null, [
-        'fields' => $fields,
-        'attributes' => $attributes,
-        'inner_blocks' => $inner_blocks
+        'fields' => $args_fields
       ]);
     });
 }
@@ -140,19 +159,9 @@ function create_block($key, $name, $fields) {
 add_action('carbon_fields_register_fields', 'register_carbon_fields_blocks');
 function register_carbon_fields_blocks()
 {
+  global $theme_options_container;
 
-  create_block('completion_date', 'Сроки выполнения', [
-    Field::make('text', 'title', 'Заголовок'),
-    Field::make('text', 'desc', 'Описание')
-  ]);
-
-  create_block('contacts', 'Контакты', [
-    Field::make('text', 'title', 'Заголовок'),
-    Field::make('text', 'desc', 'Описание')
-  ]);
-
-  Container::make('theme_options', 'Параметры')
-    ->set_page_parent('themes.php')
+  $theme_options_container = Container::make('theme_options', 'Параметры')
     ->add_fields([
       Field::make('separator', 'crb_theme', 'Общее'),
       Field::make('text', 'crb_theme_phone', 'Телефон')->set_help_text('Шорткод для блоков: {crb_theme_phone}'),
@@ -176,17 +185,38 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'crb_fixed_message', 'Сообщение')->set_rows(2),
       Field::make('textarea', 'crb_fixed_button', 'Текст кнопки в закрепе')->set_rows(2),
       Field::make('textarea', 'crb_fixed_modal_title', 'Заголовок в диалоге')->set_rows(2),
-      Field::make('textarea', 'crb_fixed_modal_button', 'Текст кнопки в диалоге')->set_rows(2),
+      Field::make('textarea', 'crb_fixed_modal_action', 'Текст кнопки в диалоге')->set_rows(2),
       Field::make('textarea', 'crb_fixed_modal_desc', 'Описание в диалоге')->set_rows(2),
 
       Field::make('separator', 'crb_callback', 'Заказать звонок'),
       Field::make('text', 'crb_callback_title', 'Заголовок в диалоге'),
-      Field::make('text', 'crb_callback_button', 'Текст кнопки в диалоге'),
+      Field::make('text', 'crb_callback_action', 'Текст кнопки в диалоге'),
       Field::make('textarea', 'crb_callback_desc', 'Описание в диалоге')->set_rows(2),
 
       Field::make('separator', 'crb_footer', 'Подвал'),
       Field::make('textarea', 'crb_footer_info', 'Информация')->set_rows(2),
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
     ]);
+
+  create_block('intro', 'Интро', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('textarea', 'desc', 'Описание')->set_rows(2),
+    Field::make('textarea', 'list', 'Список (строки)')->set_rows(4),
+    Field::make('text', 'action', 'Действие'),
+    Field::make('image', 'background', 'Фон'),
+
+    Field::make('textarea', 'modal_title', 'Диалог / Заголовок')->set_rows(2),
+    Field::make('textarea', 'modal_desc', 'Диалог / Описание')->set_rows(2),
+    Field::make('text', 'modal_action', 'Диалог / Действие'),
+    Field::make('text', 'modal_goal', 'Диалог / Цель в метрике'),
+
+    Field::make('textarea', 'form_title', 'Форма / Заголовок')->set_rows(2),
+    Field::make('complex', 'form_repair_types', 'Форма / Типы ремонта')->add_fields([
+      Field::make('text', 'name', 'Форма / Название')->set_width(50),
+      Field::make('text', 'price', 'Форма / Цена за м2')->set_width(50),
+    ]),
+    Field::make('text', 'form_action', 'Форма / Действие'),
+    Field::make('text', 'form_goal', 'Форма / Цель в метрике'),
+  ]);
 
 }

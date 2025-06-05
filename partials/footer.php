@@ -173,12 +173,12 @@
           </div>
 
           <div class="modal-form__field modal-form__field--rules">
-            Нажимая “Заказать звонок”, вы даете согласие на <a href="#">обработку персональных данных</a>
+            Нажимая “<?php echo carbon_get_theme_option('crb_callback_action'); ?>”, вы даете согласие на <a href="#">обработку персональных данных</a>
           </div>
 
           <div class="modal-form__field modal-form__field--submit">
             <button type="submit" class="primary-button primary-button--alt w-full">
-              <?php echo carbon_get_theme_option('crb_callback_button'); ?>
+              <?php echo carbon_get_theme_option('crb_callback_action'); ?>
             </button>
           </div>
         </form>
