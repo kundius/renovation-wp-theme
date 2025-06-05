@@ -21,4 +21,14 @@ export function initStickyHeader() {
   )
 
   observer.observe(headerAnchor)
+
+  const scrollup = document.querySelector('[data-sticky-header-scrollup]')
+  if (scrollup) {
+    scrollup.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    })
+  }
 }

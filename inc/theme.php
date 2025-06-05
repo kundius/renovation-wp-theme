@@ -51,3 +51,43 @@ function is_new_year()
   }
   return false;
 }
+
+function ssc($text) {
+  $search = [
+    '{crb_theme_phone}',
+    '{crb_theme_telegram}',
+    '{crb_theme_whatsapp}',
+    '{crb_theme_working_hours}',
+    '{crb_theme_working_hours_short}',
+    '{crb_theme_address}',
+    '{crb_theme_contacts}',
+    '{crb_theme_site_name}',
+    '{crb_theme_slogan}',
+  ];
+  $replace = [
+    carbon_get_theme_option('crb_theme_phone') ?: '',
+    carbon_get_theme_option('crb_theme_telegram') ?: '',
+    carbon_get_theme_option('crb_theme_whatsapp') ?: '',
+    carbon_get_theme_option('crb_theme_working_hours') ?: '',
+    carbon_get_theme_option('crb_theme_working_hours_short') ?: '',
+    carbon_get_theme_option('crb_theme_address') ?: '',
+    carbon_get_theme_option('crb_theme_contacts') ?: '',
+    carbon_get_theme_option('crb_theme_site_name') ?: '',
+    carbon_get_theme_option('crb_theme_slogan') ?: '',
+  ];
+  return str_replace($search, $replace, $text);
+}
+
+function start_output_buffer() {
+  if (is_admin()) {
+    return;
+  }
+  ob_start();
+}
+add_action('template_redirect', 'start_output_buffer');
+
+function apply_full_html_replacements() {
+  $html = ob_get_clean();
+  echo ssc($html);
+}
+add_action('wp_footer', 'apply_full_html_replacements');

@@ -7,10 +7,7 @@
             Контактная информация
           </div>
           <div class="footer-contacts__text">
-            Наш телефон: +7 (800) 123-45-67<br>
-            <br>
-            Пн - Пт,  9:00 - 18:00,<br>
-            перерыв с  13:00 - 14:00
+            <?php echo nl2br(carbon_get_theme_option('crb_theme_contacts')); ?>
           </div>
           <div class="footer-contacts__call">
             <button type="button" class="control-button">
@@ -19,8 +16,7 @@
             </button>
           </div>
           <div class="footer-contacts__address">
-            <strong>Адрес офиса:</strong><br>
-            Казань, ул. Космонавтов, 47А, 33
+            <?php echo nl2br(carbon_get_theme_option('crb_theme_address')); ?>
           </div>
         </div>
       </div>
@@ -77,13 +73,13 @@
 <div class="footer-bottom">
   <div class="container footer-bottom__container">
     <div class="footer-bottom__copyright">
-      © 2025, Все права защищены.
+      <?php echo nl2br(carbon_get_theme_option('crb_footer_copyright')); ?>
     </div>
     <div class="footer-bottom__links">
       <a href="#">Политика конфиденциальности</a>
     </div>
     <div class="footer-bottom__info">
-      Сайт не является публичной офертой и носит информационный характер
+      <?php echo nl2br(carbon_get_theme_option('crb_footer_info')); ?>
     </div>
   </div>
 </div>
@@ -103,12 +99,12 @@
           <div class="drawer-region__select">
             <div class="drawer-region-select" data-city-select role="combobox" aria-expanded="false" aria-haspopup="true" aria-label="Выбор города">
               <button class="drawer-region-select__trigger" data-city-select-trigger>
-                <span>Воронеж</span>
+                <span><?php echo carbon_get_theme_option('crb_header_city'); ?></span>
               </button>
               <div class="drawer-region-select__list" role="listbox" data-city-select-listbox>
-                <a href="#" role="option" tabindex="-1">Москва</a>
-                <a href="#" role="option" tabindex="-1">Санкт-Петербург</a>
-                <a href="#" role="option" tabindex="-1">Казань</a>
+                <?php foreach (carbon_get_theme_option('crb_header_cities') as $city): ?>
+                <a href="<?php echo $city['url'] ?>" role="option" tabindex="-1"><?php echo $city['name'] ?></a>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>
@@ -117,22 +113,309 @@
 
       <div class="drawer__contacts">
         <div class="drawer-social">
-          <a href="#" class="drawer-social__telegram">
+          <?php if ($telegram = carbon_get_theme_option('crb_theme_telegram')): ?>
+          <a href="tg://resolve?domain=<?php echo $telegram; ?>" class="drawer-social__telegram">
             <span class="icon icon-telegram"></span>
           </a>
-          <a href="#" class="drawer-social__whatsapp">
+          <?php endif; ?>
+          <?php if ($whatsapp = carbon_get_theme_option('crb_theme_whatsapp')): ?>
+          <a href="whatsapp://send?text=Hello&phone=<?php echo $whatsapp; ?>" class="drawer-social__whatsapp">
             <span class="icon icon-whatsapp"></span>
           </a>
+          <?php endif; ?>
         </div>
         
-        <a href="" class="drawer-phone">
-          <span class="drawer-phone__number">+7 (800) 123-45-67</span>
-          <span class="drawer-phone__time">Пн - Пт,  9:00 - 18:00</span>
+        <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone'); ?>" class="drawer-phone">
+          <span class="drawer-phone__number"><?php echo carbon_get_theme_option('crb_theme_phone'); ?></span>
+          <span class="drawer-phone__time"><?php echo carbon_get_theme_option('crb_theme_working_hours_short'); ?></span>
         </a>
       </div>
     </div>
   </div>
   <div class="drawer__overlay" data-drawer-close></div>
+</div>
+
+<div id="modal-call" aria-hidden="true" class="modal">
+  <div class="modal__overlay" tabindex="-1" data-modal-close>
+    <div class="modal__container modal__container--default" role="dialog" aria-modal="true">
+        
+      <div class="modal__content">
+        <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
+
+        <div class="modal__title"><?php echo carbon_get_theme_option('crb_callback_title'); ?></div>
+
+        <div class="modal__desc"><?php echo carbon_get_theme_option('crb_callback_desc'); ?></div>
+
+        <form
+          action="<?php echo admin_url('admin-ajax.php') ?>"
+          class="modal-form"
+          data-feedack-form
+          data-feedack-form-goal="MODAL_CALLBACK"
+        >
+          <input type="hidden" name="submitted" value="">
+          <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
+          <input type="hidden" name="subject" value="<?php echo carbon_get_theme_option('crb_callback_title'); ?>">
+
+          <div class="modal-form__messages" data-feedack-form-messages></div>
+
+          <div class="modal-form__field">
+            <label class="text-field">
+              <span class="text-field__label">Ваше имя<span>*</span></span>
+              <input class="text-field__input" type="text" name="your-name" value="" placeholder="">
+            </label>
+          </div>
+
+          <div class="modal-form__field">
+            <label class="phone-field">
+              <span class="phone-field__label">Ваш номер телефона<span>*</span></span>
+              <input class="phone-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+            </label>
+          </div>
+
+          <div class="modal-form__field modal-form__field--rules">
+            Нажимая “Заказать звонок”, вы даете согласие на <a href="#">обработку персональных данных</a>
+          </div>
+
+          <div class="modal-form__field modal-form__field--submit">
+            <button type="submit" class="primary-button primary-button--alt w-full">
+              <?php echo carbon_get_theme_option('crb_callback_button'); ?>
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="order-modal" aria-hidden="true" class="modal">
+  <div class="modal__overlay" tabindex="-1" data-modal-close>
+    <div class="modal__container modal__container--default" role="dialog" aria-modal="true">
+        
+      <div class="modal__content">
+        <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
+
+        <div class="modal__title" data-order-modal-title>Заказать обратный звонок</div>
+
+        <div class="modal__desc" data-order-modal-desc></div>
+
+        <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form data-feedack-form-goal="MODAL_ORDER">
+          <input type="hidden" name="submitted" value="">
+          <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
+          <input type="hidden" name="subject" value="Заказать обратный звонок" data-feedack-form-subject>
+
+          <div class="modal-form__messages" data-feedack-form-messages></div>
+
+          <div class="modal-form__field">
+            <label class="text-field">
+              <span class="text-field__label">Ваше имя<span>*</span></span>
+              <input class="text-field__input" type="text" name="your-name" value="" placeholder="">
+            </label>
+          </div>
+
+          <div class="modal-form__field">
+            <label class="phone-field">
+              <span class="phone-field__label">Ваш номер телефона<span>*</span></span>
+              <input class="phone-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+            </label>
+          </div>
+
+          <div class="modal-form__field modal-form__field--rules">
+            Нажимая “<span data-order-modal-text>Заказать звонок</span>”, вы даете согласие на <a href="#">обработку персональных данных</a>
+          </div>
+
+          <div class="modal-form__field modal-form__field--submit">
+            <button type="submit" class="primary-button primary-button--alt w-full" data-order-modal-text>Заказать звонок</button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="modal-calc" aria-hidden="true" class="modal">
+  <div class="modal__overlay" tabindex="-1" data-modal-close>
+    <div class="modal__container container" role="dialog" aria-modal="true">
+      <div class="relative">
+        <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
+
+        <form class="calc" data-calc>
+          <div class="calc__left">
+            <div class="calc__field">
+              <div class="calc__field-label">
+                1. Тип Вашего дома
+              </div>
+              <div class="calc__field-control calc__field-house-type">
+                <label class="radio-field">
+                  <input type="radio" name="house-type" data-calc-repair-price="500" data-calc-materials-price="220" value="Новостройка" checked>
+                  <span>Новостройка</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="house-type" data-calc-repair-price="700" data-calc-materials-price="300" value="Вторичное жилье">
+                  <span>Вторичное жилье</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="house-type" data-calc-repair-price="1000" data-calc-materials-price="400" value="Старый фонд">
+                  <span>Старый фонд</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="calc__field">
+              <div class="calc__field-label">
+                2. Количество комнат
+              </div>
+              <div class="calc__field-control calc__field-room-count">
+                <label class="radio-field">
+                  <input type="radio" name="room-count" data-calc-repair-price="150%" data-calc-materials-price="150%" value="Студия" checked>
+                  <span>Студия</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="room-count" data-calc-repair-price="100%" data-calc-materials-price="100%" value="1">
+                  <span>1</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="room-count" data-calc-repair-price="190%" data-calc-materials-price="190%" value="2">
+                  <span>2</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="room-count" data-calc-repair-price="270%" data-calc-materials-price="270%" value="3">
+                  <span>3</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="room-count" data-calc-repair-price="340%" data-calc-materials-price="340%" value="4">
+                  <span>4</span>
+                </label>
+                <label class="radio-field">
+                  <input type="radio" name="room-count" data-calc-repair-price="400%" data-calc-materials-price="400%" value="5">
+                  <span>5</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="calc__field">
+              <div class="calc__field-label">
+                3. Тип ремонта
+              </div>
+              <div class="calc__field-control calc__field-repair-type">
+                <label class="radio-button">
+                  <input type="radio" name="repair-type" value="КОСМЕТИЧЕСКИЙ" data-calc-repair-price="500" data-calc-materials-price="220" name="Тип ремонта" checked>
+                  <span>КОСМЕТИЧЕСКИЙ</span>
+                </label>
+                <label class="radio-button">
+                  <input type="radio" name="repair-type" value="КАПИТАЛЬНЫЙ" data-calc-repair-price="1000" data-calc-materials-price="700" name="Тип ремонта">
+                  <span>КАПИТАЛЬНЫЙ</span>
+                </label>
+                <label class="radio-button">
+                  <input type="radio" name="repair-type" value="ЧЕРНОВОЙ" data-calc-repair-price="400" data-calc-materials-price="200" name="Тип ремонта">
+                  <span>ЧЕРНОВОЙ</span>
+                </label>
+                <label class="radio-button">
+                  <input type="radio" name="repair-type" value="ПО ДИЗАЙН-ПРОЕКТУ" data-calc-repair-price="1200" data-calc-materials-price="800" name="Тип ремонта">
+                  <span>ПО ДИЗАЙН-ПРОЕКТУ</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="calc__field">
+              <div class="calc__field-label">
+                4. Загрузите план квартиры или дома для получения точной сметы ремонта <span>(в формате .doc, .docx, .xlsx, .pdf, .jpeg, .png)</span>
+              </div>
+              <div class="calc__field-control calc__field-attachments">
+                <div class="attachments-field" data-attachments-field data-attachments-field-count="1">
+                  <div class="attachments-field__row" data-attachments-field-row>
+                    <label class="attachment-field" data-attachment-field>
+                      <input type="file" name="file" class="attachment-field__input" data-attachment-field-input />
+                      <span class="attachment-field__label control-button">
+                        <span data-attachment-field-label>Выберите файл</span>
+                        <span class="icon icon-pin"></span>
+                      </span>
+                    </label>
+
+                    <button type="button" class="more-button attachments-field__remove" data-attachments-field-remove>
+                      <span class="more-button__text">Убрать</span>
+                      <span class="more-button__icon">
+                        <span class="icon icon-minus"></span>
+                      </span>
+                    </button>
+
+                    <button type="button" class="more-button attachments-field__add" data-attachments-field-add>
+                      <span class="more-button__text">Добавить ещё</span>
+                      <span class="more-button__icon">
+                        <span class="icon icon-plus"></span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calc__field calc__field--area">
+              <div class="calc__field-label">
+                Площадь помещения (м<sup>2</sup>)
+              </div>
+              <div class="calc__field-control calc__field-area">
+                <div class="range-field" data-range-field>
+                  <input type="range" name="area" value="25" min="0" max="300" class="range-field__input" data-range-field-input>
+                  <div class="range-field__display" data-range-field-display="# м<sup>2</sup>"></div>
+                  <button type="button" class="range-field__plus" data-range-field-plus>+</button>
+                  <button type="button" class="range-field__minus" data-range-field-minus>-</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc__right">
+            <div class="calc__repair">
+              <div class="calc__repair-title">
+                Примерная стоимость ремонта
+              </div>
+              <div class="calc__repair-desc">
+                без учета материалов:
+              </div>
+              <div class="calc__repair-price" data-calc-repair-cost></div>
+            </div>
+            <div class="calc__materials">
+              <div class="calc__materials-title">
+                Стоимость <span class="inline-block">черновых материалов</span>
+              </div>
+              <div class="calc__materials-price" data-calc-materials-cost></div>
+            </div>
+            <div class="calc__line"></div>
+            <div class="calc__message">
+              Мы уже приступили к точному расчету, напишите ваш телефон и получите смету
+              в течении 3 часов!
+            </div>
+            <div class="calc__phone">
+              <label class="phone-field">
+                <span class="phone-field__label">Ваш номер телефона</span>
+                <input class="phone-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+              </label>
+            </div>
+            <div class="calc__rules">
+              Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
+            </div>
+            <div class="calc__submit">
+              <button class="primary-button primary-button--alt">Отправить</button>
+            </div>
+          </div>
+
+          <div class="calc-success">
+            <div class="calc-success__title">
+              Сообщение отправлено!
+            </div>
+            <div class="calc-success__desc">
+              Тут нужно что-то написать
+            </div>
+            <button type="button" class="calc-success__close" data-calc-reset>Закрыть</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 <?php wp_footer(); ?>

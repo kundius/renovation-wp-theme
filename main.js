@@ -51,6 +51,9 @@ import { initPrices } from './src/scripts/prices'
 import { initFaq } from './src/scripts/faq'
 import { initDrawer } from './src/scripts/drawer'
 import { initExpertsEmbla } from './src/scripts/experts-embla'
+import { initCallButton } from './src/scripts/call-button'
+import { initModal } from './src/scripts/modal'
+import { initOrderButton } from './src/scripts/order-button'
 
 new MaskInput('[data-maska]')
 
@@ -71,6 +74,9 @@ initPrices()
 initFaq()
 initDrawer()
 initExpertsEmbla()
+initCallButton()
+initModal()
+initOrderButton()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()

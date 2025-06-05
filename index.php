@@ -11,12 +11,16 @@
   <div class="flex flex-col min-h-scree">
     <?php get_template_part('partials/header'); ?>
 
+    <?php the_content(); ?>
+
     <section class="hero">
       <div class="container">
         <div class="hero__layout">
           <div class="hero__layout-content">
             <div class="hero__title">Ремонт квартир под ключ в Казани </div>
-            <div class="hero__desc">Берем на себя всё: от согласований с&nbsp;управляющей компанией до комплектации мебелью и техникой</div>
+            <div class="hero__desc">
+              Берем на себя всё: от согласований с&nbsp;управляющей компанией до комплектации мебелью и техникой
+            </div>
             <ul class="hero__list">
               <li>Без предоплаты. Строго по договору</li>
               <li>Оплата по факту выполненных работ</li>
@@ -24,7 +28,7 @@
               <li>Все мастера - граждане РФ</li>
             </ul>
             <div class="hero__button">
-              <button class="primary-button primary-button--alt primary-button--large text-lg uppercase max-md:text-base">Получить предложение</button>
+              <button class="primary-button primary-button--alt primary-button--large text-lg uppercase max-md:text-base" data-order-button data-order-button-desc="Заполните форму, и наш специалист свяжется с&nbsp;Вами в течение 15 минут">Получить предложение</button>
             </div>
           </div>
           <div class="hero__layout-form">
@@ -677,22 +681,22 @@
                     <div class="portfolio-item__gallery">
                       <div class="portfolio-gallery" data-portfolio-gallery>
                         <div class="portfolio-gallery__main">
-                          <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                          <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" data-fslightbox="gallery"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
                         </div>
                         <div class="portfolio-gallery__carousel">
                           <div class="portfolio-gallery__carousel-viewport" data-portfolio-gallery-viewport>
                             <div class="portfolio-gallery__carousel-container">
                               <div class="portfolio-gallery__carousel-slide">
-                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" data-fslightbox="gallery"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
                               </div>
                               <div class="portfolio-gallery__carousel-slide">
-                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" data-fslightbox="gallery"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
                               </div>
                               <div class="portfolio-gallery__carousel-slide">
-                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" data-fslightbox="gallery"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
                               </div>
                               <div class="portfolio-gallery__carousel-slide">
-                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
+                                <a href="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" data-fslightbox="gallery"><img src="https://rembrigada116.ru/wp-content/uploads/2022/04/1-1024x768.jpg" alt=""></a>
                               </div>
                             </div>
                           </div>
@@ -1494,24 +1498,24 @@
             <div class="reviews-item__title">
               Дизайнерский ремонт в 1-комнатной квартире
             </div>
-            <a href="#video-1" class="reviews-item__preview">
+            <a href="#video-1" class="reviews-item__preview" data-fslightbox="video">
               <img class="reviews-item__image" src="https://rembrigada116.ru/wp-content/uploads/2019/06/DSC01865.jpeg" />
               <span class="reviews-item__play"></span>
             </a>
             <div class="hidden">
-              <!-- <iframe src="https://rutube.ru/play/embed/348b982ea960ac5b6617870116bd781e/" id="video-1" width="1920px" height="1080px" frameborder="0" allow="fullscreen" allowfullscreen=""></iframe> -->
+              <iframe src="https://rutube.ru/play/embed/348b982ea960ac5b6617870116bd781e/" id="video-1" width="1920px" height="1080px" frameborder="0" allow="fullscreen" allowfullscreen=""></iframe>
             </div>
           </div>
           <div class="reviews-item">
             <div class="reviews-item__title">
               Дизайнерский ремонт в 1-комнатной квартире
             </div>
-            <a href="#video-2" class="reviews-item__preview">
+            <a href="#video-2" class="reviews-item__preview" data-fslightbox="video">
               <img class="reviews-item__image" src="https://rembrigada116.ru/wp-content/uploads/2019/06/DSC01865.jpeg" />
               <span class="reviews-item__play"></span>
             </a>
             <div class="hidden">
-              <!-- <iframe src="https://rutube.ru/play/embed/348b982ea960ac5b6617870116bd781e/" id="video-2" width="1920px" height="1080px" frameborder="0" allow="fullscreen" allowfullscreen=""></iframe> -->
+              <iframe src="https://rutube.ru/play/embed/348b982ea960ac5b6617870116bd781e/" id="video-2" width="1920px" height="1080px" frameborder="0" allow="fullscreen" allowfullscreen=""></iframe>
             </div>
           </div>
         </div>

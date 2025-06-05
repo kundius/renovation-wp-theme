@@ -3,24 +3,29 @@
     <div class="extra-header__city">
       <div class="city-select" data-city-select role="combobox" aria-expanded="false" aria-haspopup="true" aria-label="Выбор города">
         <button class="city-select__trigger" data-city-select-trigger>
-          <span>Воронеж</span>
+          <span><?php echo carbon_get_theme_option('crb_header_city'); ?></span>
         </button>
         <div class="city-select__list" role="listbox" data-city-select-listbox>
-          <a href="#" role="option" tabindex="-1">Москва</a>
-          <a href="#" role="option" tabindex="-1">Санкт-Петербург</a>
-          <a href="#" role="option" tabindex="-1">Казань</a>
+          <?php foreach (carbon_get_theme_option('crb_header_cities') as $city): ?>
+          <a href="<?php echo $city['url'] ?>" role="option" tabindex="-1"><?php echo $city['name'] ?></a>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
 
     <div class="extra-header__offer">
       <div class="extra-header__offer__message">
-        ВЫГОДНОЕ СОТРУДНИЧЕСТВО ДЛЯ КОМПАНИЙ, БРИГАД И ЧАСТНЫХ МАСТЕРОВ
+        <?php echo carbon_get_theme_option('crb_fixed_message'); ?>
       </div>
-      <a href="#" class="extra-header__offer__button">
-        <span class="lg:hidden">Заявка на сотрудничество</span>
-        <span class="max-lg:hidden">Оставить заявку</span>
-      </a>
+      <button
+        class="extra-header__offer__button" 
+        data-order-button 
+        data-order-button-title="<?php echo carbon_get_theme_option('crb_fixed_modal_title'); ?>"
+        data-order-button-desc="<?php echo carbon_get_theme_option('crb_fixed_modal_desc'); ?>"
+        data-order-button-text="<?php echo carbon_get_theme_option('crb_fixed_modal_button'); ?>"
+      >
+        <?php echo carbon_get_theme_option('crb_fixed_button'); ?>
+      </button>
     </div>
   </div>
 </div>
@@ -30,10 +35,11 @@
   <div class="container container--larger header__container">
     <a href="/" class="header__logo">
       <span class="header__logo__name">
-        РЕМОНТ-
-        <span class="whitespace-nowrap">ПОД-КЛЮЧ</span>
+        <?php echo carbon_get_theme_option('crb_theme_site_name'); ?>
       </span>
-      <span class="header__logo__desc">Ремонт квартир под ключ в Казани</span>
+      <span class="header__logo__desc">
+        <?php echo carbon_get_theme_option('crb_theme_slogan'); ?>
+      </span>
     </a>
 
     <ul class="header__nav">
@@ -107,20 +113,28 @@
       <li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="">Контакты</a></li>
     </ul>
 
-    <a href="" class="header__calc">
+    <button class="header__calc" data-modal-open="modal-calc">
       <span class="header__calc__icon"></span>
       <span class="header__calc__text">
         калькулятор<br>
         стоимости
       </span>
+    </button>
+
+    <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone'); ?>" class="header__phone" data-call-button>
+      <span class="header__phone__number">
+        <?php echo carbon_get_theme_option('crb_theme_phone'); ?>
+      </span>
+      <span class="header__phone__time">
+        <?php echo carbon_get_theme_option('crb_theme_working_hours'); ?>
+      </span>
     </a>
 
-    <a href="" class="header__phone">
-      <span class="header__phone__number">+7 (800) 123-45-67</span>
-      <span class="header__phone__time">Ежедневно с 9-00 до 19-00</span>
-    </a>
-
-    <a href="" class="header__callback">
+    <a
+      href="tel:<?php echo carbon_get_theme_option('crb_theme_phone'); ?>"
+      class="header__callback"
+      data-call-button
+    >
       <span class="header__callback__icon"></span>
       <span class="header__callback__text">
         Заказать<br>
@@ -133,5 +147,8 @@
     </button>
   </div>
   <div class="header__anchor" data-sticky-header-anchor></div>
+  <button type="button" class="scrollup" data-sticky-header-scrollup>
+    <span class="icon icon-arrow-up"></span>
+  </button>
 </div>
 <div class="h-4 max-md:hidden"></div>
