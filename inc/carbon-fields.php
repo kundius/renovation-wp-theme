@@ -219,4 +219,14 @@ function register_carbon_fields_blocks()
     Field::make('text', 'form_goal', 'Форма / Цель в метрике'),
   ]);
 
+  create_block('about', 'О компании', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('textarea', 'subtitle', 'Подзаголовок')->set_rows(2),
+    Field::make('rich_text', 'content', 'Текст'),
+    Field::make('complex', 'cards', 'Карточки')->add_fields([
+      Field::make('image', 'image', 'Картинка')->set_width(50),
+      Field::make('text', 'name', 'Название')->set_width(50),
+    ]),
+  ]);
+
 }
