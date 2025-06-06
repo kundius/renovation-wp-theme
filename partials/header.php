@@ -19,10 +19,11 @@
       </div>
       <button
         class="extra-header__offer__button"
-        data-order-button
-        data-order-button-title="<?php echo carbon_get_theme_option('crb_fixed_modal_title'); ?>"
-        data-order-button-desc="<?php echo carbon_get_theme_option('crb_fixed_modal_desc'); ?>"
-        data-order-button-action="<?php echo carbon_get_theme_option('crb_fixed_modal_action'); ?>"
+        data-feedback-button
+        data-feedback-button-title="<?php echo esc_html(carbon_get_theme_option('crb_fixed_modal_title')); ?>"
+        data-feedback-button-desc="<?php echo esc_html(carbon_get_theme_option('crb_fixed_modal_desc')); ?>"
+        data-feedback-button-action="<?php echo esc_html(carbon_get_theme_option('crb_fixed_modal_action')); ?>"
+        data-feedback-button-goal="<?php echo carbon_get_theme_option('crb_fixed_modal_goal'); ?>"
       >
         <?php echo carbon_get_theme_option('crb_fixed_button'); ?>
       </button>

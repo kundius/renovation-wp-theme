@@ -19,11 +19,11 @@
         <div class="hero__button">
           <button
             class="primary-button primary-button--alt primary-button--large text-lg max-md:text-base"
-            data-order-button
-            data-order-button-title="<?php echo $args['fields']['modal_title']; ?>"
-            data-order-button-desc="<?php echo $args['fields']['modal_desc']; ?>"
-            data-order-button-action="<?php echo $args['fields']['modal_action']; ?>"
-            data-order-button-goal="<?php echo $args['fields']['modal_goal']; ?>"
+            data-feedback-button
+            data-feedback-button-title="<?php echo esc_html($args['fields']['modal_title']); ?>"
+            data-feedback-button-desc="<?php echo esc_html($args['fields']['modal_desc']); ?>"
+            data-feedback-button-action="<?php echo esc_html($args['fields']['modal_action']); ?>"
+            data-feedback-button-goal="<?php echo $args['fields']['modal_goal']; ?>"
           >
             <?php echo $action; ?>
           </button>

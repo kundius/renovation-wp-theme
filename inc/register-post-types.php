@@ -3,34 +3,34 @@ add_action('init', 'register_post_types');
 
 function register_post_types()
 {
-  // register_post_type('photoalbum', [
-  //   'label' => null,
-  //   'labels' => [
-  //     'name' => 'Фотоальбом', // основное название для типа записи
-  //     'singular_name' => 'Фотоальбом', // название для одной записи этого типа
-  //     'add_new' => 'Добавить фотоальбом', // для добавления новой записи
-  //     'add_new_item' => 'Добавить фотоальбом', // заголовка у вновь создаваемой записи в админ-панели.
-  //     'edit_item' => 'Редактировать фотоальбом', // для редактирования типа записи
-  //     'new_item' => 'Новая фотоальбом', // текст новой записи
-  //     'view_item' => 'Смотреть фотографии', // для просмотра записи этого типа.
-  //     'search_items' => 'Искать фотоальбом', // для поиска по этим типам записи
-  //     'not_found' => 'Не найдено', // если в результате поиска ничего не было найдено
-  //     'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
-  //     'parent_item_colon' => '', // для родителей (у древовидных типов)
-  //     'menu_name' => 'Фотогалерея', // название меню
-  //   ],
-  //   'description' => '',
-  //   'public' => true,
-  //   'show_in_menu' => null, // показывать ли в меню админки
-  //   'show_in_rest' => null, // добавить в REST API. C WP 4.7
-  //   'rest_base' => null, // $post_type. C WP 4.7
-  //   'menu_position' => null,
-  //   'menu_icon' => 'dashicons-media-document',
-  //   'hierarchical' => false,
-  //   'supports' => ['title', 'thumbnail'], // 'title','editor','author','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-  //   'taxonomies' => [],
-  //   'has_archive' => false,
-  //   'rewrite' => true,
-  //   'query_var' => true,
-  // ]);
+  register_post_type('portfolio', [
+    'label' => null,
+    'labels' => [
+      'name' => 'Портфолио',
+      'singular_name' => 'Портфолио',
+      'add_new' => 'Добавить Портфолио',
+      'add_new_item' => 'Добавить Портфолио',
+      'edit_item' => 'Редактировать Портфолио',
+      'new_item' => 'Новая Портфолио',
+      'view_item' => 'Смотреть Портфолио',
+      'search_items' => 'Искать Портфолио',
+      'not_found' => 'Не найдено',
+      'not_found_in_trash' => 'Не найдено в корзине',
+      'parent_item_colon' => '',
+      'menu_name' => 'Портфолио',
+    ],
+    'description' => '',
+    'public' => true,
+    'show_in_menu' => null,
+    'show_in_rest' => null,
+    'rest_base' => null,
+    'menu_position' => null,
+    'menu_icon' => 'dashicons-media-document',
+    'hierarchical' => false,
+    'supports' => ['title'],
+    'taxonomies' => [],
+    'has_archive' => false,
+    'rewrite' => true,
+    'query_var' => true,
+  ]);
 }

@@ -189,21 +189,21 @@
   </div>
 </div>
 
-<div id="order-modal" aria-hidden="true" class="modal">
+<div id="feedack-modal" aria-hidden="true" class="modal">
   <div class="modal__overlay" tabindex="-1" data-modal-close>
     <div class="modal__container modal__container--default" role="dialog" aria-modal="true">
         
       <div class="modal__content">
         <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
 
-        <div class="modal__title" data-order-modal-title>Заказать обратный звонок</div>
+        <div class="modal__title" data-feedack-modal-title>Обратная связь</div>
 
-        <div class="modal__desc" data-order-modal-desc></div>
+        <div class="modal__desc" data-feedack-modal-desc></div>
 
-        <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form data-feedack-form-goal="MODAL_ORDER">
+        <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form data-feedack-form-goal="FEEDBACK_MODAL">
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
-          <input type="hidden" name="subject" value="Заказать обратный звонок" data-feedack-form-subject>
+          <input type="hidden" name="subject" value="Форма обратной связи" data-feedack-form-subject>
 
           <div class="modal-form__messages" data-feedack-form-messages></div>
 
@@ -222,11 +222,11 @@
           </div>
 
           <div class="modal-form__field modal-form__field--rules">
-            Нажимая “<span data-order-modal-text>Заказать звонок</span>”, вы даете согласие на <a href="#">обработку персональных данных</a>
+            Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
           </div>
 
           <div class="modal-form__field modal-form__field--submit">
-            <button type="submit" class="primary-button primary-button--alt w-full" data-order-modal-text>Заказать звонок</button>
+            <button type="submit" class="primary-button primary-button--alt w-full" data-feedack-modal-action>Отправить</button>
           </div>
         </form>
 

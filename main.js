@@ -53,7 +53,7 @@ import { initDrawer } from './src/scripts/drawer'
 import { initExpertsEmbla } from './src/scripts/experts-embla'
 import { initCallButton } from './src/scripts/call-button'
 import { initModal } from './src/scripts/modal'
-import { initOrderButton } from './src/scripts/order-button'
+import { initFeedbackButton } from './src/scripts/feedback-button'
 
 new MaskInput('[data-maska]')
 
@@ -76,7 +76,7 @@ initDrawer()
 initExpertsEmbla()
 initCallButton()
 initModal()
-initOrderButton()
+initFeedbackButton()
 // initQuestionForm()
 // initMobileMenu()
 // initHomePreachingCarousel()

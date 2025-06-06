@@ -160,6 +160,15 @@ add_action('carbon_fields_register_fields', 'register_carbon_fields_blocks');
 function register_carbon_fields_blocks()
 {
   global $theme_options_container;
+  
+  Container::make('post_meta', 'Портфолио')
+    ->where('post_type', '=', 'portfolio')
+    ->add_fields([
+      Field::make('text', 'time', 'Сроки ремонта'),
+      Field::make('text', 'area', 'Площадь'),
+      Field::make('text', 'price', 'Цена'),
+      Field::make('media_gallery', 'gallery', 'Галерея'),
+    ]);
 
   $theme_options_container = Container::make('theme_options', 'Параметры')
     ->add_fields([
@@ -187,6 +196,7 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'crb_fixed_modal_title', 'Заголовок в диалоге')->set_rows(2),
       Field::make('textarea', 'crb_fixed_modal_action', 'Текст кнопки в диалоге')->set_rows(2),
       Field::make('textarea', 'crb_fixed_modal_desc', 'Описание в диалоге')->set_rows(2),
+      Field::make('text', 'crb_fixed_modal_goal', 'Цель в метрике'),
 
       Field::make('separator', 'crb_callback', 'Заказать звонок'),
       Field::make('text', 'crb_callback_title', 'Заголовок в диалоге'),
@@ -224,9 +234,51 @@ function register_carbon_fields_blocks()
     Field::make('textarea', 'subtitle', 'Подзаголовок')->set_rows(2),
     Field::make('rich_text', 'content', 'Текст'),
     Field::make('complex', 'cards', 'Карточки')->add_fields([
-      Field::make('image', 'image', 'Картинка')->set_width(50),
+      Field::make('image', 'image', 'Изображение')->set_width(50),
       Field::make('text', 'name', 'Название')->set_width(50),
     ]),
+  ]);
+
+  create_block('quiz', 'Квиз', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('complex', 'steps', 'Шаги')->add_fields([
+      Field::make('textarea', 'question', 'Вопрос')->set_rows(2)->set_width(50),
+      Field::make('image', 'image', 'Изображение')->set_width(50),
+      Field::make('complex', 'options', 'Варианты')->add_fields([
+        Field::make('text', 'name', 'Текст'),
+      ]),
+    ]),
+
+    Field::make('textarea', 'bonus_title', 'Бонусы / Заголовок')->set_rows(2),
+    Field::make('complex', 'bonus_list', 'Бонусы / Список')->add_fields([
+      Field::make('image', 'image', 'Изображение')->set_width(50),
+      Field::make('text', 'name', 'Название')->set_width(50),
+    ]),
+
+    Field::make('textarea', 'finish_title', 'Завершение / Заголовок')->set_rows(2),
+    Field::make('textarea', 'finish_subtitle', 'Завершение / Подзаголовок')->set_rows(2),
+    Field::make('textarea', 'finish_action', 'Завершение / Действие')->set_rows(2),
+    Field::make('text', 'finish_goal', 'Завершение / Цель в метрике'),
+    Field::make('image', 'finish_image', 'Завершение / Изображение'),
+    Field::make('complex', 'finish_options', 'Завершение / Варианты')->add_fields([
+      Field::make('text', 'name', 'Текст'),
+    ]),
+  ]);
+
+  create_block('portfolio', 'Портфолио', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('textarea', 'subtitle', 'Подзаголовок')->set_rows(2),
+    Field::make('association', 'items', 'Список')->set_types([
+      [
+        'type' => 'post',
+        'post_type' => 'portfolio',
+      ]
+    ]),
+
+    Field::make('textarea', 'modal_title', 'Диалог / Заголовок')->set_rows(2),
+    Field::make('textarea', 'modal_desc', 'Диалог / Описание')->set_rows(2),
+    Field::make('text', 'modal_action', 'Диалог / Действие'),
+    Field::make('text', 'modal_goal', 'Диалог / Цель в метрике'),
   ]);
 
 }

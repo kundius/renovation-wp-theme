@@ -6,7 +6,8 @@ add_filter('excerpt_length', function () {
     return 15;
 });
 
-add_image_size('archive', 480, 320, true);
+add_image_size('thumbnail-s', 120, 120, true);
+add_image_size('thumbnail-m', 500, 350, true);
 add_image_size('large-crop', 1024, 1024, true);
 
 // Add the theme support basic elements

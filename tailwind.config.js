@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.php', './partials/*.php', './src/**/*.{html,js}'],
+  content: ['./*.php', './partials/*.php', './blocks/*.php', './src/**/*.{html,js}'],
+  safelist: [
+    'whitespace-nowrap',
+    'lg:hidden',
+    'max-lg:hidden'
+  ],
   theme: {
     extend: {},
     container: {
