@@ -41,7 +41,7 @@
                 <div class="quiz-form__title">
                   <div class="quiz-form__title__number"><?php echo $key + 1; ?>.</div>
                   <span class="uppercase">
-                    <?php echo wpautop($step['question']); ?>
+                    <?php echo nl2br($step['question']); ?>
                   <span>
                 </div>
                 <?php if ($options = $step['options']): ?>
@@ -76,7 +76,7 @@
             <div class="quiz-step__bonus">
               <div class="quiz-bonus">
                 <?php if ($bonus_title = $args['fields']['bonus_title']): ?>
-                <div class="quiz-bonus__title"><?php echo wpautop($bonus_title) ?></div>
+                <div class="quiz-bonus__title"><?php echo nl2br($bonus_title) ?></div>
                 <?php endif; ?>
                 <?php if ($bonus_list = $args['fields']['bonus_list']): ?>
                 <div class="quiz-bonus__items">
@@ -89,7 +89,7 @@
                     <?php endif; ?>
                     <?php if ($name = $bonus_list_item['name']): ?>
                     <div class="quiz-bonus__item-title">
-                      <?php echo wpautop($name) ?>
+                      <?php echo nl2br($name) ?>
                     </div>
                     <?php endif; ?>
                   </div>
@@ -106,10 +106,10 @@
           <div class="quiz-ending">
             <div class="quiz-ending__hedline">
               <div class="quiz-ending__title">
-                <?php echo wpautop($args['fields']['finish_title']) ?>
+                <?php echo nl2br($args['fields']['finish_title']) ?>
               </div>
               <div class="quiz-ending__desc">
-                <?php echo wpautop($args['fields']['finish_subtitle']) ?>
+                <?php echo nl2br($args['fields']['finish_subtitle']) ?>
               </div>
             </div>
             <div class="quiz-ending__fields">
@@ -135,7 +135,7 @@
               <div class="quiz__submit">
                 <button type="submit" class="primary-button primary-button--alt">
                   <span class="text-lg leading-none">
-                    <?php echo wpautop($args['fields']['finish_action']); ?>
+                    <?php echo nl2br($args['fields']['finish_action']); ?>
                   </span>
                   <span class="icon icon-gift w-9 h-9 ml-1 -mr-1"></span>
                 </button>

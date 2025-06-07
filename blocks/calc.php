@@ -1,10 +1,10 @@
 <section class="calc-section calc-section--has-title">
   <div class="container">
     <?php if ($title = $args['fields']['title']): ?>
-    <div class="calc-section__title"><?php echo wpautop($title); ?></div>
+    <div class="calc-section__title"><?php echo nl2br($title); ?></div>
     <?php endif; ?>
 
-    <form class="calc" data-calc>
+    <form class="calc" data-calc data-calc-goal="<?php echo $args['fields']['goal']; ?>">
       <div class="calc__left">
         <?php if ($questions = $args['fields']['questions']): ?>
         <?php foreach ($questions as $n => $question): ?>
@@ -99,7 +99,7 @@
         </div>
         <div class="calc__line"></div>
         <?php if ($message = $args['fields']['message']): ?>
-        <div class="calc__message"><?php echo wpautop($message); ?></div>
+        <div class="calc__message"><?php echo nl2br($message); ?></div>
         <?php endif; ?>
         <div class="calc__phone">
           <label class="phone-field">

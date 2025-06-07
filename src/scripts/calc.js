@@ -6,9 +6,7 @@ export function applyCalc(root) {
   const area = root.querySelector('[name="area"]')
 
   const updateCosts = () => {
-    const checkeds = root.querySelectorAll(
-      '[name="house-type"]:checked,[name="room-count"]:checked,[name="repair-type"]:checked'
-    )
+    const checkeds = root.querySelectorAll('[type="radio"]:checked')
     const areaValue = parseInt(area.value)
 
     let repairFixed = 0

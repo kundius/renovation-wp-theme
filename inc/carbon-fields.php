@@ -169,6 +169,15 @@ function register_carbon_fields_blocks()
       Field::make('text', 'price', 'Цена'),
       Field::make('media_gallery', 'gallery', 'Галерея'),
     ]);
+  
+  Container::make('post_meta', 'Отзыв')
+    ->where('post_type', '=', 'review')
+    ->add_fields([
+      Field::make('textarea', 'address', 'Адрес')->set_rows(2),
+      Field::make('rich_text', 'content', 'Содержимое')->set_rows(8),
+      Field::make('textarea', 'code', 'Код плеера')->set_rows(4),
+      Field::make('image', 'image', 'Изображение'),
+    ]);
 
   $theme_options_container = Container::make('theme_options', 'Параметры')
     ->add_fields([
@@ -235,13 +244,16 @@ function register_carbon_fields_blocks()
 
   create_block('quiz', 'Квиз', [
     Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
-    Field::make('complex', 'steps', 'Шаги')->add_fields([
-      Field::make('textarea', 'question', 'Вопрос')->set_rows(2)->set_width(50),
-      Field::make('image', 'image', 'Изображение')->set_width(50),
-      Field::make('complex', 'options', 'Варианты')->add_fields([
-        Field::make('text', 'name', 'Текст'),
-      ]),
-    ]),
+    Field::make('complex', 'steps', 'Шаги')
+      ->set_layout('tabbed-horizontal')
+      ->add_fields([
+        Field::make('textarea', 'question', 'Вопрос')->set_rows(2),
+        Field::make('image', 'image', 'Изображение'),
+        Field::make('complex', 'options', 'Варианты')->add_fields([
+          Field::make('text', 'name', 'Текст'),
+        ]),
+      ])
+      ->set_header_template('<%= question %>'),
     Field::make('textarea', 'bonus_title', 'Бонусы / Заголовок')->set_rows(2),
     Field::make('complex', 'bonus_list', 'Бонусы / Список')->add_fields([
       Field::make('image', 'image', 'Изображение')->set_width(50),
@@ -287,14 +299,17 @@ function register_carbon_fields_blocks()
   create_block('services', 'Услуги', [
     Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
     Field::make('textarea', 'desc', 'Описание')->set_rows(2),
-    Field::make('complex', 'list', 'Список')->add_fields([
-      Field::make('textarea', 'sheet', 'Лист')->set_rows(2),
-      Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
-      Field::make('textarea', 'desc', 'Описание')->set_rows(2),
-      Field::make('rich_text', 'content', 'Текст'),
-      Field::make('text', 'time', 'Время'),
-      Field::make('text', 'price', 'Цена'),
-    ]),
+    Field::make('complex', 'list', 'Список')
+      ->set_layout('tabbed-horizontal')
+      ->add_fields([
+        Field::make('textarea', 'sheet', 'Лист')->set_rows(2),
+        Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+        Field::make('textarea', 'desc', 'Описание')->set_rows(2),
+        Field::make('rich_text', 'content', 'Текст'),
+        Field::make('text', 'time', 'Время'),
+        Field::make('text', 'price', 'Цена'),
+      ])
+      ->set_header_template('<%= title %>'),
     Field::make('textarea', 'modal_title', 'Диалог / Заголовок')->set_rows(2),
     Field::make('textarea', 'modal_desc', 'Диалог / Описание')->set_rows(2),
     Field::make('text', 'modal_action', 'Диалог / Действие'),
@@ -344,6 +359,86 @@ function register_carbon_fields_blocks()
         ])
       ])
       ->set_header_template('<%= question %>')
+  ]);
+
+  create_block('actions', 'Акции', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('association', 'entries', 'Список')->set_types([
+      [
+        'type' => 'post',
+        'post_type' => 'post',
+      ]
+    ]),
+  ]);
+
+  create_block('reviews', 'Отзывы', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('association', 'entries', 'Список')->set_types([
+      [
+        'type' => 'post',
+        'post_type' => 'review',
+      ]
+    ]),
+  ]);
+
+  create_block('reasons', 'Почему понравится', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('textarea', 'desc', 'Описание')->set_rows(4),
+    Field::make('complex', 'list', 'Список')->add_fields([
+      Field::make('image', 'image', 'Изображение')->set_width(50),
+      Field::make('textarea', 'title', 'Заголовок')->set_rows(2)->set_width(50),
+      Field::make('textarea', 'desc', 'Описание')->set_rows(4),
+    ]),
+  ]);
+
+  create_block('measurement', 'Получить замер', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('text', 'action', 'Действие'),
+    Field::make('textarea', 'modal_title', 'Диалог / Заголовок')->set_rows(2),
+    Field::make('textarea', 'modal_desc', 'Диалог / Описание')->set_rows(2),
+    Field::make('text', 'modal_action', 'Диалог / Действие'),
+    Field::make('text', 'modal_goal', 'Диалог / Цель в метрике'),
+  ]);
+
+  create_block('problems', 'Проблемы', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('complex', 'list', 'Список')->add_fields([
+      Field::make('image', 'image', 'Изображение')->set_width(50),
+      Field::make('textarea', 'title', 'Заголовок')->set_rows(2)->set_width(50),
+      Field::make('textarea', 'desc', 'Описание')->set_rows(4),
+    ]),
+  ]);
+
+  create_block('experts', 'Эксперты', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('complex', 'list', 'Список')->add_fields([
+      Field::make('image', 'image', 'Изображение')->set_width(50),
+      Field::make('textarea', 'name', 'Имя')->set_rows(2)->set_width(50),
+      Field::make('textarea', 'job', 'Специальность')->set_rows(2)->set_width(50),
+      Field::make('textarea', 'experience', 'Стаж')->set_rows(2)->set_width(50),
+    ]),
+  ]);
+
+  create_block('prices', 'Цены', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('complex', 'list', 'Список')
+      ->set_layout('tabbed-horizontal')
+      ->add_fields([
+        Field::make('text', 'name', 'Название'),
+        Field::make('complex', 'groups', 'Группы')
+          ->set_layout('tabbed-vertical')
+          ->add_fields([
+            Field::make('text', 'name', 'Название'),
+            Field::make('complex', 'options', 'Опции')->add_fields([
+              Field::make('text', 'name', 'Название')->set_width(55),
+              Field::make('text', 'quantity', 'Кличество')->set_width(15),
+              Field::make('text', 'unit', 'Ед. изм')->set_width(15),
+              Field::make('text', 'price', 'Цена')->set_width(15),
+            ])
+          ])
+          ->set_header_template('<%= name %>'),
+      ])
+      ->set_header_template('<%= name %>'),
   ]);
 
 }

@@ -1,7 +1,7 @@
 <section class="terms-section">
   <div class="container">
     <?php if ($title = $args['fields']['title']): ?>
-    <div class="terms-section__title"><?php echo wpautop($title); ?></div>
+    <div class="terms-section__title"><?php echo nl2br($title); ?></div>
     <?php endif; ?>
 
     <?php if ($list = $args['fields']['list']): ?>
@@ -25,7 +25,7 @@
 
       <?php foreach ($list as $item): ?>
       <div class="terms-card__title<?php if ($item['_type'] !== 'head'): ?> terms-card__title--colored<?php endif; ?>">
-        <?php echo wpautop($item['name']); ?>
+        <?php echo nl2br($item['name']); ?>
       </div>
       <?php endforeach; ?>
 

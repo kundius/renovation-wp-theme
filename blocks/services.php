@@ -3,12 +3,12 @@
     <div class="services-section__headline">
       <?php if ($title = $args['fields']['title']): ?>
       <div class="services-section__title">
-        <?php echo wpautop($title); ?>
+        <?php echo nl2br($title); ?>
       </div>
       <?php endif; ?>
       <?php if ($desc = $args['fields']['desc']): ?>
       <div class="services-section__desc">
-        <?php echo wpautop($desc); ?>
+        <?php echo nl2br($desc); ?>
       </div>
       <?php endif; ?>
     </div>
@@ -19,18 +19,18 @@
         <div class="services-section__grid-cell">
           <div class="services-card">
             <?php if ($sheet = $item['sheet']): ?>
-            <div class="services-card__sheet"><?php echo wpautop($sheet); ?></div>
+            <div class="services-card__sheet"><?php echo nl2br($sheet); ?></div>
             <?php endif; ?>
             <?php if ($title = $item['title']): ?>
-            <div class="services-card__title"><?php echo wpautop($title); ?></div>
+            <div class="services-card__title"><?php echo nl2br($title); ?></div>
             <?php endif; ?>
             <?php if ($desc = $item['desc']): ?>
-            <div class="services-card__desc"><?php echo wpautop($desc); ?></div>
+            <div class="services-card__desc"><?php echo nl2br($desc); ?></div>
             <?php endif; ?>
             <?php if ($content = $item['content']): ?>
             <div class="services-card__list">
               <div class="services-card__list-inner">
-                <?php echo wpautop($content); ?>
+                <?php echo nl2br($content); ?>
               </div>
             </div>
             <?php endif; ?>

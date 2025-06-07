@@ -173,7 +173,7 @@
           </div>
 
           <div class="modal-form__field modal-form__field--rules">
-            Нажимая “<?php echo carbon_get_theme_option('crb_callback_action'); ?>”, вы даете согласие на <a href="#">обработку персональных данных</a>
+            Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
           </div>
 
           <div class="modal-form__field modal-form__field--submit">
@@ -242,89 +242,39 @@
       <div class="relative">
         <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
 
-        <form class="calc" data-calc>
+        <form class="calc" data-calc data-calc-goal="<?php echo carbon_get_theme_option('calc_goal'); ?>">
           <div class="calc__left">
+            <?php if ($questions = carbon_get_theme_option('calc_questions')): ?>
+            <?php foreach ($questions as $n => $question): ?>
             <div class="calc__field">
               <div class="calc__field-label">
-                1. Тип Вашего дома
+                <?php echo ($n + 1); ?>. <?php echo nl2br($question['question']); ?>
               </div>
-              <div class="calc__field-control calc__field-house-type">
-                <label class="radio-field">
-                  <input type="radio" name="house-type" data-calc-repair-price="500" data-calc-materials-price="220" value="Новостройка" checked>
-                  <span>Новостройка</span>
+              <?php if ($answers = $question['answers']): ?>
+              <div class="calc__field-control <?php if ($question['type'] === 'box'): ?>calc__field-radio-box<?php else: ?>calc__field-radio-button<?php endif; ?>">
+                <?php foreach ($answers as $k => $answer): ?>
+                <label class="<?php if ($question['type'] === 'box'): ?>radio-field<?php else: ?>radio-button<?php endif; ?>">
+                  <input
+                    type="radio"
+                    name="<?php echo esc_html($question['question']); ?>"
+                    data-calc-repair-price="<?php echo $answer['repair_price']; ?>"
+                    data-calc-materials-price="<?php echo $answer['materials_price']; ?>"
+                    value="<?php echo esc_html($answer['answer']); ?>"
+                    <?php if ($k === 0): ?>checked<?php endif; ?>
+                  >
+                  <span><?php echo $answer['answer']; ?></span>
                 </label>
-                <label class="radio-field">
-                  <input type="radio" name="house-type" data-calc-repair-price="700" data-calc-materials-price="300" value="Вторичное жилье">
-                  <span>Вторичное жилье</span>
-                </label>
-                <label class="radio-field">
-                  <input type="radio" name="house-type" data-calc-repair-price="1000" data-calc-materials-price="400" value="Старый фонд">
-                  <span>Старый фонд</span>
-                </label>
+                <?php endforeach; ?>
               </div>
+              <?php endif; ?>
             </div>
+            <?php endforeach; ?>
 
             <div class="calc__field">
               <div class="calc__field-label">
-                2. Количество комнат
+                <?php echo (count($questions) + 1); ?>. Загрузите план квартиры или дома для получения точной сметы ремонта <span>(в формате .doc, .docx, .xlsx, .pdf, .jpeg, .png)</span>
               </div>
-              <div class="calc__field-control calc__field-room-count">
-                <label class="radio-field">
-                  <input type="radio" name="room-count" data-calc-repair-price="150%" data-calc-materials-price="150%" value="Студия" checked>
-                  <span>Студия</span>
-                </label>
-                <label class="radio-field">
-                  <input type="radio" name="room-count" data-calc-repair-price="100%" data-calc-materials-price="100%" value="1">
-                  <span>1</span>
-                </label>
-                <label class="radio-field">
-                  <input type="radio" name="room-count" data-calc-repair-price="190%" data-calc-materials-price="190%" value="2">
-                  <span>2</span>
-                </label>
-                <label class="radio-field">
-                  <input type="radio" name="room-count" data-calc-repair-price="270%" data-calc-materials-price="270%" value="3">
-                  <span>3</span>
-                </label>
-                <label class="radio-field">
-                  <input type="radio" name="room-count" data-calc-repair-price="340%" data-calc-materials-price="340%" value="4">
-                  <span>4</span>
-                </label>
-                <label class="radio-field">
-                  <input type="radio" name="room-count" data-calc-repair-price="400%" data-calc-materials-price="400%" value="5">
-                  <span>5</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="calc__field">
-              <div class="calc__field-label">
-                3. Тип ремонта
-              </div>
-              <div class="calc__field-control calc__field-repair-type">
-                <label class="radio-button">
-                  <input type="radio" name="repair-type" value="КОСМЕТИЧЕСКИЙ" data-calc-repair-price="500" data-calc-materials-price="220" name="Тип ремонта" checked>
-                  <span>КОСМЕТИЧЕСКИЙ</span>
-                </label>
-                <label class="radio-button">
-                  <input type="radio" name="repair-type" value="КАПИТАЛЬНЫЙ" data-calc-repair-price="1000" data-calc-materials-price="700" name="Тип ремонта">
-                  <span>КАПИТАЛЬНЫЙ</span>
-                </label>
-                <label class="radio-button">
-                  <input type="radio" name="repair-type" value="ЧЕРНОВОЙ" data-calc-repair-price="400" data-calc-materials-price="200" name="Тип ремонта">
-                  <span>ЧЕРНОВОЙ</span>
-                </label>
-                <label class="radio-button">
-                  <input type="radio" name="repair-type" value="ПО ДИЗАЙН-ПРОЕКТУ" data-calc-repair-price="1200" data-calc-materials-price="800" name="Тип ремонта">
-                  <span>ПО ДИЗАЙН-ПРОЕКТУ</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="calc__field">
-              <div class="calc__field-label">
-                4. Загрузите план квартиры или дома для получения точной сметы ремонта <span>(в формате .doc, .docx, .xlsx, .pdf, .jpeg, .png)</span>
-              </div>
-              <div class="calc__field-control calc__field-attachments">
+              <div class="calc__field-control">
                 <div class="attachments-field" data-attachments-field data-attachments-field-count="1">
                   <div class="attachments-field__row" data-attachments-field-row>
                     <label class="attachment-field" data-attachment-field>
@@ -352,15 +302,16 @@
                 </div>
               </div>
             </div>
+            <?php endif; ?>
 
             <div class="calc__field calc__field--area">
               <div class="calc__field-label">
                 Площадь помещения (м<sup>2</sup>)
               </div>
-              <div class="calc__field-control calc__field-area">
+              <div class="calc__field-control">
                 <div class="range-field" data-range-field>
                   <input type="range" name="area" value="25" min="0" max="300" class="range-field__input" data-range-field-input>
-                  <div class="range-field__display" data-range-field-display="# м<sup>2</sup>"></div>
+                  <div class="range-field__display" data-range-field-display="<?php echo esc_html('# м<sup>2</sup>'); ?>"></div>
                   <button type="button" class="range-field__plus" data-range-field-plus>+</button>
                   <button type="button" class="range-field__minus" data-range-field-minus>-</button>
                 </div>
@@ -385,10 +336,9 @@
               <div class="calc__materials-price" data-calc-materials-cost></div>
             </div>
             <div class="calc__line"></div>
-            <div class="calc__message">
-              Мы уже приступили к точному расчету, напишите ваш телефон и получите смету
-              в течении 3 часов!
-            </div>
+            <?php if ($message = carbon_get_theme_option('calc_message')): ?>
+            <div class="calc__message"><?php echo wpautop($message); ?></div>
+            <?php endif; ?>
             <div class="calc__phone">
               <label class="phone-field">
                 <span class="phone-field__label">Ваш номер телефона</span>
@@ -413,6 +363,7 @@
             <button type="button" class="calc-success__close" data-calc-reset>Закрыть</button>
           </div>
         </form>
+
       </div>
     </div>
   </div>

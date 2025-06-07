@@ -3,10 +3,10 @@
     <div class="hero__layout">
       <div class="hero__layout-content">
         <?php if ($title = $args['fields']['title']): ?>
-        <div class="hero__title"><?php echo wpautop($title); ?></div>
+        <div class="hero__title"><?php echo nl2br($title); ?></div>
         <?php endif; ?>
         <?php if ($desc = $args['fields']['desc']): ?>
-        <div class="hero__desc"><?php echo wpautop($desc); ?></div>
+        <div class="hero__desc"><?php echo nl2br($desc); ?></div>
         <?php endif; ?>
         <?php if ($list = $args['fields']['list']): $list = explode(PHP_EOL, $list); ?>
         <ul class="hero__list">
