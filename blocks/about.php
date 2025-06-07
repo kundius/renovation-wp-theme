@@ -5,7 +5,7 @@
         <div class="about__headline">
           <?php if ($title = $args['fields']['title']): ?>
           <div class="about__headline-primary">
-            <?php echo $title; ?>
+            <?php echo wpautop($title); ?>
           </div>
           <?php endif; ?>
           <?php if ($subtitle = $args['fields']['subtitle']): ?>

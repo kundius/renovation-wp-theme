@@ -182,14 +182,12 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'crb_theme_contacts', 'Контакты')->set_help_text('Шорткод для блоков: {crb_theme_contacts}')->set_rows(4),
       Field::make('text', 'crb_theme_site_name', 'Название сайта')->set_help_text('Шорткод для блоков: {crb_theme_site_name}'),
       Field::make('text', 'crb_theme_slogan', 'Слоган')->set_help_text('Шорткод для блоков: {crb_theme_slogan}'),
-
       Field::make('separator', 'crb_header', 'Шапка'),
       Field::make('text', 'crb_header_city', 'Выбранный город'),
       Field::make('complex', 'crb_header_cities', 'Список городов')->add_fields([
         Field::make('text', 'name', 'Название')->set_width(50),
         Field::make('text', 'url', 'Ссылка')->set_width(50),
       ]),
-
       Field::make('separator', 'crb_fixed', 'Закреп'),
       Field::make('textarea', 'crb_fixed_message', 'Сообщение')->set_rows(2),
       Field::make('textarea', 'crb_fixed_button', 'Текст кнопки в закрепе')->set_rows(2),
@@ -197,12 +195,10 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'crb_fixed_modal_action', 'Текст кнопки в диалоге')->set_rows(2),
       Field::make('textarea', 'crb_fixed_modal_desc', 'Описание в диалоге')->set_rows(2),
       Field::make('text', 'crb_fixed_modal_goal', 'Цель в метрике'),
-
       Field::make('separator', 'crb_callback', 'Заказать звонок'),
       Field::make('text', 'crb_callback_title', 'Заголовок в диалоге'),
       Field::make('text', 'crb_callback_action', 'Текст кнопки в диалоге'),
       Field::make('textarea', 'crb_callback_desc', 'Описание в диалоге')->set_rows(2),
-
       Field::make('separator', 'crb_footer', 'Подвал'),
       Field::make('textarea', 'crb_footer_info', 'Информация')->set_rows(2),
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
@@ -214,12 +210,10 @@ function register_carbon_fields_blocks()
     Field::make('textarea', 'list', 'Список (строки)')->set_rows(4),
     Field::make('text', 'action', 'Действие'),
     Field::make('image', 'background', 'Фон'),
-
     Field::make('textarea', 'modal_title', 'Диалог / Заголовок')->set_rows(2),
     Field::make('textarea', 'modal_desc', 'Диалог / Описание')->set_rows(2),
     Field::make('text', 'modal_action', 'Диалог / Действие'),
     Field::make('text', 'modal_goal', 'Диалог / Цель в метрике'),
-
     Field::make('textarea', 'form_title', 'Форма / Заголовок')->set_rows(2),
     Field::make('complex', 'form_repair_types', 'Форма / Типы ремонта')->add_fields([
       Field::make('text', 'name', 'Форма / Название')->set_width(50),
@@ -248,13 +242,11 @@ function register_carbon_fields_blocks()
         Field::make('text', 'name', 'Текст'),
       ]),
     ]),
-
     Field::make('textarea', 'bonus_title', 'Бонусы / Заголовок')->set_rows(2),
     Field::make('complex', 'bonus_list', 'Бонусы / Список')->add_fields([
       Field::make('image', 'image', 'Изображение')->set_width(50),
       Field::make('text', 'name', 'Название')->set_width(50),
     ]),
-
     Field::make('textarea', 'finish_title', 'Завершение / Заголовок')->set_rows(2),
     Field::make('textarea', 'finish_subtitle', 'Завершение / Подзаголовок')->set_rows(2),
     Field::make('textarea', 'finish_action', 'Завершение / Действие')->set_rows(2),
@@ -274,11 +266,84 @@ function register_carbon_fields_blocks()
         'post_type' => 'portfolio',
       ]
     ]),
-
     Field::make('textarea', 'modal_title', 'Диалог / Заголовок')->set_rows(2),
     Field::make('textarea', 'modal_desc', 'Диалог / Описание')->set_rows(2),
     Field::make('text', 'modal_action', 'Диалог / Действие'),
     Field::make('text', 'modal_goal', 'Диалог / Цель в метрике'),
+  ]);
+
+  create_block('comparison', 'Сравнение', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('complex', 'list', 'Список')->add_fields([
+      Field::make('image', 'before_image_big', 'Изображение до большое')->set_width(33),
+      Field::make('image', 'before_image_small', 'Изображение до маленькое')->set_width(33),
+      Field::make('text', 'before_label', 'Подпись до')->set_width(33),
+      Field::make('image', 'after_image_big', 'Изображение после большое')->set_width(33),
+      Field::make('image', 'after_image_small', 'Изображение после маленькое')->set_width(33),
+      Field::make('text', 'after_label', 'Подпись после')->set_width(33),
+    ]),
+  ]);
+
+  create_block('services', 'Услуги', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('textarea', 'desc', 'Описание')->set_rows(2),
+    Field::make('complex', 'list', 'Список')->add_fields([
+      Field::make('textarea', 'sheet', 'Лист')->set_rows(2),
+      Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+      Field::make('textarea', 'desc', 'Описание')->set_rows(2),
+      Field::make('rich_text', 'content', 'Текст'),
+      Field::make('text', 'time', 'Время'),
+      Field::make('text', 'price', 'Цена'),
+    ]),
+    Field::make('textarea', 'modal_title', 'Диалог / Заголовок')->set_rows(2),
+    Field::make('textarea', 'modal_desc', 'Диалог / Описание')->set_rows(2),
+    Field::make('text', 'modal_action', 'Диалог / Действие'),
+    Field::make('text', 'modal_goal', 'Диалог / Цель в метрике'),
+  ]);
+
+  create_block('terms', 'Сроки', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('complex', 'list', 'Список')
+      ->set_layout('tabbed-horizontal')
+      ->add_fields('head', 'Заголовки', [
+        Field::make('textarea', 'name', 'Название')->set_rows(2),
+        Field::make('complex', 'options', 'Опции')->add_fields([
+          Field::make('text', 'text', 'Текст'),
+        ])
+      ])
+      ->set_header_template('<%= name %>')
+      ->add_fields('data', 'Значения', [
+        Field::make('textarea', 'name', 'Название')->set_rows(2),
+        Field::make('complex', 'options', 'Опции')->add_fields([
+          Field::make('text', 'text', 'Текст'),
+        ])
+      ])
+      ->set_header_template('<%= name %>')
+  ]);
+
+  create_block('calc', 'Калькулятор', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('textarea', 'message', 'Сообщение')->set_rows(2),
+    Field::make('text', 'goal', 'Цель в метрике'),
+    Field::make('complex', 'questions', 'Вопросы')
+      ->set_layout('tabbed-horizontal')
+      ->add_fields([
+        Field::make('select', 'type', 'Тип')->add_options([
+          'box' => 'Бокс',
+          'button' => 'Кнопка',
+        ]),
+        Field::make('textarea', 'question', 'Вопрос')->set_rows(2),
+        Field::make('complex', 'answers', 'Варианты ответов')->add_fields([
+          Field::make('text', 'answer', 'Ответ')->set_width(100),
+          Field::make('text', 'repair_price', 'Стоимость ремонта')
+            ->set_help_text('Стоимость за кв. м., можно указать в процентах, например: 200%')
+            ->set_width(50),
+          Field::make('text', 'materials_price', 'Стоимость материалов')
+            ->set_help_text('Стоимость за кв. м., можно указать в процентах, например: 200%')
+            ->set_width(50)
+        ])
+      ])
+      ->set_header_template('<%= question %>')
   ]);
 
 }

@@ -3,15 +3,15 @@
     <div class="hero__layout">
       <div class="hero__layout-content">
         <?php if ($title = $args['fields']['title']): ?>
-        <div class="hero__title"><?php echo $title; ?></div>
+        <div class="hero__title"><?php echo wpautop($title); ?></div>
         <?php endif; ?>
         <?php if ($desc = $args['fields']['desc']): ?>
-        <div class="hero__desc"><?php echo $desc; ?></div>
+        <div class="hero__desc"><?php echo wpautop($desc); ?></div>
         <?php endif; ?>
         <?php if ($list = $args['fields']['list']): $list = explode(PHP_EOL, $list); ?>
         <ul class="hero__list">
           <?php foreach ($list as $item): ?>
-            <li><?php echo $item; ?></li>
+          <li><?php echo $item; ?></li>
           <?php endforeach; ?>
         </ul>
         <?php endif; ?>

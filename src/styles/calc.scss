@@ -394,7 +394,7 @@
 
 .calc__field-control {}
 
-.calc__field-house-type {
+.calc__field-radio-box {
   display: flex;
   column-gap: 24px;
   row-gap: 6px;
@@ -406,19 +406,7 @@
   }
 }
 
-.calc__field-room-count {
-  display: flex;
-  column-gap: 24px;
-  row-gap: 6px;
-  flex-wrap: wrap;
-
-  @include max-lg {
-    row-gap: 2px;
-    column-gap: 16px;
-  }
-}
-
-.calc__field-repair-type {
+.calc__field-radio-button {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
