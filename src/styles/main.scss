@@ -449,11 +449,6 @@ body {
   top: 8px;
 }
 
-.text-field--centered .text-field__label {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .text-field__input {
   font-family: 'Gilroy';
   width: 100%;
@@ -470,9 +465,39 @@ body {
   color: #2d2d2d;
 }
 
-.text-field--centered .text-field__input {
-  text-align: center;
-  border-radius: 24px;
+.textarea-field {
+  position: relative;
+  display: flex;
+}
+
+.textarea-field__label {
+  font-size: 11px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 900;
+  color: #7d8798;
+  line-height: 1;
+  position: absolute;
+  user-select: none;
+  letter-spacing: 0.1em;
+  left: 20px;
+  top: 8px;
+}
+
+.textarea-field__input {
+  font-family: 'Gilroy';
+  width: 100%;
+  font-size: 18px;
+  line-height: 1;
+  color: #2d2d2d;
+  letter-spacing: 0.025em;
+  background-color: rgb(243, 245, 248);
+  min-height: calc(3em + 48px);
+  padding: 24px 20px;
+}
+
+.textarea-field__input::placeholder {
+  color: #2d2d2d;
 }
 
 .control-button {

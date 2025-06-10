@@ -175,6 +175,12 @@
 }
 
 .consultation-form__list {
+  font-size: 14px;
+  color: rgba(34, 34, 34, 0.78);
+  line-height: 1.2;
+}
+
+.consultation-form__list ul {
   margin-left: 32px;
 
   @include max-md {
@@ -182,19 +188,16 @@
   }
 }
 
-.consultation-form__list li {
+.consultation-form__list ul li {
   position: relative;
   padding-left: 22px;
-  font-size: 14px;
-  color: rgba(34, 34, 34, 0.78);
-  line-height: 1.2;
 
   @include max-md {
     font-size: 12px;
   }
 }
 
-.consultation-form__list li+li {
+.consultation-form__list ul li+li {
   margin-top: 15px;
 
   @include max-md {
@@ -202,7 +205,7 @@
   }
 }
 
-.consultation-form__list li::before {
+.consultation-form__list ul li::before {
   content: '';
   border-radius: 50%;
   background-color: rgb(160, 153, 147);

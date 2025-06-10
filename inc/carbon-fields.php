@@ -441,4 +441,84 @@ function register_carbon_fields_blocks()
       ->set_header_template('<%= name %>'),
   ]);
 
+  create_block('estimate', 'Получите смету', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('image', 'example_image', 'Пример сметы / Фото'),
+    Field::make('text', 'example_action', 'Пример сметы / Действие'),
+    Field::make('image', 'manager_image', 'Менеджер / Фото'),
+    Field::make('text', 'manager_name', 'Менеджер / Имя'),
+    Field::make('text', 'manager_experience', 'Менеджер / Опыт'),
+    Field::make('textarea', 'manager_desc', 'Менеджер / Описание')->set_rows(2),
+    Field::make('text', 'form_action', 'Форма / Действие'),
+    Field::make('text', 'form_goal', 'Форма / Цель в метрике'),
+  ]);
+
+  create_block('hiw', '3 шага', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    
+    Field::make('textarea', 'step_1_text_1', 'Шаг 1 / Текст 1')->set_rows(2),
+    Field::make('textarea', 'step_1_text_2', 'Шаг 1 / Текст 2')->set_rows(2),
+    Field::make('textarea', 'step_1_text_3', 'Шаг 1 / Текст 3')->set_rows(2),
+    Field::make('text', 'step_1_action', 'Шаг 1 / Действие'),
+    Field::make('textarea', 'step_1_modal_title', 'Шаг 1 / Диалог / Заголовок')->set_rows(2),
+    Field::make('textarea', 'step_1_modal_desc', 'Шаг 1 / Диалог / Описание')->set_rows(2),
+    Field::make('text', 'step_1_modal_action', 'Шаг 1 / Диалог / Действие'),
+    Field::make('text', 'step_1_modal_goal', 'Шаг 1 / Диалог / Цель в метрике'),
+    Field::make('textarea', 'step_2_text_1', 'Шаг 2 / Текст 1')->set_rows(2),
+    Field::make('textarea', 'step_2_text_2', 'Шаг 2 / Текст 2')->set_rows(2),
+    Field::make('textarea', 'step_3_text_1', 'Шаг 3 / Текст 1')->set_rows(2),
+    Field::make('textarea', 'step_3_text_2', 'Шаг 3 / Текст 2')->set_rows(2),
+  ]);
+
+  create_block('team', 'Команда', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('complex', 'list', 'Список')
+      ->set_layout('tabbed-horizontal')
+      ->add_fields([
+        Field::make('text', 'name', 'Имя'),
+        Field::make('image', 'image', 'Фото'),
+        Field::make('text', 'job', 'Должность'),
+        Field::make('text', 'experience', 'Опыт'),
+      ])
+      ->set_header_template('<%= name %>'),
+  ]);
+
+  create_block('trust', 'Доверие', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('textarea', 'subtitle', 'Подзаголовок')->set_rows(2),
+    Field::make('textarea', 'contract_desc', 'Договор / Описание')->set_rows(2),
+    Field::make('image', 'contract_image', 'Договор / Изображение'),
+    Field::make('file', 'contract_file', 'Договор / Файл'),
+    Field::make('text', 'contract_action', 'Договор / Действие'),
+    Field::make('complex', 'list', 'Список')->add_fields([
+      Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+      Field::make('textarea', 'desc', 'Описание')->set_rows(2),
+    ]),
+  ]);
+
+  create_block('faq', 'Вопрос-ответ', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('text', 'action', 'Действие'),
+    Field::make('complex', 'list', 'Список')->add_fields([
+      Field::make('textarea', 'question', 'Вопрос')->set_rows(2),
+      Field::make('textarea', 'answer', 'Ответ')->set_rows(2),
+    ]),
+  ]);
+
+  create_block('text_block', 'Текстовый блок', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('rich_text', 'content', 'Содержимое')->set_rows(2),
+  ]);
+
+  create_block('consultation', 'Консультация', [
+    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('textarea', 'subtitle', 'Подзаголовок')->set_rows(2),
+    Field::make('text', 'phone_label', 'Надпись телефона'),
+    Field::make('text', 'messenger_label', 'Надпись мессенджеры'),
+    Field::make('textarea', 'form_title', 'Форма / Заголовок')->set_rows(2),
+    Field::make('rich_text', 'form_desc', 'Форма / Описание'),
+    Field::make('text', 'form_action', 'Форма / Действие'),
+    Field::make('text', 'form_goal', 'Форма / Цель в метрике'),
+  ]);
+
 }
