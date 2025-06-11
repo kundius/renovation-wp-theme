@@ -8,10 +8,16 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
 
-  <div class="flex flex-col min-h-scree">
+  <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
 
-    <?php the_content(); ?>
+    <div class="flex-grow">
+      <div class="container">
+        <div class="page-content">
+          <?php the_content(); ?>
+        </div>
+      </div>
+    </div>
 
     <?php get_template_part('partials/footer'); ?>
   </div>

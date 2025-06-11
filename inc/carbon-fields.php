@@ -505,10 +505,10 @@ function register_carbon_fields_blocks()
     ]),
   ]);
 
-  create_block('text_block', 'Текстовый блок', [
-    Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
-    Field::make('rich_text', 'content', 'Содержимое')->set_rows(2),
-  ]);
+  // create_block('text_block', 'Текстовый блок', [
+  //   Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+  //   Field::make('rich_text', 'content', 'Содержимое')->set_rows(2),
+  // ]);
 
   create_block('consultation', 'Консультация', [
     Field::make('textarea', 'title', 'Заголовок')->set_rows(2),

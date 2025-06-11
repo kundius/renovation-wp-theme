@@ -676,3 +676,66 @@ button.more-button {
   text-align: center;
   margin-bottom: 64px;
 }
+
+.page-content .block-section {
+  margin-left: calc((100vw - 1160px) / 2 * -1);
+  margin-right: calc((100vw - 1160px) / 2 * -1);
+
+  @include max-xl {
+    margin-left: calc((100vw - 976px) / 2 * -1);
+    margin-right: calc((100vw - 976px) / 2 * -1);
+  }
+
+  @include max-lg {
+    margin-left: calc((100vw - 736px) / 2 * -1);
+    margin-right: calc((100vw - 736px) / 2 * -1);
+  }
+
+  @include max-md {
+    margin-left: calc((100vw - 448px) / 2 * -1);
+    margin-right: calc((100vw - 448px) / 2 * -1);
+  }
+
+  @include max-sm {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
+
+.page-content {
+  font-size: 18px;
+  line-height: 1.333;
+}
+
+.page-content>p {
+  margin: 24px 0;
+}
+
+.page-content>h2 {
+  font-size: 42px;
+  line-height: 1.15;
+  color: #252e36;
+  font-weight: 700;
+  text-align: center;
+  margin: 64px 0;
+
+  em {
+    color: #7c9cb6;
+    font-style: normal;
+  }
+
+  @include max-xl {
+    font-size: 36px;
+    margin-bottom: 56px;
+  }
+
+  @include max-lg {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+
+  @include max-md {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
