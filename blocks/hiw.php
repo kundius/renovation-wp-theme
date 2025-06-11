@@ -1,4 +1,4 @@
-<section class="hiw-section">
+<section class="block-section hiw-section">
   <div class="container">
     <?php if ($args['fields']['title']): ?>
     <div class="hiw-section__title">

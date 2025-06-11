@@ -1,4 +1,4 @@
-<section class="estimate-section">
+<section class="block-section estimate-section">
   <div class="container container--large">
     <div class="estimate-section__layout">
       <div class="estimate-section__content">

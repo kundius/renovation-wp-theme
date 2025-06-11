@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="block-section hero">
   <div class="container">
     <div class="hero__layout">
       <div class="hero__layout-content">

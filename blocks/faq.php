@@ -1,4 +1,4 @@
-<section class="faq-section" data-faq>
+<section class="block-section faq-section" data-faq>
   <div class="container">
     <?php if ($title = $args['fields']['title']): ?>
     <div class="faq-section__title"><?php echo nl2br($title); ?></div>

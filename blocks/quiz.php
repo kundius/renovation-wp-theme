@@ -1,5 +1,5 @@
 <?php if ($steps = $args['fields']['steps']): ?>
-<section class="quiz-section">
+<section class="block-section quiz-section">
   <div class="container">
 
     <form class="quiz" data-quiz data-quiz-goal="<?php echo $args['fields']['finish_goal']; ?>">

@@ -1,4 +1,4 @@
-<section class="actions-section">
+<section class="block-section actions-section">
   <div class="container container--large">
     <?php if ($title = $args['fields']['title']): ?>
     <div class="actions-section__title"><?php echo nl2br($title); ?></div>

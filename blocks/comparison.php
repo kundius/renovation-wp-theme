@@ -1,4 +1,4 @@
-<section class="comparison-section">
+<section class="block-section comparison-section">
   <div class="container container--large">
     <?php if ($title = $args['fields']['title']): ?>
     <div class="comparison-section__title">

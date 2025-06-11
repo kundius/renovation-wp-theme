@@ -1,4 +1,4 @@
-<section class="consultation-section">
+<section class="block-section consultation-section">
   <div class="container">
     <div class="consultation-section__layout">
       <div class="consultation-section__layout-content">

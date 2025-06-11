@@ -1,4 +1,4 @@
-<section class="services-section">
+<section class="block-section services-section">
   <div class="container">
     <div class="services-section__headline">
       <?php if ($title = $args['fields']['title']): ?>
@@ -30,7 +30,7 @@
             <?php if ($content = $item['content']): ?>
             <div class="services-card__list">
               <div class="services-card__list-inner">
-                <?php echo nl2br($content); ?>
+                <?php echo wpautop($content); ?>
               </div>
             </div>
             <?php endif; ?>

@@ -1,4 +1,4 @@
-<section class="about">
+<section class="block-section about">
   <div class="container">
     <div class="about__layout">
       <div class="about__layout-content">

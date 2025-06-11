@@ -10,7 +10,7 @@
             <?php echo nl2br(carbon_get_theme_option('crb_theme_contacts')); ?>
           </div>
           <div class="footer-contacts__call">
-            <button type="button" class="control-button">
+            <button type="button" class="control-button" data-modal-open="modal-call">
               <span>Заказать звонок</span>
               <span class="icon icon-phone"></span>
             </button>
@@ -28,52 +28,6 @@
         'menu_class' => 'footer-menu',
       ]);
       ?>
-      <!-- <div class="footer-layout__nav">
-        <div class="footer-menu">
-          <div class="footer-menu__title">
-            Ремонт и отделка
-          </div>
-          <ul class="footer-menu__menu">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Услуги</a></li>
-            <li><a href="#">Контакты</a></li>
-          </ul>
-        </div>
-        <div class="footer-menu">
-          <div class="footer-menu__title">
-            Отдельные услуги
-          </div>
-          <ul class="footer-menu__menu">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Услуги</a></li>
-            <li><a href="#">Контакты</a></li>
-          </ul>
-        </div>
-        <div class="footer-menu">
-          <div class="footer-menu__title">
-            Инженерные работы
-          </div>
-          <ul class="footer-menu__menu">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Услуги</a></li>
-            <li><a href="#">Контакты</a></li>
-          </ul>
-        </div>
-        <div class="footer-menu">
-          <div class="footer-menu__title">
-            О компании
-          </div>
-          <ul class="footer-menu__menu">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Услуги</a></li>
-            <li><a href="#">Контакты</a></li>
-          </ul>
-        </div>
-      </div> -->
     </div>
   </div>
 </div>

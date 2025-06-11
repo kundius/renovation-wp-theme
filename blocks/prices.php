@@ -1,4 +1,4 @@
-<section class="prices-section">
+<section class="block-section prices-section">
   <div class="container">
     <?php if ($title = $args['fields']['title']): ?>
     <div class="prices-section__title"><?php echo nl2br($title); ?></div>

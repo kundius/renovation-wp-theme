@@ -1,4 +1,4 @@
-<section class="reasons-section">
+<section class="block-section reasons-section">
   <div class="container">
     <div class="reasons-section__headline">
       <?php if ($title = $args['fields']['title']): ?>

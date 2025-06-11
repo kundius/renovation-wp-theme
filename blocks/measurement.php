@@ -1,4 +1,4 @@
-<section class="measurement-section">
+<section class="block-section measurement-section">
   <div class="container">
     <div class="measurement-section__title">
       <?php if ($title = $args['fields']['title']): ?>

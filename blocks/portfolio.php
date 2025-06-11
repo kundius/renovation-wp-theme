@@ -1,4 +1,4 @@
-<section class="portfolio">
+<section class="block-section portfolio">
   <div class="container container--large">
 
     <div class="portfolio__headline">

@@ -1,4 +1,4 @@
-<section class="trust-section">
+<section class="block-section trust-section">
   <div class="container">
     <div class="trust-section__layout">
       <div class="trust-section__layout-left">

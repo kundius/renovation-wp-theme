@@ -1,4 +1,4 @@
-<section class="problems-section">
+<section class="block-section problems-section">
   <div class="container">
     <?php if ($title = $args['fields']['title']): ?>
     <div class="problems-section__title"><?php echo nl2br($title); ?></div>
