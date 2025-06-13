@@ -19,12 +19,9 @@ add_theme_support('wp-block-styles');
 add_theme_support('post-thumbnails');
 add_theme_support('html5', ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'script', 'style']);
 
-add_shortcode('template_part', function ($atts, $content = null) {
-    $tp_atts = shortcode_atts([
-        'path' =>  null,
-    ], $atts);
+add_shortcode('partial', function ($atts, $content = null) {
     ob_start();
-    get_template_part($tp_atts['path']);
+    get_template_part('partials/' . $atts[0]);
     $output = ob_get_contents();
     ob_end_clean();
     return $output;

@@ -95,6 +95,7 @@
   display: block;
   width: 100%;
   text-align: left;
+  min-height: 60px;
 
   @include max-xl {
     font-size: 18px;

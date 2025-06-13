@@ -178,37 +178,67 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'code', 'Код плеера')->set_rows(4),
       Field::make('image', 'image', 'Изображение'),
     ]);
+    
+  Block::make('contacts_info', 'Контактная информация')
+    ->add_fields([
+      Field::make('rich_text', 'phone', 'Телефон'),
+      Field::make('rich_text', 'address', 'Адрес')
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/contacts-info', null, [
+        'fields' => $fields
+      ]);
+    });
+    
+  Block::make('contacts_map', 'Карта')
+    ->add_fields([
+      Field::make('textarea', 'html', 'Код карты')->set_rows(4)
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/contacts-map', null, [
+        'fields' => $fields
+      ]);
+    });
 
   $theme_options_container = Container::make('theme_options', 'Параметры')
-    ->add_fields([
-      Field::make('separator', 'crb_theme', 'Общее'),
+    ->add_tab('Общее', [
       Field::make('text', 'crb_theme_phone', 'Телефон')->set_help_text('Шорткод для блоков: {crb_theme_phone}'),
       Field::make('text', 'crb_theme_telegram', 'Telegram')->set_help_text('Шорткод для блоков: {crb_theme_telegram}'),
       Field::make('text', 'crb_theme_whatsapp', 'Whatsapp')->set_help_text('Шорткод для блоков: {crb_theme_whatsapp}'),
       Field::make('text', 'crb_theme_working_hours', 'Время работы')->set_help_text('Шорткод для блоков: {crb_theme_working_hours}'),
       Field::make('text', 'crb_theme_working_hours_short', 'Время работы кратко')->set_help_text('Шорткод для блоков: {crb_theme_working_hours_short}'),
-      Field::make('textarea', 'crb_theme_address', 'Адрес')->set_help_text('Шорткод для блоков: {crb_theme_address}')->set_rows(4),
-      Field::make('textarea', 'crb_theme_contacts', 'Контакты')->set_help_text('Шорткод для блоков: {crb_theme_contacts}')->set_rows(4),
+      Field::make('rich_text', 'crb_theme_address', 'Адрес')->set_help_text('Шорткод для блоков: {crb_theme_address}')->set_rows(4),
+      Field::make('rich_text', 'crb_theme_contacts', 'Контакты')->set_help_text('Шорткод для блоков: {crb_theme_contacts}')->set_rows(4),
       Field::make('text', 'crb_theme_site_name', 'Название сайта')->set_help_text('Шорткод для блоков: {crb_theme_site_name}'),
       Field::make('text', 'crb_theme_slogan', 'Слоган')->set_help_text('Шорткод для блоков: {crb_theme_slogan}'),
-      Field::make('separator', 'crb_header', 'Шапка'),
+    ])
+    ->add_tab('Шапка', [
       Field::make('text', 'crb_header_city', 'Выбранный город'),
       Field::make('complex', 'crb_header_cities', 'Список городов')->add_fields([
         Field::make('text', 'name', 'Название')->set_width(50),
         Field::make('text', 'url', 'Ссылка')->set_width(50),
       ]),
-      Field::make('separator', 'crb_fixed', 'Закреп'),
+    ])
+    ->add_tab('Закреп', [
       Field::make('textarea', 'crb_fixed_message', 'Сообщение')->set_rows(2),
       Field::make('textarea', 'crb_fixed_button', 'Текст кнопки в закрепе')->set_rows(2),
       Field::make('textarea', 'crb_fixed_modal_title', 'Заголовок в диалоге')->set_rows(2),
       Field::make('textarea', 'crb_fixed_modal_action', 'Текст кнопки в диалоге')->set_rows(2),
       Field::make('textarea', 'crb_fixed_modal_desc', 'Описание в диалоге')->set_rows(2),
       Field::make('text', 'crb_fixed_modal_goal', 'Цель в метрике'),
-      Field::make('separator', 'crb_callback', 'Заказать звонок'),
+    ])
+    ->add_tab('Заказать звонок', [
       Field::make('text', 'crb_callback_title', 'Заголовок в диалоге'),
       Field::make('text', 'crb_callback_action', 'Текст кнопки в диалоге'),
       Field::make('textarea', 'crb_callback_desc', 'Описание в диалоге')->set_rows(2),
-      Field::make('separator', 'crb_footer', 'Подвал'),
+    ])
+    ->add_tab('Подвал', [
       Field::make('textarea', 'crb_footer_info', 'Информация')->set_rows(2),
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
     ]);

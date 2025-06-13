@@ -687,10 +687,10 @@ button.more-button {
   color: #00273f;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 96px;
 
   @include max-xl {
-    font-size: 40px;
+    font-size: 48px;
     margin-bottom: 64px;
   }
 
@@ -757,7 +757,7 @@ button.more-button {
   color: #252e36;
   font-weight: 700;
   text-align: center;
-  margin: 80px 0;
+  margin: 96px 0;
 
   em {
     color: #7c9cb6;
@@ -765,7 +765,7 @@ button.more-button {
   }
 
   @include max-xl {
-    font-size: 40px;
+    font-size: 48px;
     margin: 64px 0;
   }
 
@@ -934,5 +934,55 @@ button.more-button {
     background-color: transparent;
     filter: none;
     padding: 0;
+  }
+}
+
+.contacts-info {}
+
+.contacts-info__title {
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.contacts-info__text {
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.contacts-info__phone {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 36px;
+  row-gap: 12px;
+
+  @include max-md {
+    flex-direction: column;
+  }
+}
+
+.contacts-info__phone-text {}
+
+.contacts-info__phone-button {}
+
+.contacts-info__address {
+  margin-top: 36px;
+}
+
+.contacts-map {
+  position: relative;
+  height: 480px;
+
+  @include max-md {
+    height: 360px;
+  }
+
+  >iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
 }
