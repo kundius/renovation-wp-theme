@@ -10,7 +10,7 @@ $posts_for_terms_query = new WP_Query([
 ]);
 $terms = get_terms([
   'taxonomy' => 'post_tag',
-  'hide_empty' => false
+  'hide_empty' => true
 ]);
 $posts_query = new WP_Query([
   'post_type' => 'portfolio',
