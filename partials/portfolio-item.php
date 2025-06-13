@@ -7,7 +7,7 @@
   <div class="portfolio-item__gallery">
     <div class="portfolio-gallery" data-portfolio-gallery>
       <div class="portfolio-gallery__main">
-        <a href="<?php echo wp_get_attachment_url($first); ?>" data-fslightbox="gallery">
+        <a href="<?php echo wp_get_attachment_url($first); ?>" data-fslightbox="gallery-<?php echo get_the_ID(); ?>">
           <img src="<?php echo wp_get_attachment_image_url($first, 'thumbnail-m'); ?>" alt="">
         </a>
       </div>
