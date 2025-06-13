@@ -56,7 +56,7 @@ $posts_query = new WP_Query([
         <?php endif; ?>
 
         <div
-          class="pb-32"
+          class="pb-32 max-md:pb-20"
           data-portfolio-list
           data-portfolio-list-max-page="<?php echo $posts_query->max_num_pages; ?>"
           data-portfolio-list-current-page="<?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>"
@@ -73,7 +73,7 @@ $posts_query = new WP_Query([
           </div>
   
           <?php if ($posts_query->max_num_pages > 1) : ?>
-          <button type="button" class="flex mx-auto mt-24 primary-button font-bold text-lg w-56" data-portfolio-list-load>Показать ещё</button>
+          <button type="button" class="flex mx-auto mt-24 max-md:mt-16 primary-button font-bold text-lg w-56" data-portfolio-list-load>Показать ещё</button>
           <?php endif; ?>
         </div>
 
