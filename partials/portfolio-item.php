@@ -16,7 +16,7 @@
           <div class="portfolio-gallery__carousel-container">
             <?php foreach ($rest as $rest_item): ?>
             <div class="portfolio-gallery__carousel-slide">
-              <a href="<?php echo wp_get_attachment_url($rest_item); ?>" data-fslightbox="gallery">
+              <a href="<?php echo wp_get_attachment_url($rest_item); ?>" data-fslightbox="gallery-<?php echo get_the_ID(); ?>">
                 <img src="<?php echo wp_get_attachment_image_url($rest_item, 'thumbnail-s'); ?>" alt="">
               </a>
             </div>
