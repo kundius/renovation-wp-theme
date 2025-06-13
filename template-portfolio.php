@@ -49,7 +49,7 @@ $posts_query = new WP_Query([
           </li>
           <?php foreach ($terms as $term): ?>
           <li<?php if ($current_tag === $term->slug): ?> class="active"<?php endif; ?>>
-            <a href="<?php the_permalink() ?>&tag=<?php echo $term->slug ?>"><?php echo $term->name ?></a>
+            <a href="<?php the_permalink() ?>?tag=<?php echo $term->slug ?>"><?php echo $term->name ?></a>
           </li>
           <?php endforeach; ?>
         </ul>
