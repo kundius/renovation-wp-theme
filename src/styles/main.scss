@@ -667,9 +667,16 @@ button.more-button {
     color: #000;
   }
 
+  @include max-lg {
+    font-size: 13px;
+    padding: 12px 0;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
   @include max-md {
     font-size: 12px;
-    padding: 8px 0;
+    padding: 10px 0;
     gap: 8px;
     margin-bottom: 12px;
   }
