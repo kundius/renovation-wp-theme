@@ -639,6 +639,10 @@
   display: block;
 }
 
+.header__nav>.menu-item.current-menu-item>a::before {
+  display: block;
+}
+
 .header__nav>.menu-item>a::before {
   content: '';
   display: none;
