@@ -205,18 +205,31 @@ function register_carbon_fields_blocks()
         'fields' => $fields
       ]);
     });
+    
+  Block::make('partnership-form', 'Форма "Партнерство"')
+    ->add_fields([
+      Field::make('separator', 'partnership', 'Форма "Партнерство"')
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/partnership-form', null, [
+        'fields' => $fields
+      ]);
+    });
 
   $theme_options_container = Container::make('theme_options', 'Параметры')
     ->add_tab('Общее', [
-      Field::make('text', 'crb_theme_phone', 'Телефон')->set_help_text('Шорткод для блоков: {crb_theme_phone}'),
-      Field::make('text', 'crb_theme_telegram', 'Telegram')->set_help_text('Шорткод для блоков: {crb_theme_telegram}'),
-      Field::make('text', 'crb_theme_whatsapp', 'Whatsapp')->set_help_text('Шорткод для блоков: {crb_theme_whatsapp}'),
-      Field::make('text', 'crb_theme_working_hours', 'Время работы')->set_help_text('Шорткод для блоков: {crb_theme_working_hours}'),
-      Field::make('text', 'crb_theme_working_hours_short', 'Время работы кратко')->set_help_text('Шорткод для блоков: {crb_theme_working_hours_short}'),
-      Field::make('rich_text', 'crb_theme_address', 'Адрес')->set_help_text('Шорткод для блоков: {crb_theme_address}')->set_rows(4),
-      Field::make('rich_text', 'crb_theme_contacts', 'Контакты')->set_help_text('Шорткод для блоков: {crb_theme_contacts}')->set_rows(4),
-      Field::make('text', 'crb_theme_site_name', 'Название сайта')->set_help_text('Шорткод для блоков: {crb_theme_site_name}'),
-      Field::make('text', 'crb_theme_slogan', 'Слоган')->set_help_text('Шорткод для блоков: {crb_theme_slogan}'),
+      Field::make('text', 'crb_theme_phone', 'Телефон')->set_help_text('Шорткод: {crb_theme_phone}'),
+      Field::make('text', 'crb_theme_telegram', 'Telegram')->set_help_text('Шорткод: {crb_theme_telegram}'),
+      Field::make('text', 'crb_theme_whatsapp', 'Whatsapp')->set_help_text('Шорткод: {crb_theme_whatsapp}'),
+      Field::make('text', 'crb_theme_working_hours_long', 'Время работы подробно')->set_help_text('Шорткод: {crb_theme_working_hours_long}'),
+      Field::make('text', 'crb_theme_working_hours_short', 'Время работы кратко')->set_help_text('Шорткод: {crb_theme_working_hours_short}'),
+      Field::make('text', 'crb_theme_working_hours_pause', 'Время работы перерыв')->set_help_text('Шорткод: {crb_theme_working_hours_pause}'),
+      Field::make('text', 'crb_theme_address', 'Адрес')->set_help_text('Шорткод: {crb_theme_address}'),
+      Field::make('text', 'crb_theme_site_name', 'Название сайта')->set_help_text('Шорткод: {crb_theme_site_name}'),
+      Field::make('text', 'crb_theme_slogan', 'Слоган')->set_help_text('Шорткод: {crb_theme_slogan}'),
     ])
     ->add_tab('Шапка', [
       Field::make('text', 'crb_header_city', 'Выбранный город'),
@@ -228,10 +241,6 @@ function register_carbon_fields_blocks()
     ->add_tab('Закреп', [
       Field::make('textarea', 'crb_fixed_message', 'Сообщение')->set_rows(2),
       Field::make('textarea', 'crb_fixed_button', 'Текст кнопки в закрепе')->set_rows(2),
-      Field::make('textarea', 'crb_fixed_modal_title', 'Заголовок в диалоге')->set_rows(2),
-      Field::make('textarea', 'crb_fixed_modal_action', 'Текст кнопки в диалоге')->set_rows(2),
-      Field::make('textarea', 'crb_fixed_modal_desc', 'Описание в диалоге')->set_rows(2),
-      Field::make('text', 'crb_fixed_modal_goal', 'Цель в метрике'),
     ])
     ->add_tab('Заказать звонок', [
       Field::make('text', 'crb_callback_title', 'Заголовок в диалоге'),

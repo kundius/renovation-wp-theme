@@ -60,9 +60,9 @@
           </ul>
           </div>
           <div class="consultation-form__phone">
-            <label class="phone-field">
-              <span class="phone-field__label">Ваш номер телефона</span>
-              <input class="phone-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+            <label class="text-field">
+              <span class="text-field__label">Ваш номер телефона</span>
+              <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
             </label>
           </div>
           <div class="consultation-form__rules">

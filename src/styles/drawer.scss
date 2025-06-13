@@ -66,6 +66,8 @@
 .drawer__content {
   overflow: auto;
   height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
   // flex-grow: 1;
   // display: flex;
   // flex-direction: column;
@@ -212,7 +214,7 @@
 
 .drawer__region {
   // margin: 32px 24px;
-  margin: 4px 24px;
+  padding: 8px 24px;
 }
 
 .drawer-region {
@@ -318,9 +320,9 @@
   gap: 12px;
   justify-content: space-between;
   align-items: center;
-  margin-left: 24px;
-  margin-right: 24px;
-  margin-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 16px;
 }
 
 .drawer-social {

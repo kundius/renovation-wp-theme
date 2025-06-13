@@ -17,16 +17,9 @@
       <div class="extra-header__offer__message">
         <?php echo carbon_get_theme_option('crb_fixed_message'); ?>
       </div>
-      <button
-        class="extra-header__offer__button"
-        data-feedback-button
-        data-feedback-button-title="<?php echo esc_html(carbon_get_theme_option('crb_fixed_modal_title')); ?>"
-        data-feedback-button-desc="<?php echo esc_html(carbon_get_theme_option('crb_fixed_modal_desc')); ?>"
-        data-feedback-button-action="<?php echo esc_html(carbon_get_theme_option('crb_fixed_modal_action')); ?>"
-        data-feedback-button-goal="<?php echo carbon_get_theme_option('crb_fixed_modal_goal'); ?>"
-      >
+      <a class="extra-header__offer__button" href="/partnership">
         <?php echo carbon_get_theme_option('crb_fixed_button'); ?>
-      </button>
+      </a>
     </div>
   </div>
 </div>
@@ -64,7 +57,7 @@
         <?php echo carbon_get_theme_option('crb_theme_phone'); ?>
       </span>
       <span class="header__phone__time">
-        <?php echo carbon_get_theme_option('crb_theme_working_hours'); ?>
+        <?php echo carbon_get_theme_option('crb_theme_working_hours_long'); ?>
       </span>
     </a>
 
