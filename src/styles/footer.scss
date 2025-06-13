@@ -61,6 +61,7 @@
   color: #000000;
   text-align: center;
   line-height: 1.2;
+  font-family: 'Gilroy';
 
   @include max-lg {
     font-size: 14px;
@@ -83,6 +84,7 @@
   text-align: center;
   margin-top: 36px;
   line-height: 1.2;
+  font-family: 'Gilroy';
 
   @include max-lg {
     font-size: 14px;
@@ -192,6 +194,7 @@
   font-size: 12px;
   line-height: 1.2;
   color: #222222;
+  font-family: 'Gilroy';
 }
 
 .footer-bottom__links {

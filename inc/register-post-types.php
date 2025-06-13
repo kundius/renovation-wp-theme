@@ -28,7 +28,7 @@ function register_post_types()
     'menu_icon' => 'dashicons-media-document',
     'hierarchical' => false,
     'supports' => ['title'],
-    'taxonomies' => [],
+    'taxonomies' => ['post_tag'],
     'has_archive' => false,
     'rewrite' => true,
     'query_var' => true,
