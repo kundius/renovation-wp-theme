@@ -51,13 +51,13 @@
     ]);
     ?>
 
-    <button class="header__calc" data-modal-open="modal-calc">
+    <a href="/calc" class="header__calc">
       <span class="header__calc__icon"></span>
       <span class="header__calc__text">
         калькулятор<br>
         стоимости
       </span>
-    </button>
+    </a>
 
     <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone'); ?>" class="header__phone" data-call-button>
       <span class="header__phone__number">
