@@ -122,6 +122,7 @@
   flex: 0 0 var(--slide-size);
   min-width: 0;
   padding-left: var(--slide-spacing);
+  display: flex;
 }
 
 .portfolio-embla__nav {
@@ -217,6 +218,8 @@
   background-color: #ffffff;
   filter: drop-shadow(0px 3px 24.5px rgba(0, 50, 92, 0.15));
   padding: 32px;
+  display: flex;
+  flex-direction: column;
 
   .portfolio-embla & {
     filter: none;
@@ -241,6 +244,7 @@
   font-size: 24px;
   line-height: 1.15;
   font-weight: bold;
+  flex-grow: 1;
 
   @include max-md {
     font-size: 14px;
