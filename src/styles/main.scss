@@ -666,6 +666,13 @@ button.more-button {
   span {
     color: #000;
   }
+
+  @include max-md {
+    font-size: 12px;
+    padding: 8px 0;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
 }
 
 .page-title {
