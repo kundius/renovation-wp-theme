@@ -54,8 +54,8 @@
   background: #ffffff;
   height: 100%;
   max-width: 360px;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   position: relative;
   z-index: 2;
   box-shadow: 0 0 24px rgba(0, 0, 0, .5);
@@ -64,10 +64,11 @@
 }
 
 .drawer__content {
-  flex-grow: 1;
   overflow: auto;
-  display: flex;
-  flex-direction: column;
+  height: calc(100% - 40px);
+  // flex-grow: 1;
+  // display: flex;
+  // flex-direction: column;
 }
 
 .drawer__nav {
@@ -210,8 +211,8 @@
 }
 
 .drawer__region {
-  // margin: 32px 24px;
-  margin: 4px 24px;
+  margin: 32px 24px;
+  // margin: 4px 24px;
 }
 
 .drawer-region {
