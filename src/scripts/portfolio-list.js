@@ -37,6 +37,8 @@ export function applyPortfolioList(root) {
 
           tmp.childNodes.forEach(child => wrap.appendChild(child))
 
+          refreshFsLightbox()
+
           if (currentPage == root.dataset.portfolioListMaxPage) {
             load.remove()
           }

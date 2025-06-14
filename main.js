@@ -53,6 +53,7 @@ import { initCallButton } from './src/scripts/call-button'
 import { initModal } from './src/scripts/modal'
 import { initFeedbackButton } from './src/scripts/feedback-button'
 import { initPortfolioList } from './src/scripts/portfolio-list'
+import { initReviewsList } from './src/scripts/reviews-list'
 
 new MaskInput('[data-maska]')
 
@@ -77,4 +78,5 @@ initCallButton()
 initModal()
 initFeedbackButton()
 initPortfolioList()
+initReviewsList()
 // initQuestionForm()

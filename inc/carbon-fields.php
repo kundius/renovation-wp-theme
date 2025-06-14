@@ -208,13 +208,39 @@ function register_carbon_fields_blocks()
     
   Block::make('partnership-form', 'Форма "Партнерство"')
     ->add_fields([
-      Field::make('separator', 'partnership', 'Форма "Партнерство"')
+      Field::make('separator', 'partnership-form', 'Форма "Партнерство"')
     ])
     ->set_category('layout')
     ->set_mode('edit')
     ->set_icon('shortcode')
     ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
       get_template_part('partials/partnership-form', null, [
+        'fields' => $fields
+      ]);
+    });
+    
+  Block::make('portfolio-list', 'Список "Портфолио"')
+    ->add_fields([
+      Field::make('separator', 'portfolio-list', 'Список "Портфолио"')
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/portfolio-list', null, [
+        'fields' => $fields
+      ]);
+    });
+
+  Block::make('reviews-list', 'Список "Отзывы"')
+    ->add_fields([
+      Field::make('separator', 'reviews-list', 'Список "Отзывы"')
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/reviews-list', null, [
         'fields' => $fields
       ]);
     });
