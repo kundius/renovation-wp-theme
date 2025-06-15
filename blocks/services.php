@@ -2,9 +2,9 @@
   <div class="container">
     <div class="services-section__headline">
       <?php if ($title = $args['fields']['title']): ?>
-      <div class="services-section__title">
+      <h2 class="services-section__title">
         <?php echo nl2br($title); ?>
-      </div>
+      </h2>
       <?php endif; ?>
       <?php if ($desc = $args['fields']['desc']): ?>
       <div class="services-section__desc">

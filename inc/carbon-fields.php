@@ -192,7 +192,7 @@ function register_carbon_fields_blocks()
         'fields' => $fields
       ]);
     });
-    
+
   Block::make('contacts_map', 'Карта')
     ->add_fields([
       Field::make('textarea', 'html', 'Код карты')->set_rows(4)
@@ -205,7 +205,7 @@ function register_carbon_fields_blocks()
         'fields' => $fields
       ]);
     });
-    
+
   Block::make('partnership-form', 'Форма "Партнерство"')
     ->add_fields([
       Field::make('separator', 'partnership-form', 'Форма "Партнерство"')
@@ -218,7 +218,7 @@ function register_carbon_fields_blocks()
         'fields' => $fields
       ]);
     });
-    
+
   Block::make('portfolio-list', 'Список "Портфолио"')
     ->add_fields([
       Field::make('separator', 'portfolio-list', 'Список "Портфолио"')

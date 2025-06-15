@@ -3,9 +3,9 @@
 
     <div class="portfolio__headline">
       <?php if ($title = $args['fields']['title']): ?>
-      <div class="portfolio__title">
+      <h2 class="portfolio__title">
         <?php echo $title; ?>
-      </div>
+      </h2>
       <?php endif; ?>
       <?php if ($subtitle = $args['fields']['subtitle']): ?>
       <div class="portfolio__desc">

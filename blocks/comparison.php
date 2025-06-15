@@ -1,9 +1,9 @@
 <section class="block-section comparison-section">
   <div class="container container--large">
     <?php if ($title = $args['fields']['title']): ?>
-    <div class="comparison-section__title">
+    <h2 class="comparison-section__title">
       <?php echo $title; ?>
-    </div>
+    </h2>
     <?php endif; ?>
     <?php if ($list = $args['fields']['list']): ?>
     <div class="comparison-carousel" data-comparison-carousel>

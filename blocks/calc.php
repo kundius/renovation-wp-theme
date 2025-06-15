@@ -1,7 +1,7 @@
 <section class="block-section calc-section calc-section--has-title">
   <div class="container">
     <?php if ($title = $args['fields']['title']): ?>
-    <div class="calc-section__title"><?php echo nl2br($title); ?></div>
+    <h2 class="calc-section__title"><?php echo nl2br($title); ?></h2>
     <?php endif; ?>
 
     <form

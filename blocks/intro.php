@@ -3,7 +3,7 @@
     <div class="hero__layout">
       <div class="hero__layout-content">
         <?php if ($title = $args['fields']['title']): ?>
-        <div class="hero__title"><?php echo nl2br($title); ?></div>
+        <h1 class="hero__title"><?php echo nl2br($title); ?></h1>
         <?php endif; ?>
         <?php if ($desc = $args['fields']['desc']): ?>
         <div class="hero__desc"><?php echo nl2br($desc); ?></div>

@@ -1,9 +1,9 @@
 <section class="block-section hiw-section">
   <div class="container">
     <?php if ($args['fields']['title']): ?>
-    <div class="hiw-section__title">
+    <h2 class="hiw-section__title">
       <?php echo nl2br($args['fields']['title']); ?>
-    </div>
+    </h2>
     <?php endif; ?>
     <div class="hiw-section__grid">
       <div class="hiw-section__grid-cell">

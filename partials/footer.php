@@ -61,6 +61,7 @@
     <div class="drawer__content">
       <div class="drawer__nav" data-drawer-nav></div>
 
+      <?php if (is_multisite()): ?>
       <div class="drawer__region">
         <div class="drawer-region">
           <div class="drawer-region__label">Ваш регион:</div>
@@ -81,6 +82,7 @@
           </div>
         </div>
       </div>
+      <?php endif; ?>
 
       <div class="drawer__contacts">
         <div class="drawer-social">

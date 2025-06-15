@@ -2,7 +2,7 @@
   <div class="container">
     <div class="measurement-section__title">
       <?php if ($title = $args['fields']['title']): ?>
-      <div class="measurement-section__title-inner"><?php echo nl2br($title); ?></div>
+      <h2 class="measurement-section__title-inner"><?php echo nl2br($title); ?></h2>
       <?php endif; ?>
     </div>
     <?php if ($action = $args['fields']['action']): ?>

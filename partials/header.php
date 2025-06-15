@@ -1,5 +1,6 @@
 <div class="extra-header">
   <div class="container container--larger extra-header__container">
+    <?php if (is_multisite()): ?>
     <div class="extra-header__city">
       <div class="city-select" data-city-select role="combobox" aria-expanded="false" aria-haspopup="true" aria-label="Выбор города">
         <button class="city-select__trigger" data-city-select-trigger>
@@ -15,6 +16,7 @@
         </div>
       </div>
     </div>
+    <?php endif; ?>
 
     <div class="extra-header__offer">
       <div class="extra-header__offer__message">

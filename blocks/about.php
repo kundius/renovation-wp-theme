@@ -4,9 +4,9 @@
       <div class="about__layout-content">
         <div class="about__headline">
           <?php if ($title = $args['fields']['title']): ?>
-          <div class="about__headline-primary">
+          <h2 class="about__headline-primary">
             <?php echo nl2br($title); ?>
-          </div>
+          </h2>
           <?php endif; ?>
           <?php if ($subtitle = $args['fields']['subtitle']): ?>
           <div class="about__headline-secondary">

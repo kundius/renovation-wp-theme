@@ -5,9 +5,9 @@
     <form class="quiz" data-quiz data-quiz-goal="<?php echo $args['fields']['finish_goal']; ?>">
 
       <?php if ($title = $args['fields']['title']): ?>
-      <div class="quiz__title">
+      <h2 class="quiz__title">
         <?php echo $title; ?>
-      </div>
+      </h2>
       <?php endif; ?>
 
       <div class="quiz-progress" data-quiz-progress>

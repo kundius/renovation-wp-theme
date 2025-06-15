@@ -1,7 +1,7 @@
 <section class="block-section faq-section" data-faq>
   <div class="container">
     <?php if ($title = $args['fields']['title']): ?>
-    <div class="faq-section__title"><?php echo nl2br($title); ?></div>
+    <h2 class="faq-section__title"><?php echo nl2br($title); ?></h2>
     <?php endif; ?>
     <?php if ($list = $args['fields']['list']): ?>
     <div class="faq-section__grid">

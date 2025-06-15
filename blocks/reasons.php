@@ -2,7 +2,7 @@
   <div class="container">
     <div class="reasons-section__headline">
       <?php if ($title = $args['fields']['title']): ?>
-      <div class="reasons-section__title"><?php echo nl2br($title); ?></div>
+      <h2 class="reasons-section__title"><?php echo nl2br($title); ?></h2>
       <?php endif; ?>
       <?php if ($desc = $args['fields']['desc']): ?>
       <div class="reasons-section__desc"><?php echo nl2br($desc); ?></div>

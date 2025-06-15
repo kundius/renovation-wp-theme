@@ -4,7 +4,7 @@
       <div class="consultation-section__layout-content">
         <div class="consultation-headline">
           <?php if ($title = $args['fields']['title']): ?>
-          <div class="consultation-headline__title"><?php echo nl2br($title); ?></div>
+          <h2 class="consultation-headline__title"><?php echo nl2br($title); ?></h2>
           <?php endif; ?>
           <?php if ($subtitle = $args['fields']['subtitle']): ?>
           <div class="consultation-headline__desc"><?php echo nl2br($subtitle); ?></div>
