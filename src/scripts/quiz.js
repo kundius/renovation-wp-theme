@@ -6,7 +6,7 @@ export function applyQuiz(root) {
   const actionPrevNodes = Array.from(root.querySelectorAll('[data-quiz-prev]'))
   const actionNextNodes = Array.from(root.querySelectorAll('[data-quiz-next]'))
   const fieldNodes = Array.from(root.querySelectorAll('.radio-field'))
-  const resetNodes = Array.from(root.querySelectorAll('[data-quiz-reset]'))
+  const resetNodes = Array.from(root.querySelectorAll('[data-feedack-form-reset]'))
 
   let step = 0
 
@@ -54,22 +54,8 @@ export function applyQuiz(root) {
 
   resetNodes.forEach((resetNode) => {
     resetNode.addEventListener('click', () => {
-      root.removeAttribute('data-quiz-success')
       setStep(0)
     })
-  })
-
-  root.addEventListener('submit', (e) => {
-    e.preventDefault()
-    var formData = new FormData(root)
-    // output as an object
-    console.log(Object.fromEntries(formData))
-    // ...or iterate through the name-value pairs
-    for (var pair of formData.entries()) {
-      console.log(pair[0] + ': ' + pair[1])
-    }
-
-    root.setAttribute('data-quiz-success', '')
   })
 }
 

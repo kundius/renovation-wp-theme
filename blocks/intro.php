@@ -109,5 +109,9 @@
       </div>
     </div>
   </div>
-  <img src="<?php bloginfo('template_url'); ?>/src/images/bg-intro.jpg" alt="" class="hero__bg">
+  <?php if ($background = $args['fields']['background']): ?>
+    <img src="<?php echo wp_get_attachment_image_url($background, 'full'); ?>" alt="" class="hero__bg">
+  <?php else: ?>
+    <img src="<?php bloginfo('template_url'); ?>/src/images/bg-intro.jpg" alt="" class="hero__bg">
+  <?php endif; ?>
 </section>

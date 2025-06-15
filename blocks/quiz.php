@@ -2,7 +2,17 @@
 <section class="block-section quiz-section">
   <div class="container">
 
-    <form class="quiz" data-quiz data-quiz-goal="<?php echo $args['fields']['finish_goal']; ?>">
+    <form
+      class="quiz"
+      data-quiz
+      action="<?php echo admin_url('admin-ajax.php') ?>"
+      data-feedack-form
+      data-feedack-form-goal="<?php echo $args['fields']['finish_goal']; ?>"
+    >
+      <input type="hidden" name="submitted" value="">
+      <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
+      <input type="hidden" name="type" value="quiz">
+      <input type="hidden" name="subject" value="<?php echo esc_html($args['fields']['title']); ?>">
 
       <?php if ($title = $args['fields']['title']): ?>
       <h2 class="quiz__title">
@@ -125,11 +135,12 @@
               </label>
               <?php endforeach; ?>
             </div>
+            <div class="quiz-ending__errors" data-feedack-form-errors></div>
             <div class="quiz-ending__form">
               <div class="quiz__phone">
                 <label class="text-field text-field--centered">
                   <span class="text-field__label">Ваш номер телефона</span>
-                  <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+                  <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
                 </label>
               </div>
               <div class="quiz__submit">
@@ -154,14 +165,14 @@
 
       </div>
 
-      <div class="quiz__success">
-        <div class="quiz__success__title">
-          Сообщение отправлено!
+      <div class="quiz-success">
+        <div class="quiz-success__title">
+          <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_title')); ?>
         </div>
-        <div class="quiz__success__desc">
-          Тут нужно что-то написать
+        <div class="quiz-success__desc">
+          <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_desc')); ?>
         </div>
-        <button type="button" class="quiz__success__close" data-quiz-reset>Закрыть</button>
+        <button type="button" class="control-button w-32" data-feedack-form-reset>Закрыть</button>
       </div>
     </form>
 

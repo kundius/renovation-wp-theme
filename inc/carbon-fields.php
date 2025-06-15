@@ -257,13 +257,6 @@ function register_carbon_fields_blocks()
       Field::make('text', 'crb_theme_site_name', 'Название сайта')->set_help_text('Шорткод: {crb_theme_site_name}'),
       Field::make('text', 'crb_theme_slogan', 'Слоган')->set_help_text('Шорткод: {crb_theme_slogan}'),
     ])
-    ->add_tab('Шапка', [
-      Field::make('text', 'crb_header_city', 'Выбранный город'),
-      Field::make('complex', 'crb_header_cities', 'Список городов')->add_fields([
-        Field::make('text', 'name', 'Название')->set_width(50),
-        Field::make('text', 'url', 'Ссылка')->set_width(50),
-      ]),
-    ])
     ->add_tab('Закреп', [
       Field::make('textarea', 'crb_fixed_message', 'Сообщение')->set_rows(2),
       Field::make('textarea', 'crb_fixed_button', 'Текст кнопки в закрепе')->set_rows(2),
