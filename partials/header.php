@@ -6,9 +6,9 @@
           <span><?php echo get_blog_details(get_current_blog_id())->blogname; ?></span>
         </button>
         <div class="city-select__list" role="listbox" data-city-select-listbox>
-          <?php $sites = get_sites([ 'site__not_in' => get_current_blog_id() ]); print_r($sites); ?>
+          <?php $sites = get_sites([ 'site__not_in' => get_current_blog_id() ]); ?>
           <?php foreach ($sites as $site): ?>
-          <a href="<?php echo $site->domain . $site->path; ?>" role="option" tabindex="-1">
+          <a href="<?php echo get_site_url($site->blog_id); ?>" role="option" tabindex="-1">
             <?php echo get_blog_details($site->blog_id)->blogname; ?>
           </a>
           <?php endforeach; ?>
