@@ -54,16 +54,14 @@
                     <?php echo nl2br($option['name']); ?>
                   </div>
                   <div class="prices-list__quantity">
-                    <?php if ($option['quantity']): ?>
                     <input
                       class="prices-list__quantity-input"
                       type="text"
                       name="quantity"
                       min="1"
-                      value="<?php echo $option['quantity']; ?>"
+                      value="1"
                       data-prices-row-quantity
                     />
-                    <?php endif; ?>
                   </div>
                   <div class="prices-list__units" data-prices-row-units>
                     <?php echo $option['unit']; ?>

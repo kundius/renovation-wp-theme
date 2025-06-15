@@ -17,7 +17,7 @@ export function applyAttachmentsField(root) {
       row.setAttribute('data-attachments-field-row', '')
       row.innerHTML = `
         <label class="attachment-field" data-attachment-field>
-          <input type="file" name="file" class="attachment-field__input" data-attachment-field-input />
+          <input type="file" name="attachments[]" class="attachment-field__input" data-attachment-field-input />
           <span class="attachment-field__label control-button">
             <span data-attachment-field-label>Выберите файл</span>
             <span class="icon icon-pin"></span>

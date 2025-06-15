@@ -1,17 +1,15 @@
 export function applyFeedbackForm(form) {
-  const reset = form.querySelector('[data-feedack-form-reset]')
+  const resetNodes = Array.from(form.querySelectorAll('[data-feedack-form-reset]'))
   const submit = form.querySelector('[type="submit"]')
   const errors = form.querySelector('[data-feedack-form-errors]')
 
-  if (reset) {
-    reset.addEventListener('click', () => {
-      errors.innerHTML = ''
-      form.removeAttribute('data-feedack-form-failure')
-      form.removeAttribute('data-feedack-form-success')
-      form.removeAttribute('data-feedack-form-loading')
-      submit.removeAttribute('disabled')
-    })
-  }
+  resetNodes.forEach((resetNode) => resetNode.addEventListener('click', () => {
+    errors.innerHTML = ''
+    form.removeAttribute('data-feedack-form-failure')
+    form.removeAttribute('data-feedack-form-success')
+    form.removeAttribute('data-feedack-form-loading')
+    submit.removeAttribute('disabled')
+  }))
 
   form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -23,7 +21,7 @@ export function applyFeedbackForm(form) {
     submit.setAttribute('disabled', '')
 
     const formData = new FormData(e.target)
-    formData.append('action', 'feedack_action')
+    formData.append('action', form.dataset.feedackFormAction)
 
     fetch(e.target.action, {
       method: 'post',

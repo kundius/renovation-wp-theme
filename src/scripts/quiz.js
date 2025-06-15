@@ -45,9 +45,8 @@ export function applyQuiz(root) {
     const radio = fieldNode.querySelector('[type="radio"]')
     const text = fieldNode.querySelector('[type="text"]')
     if (text && radio) {
-      radio.dataset.initialValue = radio.value
       text.addEventListener('input', () => {
-        radio.value = radio.dataset.initialValue.replace('#', text.value)
+        radio.value = text.dataset.template.replace('#', text.value)
       })
     }
   })

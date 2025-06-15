@@ -61,6 +61,8 @@ export function applyPrices(root) {
       rowPriceNode.innerHTML = formatPrice(rowPrice * rowQuantity)
 
       if (rowEnableNode.checked) {
+        row.setAttribute('data-prices-row-active', '')
+
         // увеличить итоговую стоимость
         cost += rowPrice * rowQuantity
 
@@ -76,6 +78,8 @@ export function applyPrices(root) {
             price: rowPrice * rowQuantity
           })
         }
+      } else {
+        row.removeAttribute('data-prices-row-active')
       }
     })
 

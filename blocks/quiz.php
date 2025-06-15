@@ -8,10 +8,11 @@
       action="<?php echo admin_url('admin-ajax.php') ?>"
       data-feedack-form
       data-feedack-form-goal="<?php echo $args['fields']['finish_goal']; ?>"
+      data-feedack-form-action="quiz_form"
     >
       <input type="hidden" name="submitted" value="">
       <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
-      <input type="hidden" name="type" value="quiz">
+      <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
       <input type="hidden" name="subject" value="<?php echo esc_html($args['fields']['title']); ?>">
 
       <?php if ($title = $args['fields']['title']): ?>
@@ -58,13 +59,16 @@
                 <div class="quiz-form__fields">
                   <?php foreach ($options as $n => $option): ?>
                   <label class="radio-field">
+                    <?php $template = preg_replace('/input:"([^"]+)"/u', '#', $option['name']); ?>
                     <input
                       type="radio"
-                      name="<?php echo esc_html($step['question']) ?>"
-                      value="<?php echo esc_html($option['name']) ?>"
+                      name="question:<?php echo esc_html($step['question']); ?>"
+                      value="<?php echo esc_html($template); ?>"
                       <?php if ($n === 0): ?>checked<?php endif; ?>
                     >
-                    <span><?php echo $option['name'] ?></span>
+                    <span>
+                      <?php echo preg_replace('/input:"([^"]+)"/u', '<input type="text" placeholder="$1" data-template="' . esc_html($template)  . '">', $option['name']); ?>
+                    </span>
                   </label>
                   <?php endforeach; ?>
                 </div>
@@ -127,7 +131,7 @@
               <label class="radio-field">
                 <input
                   type="radio"
-                  name="<?php echo esc_html($args['fields']['finish_title']); ?>"
+                  name="question:<?php echo esc_html($args['fields']['finish_title']); ?>"
                   value="<?php echo esc_html($finish_option['name']); ?>"
                   <?php if ($n === 0): ?>checked<?php endif; ?>
                 >
@@ -140,7 +144,7 @@
               <div class="quiz__phone">
                 <label class="text-field text-field--centered">
                   <span class="text-field__label">Ваш номер телефона</span>
-                  <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
+                  <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
                 </label>
               </div>
               <div class="quiz__submit">

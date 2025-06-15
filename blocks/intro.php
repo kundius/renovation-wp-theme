@@ -37,10 +37,11 @@
           data-hero-form
           data-feedack-form
           data-feedack-form-goal="<?php echo $args['fields']['form_goal']; ?>"
+          data-feedack-form-action="hero_form"
         >
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
-          <input type="hidden" name="type" value="hero">
+          <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
           <input type="hidden" name="subject" value="<?php echo esc_html($args['fields']['title']); ?>">
 
           <?php if ($form_title = $args['fields']['form_title']): ?>
@@ -55,10 +56,11 @@
               <?php foreach ($form_repair_types as $key => $item): ?>
               <label class="radio-button">
                 <input
-                type="radio"
-                name="type"
-                value="КОСМЕТИЧЕСКИЙ" data-hero-form-type-price="<?php echo $item['price']; ?>"
-                <?php if ($key === 0): ?>checked<?php endif; ?>
+                  type="radio"
+                  name="type"
+                  value="<?php echo $item['name']; ?>"
+                  data-hero-form-type-price="<?php echo $item['price']; ?>"
+                  <?php if ($key === 0): ?>checked<?php endif; ?>
                 >
                 <span><?php echo $item['name']; ?></span>
               </label>
@@ -85,7 +87,7 @@
           <div class="hero-form__phone">
             <label class="text-field">
               <span class="text-field__label">Ваш номер телефона</span>
-              <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
+              <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
             </label>
           </div>
           <div class="hero-form__rules">

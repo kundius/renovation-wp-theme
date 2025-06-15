@@ -443,6 +443,11 @@
   line-height: 1.25;
   flex-shrink: 0;
   width: 88px;
+  display: none;
+
+  [data-prices-row-active] & {
+    display: block;
+  }
 
   @include max-lg {
     width: 64px;

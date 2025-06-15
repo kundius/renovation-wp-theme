@@ -498,10 +498,9 @@ function register_carbon_fields_blocks()
           ->add_fields([
             Field::make('text', 'name', 'Название'),
             Field::make('complex', 'options', 'Опции')->add_fields([
-              Field::make('text', 'name', 'Название')->set_width(55),
-              Field::make('text', 'quantity', 'Кличество')->set_width(15),
-              Field::make('text', 'unit', 'Ед. изм')->set_width(15),
-              Field::make('text', 'price', 'Цена')->set_width(15),
+              Field::make('text', 'name', 'Название')->set_width(60),
+              Field::make('text', 'unit', 'Ед. изм')->set_width(20),
+              Field::make('text', 'price', 'Цена')->set_width(20),
             ])
           ])
           ->set_header_template('<%= name %>'),

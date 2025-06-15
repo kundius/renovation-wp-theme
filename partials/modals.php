@@ -14,10 +14,11 @@
           class="modal-form"
           data-feedack-form
           data-feedack-form-goal="<?php echo carbon_get_theme_option('crb_callback_goal'); ?>"
+          data-feedack-form-action="feedback_form"
         >
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
-          <input type="hidden" name="type" value="callback">
+          <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
           <input type="hidden" name="subject" value="<?php echo esc_html(carbon_get_theme_option('crb_callback_title')); ?>">
 
           <div class="modal-form__errors" data-feedack-form-errors></div>
@@ -25,7 +26,7 @@
           <div class="modal-form__field">
             <label class="text-field">
               <span class="text-field__label">Ваш номер телефона<span>*</span></span>
-              <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
+              <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
             </label>
           </div>
 
@@ -67,10 +68,16 @@
 
         <div class="modal__desc" data-feedack-modal-desc></div>
 
-        <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form data-feedack-form-goal="FEEDBACK_MODAL">
+        <form
+          action="<?php echo admin_url('admin-ajax.php') ?>"
+          class="modal-form"
+          data-feedack-form
+          data-feedack-form-goal="FEEDBACK_MODAL"
+          data-feedack-form-action="feedback_form"
+        >
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
-          <input type="hidden" name="type" value="feedback">
+          <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
           <input type="hidden" name="subject" value="Форма обратной связи" data-feedack-modal-subject>
 
           <div class="modal-form__errors" data-feedack-form-errors></div>
@@ -78,7 +85,7 @@
           <div class="modal-form__field">
             <label class="text-field">
               <span class="text-field__label">Ваш номер телефона<span>*</span></span>
-              <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
+              <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
             </label>
           </div>
 
@@ -123,10 +130,11 @@
           action="<?php echo admin_url('admin-ajax.php') ?>"
           data-feedack-form
           data-feedack-form-goal="<?php echo carbon_get_theme_option('crb_faq_goal'); ?>"
+          data-feedack-form-action="faq_form"
         >
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
-          <input type="hidden" name="type" value="faq">
+          <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
           <input type="hidden" name="subject" value="<?php echo esc_html(carbon_get_theme_option('crb_faq_title')); ?>">
 
           <div class="modal-form__errors" data-feedack-form-errors></div>
@@ -141,14 +149,14 @@
           <div class="modal-form__field">
             <label class="text-field">
               <span class="text-field__label">Ваш номер телефона<span>*</span></span>
-              <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
+              <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
             </label>
           </div>
 
           <div class="modal-form__field">
             <label class="textarea-field">
               <span class="textarea-field__label">Ваш вопрос<span>*</span></span>
-              <textarea class="textarea-field__input" name="your-message" placeholder="" required></textarea>
+              <textarea class="textarea-field__input" name="message" placeholder="" required></textarea>
             </label>
           </div>
 
