@@ -9,7 +9,7 @@
     class="media-reviews-item__pmedia-review"
     data-fslightbox="video"
   >
-    <?php echo get_the_post_thumbnail(get_the_ID(), 'thumbnail-l', ['class' => 'media-reviews-item__image']); ?>
+    <?php echo get_the_post_thumbnail(get_the_ID(), 'thumbnail-m', ['class' => 'media-reviews-item__image']); ?>
     <span class="media-reviews-item__trigger">
       <?php if ($code): ?>
       <span class="icon icon-circle-play"></span>
