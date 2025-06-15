@@ -88,7 +88,7 @@
   display: none;
 }
 
-.calc[data-calc-success] .calc-success {
+[data-feedack-form-success] .calc-success {
   display: flex;
 }
 
@@ -106,11 +106,11 @@
 
 .calc-success__title {
   text-align: center;
-  font-weight: 900;
+  font-weight: 700;
   color: #5a6879;
   font-size: 24px;
   line-height: 1;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 
   span {
     color: #5abeff;
@@ -119,7 +119,8 @@
 
 .calc-success__desc {
   font-size: 18px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 .calc-success__close {

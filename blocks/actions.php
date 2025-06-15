@@ -10,28 +10,12 @@
         <div class="actions-carousel__viewport" data-actions-carousel-viewport>
           <div class="actions-carousel__container">
             <?php foreach ($entries as $item): ?>
+            <?php $post = get_post($item['id']); ?>
+            <?php setup_postdata($post); ?>
             <div class="actions-carousel__slide">
-              <div class="actions-item">
-                <?php echo get_the_post_thumbnail($item['id'], 'thumbnail-l', ['class' => 'actions-item__image']); ?>
-                <div class="actions-item__content">
-                  <div class="actions-item__title">
-                    <?php echo get_the_title($item['id']); ?>
-                  </div>
-                  <div class="actions-item__desc">
-                    <?php echo get_the_excerpt($item['id']); ?>
-                  </div>
-                  <div class="actions-item__more">
-                    <a href="<?php echo get_the_permalink($item['id']); ?>" class="more-button">
-                      <span class="more-button__text">Узнать больше</span>
-                      <span class="more-button__icon">
-                        <span class="icon icon-arrow-right"></span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <?php get_template_part('partials/actions-item'); ?>
             </div>
-            <?php endforeach; ?>
+            <?php endforeach; wp_reset_postdata(); ?>
           </div>
         </div>
         <button class="actions-carousel__nav actions-carousel__nav--prev" type="button" data-actions-carousel-prev></button>

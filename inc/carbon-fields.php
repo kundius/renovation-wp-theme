@@ -268,10 +268,20 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'crb_fixed_message', 'Сообщение')->set_rows(2),
       Field::make('textarea', 'crb_fixed_button', 'Текст кнопки в закрепе')->set_rows(2),
     ])
-    ->add_tab('Заказать звонок', [
-      Field::make('text', 'crb_callback_title', 'Заголовок в диалоге'),
-      Field::make('text', 'crb_callback_action', 'Текст кнопки в диалоге'),
-      Field::make('textarea', 'crb_callback_desc', 'Описание в диалоге')->set_rows(2),
+    ->add_tab('Формы', [
+      Field::make('separator', 'crb_callback', 'Заказать звонок'),
+      Field::make('text', 'crb_callback_title', 'Заголовок'),
+      Field::make('text', 'crb_callback_action', 'Текст кнопки'),
+      Field::make('text', 'crb_callback_goal', 'Цель в метрике'),
+      Field::make('textarea', 'crb_callback_desc', 'Описание')->set_rows(2),
+      Field::make('separator', 'crb_faq', 'Задать вопрос'),
+      Field::make('text', 'crb_faq_title', 'Заголовок'),
+      Field::make('text', 'crb_faq_action', 'Текст кнопки'),
+      Field::make('text', 'crb_faq_goal', 'Цель в метрике'),
+      Field::make('textarea', 'crb_faq_desc', 'Описание')->set_rows(2),
+      Field::make('separator', 'crb_feedback_success', 'Успешная отправка'),
+      Field::make('text', 'crb_feedback_success_title', 'Заголовок'),
+      Field::make('textarea', 'crb_feedback_success_desc', 'Описание')->set_rows(2),
     ])
     ->add_tab('Подвал', [
       Field::make('textarea', 'crb_footer_info', 'Информация')->set_rows(2),

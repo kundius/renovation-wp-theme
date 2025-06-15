@@ -4,7 +4,18 @@
     <div class="calc-section__title"><?php echo nl2br($title); ?></div>
     <?php endif; ?>
 
-    <form class="calc" data-calc data-calc-goal="<?php echo $args['fields']['goal']; ?>">
+    <form
+      class="calc"
+      data-calc
+      action="<?php echo admin_url('admin-ajax.php') ?>"
+      data-feedack-form
+      data-feedack-form-goal="<?php echo $args['fields']['goal']; ?>"
+    >
+      <input type="hidden" name="submitted" value="">
+      <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
+      <input type="hidden" name="type" value="calc">
+      <input type="hidden" name="subject" value="<?php echo esc_html($args['fields']['title']); ?>">
+
       <div class="calc__left">
         <?php if ($questions = $args['fields']['questions']): ?>
         <?php foreach ($questions as $n => $question): ?>
@@ -101,28 +112,29 @@
         <?php if ($message = $args['fields']['message']): ?>
         <div class="calc__message"><?php echo nl2br($message); ?></div>
         <?php endif; ?>
+        <div class="calc__errors" data-feedack-form-errors></div>
         <div class="calc__phone">
           <label class="text-field">
             <span class="text-field__label">Ваш номер телефона</span>
-            <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+            <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
           </label>
         </div>
         <div class="calc__rules">
-          Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
+          Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
         </div>
         <div class="calc__submit">
-          <button class="primary-button primary-button--alt">Отправить</button>
+          <button type="submit" class="primary-button primary-button--alt">Отправить</button>
         </div>
       </div>
 
       <div class="calc-success">
         <div class="calc-success__title">
-          Сообщение отправлено!
+          <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_title')); ?>
         </div>
         <div class="calc-success__desc">
-          Тут нужно что-то написать
+          <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_desc')); ?>
         </div>
-        <button type="button" class="calc-success__close" data-calc-reset>Закрыть</button>
+        <button type="button" class="calc-success__close w-32" data-feedack-form-reset>Закрыть</button>
       </div>
     </form>
   </div>

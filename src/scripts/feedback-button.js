@@ -9,7 +9,7 @@ export function applyFeedbackButton(button) {
   const descNode = modal.querySelector('[data-feedack-modal-desc]')
   const actionNode = modal.querySelector('[data-feedack-modal-action]')
   const formNode = modal.querySelector('[data-feedack-form]')
-  const subjectNode = modal.querySelector('[data-feedack-form-subject]')
+  const subjectNode = modal.querySelector('[data-feedack-modal-subject]')
 
   const defaults = {
     title: titleNode.innerHTML,

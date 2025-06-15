@@ -33,10 +33,16 @@
       <div class="hero__layout-form">
         <form
           class="hero-form"
+          action="<?php echo admin_url('admin-ajax.php') ?>"
           data-hero-form
           data-feedack-form
           data-feedack-form-goal="<?php echo $args['fields']['form_goal']; ?>"
         >
+          <input type="hidden" name="submitted" value="">
+          <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
+          <input type="hidden" name="type" value="hero">
+          <input type="hidden" name="subject" value="<?php echo esc_html($args['fields']['title']); ?>">
+
           <?php if ($form_title = $args['fields']['form_title']): ?>
           <div class="hero-form__title">
             <?php echo $form_title; ?>
@@ -75,20 +81,30 @@
             <div class="hero-form__price-label">Итого: </div>
             <div class="hero-form__price-value" data-hero-form-price-output></div>
           </div>
+          <div class="hero-form__errors" data-feedack-form-errors></div>
           <div class="hero-form__phone">
             <label class="text-field">
               <span class="text-field__label">Ваш номер телефона</span>
-              <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+              <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
             </label>
           </div>
           <div class="hero-form__rules">
-            Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
+            Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
           </div>
           <?php if ($form_action = $args['fields']['form_action']): ?>
           <div class="hero-form__submit">
-            <button class="primary-button"><?php echo $form_action; ?></button>
+            <button type="submit" class="primary-button"><?php echo $form_action; ?></button>
           </div>
           <?php endif; ?>
+          <div class="hero-form-success">
+            <div class="hero-form-success__title">
+              <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_title')); ?>
+            </div>
+            <div class="hero-form-success__desc">
+              <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_desc')); ?>
+            </div>
+            <button type="button" class="control-button w-32" data-feedack-form-reset>Закрыть</button>
+          </div>
         </form>
       </div>
     </div>

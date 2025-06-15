@@ -1,5 +1,5 @@
 export function applyCalc(root) {
-  const resetNodes = Array.from(root.querySelectorAll('[data-calc-reset]'))
+  // const resetNodes = Array.from(root.querySelectorAll('[data-calc-reset]'))
   const inputs = root.querySelectorAll('input')
   const repairCost = root.querySelector('[data-calc-repair-cost]')
   const materialsCost = root.querySelector('[data-calc-materials-cost]')
@@ -47,27 +47,27 @@ export function applyCalc(root) {
 
   inputs.forEach((input) => input.addEventListener('input', updateCosts))
 
-  resetNodes.forEach((resetNode) => {
-    resetNode.addEventListener('click', () => {
-      root.removeAttribute('data-calc-success')
-      // отключил, потому что прикрепленные файлы нужно удалять вручную, как и обновлять шкалу площади
-      // root.reset()
-      // updateCosts()
-    })
-  })
+  // resetNodes.forEach((resetNode) => {
+  //   resetNode.addEventListener('click', () => {
+  //     root.removeAttribute('data-calc-success')
+  //     // отключил, потому что прикрепленные файлы нужно удалять вручную, как и обновлять шкалу площади
+  //     // root.reset()
+  //     // updateCosts()
+  //   })
+  // })
 
-  root.addEventListener('submit', (e) => {
-    e.preventDefault()
-    var formData = new FormData(root)
-    // output as an object
-    console.log(Object.fromEntries(formData))
-    // ...or iterate through the name-value pairs
-    for (var pair of formData.entries()) {
-      console.log(pair[0] + ': ' + pair[1])
-    }
+  // root.addEventListener('submit', (e) => {
+  //   e.preventDefault()
+  //   var formData = new FormData(root)
+  //   // output as an object
+  //   console.log(Object.fromEntries(formData))
+  //   // ...or iterate through the name-value pairs
+  //   for (var pair of formData.entries()) {
+  //     console.log(pair[0] + ': ' + pair[1])
+  //   }
 
-    root.setAttribute('data-calc-success', '')
-  })
+  //   root.setAttribute('data-calc-success', '')
+  // })
 }
 
 export function initCalc() {

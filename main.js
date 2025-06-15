@@ -54,6 +54,8 @@ import { initModal } from './src/scripts/modal'
 import { initFeedbackButton } from './src/scripts/feedback-button'
 import { initPortfolioList } from './src/scripts/portfolio-list'
 import { initReviewsList } from './src/scripts/reviews-list'
+import { initCategoryList } from './src/scripts/category-list'
+import { initFeedbackForm } from './src/scripts/feedack-form'
 
 new MaskInput('[data-maska]')
 
@@ -79,4 +81,5 @@ initModal()
 initFeedbackButton()
 initPortfolioList()
 initReviewsList()
-// initQuestionForm()
+initCategoryList()
+initFeedbackForm()

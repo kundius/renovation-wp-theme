@@ -142,7 +142,7 @@
               </div>
             </div>
             <div class="quiz-ending__rules">
-              Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
+              Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
             </div>
             <?php if ($image = $args['fields']['finish_image']): ?>
             <div class="quiz-ending__image">

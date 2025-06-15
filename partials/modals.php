@@ -13,29 +13,40 @@
           action="<?php echo admin_url('admin-ajax.php') ?>"
           class="modal-form"
           data-feedack-form
-          data-feedack-form-goal="MODAL_CALLBACK"
+          data-feedack-form-goal="<?php echo carbon_get_theme_option('crb_callback_goal'); ?>"
         >
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
-          <input type="hidden" name="subject" value="<?php echo carbon_get_theme_option('crb_callback_title'); ?>">
+          <input type="hidden" name="type" value="callback">
+          <input type="hidden" name="subject" value="<?php echo esc_html(carbon_get_theme_option('crb_callback_title')); ?>">
 
-          <div class="modal-form__messages" data-feedack-form-messages></div>
+          <div class="modal-form__errors" data-feedack-form-errors></div>
 
           <div class="modal-form__field">
             <label class="text-field">
               <span class="text-field__label">Ваш номер телефона<span>*</span></span>
-              <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+              <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
             </label>
           </div>
 
           <div class="modal-form__field modal-form__field--rules">
-            Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
+            Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
           </div>
 
           <div class="modal-form__field modal-form__field--submit">
             <button type="submit" class="primary-button primary-button--alt w-full">
               <?php echo carbon_get_theme_option('crb_callback_action'); ?>
             </button>
+          </div>
+
+          <div class="modal-form-success">
+            <div class="modal-form-success__title">
+              <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_title')); ?>
+            </div>
+            <div class="modal-form-success__desc">
+              <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_desc')); ?>
+            </div>
+            <button type="button" class="control-button w-32" data-feedack-form-reset>Закрыть</button>
           </div>
         </form>
 
@@ -59,23 +70,34 @@
         <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form data-feedack-form-goal="FEEDBACK_MODAL">
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
-          <input type="hidden" name="subject" value="Форма обратной связи" data-feedack-form-subject>
+          <input type="hidden" name="type" value="feedback">
+          <input type="hidden" name="subject" value="Форма обратной связи" data-feedack-modal-subject>
 
-          <div class="modal-form__messages" data-feedack-form-messages></div>
+          <div class="modal-form__errors" data-feedack-form-errors></div>
 
           <div class="modal-form__field">
             <label class="text-field">
               <span class="text-field__label">Ваш номер телефона<span>*</span></span>
-              <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __">
+              <input class="text-field__input" type="text" name="your-phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
             </label>
           </div>
 
           <div class="modal-form__field modal-form__field--rules">
-            Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
+            Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
           </div>
 
           <div class="modal-form__field modal-form__field--submit">
             <button type="submit" class="primary-button primary-button--alt w-full" data-feedack-modal-action>Отправить</button>
+          </div>
+
+          <div class="modal-form-success">
+            <div class="modal-form-success__title">
+              <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_title')); ?>
+            </div>
+            <div class="modal-form-success__desc">
+              <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_desc')); ?>
+            </div>
+            <button type="button" class="control-button w-32" data-feedack-form-reset>Закрыть</button>
           </div>
         </form>
 
@@ -92,16 +114,22 @@
       <div class="modal__content">
         <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
 
-        <div class="modal__title" data-feedack-modal-title>Задать вопрос</div>
+        <div class="modal__title"><?php echo carbon_get_theme_option('crb_faq_title'); ?></div>
 
-        <div class="modal__desc" data-feedack-modal-desc></div>
+        <div class="modal__desc"><?php echo carbon_get_theme_option('crb_faq_desc'); ?></div>
 
-        <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form data-feedack-form-goal="FAQ_MODAL">
+        <form
+          class="modal-form"
+          action="<?php echo admin_url('admin-ajax.php') ?>"
+          data-feedack-form
+          data-feedack-form-goal="<?php echo carbon_get_theme_option('crb_faq_goal'); ?>"
+        >
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
-          <input type="hidden" name="subject" value="Задать вопрос" data-feedack-form-subject>
+          <input type="hidden" name="type" value="faq">
+          <input type="hidden" name="subject" value="<?php echo esc_html(carbon_get_theme_option('crb_faq_title')); ?>">
 
-          <div class="modal-form__messages" data-feedack-form-messages></div>
+          <div class="modal-form__errors" data-feedack-form-errors></div>
 
           <div class="modal-form__field">
             <label class="text-field">
@@ -125,11 +153,23 @@
           </div>
 
           <div class="modal-form__field modal-form__field--rules">
-            Нажимая “Отправить”, вы даете согласие на <a href="#">обработку персональных данных</a>
+            Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
           </div>
 
           <div class="modal-form__field modal-form__field--submit">
-            <button type="submit" class="primary-button primary-button--alt w-full" data-feedack-modal-action>Отправить</button>
+            <button type="submit" class="primary-button primary-button--alt w-full">
+              <?php echo carbon_get_theme_option('crb_faq_action'); ?>
+            </button>
+          </div>
+
+          <div class="modal-form-success">
+            <div class="modal-form-success__title">
+              <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_title')); ?>
+            </div>
+            <div class="modal-form-success__desc">
+              <?php echo nl2br(carbon_get_theme_option('crb_feedback_success_desc')); ?>
+            </div>
+            <button type="button" class="control-button w-32" data-feedack-form-reset>Закрыть</button>
           </div>
         </form>
 

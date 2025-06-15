@@ -55,7 +55,7 @@
     </div>
     <div class="partnership-form__footer-cell">
       <div class="partnership-form__rules">
-        Нажимая “Отправить”, вы даете согласие на <a href="">обработку персональных данных</a>
+        Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
       </div>
     </div>
   </div>

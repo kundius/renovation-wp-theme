@@ -216,28 +216,62 @@
   padding: 0 8px;
 }
 
-.modal-form__messages {
+.modal-form__errors {
   grid-column: span 2 / span 2;
-  background: hsl(210 40% 98%);
-  color: hsl(215.3 19.3% 34.5%);
+  background: hsl(355.7 100% 97.3%);
+  color: hsl(346.8 77.2% 49.8%);
   padding: 8px 16px;
   border-radius: 6px;
   font-size: 14px;
-  border: 1px solid hsl(214.3 31.8% 91.4%);
-
-  [data-feedack-form-status='failure'] & {
-    border-color: hsl(352.7 96.1% 90%);
-    background: hsl(355.7 100% 97.3%);
-    color: hsl(346.8 77.2% 49.8%);
-  }
-
-  [data-feedack-form-status='success'] & {
-    border-color: hsl(152.4 76% 80.4%);
-    background: hsl(151.8 81% 95.9%);
-    color: hsl(161.4 93.5% 30.4%);
-  }
+  border: 1px solid hsl(352.7 96.1% 90%);
 
   &:empty {
     display: none;
   }
+}
+
+.modal-form-success {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+
+  [data-feedack-form-success] & {
+    display: flex;
+  }
+}
+
+.modal-form-success::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: #fffc;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.modal-form-success__title {
+  text-align: center;
+  font-weight: 700;
+  color: #5a6879;
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.modal-form-success__desc {
+  font-size: 18px;
+  margin-bottom: 24px;
+  text-align: center;
 }
