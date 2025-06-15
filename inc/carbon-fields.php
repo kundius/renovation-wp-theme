@@ -12,6 +12,11 @@ add_action('after_setup_theme', function () {
 
 add_action('admin_head', function () {
   echo '<style>
+    .cf-radio__list {
+      margin: 0;
+      padding: 0;
+    }
+
     [data-type^="carbon-fields/block"] {
       position: relative;
       z-index: 1;
@@ -170,13 +175,33 @@ function register_carbon_fields_blocks()
       Field::make('media_gallery', 'gallery', 'Галерея'),
     ]);
   
-  Container::make('post_meta', 'Отзыв')
-    ->where('post_type', '=', 'review')
+  Container::make('post_meta', 'Медиа отзыв')
+    ->where('post_type', '=', 'media-review')
     ->add_fields([
       Field::make('textarea', 'address', 'Адрес')->set_rows(2),
       Field::make('rich_text', 'content', 'Содержимое')->set_rows(8),
       Field::make('textarea', 'code', 'Код плеера')->set_rows(4),
       Field::make('image', 'image', 'Изображение'),
+    ]);
+  
+  Container::make('post_meta', 'Отзыв посетителя')
+    ->where('post_type', '=', 'user-review')
+    ->add_fields([
+      Field::make('text', 'author', 'Автор'),
+      Field::make('date_time', 'date', 'Дата'),
+      Field::make('text', 'address', 'Адрес'),
+      Field::make('textarea', 'content', 'Содержимое')->set_rows(4),
+      Field::make('text', 'rating', 'Рейтинг')->set_help_text('От 1 до 5'),
+      Field::make('image', 'photo', 'Фото'),
+      Field::make('media_gallery', 'gallery', 'Галерея'),
+      Field::make('separator', 'reply', 'Ответ'),
+      Field::make('date_time', 'reply_date', 'Дата'),
+      // Field::make('text', 'reply_address', 'Адрес'),
+      Field::make('textarea', 'reply_content', 'Содержимое')->set_rows(4),
+      // Field::make('text', 'reply_rating', 'Рейтинг')->set_help_text('От 1 до 5'),
+      // Field::make('text', 'reply_author', 'Автор'),
+      // Field::make('image', 'reply_photo', 'Фото'),
+      Field::make('media_gallery', 'reply_gallery', 'Галерея')
     ]);
     
   Block::make('contacts_info', 'Контактная информация')
@@ -232,19 +257,6 @@ function register_carbon_fields_blocks()
       ]);
     });
 
-  Block::make('reviews-list', 'Список "Отзывы"')
-    ->add_fields([
-      Field::make('separator', 'reviews-list', 'Список "Отзывы"')
-    ])
-    ->set_category('layout')
-    ->set_mode('edit')
-    ->set_icon('shortcode')
-    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
-      get_template_part('partials/reviews-list', null, [
-        'fields' => $fields
-      ]);
-    });
-
   $theme_options_container = Container::make('theme_options', 'Параметры')
     ->add_tab('Общее', [
       Field::make('text', 'crb_theme_phone', 'Телефон')->set_help_text('Шорткод: {crb_theme_phone}'),
@@ -279,6 +291,10 @@ function register_carbon_fields_blocks()
     ->add_tab('Подвал', [
       Field::make('textarea', 'crb_footer_info', 'Информация')->set_rows(2),
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
+    ])
+    ->add_tab('Отзывы', [
+      Field::make('text', 'crb_reply_author', 'Автор ответа'),
+      Field::make('image', 'crb_reply_photo', 'Фото автора ответа'),
     ]);
 
   create_block('intro', 'Интро', [
@@ -439,12 +455,16 @@ function register_carbon_fields_blocks()
     ]),
   ]);
 
-  create_block('reviews', 'Отзывы', [
+  create_block('media-reviews', 'Медиа отзывы', [
     Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('radio', 'what', 'Что показывать')->set_options([
+      'all' => 'Все',
+      'selected' => 'Только выбранные',
+    ]),
     Field::make('association', 'entries', 'Список')->set_types([
       [
         'type' => 'post',
-        'post_type' => 'review',
+        'post_type' => 'media-review',
       ]
     ]),
   ]);

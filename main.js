@@ -13,7 +13,7 @@ import './src/styles/services.scss'
 import './src/styles/terms.scss'
 import './src/styles/calc.scss'
 import './src/styles/actions.scss'
-import './src/styles/reviews.scss'
+import './src/styles/media-reviews.scss'
 import './src/styles/reasons.scss'
 import './src/styles/measurement.scss'
 import './src/styles/problems.scss'
@@ -53,7 +53,6 @@ import { initCallButton } from './src/scripts/call-button'
 import { initModal } from './src/scripts/modal'
 import { initFeedbackButton } from './src/scripts/feedback-button'
 import { initPortfolioList } from './src/scripts/portfolio-list'
-import { initReviewsList } from './src/scripts/reviews-list'
 import { initCategoryList } from './src/scripts/category-list'
 import { initFeedbackForm } from './src/scripts/feedack-form'
 
@@ -80,6 +79,5 @@ initCallButton()
 initModal()
 initFeedbackButton()
 initPortfolioList()
-initReviewsList()
 initCategoryList()
 initFeedbackForm()
