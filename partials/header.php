@@ -3,11 +3,14 @@
     <div class="extra-header__city">
       <div class="city-select" data-city-select role="combobox" aria-expanded="false" aria-haspopup="true" aria-label="Выбор города">
         <button class="city-select__trigger" data-city-select-trigger>
-          <span><?php echo carbon_get_theme_option('crb_header_city'); ?></span>
+          <span><?php echo get_blog_details()->blogname; ?></span>
         </button>
         <div class="city-select__list" role="listbox" data-city-select-listbox>
-          <?php foreach (carbon_get_theme_option('crb_header_cities') as $city): ?>
-          <a href="<?php echo $city['url'] ?>" role="option" tabindex="-1"><?php echo $city['name'] ?></a>
+          <?php $sites = get_sites(); ?>
+          <?php foreach ($sites as $site): ?>
+          <a href="<?php echo $site->domain . $site->path; ?>" role="option" tabindex="-1">
+            <?php echo get_blog_details($site->blog_id)->blogname; ?>
+          </a>
           <?php endforeach; ?>
         </div>
       </div>
