@@ -257,6 +257,25 @@ function register_carbon_fields_blocks()
       ]);
     });
 
+  Block::make('actions-list', 'Список "Акции"')
+    ->add_fields([
+      Field::make('separator', 'actions-list', 'Список "Акции"'),
+      Field::make('association', 'category', 'Рубрика')->set_types([
+        [
+          'type' => 'term',
+          'taxonomy' => 'category',
+        ]
+      ])->set_max(1)
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/actions-list', null, [
+        'fields' => $fields
+      ]);
+    });
+
   $theme_options_container = Container::make('theme_options', 'Параметры')
     ->add_tab('Общее', [
       Field::make('text', 'crb_theme_phone', 'Телефон')->set_help_text('Шорткод: {crb_theme_phone}'),

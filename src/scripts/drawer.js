@@ -4,7 +4,7 @@ function parseMenu(node) {
   const result = [];
 
   Array.from(node.children).forEach(li => {
-    const link = li.querySelector('a');
+    const link = li.querySelector('a,button');
     const ul = li.querySelector('ul');
 
     if (link) {
@@ -69,8 +69,11 @@ export function applyDrawer(root) {
 
       // первый уровень вложенности
       menuArray.forEach((menuItem, index) => {
-        const link = document.createElement('a')
-        link.setAttribute('href', menuItem.href)
+        let link = document.createElement('button')
+        if (!!menuItem.href) {
+          link = document.createElement('a')
+          link.setAttribute('href', menuItem.href)
+        }
         link.textContent = menuItem.text
         const row = document.createElement('li')
         row.appendChild(link)

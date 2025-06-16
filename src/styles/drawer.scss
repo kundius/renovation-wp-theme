@@ -82,6 +82,7 @@
 
 .drawer__nav>.primary>li {}
 
+.drawer__nav>.primary>li>button,
 .drawer__nav>.primary>li>a {
   font-size: 14px;
   line-height: 1;
@@ -91,12 +92,15 @@
   min-height: 32px;
   align-items: center;
   padding: 0 16px;
+  width: 100%;
+  text-align: left;
 }
 
 .drawer__nav>.primary>li>a:hover {
   background: #d9f2ff;
 }
 
+.drawer__nav>.primary>li.has-children>button,
 .drawer__nav>.primary>li.has-children>a {
   min-height: 48px;
   background: #f6f8fe;
