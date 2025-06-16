@@ -58,8 +58,8 @@
                       class="prices-list__quantity-input"
                       type="text"
                       name="quantity"
-                      min="1"
-                      value="1"
+                      min="0"
+                      value="0"
                       data-prices-row-quantity
                     />
                   </div>
