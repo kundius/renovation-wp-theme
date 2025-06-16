@@ -121,7 +121,7 @@
           </label>
         </div>
         <div class="calc__rules">
-          Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
+          Нажимая “Отправить”, вы даете согласие на <a href="/privacy-policy" target="_blank">обработку персональных данных</a>
         </div>
         <div class="calc__submit">
           <button type="submit" class="primary-button primary-button--alt">Отправить</button>

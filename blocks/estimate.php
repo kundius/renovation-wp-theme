@@ -58,7 +58,7 @@
             </label>
           </div>
           <div class="estimate-form__rules">
-            Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
+            Нажимая “Отправить”, вы даете согласие на <a href="/privacy-policy" target="_blank">обработку персональных данных</a>
           </div>
           <?php if ($form_action = $args['fields']['form_action']): ?>
           <div class="estimate-form__submit">

@@ -31,7 +31,7 @@
           </div>
 
           <div class="modal-form__field modal-form__field--rules">
-            Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
+            Нажимая “Отправить”, вы даете согласие на <a href="/privacy-policy" target="_blank">обработку персональных данных</a>
           </div>
 
           <div class="modal-form__field modal-form__field--submit">
@@ -90,7 +90,7 @@
           </div>
 
           <div class="modal-form__field modal-form__field--rules">
-            Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
+            Нажимая “Отправить”, вы даете согласие на <a href="/privacy-policy" target="_blank">обработку персональных данных</a>
           </div>
 
           <div class="modal-form__field modal-form__field--submit">
@@ -161,7 +161,7 @@
           </div>
 
           <div class="modal-form__field modal-form__field--rules">
-            Нажимая “Отправить”, вы даете согласие на <a href="/privacy" target="_blank">обработку персональных данных</a>
+            Нажимая “Отправить”, вы даете согласие на <a href="/privacy-policy" target="_blank">обработку персональных данных</a>
           </div>
 
           <div class="modal-form__field modal-form__field--submit">
