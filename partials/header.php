@@ -83,8 +83,8 @@
     </button>
   </div>
   <div class="header__anchor" data-sticky-header-anchor></div>
-  <button type="button" class="scrollup" data-sticky-header-scrollup>
+  <!-- <button type="button" class="scrollup" data-sticky-header-scrollup>
     <span class="icon icon-arrow-up"></span>
-  </button>
+  </button> -->
 </div>
 <div class="h-4 max-md:hidden"></div>
