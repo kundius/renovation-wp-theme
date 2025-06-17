@@ -203,6 +203,20 @@ function register_carbon_fields_blocks()
       // Field::make('image', 'reply_photo', 'Фото'),
       Field::make('media_gallery', 'reply_gallery', 'Галерея')
     ]);
+  
+  Container::make('post_meta', 'Цены')
+    ->where('post_type', '=', 'prices')
+    ->add_fields([
+      Field::make('complex', 'options', 'Список работ')
+        ->add_fields('title', [
+          Field::make('text', 'name', 'Заголовок'),
+        ])
+        ->add_fields('option', [
+          Field::make('text', 'name', 'Название')->set_width(60),
+          Field::make('text', 'unit', 'Ед. изм')->set_width(20),
+          Field::make('text', 'price', 'Цена')->set_width(20),
+        ])
+    ]);
     
   Block::make('contacts_info', 'Контактная информация')
     ->add_fields([
@@ -272,6 +286,19 @@ function register_carbon_fields_blocks()
     ->set_icon('shortcode')
     ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
       get_template_part('partials/actions-list', null, [
+        'fields' => $fields
+      ]);
+    });
+
+  Block::make('sitemap', 'Список "Карта сайта"')
+    ->add_fields([
+      Field::make('separator', 'sitemap', 'Список "Карта сайта"'),
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/sitemap', null, [
         'fields' => $fields
       ]);
     });
@@ -528,6 +555,16 @@ function register_carbon_fields_blocks()
 
   create_block('prices', 'Цены', [
     Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+    Field::make('radio', 'what', 'Что показывать')->set_options([
+      'all' => 'Все',
+      'selected' => 'Только выбранные',
+    ]),
+    Field::make('association', 'entries', 'Список')->set_types([
+      [
+        'type' => 'post',
+        'post_type' => 'prices',
+      ]
+    ]),
     Field::make('complex', 'list', 'Список')
       ->set_layout('tabbed-horizontal')
       ->add_fields([
@@ -544,7 +581,7 @@ function register_carbon_fields_blocks()
           ])
           ->set_header_template('<%= name %>'),
       ])
-      ->set_header_template('<%= name %>'),
+      ->set_header_template('<%= name %>')
   ]);
 
   create_block('estimate', 'Получите смету', [

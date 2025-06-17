@@ -87,6 +87,10 @@
       max-height: initial;
     }
   }
+
+  &--count-1 {
+    display: none;
+  }
 }
 
 .prices-tabs__show {

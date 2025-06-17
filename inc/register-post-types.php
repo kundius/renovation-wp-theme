@@ -75,4 +75,28 @@ function register_post_types()
     'query_var' => false,
     'show_ui' => true,
   ]);
+
+  register_post_type('prices', [
+    'label' => null,
+    'labels' => [
+      'name' => 'Цены',
+      'singular_name' => 'Цены',
+      'add_new' => 'Добавить Цены',
+      'add_new_item' => 'Добавить Цены',
+      'edit_item' => 'Редактировать Цены',
+      'new_item' => 'Новая Цены',
+      'view_item' => 'Смотреть Цены',
+      'search_items' => 'Искать Цены',
+      'not_found' => 'Не найдено',
+      'not_found_in_trash' => 'Не найдено в корзине',
+      'parent_item_colon' => '',
+      'menu_name' => 'Цены',
+    ],
+    'description' => '',
+    'public' => false,
+    'menu_icon' => 'dashicons-media-document',
+    'supports' => ['title'],
+    'query_var' => false,
+    'show_ui' => true,
+  ]);
 }
