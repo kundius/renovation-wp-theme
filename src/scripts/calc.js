@@ -31,7 +31,7 @@ export function applyCalc(root) {
       style: 'currency',
       currency: 'RUB',
       maximumFractionDigits: 0
-    })
+    }).replace('₽', 'руб.')
 
     materialsCost.innerHTML = (areaValue * materialsRelative * materialsFixed).toLocaleString(
       'ru-RU',

@@ -11,7 +11,7 @@ export function applyHeroForm(root) {
       style: 'currency',
       currency: 'RUB',
       maximumFractionDigits: 0
-    })
+    }).replace('₽', 'руб.')
   }
 
   document.addEventListener('DOMContentLoaded', updatePrice)
