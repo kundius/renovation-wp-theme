@@ -565,23 +565,6 @@ function register_carbon_fields_blocks()
         'post_type' => 'prices',
       ]
     ]),
-    Field::make('complex', 'list', 'Список')
-      ->set_layout('tabbed-horizontal')
-      ->add_fields([
-        Field::make('text', 'name', 'Название'),
-        Field::make('complex', 'groups', 'Группы')
-          ->set_layout('tabbed-vertical')
-          ->add_fields([
-            Field::make('text', 'name', 'Название'),
-            Field::make('complex', 'options', 'Опции')->add_fields([
-              Field::make('text', 'name', 'Название')->set_width(60),
-              Field::make('text', 'unit', 'Ед. изм')->set_width(20),
-              Field::make('text', 'price', 'Цена')->set_width(20),
-            ])
-          ])
-          ->set_header_template('<%= name %>'),
-      ])
-      ->set_header_template('<%= name %>')
   ]);
 
   create_block('estimate', 'Получите смету', [
