@@ -21,7 +21,7 @@ const formatPrice = (value) => {
     style: 'currency',
     currency: 'RUB',
     maximumFractionDigits: 0
-  })
+  }).replace('₽', 'руб.')
 }
 
 export function applyPrices(root) {
