@@ -733,6 +733,7 @@
   z-index: 2;
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item>button,
 .header__nav>.menu-item>.sub-menu>.menu-item>a {
   display: block;
   padding: 10px 20px;
@@ -745,19 +746,23 @@
   position: relative;
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item>button:hover,
 .header__nav>.menu-item>.sub-menu>.menu-item>a:hover {
   color: #3db6ff;
   background-color: rgba(61, 182, 255, 0.15);
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item:hover>button,
 .header__nav>.menu-item>.sub-menu>.menu-item:hover>a {
   background-color: rgba(61, 182, 255, 0.15);
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item.menu-item-has-children>button,
 .header__nav>.menu-item>.sub-menu>.menu-item.menu-item-has-children>a {
   padding-right: 40px;
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item.menu-item-has-children>button::after,
 .header__nav>.menu-item>.sub-menu>.menu-item.menu-item-has-children>a::after {
   content: '';
   position: absolute;
@@ -808,6 +813,7 @@
   border-top: 1px solid #e5e6ec;
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>button,
 .header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>a {
   display: block;
   padding: 10px 20px;
@@ -818,18 +824,22 @@
   position: relative;
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>button:hover,
 .header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>a:hover {
   color: #3db6ff;
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item:hover>button,
 .header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item:hover>a {
   color: #3db6ff;
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item.menu-item-has-children>button,
 .header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item.menu-item-has-children>a {
   padding-right: 40px;
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item.menu-item-has-children>button::after,
 .header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item.menu-item-has-children>a::after {
   content: '';
   position: absolute;
@@ -884,6 +894,7 @@
   border-top: 1px solid #e5e6ec;
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>button,
 .header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>a {
   display: block;
   padding: 10px 20px;
@@ -894,6 +905,7 @@
   position: relative;
 }
 
+.header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>button:hover,
 .header__nav>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>a:hover {
   color: #3db6ff;
 }
