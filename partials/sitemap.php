@@ -12,7 +12,7 @@ $pagination = [
 ];
 ?>
 <?php if ($links_query->have_posts()): ?>
-  <div class="grid grid-cols-2 gap-x-6 gap-y-3 max-lg:grid-cols-1">
+  <div class="my-10 grid grid-cols-2 gap-x-6 gap-y-3 max-lg:grid-cols-1">
     <?php while ($links_query->have_posts()): ?>
       <?php $links_query->the_post(); ?>
       <div>
