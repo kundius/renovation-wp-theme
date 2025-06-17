@@ -58,7 +58,7 @@ export function applyPrices(root) {
       }
 
       // увеличить стоимость строки
-      // rowPriceNode.innerHTML = formatPrice(rowPrice * rowQuantity)
+      rowPriceNode.innerHTML = formatPrice(rowPrice * rowQuantity)
 
       if (rowEnableNode.checked) {
         row.setAttribute('data-prices-row-active', '')

@@ -78,8 +78,8 @@ $posts_query = new WP_Query($posts_query_args);
                         class="prices-list__quantity-input"
                         type="text"
                         name="quantity"
-                        min="0"
-                        value="0"
+                        min="1"
+                        value="1"
                         data-prices-row-quantity
                       />
                     </div>
