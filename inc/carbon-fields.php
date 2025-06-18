@@ -188,19 +188,14 @@ function register_carbon_fields_blocks()
     ->where('post_type', '=', 'user-review')
     ->add_fields([
       Field::make('text', 'author', 'Автор'),
-      Field::make('date_time', 'date', 'Дата'),
-      Field::make('text', 'address', 'Адрес'),
+      Field::make('date', 'date', 'Дата'),
       Field::make('textarea', 'content', 'Содержимое')->set_rows(4),
       Field::make('text', 'rating', 'Рейтинг')->set_help_text('От 1 до 5'),
-      Field::make('image', 'photo', 'Фото'),
+      Field::make('image', 'avatar', 'Аватар'),
       Field::make('media_gallery', 'gallery', 'Галерея'),
       Field::make('separator', 'reply', 'Ответ'),
-      Field::make('date_time', 'reply_date', 'Дата'),
-      // Field::make('text', 'reply_address', 'Адрес'),
+      Field::make('date', 'reply_date', 'Дата'),
       Field::make('textarea', 'reply_content', 'Содержимое')->set_rows(4),
-      // Field::make('text', 'reply_rating', 'Рейтинг')->set_help_text('От 1 до 5'),
-      // Field::make('text', 'reply_author', 'Автор'),
-      // Field::make('image', 'reply_photo', 'Фото'),
       Field::make('media_gallery', 'reply_gallery', 'Галерея')
     ]);
   
@@ -352,8 +347,15 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
     ])
     ->add_tab('Отзывы', [
-      Field::make('text', 'crb_reply_author', 'Автор ответа'),
-      Field::make('image', 'crb_reply_photo', 'Фото автора ответа'),
+      Field::make('text', 'crb_review_reply_author', 'Автор ответа'),
+      Field::make('image', 'crb_review_reply_avatar', 'Аватар ответа'),
+      Field::make('separator', 'crb_review_form', 'Форма'),
+      Field::make('text', 'crb_review_form_title', 'Заголовок'),
+      Field::make('textarea', 'crb_review_form_desc', 'Описание')->set_rows(2),
+      Field::make('text', 'crb_review_form_goal', 'Цель в метрике'),
+      Field::make('separator', 'crb_review_success', 'Успешная отправка'),
+      Field::make('text', 'crb_review_success_title', 'Заголовок'),
+      Field::make('textarea', 'crb_review_success_desc', 'Описание')->set_rows(2),
     ]);
 
   create_block('intro', 'Интро', [

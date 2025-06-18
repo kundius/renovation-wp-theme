@@ -278,3 +278,48 @@ function calc_form_callback()
   }
   wp_die();
 }
+
+/**
+ * review_form
+ */
+add_action('wp_ajax_review_form', 'review_form_callback');
+add_action('wp_ajax_nopriv_review_form', 'review_form_callback');
+function review_form_callback()
+{
+  $errors = [];
+  if (!wp_verify_nonce($_POST['nonce'], 'feedback-nonce')) {
+    wp_die('Данные отправлены с неподдерживаемого адреса');
+  }
+  if (!empty($_POST['submitted'])) {
+    $errors['submitted'] = 'Что?';
+  }
+  if (empty($_POST['message'])) {
+    $errors['message'] = 'Укажите Ваш комментарий.';
+  }
+  if ($errors) {
+    wp_send_json_error($errors);
+  } else {
+    $files = $_FILES['gallery'];
+    $gallery = [];
+    foreach ($files['name'] as $key => $name) {
+      if ($files['error'][$key] === UPLOAD_ERR_OK) {
+        $tmp_name = $files['tmp_name'][$key];
+        if (is_uploaded_file($tmp_name)) {
+          $gallery[] = $tmp_name;
+        }
+      }
+    }
+    $email_to = get_option('admin_email');
+    $headers = ['Content-Type: text/html; charset=UTF-8'];
+    $rows = [];
+    $rows[] = 'Имя: ' . sanitize_text_field($_POST['your-name']);
+    $rows[] = 'Оценка: ' . sanitize_text_field($_POST['rating']);
+    $rows[] = 'Сообщение: ' . sanitize_text_field($_POST['message']);
+    $rows[] = 'Страница: ' . sanitize_text_field($_POST['page']);
+    $body = implode("\n", $rows);
+    $subject = $_POST['subject'];
+    wp_mail($email_to, $subject, $body, $headers, $gallery);
+    wp_send_json_success();
+  }
+  wp_die();
+}

@@ -71,7 +71,7 @@ function register_post_types()
     'description' => '',
     'public' => false,
     'menu_icon' => 'dashicons-media-document',
-    'supports' => ['title', 'thumbnail'],
+    'supports' => ['title'],
     'query_var' => false,
     'show_ui' => true,
   ]);

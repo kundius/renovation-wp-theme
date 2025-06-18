@@ -55,6 +55,7 @@ import { initFeedbackButton } from './src/scripts/feedback-button'
 import { initPortfolioList } from './src/scripts/portfolio-list'
 import { initCategoryList } from './src/scripts/category-list'
 import { initFeedbackForm } from './src/scripts/feedack-form'
+import { initGalleryField } from './src/scripts/gallery-field'
 
 new MaskInput('[data-maska]')
 
@@ -81,3 +82,4 @@ initFeedbackButton()
 initPortfolioList()
 initCategoryList()
 initFeedbackForm()
+initGalleryField()
