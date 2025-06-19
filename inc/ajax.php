@@ -311,29 +311,31 @@ function review_form_callback()
     carbon_set_post_meta($post_id, 'date', date('Y-m-d', time()));
 
     $files = $_FILES['gallery'];
-    $files_flat = [];
-    $count = count($files['name']);
-    for ($i = 0; $i < $count; $i++) {
-      $files_flat[] = [
-        'name'      => $files['name'][$i],
-        'full_path' => $files['full_path'][$i],
-        'type'      => $files['type'][$i],
-        'tmp_name'  => $files['tmp_name'][$i],
-        'error'     => $files['error'][$i],
-        'size'      => $files['size'][$i]
-      ];
-    }
-    $gallery = [];
-    $attachments = [];
-    foreach ($files_flat as $file) {
-      if ($file['error'] === UPLOAD_ERR_OK) {
-        if (is_uploaded_file($file['tmp_name'])) {
-          $attachments[] = $file['tmp_name'];
-          $gallery[] = create_attachment_from_upload($file, $post_id);
+    if ($files) {
+      $files_flat = [];
+      $count = count($files['name']);
+      for ($i = 0; $i < $count; $i++) {
+        $files_flat[] = [
+          'name'      => $files['name'][$i],
+          'full_path' => $files['full_path'][$i],
+          'type'      => $files['type'][$i],
+          'tmp_name'  => $files['tmp_name'][$i],
+          'error'     => $files['error'][$i],
+          'size'      => $files['size'][$i]
+        ];
+      }
+      $gallery = [];
+      $attachments = [];
+      foreach ($files_flat as $file) {
+        if ($file['error'] === UPLOAD_ERR_OK) {
+          if (is_uploaded_file($file['tmp_name'])) {
+            $attachments[] = $file['tmp_name'];
+            $gallery[] = create_attachment_from_upload($file, $post_id);
+          }
         }
       }
+      carbon_set_post_meta($post_id, 'gallery', $gallery);
     }
-    carbon_set_post_meta($post_id, 'gallery', $gallery);
 
     $admin_url = get_site_url() . '/wp-admin/post.php?post=' . $post_id . '&action=edit';
     $email_to = get_option('admin_email');
