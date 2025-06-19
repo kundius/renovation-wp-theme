@@ -53,7 +53,7 @@ export function applyGalleryField(root) {
 
           const itemFileInput = document.createElement('input')
           itemFileInput.type = 'file'
-          itemFileInput.name = 'gallery'
+          itemFileInput.name = 'gallery[]'
           itemFileInput.setAttribute('tabindex', -1)
           itemFileInput.multiple = false
           itemFileInput.accept = allowedTypes.join(', ')

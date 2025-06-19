@@ -299,16 +299,43 @@ function review_form_callback()
   if ($errors) {
     wp_send_json_error($errors);
   } else {
+    $post_id = wp_insert_post([
+      'post_title' => sanitize_text_field($_POST['your-name']),
+      'post_status' => 'draft',
+      'post_type' => 'user-review',
+      'post_author' => 1,
+    ]);
+    carbon_set_post_meta($post_id, 'rating', $_POST['rating']);
+    carbon_set_post_meta($post_id, 'author', $_POST['your-name']);
+    carbon_set_post_meta($post_id, 'content', $_POST['message']);
+    carbon_set_post_meta($post_id, 'date', date('Y-m-d', time()));
+
     $files = $_FILES['gallery'];
+    $files_flat = [];
+    $count = count($files['name']);
+    for ($i = 0; $i < $count; $i++) {
+      $files_flat[] = [
+        'name'      => $files['name'][$i],
+        'full_path' => $files['full_path'][$i],
+        'type'      => $files['type'][$i],
+        'tmp_name'  => $files['tmp_name'][$i],
+        'error'     => $files['error'][$i],
+        'size'      => $files['size'][$i]
+      ];
+    }
     $gallery = [];
-    foreach ($files['name'] as $key => $name) {
-      if ($files['error'][$key] === UPLOAD_ERR_OK) {
-        $tmp_name = $files['tmp_name'][$key];
-        if (is_uploaded_file($tmp_name)) {
-          $gallery[] = $tmp_name;
+    $attachments = [];
+    foreach ($files_flat as $file) {
+      if ($file['error'] === UPLOAD_ERR_OK) {
+        if (is_uploaded_file($file['tmp_name'])) {
+          $attachments[] = $file['tmp_name'];
+          $gallery[] = create_attachment_from_upload($file, $post_id);
         }
       }
     }
+    carbon_set_post_meta($post_id, 'gallery', $gallery);
+
+    $admin_url = get_site_url() . '/wp-admin/post.php?post=' . $post_id . '&action=edit';
     $email_to = get_option('admin_email');
     $headers = ['Content-Type: text/html; charset=UTF-8'];
     $rows = [];
@@ -316,9 +343,10 @@ function review_form_callback()
     $rows[] = 'Оценка: ' . sanitize_text_field($_POST['rating']);
     $rows[] = 'Сообщение: ' . sanitize_text_field($_POST['message']);
     $rows[] = 'Страница: ' . sanitize_text_field($_POST['page']);
+    $rows[] = 'Отзыв в админке: <a href="' . $admin_url . '">' . $admin_url . '</a>';
     $body = implode("\n", $rows);
     $subject = $_POST['subject'];
-    wp_mail($email_to, $subject, $body, $headers, $gallery);
+    wp_mail($email_to, $subject, $body, $headers, $attachments);
     wp_send_json_success();
   }
   wp_die();

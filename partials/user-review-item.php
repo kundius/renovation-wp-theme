@@ -4,8 +4,10 @@ $content = carbon_get_post_meta(get_the_ID(), 'content');
 $author = carbon_get_post_meta(get_the_ID(), 'author');
 $avatar = carbon_get_post_meta(get_the_ID(), 'avatar');
 $date = carbon_get_post_meta(get_the_ID(), 'date');
+$gallery = carbon_get_post_meta(get_the_ID(), 'gallery');
 $reply_content = carbon_get_post_meta(get_the_ID(), 'reply_content');
 $reply_date = carbon_get_post_meta(get_the_ID(), 'reply_date');
+$reply_gallery = carbon_get_post_meta(get_the_ID(), 'reply_gallery');
 $crb_review_reply_author = carbon_get_theme_option('crb_review_reply_author');
 $crb_review_reply_avatar = carbon_get_theme_option('crb_review_reply_avatar');
 ?>
@@ -35,6 +37,16 @@ $crb_review_reply_avatar = carbon_get_theme_option('crb_review_reply_avatar');
   <div class="text-base mt-2">
     <?php echo $content; ?>
   </div>
+  <?php if ($gallery): ?>
+  <div class="flex flex-wrap gap-2 mt-2">
+    <?php foreach ($gallery as $item): ?>
+    <a href="<?php echo wp_get_attachment_image_url($item, 'full'); ?>" class="flex w-16 h-16 overflow-hidden rounded" data-fslightbox="review-gallery-<?php echo get_the_ID(); ?>">
+      <?php echo wp_get_attachment_image($item, 'thumbnail-s'); ?>
+    </a>
+    <?php endforeach; ?>
+  </div>
+  <?php endif; ?>
+
   <?php if ($reply_content): ?>
   <div class="pl-12 mt-6">
     <div class="flex items-center gap-3">
@@ -57,6 +69,15 @@ $crb_review_reply_avatar = carbon_get_theme_option('crb_review_reply_avatar');
     <div class="text-base mt-2">
       <?php echo $reply_content; ?>
     </div>
+    <?php if ($reply_gallery): ?>
+    <div class="flex flex-wrap gap-2 mt-2">
+      <?php foreach ($reply_gallery as $item): ?>
+      <a href="<?php echo wp_get_attachment_image_url($item, 'full'); ?>" class="flex w-16 h-16 overflow-hidden rounded" data-fslightbox="review-gallery-<?php echo get_the_ID(); ?>">
+        <?php echo wp_get_attachment_image($item, 'thumbnail-s'); ?>
+      </a>
+      <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
   </div>
   <?php endif; ?>
 </div>

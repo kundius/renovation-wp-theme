@@ -91,3 +91,27 @@ function apply_full_html_replacements() {
   echo ssc($html);
 }
 add_action('wp_footer', 'apply_full_html_replacements');
+
+// Array
+// (
+//     [name] => small_garant_2.jpg
+//     [full_path] => small_garant_2.jpg
+//     [type] => image/jpeg
+//     [tmp_name] => /tmp/phpagipea
+//     [error] => 0
+//     [size] => 317550
+// )
+function create_attachment_from_upload($upload, $post_id = 0) {
+    require_once(ABSPATH . 'wp-admin/includes/media.php');
+    require_once(ABSPATH . 'wp-admin/includes/file.php');
+    require_once(ABSPATH . 'wp-admin/includes/image.php');
+
+    $attachment_id = media_handle_sideload($upload, $post_id);
+
+    if (is_wp_error($attachment_id)) {
+        @unlink($file_array['tmp_name']);
+        return $attachment_id;
+    }
+
+    return $attachment_id;
+}
