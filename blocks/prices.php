@@ -87,7 +87,9 @@ $posts_query = new WP_Query($posts_query_args);
                       <?php echo $option['unit']; ?>
                     </div>
                     <div class="prices-list__price" data-prices-row-price="<?php echo $option['price']; ?>">
+                      <?php if ($option['price']): ?>
                       <?php echo number_format_i18n($option['price']); ?> руб.
+                      <?php endif; ?>
                     </div>
                   </div>
                   <?php endif; ?>
