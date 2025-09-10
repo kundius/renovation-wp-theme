@@ -76,7 +76,7 @@ export function applyPrices(root) {
           }
           priceList[rowPaneNode.dataset.pricesPane].push({
             name: rowNameNode.textContent.trim(),
-            quantity: rowQuantity,
+            quantity: rowCost !== null ? rowQuantity : '',
             units: rowUnitsNode.textContent.trim(),
             price: rowCost !== null ? rowCost : ''
           })
