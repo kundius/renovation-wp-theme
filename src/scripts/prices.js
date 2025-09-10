@@ -51,20 +51,23 @@ export function applyPrices(root) {
       if (!rowEnableNode || !rowPriceNode) return
 
       let rowQuantity = 1
-      let rowPrice = parseInt(rowPriceNode.dataset.pricesRowPrice)
+      let rowPrice = rowPriceNode.dataset.pricesRowPrice ? parseInt(rowPriceNode.dataset.pricesRowPrice) : null
+      let rowCost = rowPrice !== null ? rowPrice * rowQuantity : null
 
       if (rowQuantityNode) {
         rowQuantity = parseInt(rowQuantityNode.value)
       }
 
       // увеличить стоимость строки
-      rowPriceNode.innerHTML = formatPrice(rowPrice * rowQuantity)
+      rowPriceNode.innerHTML = rowCost !== null ? formatPrice(rowCost) : ''
 
       if (rowEnableNode.checked) {
         row.setAttribute('data-prices-row-active', '')
 
         // увеличить итоговую стоимость
-        cost += rowPrice * rowQuantity
+        if (rowCost !== null) {
+          cost += rowCost
+        }
 
         // добавить в прайс запись
         if (rowPaneNode) {
@@ -75,7 +78,7 @@ export function applyPrices(root) {
             name: rowNameNode.textContent.trim(),
             quantity: rowQuantity,
             units: rowUnitsNode.textContent.trim(),
-            price: rowPrice * rowQuantity
+            price: rowCost !== null ? rowCost : ''
           })
         }
       } else {
