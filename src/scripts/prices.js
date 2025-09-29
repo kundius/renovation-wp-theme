@@ -56,8 +56,6 @@ export function applyPrices(root) {
         rowQuantity = parseInt(rowQuantityNode.value)
       }
 
-      console.log('rowQuantity', rowQuantityNode, rowQuantity)
-
       let rowPrice = rowPriceNode.dataset.pricesRowPrice ? parseInt(rowPriceNode.dataset.pricesRowPrice) : null
       let rowCost = rowPrice !== null ? rowPrice * rowQuantity : null
 
