@@ -51,17 +51,15 @@ export function applyPrices(root) {
       if (!rowEnableNode || !rowPriceNode) return
 
       let rowQuantity = 1
-      let rowPrice = rowPriceNode.dataset.pricesRowPrice ? parseInt(rowPriceNode.dataset.pricesRowPrice) : null
-      let rowCost = rowPrice !== null ? rowPrice * rowQuantity : null
-
-      console.log('rowPriceNode.dataset', rowPriceNode.dataset)
-      console.log('rowPrice', rowPrice)
-      console.log('rowCost', rowCost)
 
       if (rowQuantityNode) {
         rowQuantity = parseInt(rowQuantityNode.value)
       }
-      console.log('rowQuantity', rowQuantity)
+
+      console.log('rowQuantity', rowQuantityNode, rowQuantity)
+
+      let rowPrice = rowPriceNode.dataset.pricesRowPrice ? parseInt(rowPriceNode.dataset.pricesRowPrice) : null
+      let rowCost = rowPrice !== null ? rowPrice * rowQuantity : null
 
       // увеличить стоимость строки
       rowPriceNode.innerHTML = rowCost !== null ? formatPrice(rowCost) : ''
