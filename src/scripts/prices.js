@@ -54,9 +54,14 @@ export function applyPrices(root) {
       let rowPrice = rowPriceNode.dataset.pricesRowPrice ? parseInt(rowPriceNode.dataset.pricesRowPrice) : null
       let rowCost = rowPrice !== null ? rowPrice * rowQuantity : null
 
+      console.log('rowPriceNode.dataset', rowPriceNode.dataset)
+      console.log('rowPrice', rowPrice)
+      console.log('rowCost', rowCost)
+
       if (rowQuantityNode) {
         rowQuantity = parseInt(rowQuantityNode.value)
       }
+      console.log('rowQuantity', rowQuantity)
 
       // увеличить стоимость строки
       rowPriceNode.innerHTML = rowCost !== null ? formatPrice(rowCost) : ''
