@@ -12,6 +12,7 @@
         class="primary-button primary-button--alt primary-button--large"
         data-feedback-button
         data-feedback-button-title="<?php echo esc_html($args['fields']['modal_title']); ?>"
+        data-feedback-button-subject="<?php echo esc_html($args['fields']['modal_title']); ?>"
         data-feedback-button-desc="<?php echo esc_html($args['fields']['modal_desc']); ?>"
         data-feedback-button-action="<?php echo esc_html($args['fields']['modal_action']); ?>"
         data-feedback-button-goal="<?php echo $args['fields']['modal_goal']; ?>"
