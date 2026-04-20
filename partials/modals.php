@@ -26,7 +26,7 @@
           <div class="modal-form__field">
             <label class="text-field">
               <span class="text-field__label">Ваш номер телефона<span>*</span></span>
-              <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
+              <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" data-maska-eager="true" placeholder="+ 7 (___)  - ___ - __ - __" required>
             </label>
           </div>
 
