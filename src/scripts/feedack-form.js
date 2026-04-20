@@ -40,6 +40,7 @@ export function applyFeedbackForm(form) {
           form.setAttribute('data-feedack-form-success', '')
           form.reset()
 
+          console.log(getMetrikaId, form.dataset.feedackFormGoal, ym)
           if (form.dataset.feedackFormGoal && typeof ym !== 'undefined') {
             const ymId = getMetrikaId()
             if (ymId) {
