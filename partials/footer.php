@@ -110,4 +110,6 @@
 
 <?php get_template_part('partials/modals'); ?>
 
+<?php echo carbon_get_theme_option('crb_footer_counters'); ?>
+
 <?php wp_footer(); ?>

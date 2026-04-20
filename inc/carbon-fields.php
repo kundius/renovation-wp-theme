@@ -345,6 +345,7 @@ function register_carbon_fields_blocks()
     ->add_tab('Подвал', [
       Field::make('textarea', 'crb_footer_info', 'Информация')->set_rows(2),
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
+      Field::make('textarea', 'crb_footer_counters', 'Счетчики')->set_rows(4),
     ])
     ->add_tab('Отзывы', [
       Field::make('text', 'crb_review_reply_author', 'Автор ответа'),
