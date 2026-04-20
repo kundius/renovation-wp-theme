@@ -71,6 +71,13 @@ allMaskedInputs.forEach((el) => {
       setTimeout(() => input.setSelectionRange(5, 5), 0)
     }
   })
+  el.addEventListener('blur', (e) => {
+    const input = e.target
+    console.log(input.value)
+    if (input.value.replace(/\D/g, '') === '') {
+      input.value = ''
+    }
+  })
 })
 
 initStickyHeader()
