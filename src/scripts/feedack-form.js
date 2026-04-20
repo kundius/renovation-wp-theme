@@ -17,6 +17,7 @@ export function applyFeedbackForm(form) {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault()
+    console.log('submit')
 
     errors.innerHTML = ''
     form.removeAttribute('data-feedack-form-failure')
