@@ -17,7 +17,6 @@ export function applyFeedbackForm(form) {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault()
-    console.log('submit')
 
     errors.innerHTML = ''
     form.removeAttribute('data-feedack-form-failure')
@@ -41,7 +40,6 @@ export function applyFeedbackForm(form) {
           form.setAttribute('data-feedack-form-success', '')
           form.reset()
 
-          console.log(getMetrikaId, form.dataset.feedackFormGoal, ym)
           if (form.dataset.feedackFormGoal && typeof ym !== 'undefined') {
             const ymId = getMetrikaId()
             if (ymId) {
