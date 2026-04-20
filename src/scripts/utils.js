@@ -47,3 +47,10 @@ export function truncateString(str, maxLength = 10, separator = '...') {
 
   return str.slice(0, headLength) + separator + str.slice(-tailLength)
 }
+
+export const getMetrikaId = () => {
+  const script = Array.from(document.scripts).find((s) =>
+    s.src?.includes('mc.yandex.ru/metrika/tag.js')
+  )
+  return script ? new URL(script.src).searchParams.get('id') : null
+}

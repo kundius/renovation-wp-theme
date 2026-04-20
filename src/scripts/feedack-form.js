@@ -3,13 +3,15 @@ export function applyFeedbackForm(form) {
   const submit = form.querySelector('[type="submit"]')
   const errors = form.querySelector('[data-feedack-form-errors]')
 
-  resetNodes.forEach((resetNode) => resetNode.addEventListener('click', () => {
-    errors.innerHTML = ''
-    form.removeAttribute('data-feedack-form-failure')
-    form.removeAttribute('data-feedack-form-success')
-    form.removeAttribute('data-feedack-form-loading')
-    submit.removeAttribute('disabled')
-  }))
+  resetNodes.forEach((resetNode) =>
+    resetNode.addEventListener('click', () => {
+      errors.innerHTML = ''
+      form.removeAttribute('data-feedack-form-failure')
+      form.removeAttribute('data-feedack-form-success')
+      form.removeAttribute('data-feedack-form-loading')
+      submit.removeAttribute('disabled')
+    })
+  )
 
   form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -37,10 +39,10 @@ export function applyFeedbackForm(form) {
           form.reset()
 
           if (form.dataset.feedackFormGoal && typeof ym !== 'undefined') {
-            const elYmId = document.querySelector('[data-ym-id]')
-            if (elYmId && elYmId.dataset.ymId) {
-              ym(elYmId.dataset.ymId, 'reachGoal', form.dataset.feedackFormGoal)
-              console.log('goal', elYmId.dataset.ymId, form.dataset.feedackFormGoal)
+            const ymId = getMetrikaId()
+            if (ymId) {
+              ym(ymId, 'reachGoal', form.dataset.feedackFormGoal)
+              console.log('goal', ymId, form.dataset.feedackFormGoal)
             }
           }
 
