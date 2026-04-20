@@ -311,7 +311,7 @@ function register_carbon_fields_blocks()
       ]);
     });
 
-  $theme_options_container = Container::make('theme_options', 'Параметры')
+  $theme_options_container = Container::make('theme_options', 'Инфоблоки')
     ->add_tab('Общее', [
       Field::make('text', 'crb_theme_phone', 'Телефон')->set_help_text('Шорткод: {crb_theme_phone}'),
       Field::make('text', 'crb_theme_telegram', 'Telegram')->set_help_text('Шорткод: {crb_theme_telegram}'),

@@ -2,7 +2,7 @@
   class="partnership-form"
   action="<?php echo admin_url('admin-ajax.php') ?>"
   data-feedack-form
-  data-feedack-form-goal="partnership"
+  data-feedack-form-goal="PARTNERSHIP"
   data-feedack-form-action="partnership_form"
 >
   <input type="hidden" name="submitted" value="">

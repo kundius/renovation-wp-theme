@@ -42,13 +42,13 @@
           class="estimate-form"
           action="<?php echo admin_url('admin-ajax.php') ?>"
           data-feedack-form
-          data-feedack-form-goal="<?php echo carbon_get_theme_option('form_goal'); ?>"
+          data-feedack-form-goal="<?php echo esc_attr($args['fields']['form_goal']); ?>"
           data-feedack-form-action="feedback_form"
         >
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
-          <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
-          <input type="hidden" name="subject" value="<?php echo esc_html($args['fields']['title']); ?>">
+          <input type="hidden" name="page" value="<?php echo esc_attr(get_self_link()); ?>">
+          <input type="hidden" name="subject" value="<?php echo esc_attr($args['fields']['title']); ?>">
 
           <div class="estimate-form__errors" data-feedack-form-errors></div>
           <div class="estimate-form__phone">
