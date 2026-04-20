@@ -3,7 +3,6 @@ export function applyFaq(root) {
   const triggers = root.querySelectorAll('[data-faq-trigger]')
   // const areaInput = root.querySelector('[name="area"]')
   // const priceOutput = root.querySelector('[data-hero-form-price-output]')
-  console.log(triggers)
   const show = (e) => {
     const parent = e.target.closest('[data-faq-item]')
     items.forEach((item) => {

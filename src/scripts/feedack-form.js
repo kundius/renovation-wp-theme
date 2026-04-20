@@ -1,3 +1,5 @@
+import { getMetrikaId } from './utils'
+
 export function applyFeedbackForm(form) {
   const resetNodes = Array.from(form.querySelectorAll('[data-feedack-form-reset]'))
   const submit = form.querySelector('[type="submit"]')
