@@ -1,10 +1,12 @@
-import { applyFeedbackButton } from "./feedback-button"
-import { applyPortfolioGallery } from "./portfolio-gallery"
+import { applyFeedbackButton } from './feedback-button'
+import { applyPortfolioGallery } from './portfolio-gallery'
 
 export function applyPortfolioList(root) {
   const wrap = root.querySelector('[data-portfolio-list-wrap]')
   const load = root.querySelector('[data-portfolio-list-load]')
   const tmp = document.createElement('div')
+
+  if (!(load && wrap)) return
 
   let currentPage = root.dataset.portfolioListCurrentPage
 
@@ -19,11 +21,11 @@ export function applyPortfolioList(root) {
     load.textContent = 'Загрузка...'
 
     fetch(theme_ajax.url, {
-      method: "POST",
-      body: formData,
+      method: 'POST',
+      body: formData
     })
-      .then(response => response.text())
-      .then(response => {
+      .then((response) => response.text())
+      .then((response) => {
         load.textContent = 'Показать ещё'
 
         if (response) {
@@ -35,7 +37,7 @@ export function applyPortfolioList(root) {
           const feedbackButtonNodes = Array.from(tmp.querySelectorAll('[data-feedback-button]'))
           feedbackButtonNodes.forEach(applyFeedbackButton)
 
-          tmp.childNodes.forEach(child => wrap.appendChild(child))
+          tmp.childNodes.forEach((child) => wrap.appendChild(child))
 
           refreshFsLightbox()
 
@@ -45,7 +47,7 @@ export function applyPortfolioList(root) {
         } else {
           load.remove()
         }
-      });
+      })
   })
 }
 
