@@ -57,24 +57,19 @@ import { initCategoryList } from './src/scripts/category-list'
 import { initFeedbackForm } from './src/scripts/feedack-form'
 import { initGalleryField } from './src/scripts/gallery-field'
 
-new MaskInput('[data-maska]', {
-  // eager: true
-})
+new MaskInput('[data-maska]')
 const allMaskedInputs = document.querySelectorAll('[data-maska="+ 7 (###) - ### - ## - ##"]') || []
-console.log(3, allMaskedInputs)
 allMaskedInputs.forEach((el) => {
   el.addEventListener('focus', (e) => {
     const input = e.target
     if (!input.value.trim()) {
       input.value = '+ 7 ('
-      // Ждём, пока DOM и maska отрендерят статическую часть
       setTimeout(() => input.setSelectionRange(5, 5), 0)
     }
   })
   el.addEventListener('blur', (e) => {
     const input = e.target
-    console.log(input.value)
-    if (input.value.replace(/\D/g, '') === '') {
+    if (input.value === '+ 7 (') {
       input.value = ''
     }
   })
