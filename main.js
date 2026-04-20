@@ -58,10 +58,10 @@ import { initFeedbackForm } from './src/scripts/feedack-form'
 import { initGalleryField } from './src/scripts/gallery-field'
 
 new MaskInput('[data-maska]', {
-  // eager: true,
+  eager: true
 })
 const allMaskedInputs = document.querySelectorAll('[data-maska="+ 7 (###) - ### - ## - ##"]') || []
-console.log(allMaskedInputs)
+console.log(2, allMaskedInputs)
 allMaskedInputs.forEach((el) => {
   el.addEventListener('focus', (e) => {
     setTimeout(() => {
