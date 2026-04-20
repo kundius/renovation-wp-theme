@@ -58,19 +58,18 @@ import { initFeedbackForm } from './src/scripts/feedack-form'
 import { initGalleryField } from './src/scripts/gallery-field'
 
 new MaskInput('[data-maska]', {
-  eager: true
+  // eager: true
 })
 const allMaskedInputs = document.querySelectorAll('[data-maska="+ 7 (###) - ### - ## - ##"]') || []
-console.log(2, allMaskedInputs)
+console.log(3, allMaskedInputs)
 allMaskedInputs.forEach((el) => {
   el.addEventListener('focus', (e) => {
-    setTimeout(() => {
-      const input = e.target
-      // Позиция сразу после "+ 7 ("
-      const pos = input.value.indexOf('#') > -1 ? input.value.indexOf('#') : 5
-      console.log(pos)
-      input.setSelectionRange(pos, pos)
-    }, 0)
+    const input = e.target
+    if (!input.value.trim()) {
+      input.value = '+ 7 ('
+      // Ждём, пока DOM и maska отрендерят статическую часть
+      setTimeout(() => input.setSelectionRange(5, 5), 0)
+    }
   })
 })
 
