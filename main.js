@@ -60,6 +60,7 @@ import { initGalleryField } from './src/scripts/gallery-field'
 new MaskInput('[data-maska]', {
   eager: true
 })
+console.log('eager: true')
 const allMaskedInputs = document.querySelectorAll('[data-maska="+ 7 (###) - ### - ## - ##"]') || []
 allMaskedInputs.forEach((el) => {
   el.addEventListener('focus', (e) => {
