@@ -57,7 +57,9 @@ import { initCategoryList } from './src/scripts/category-list'
 import { initFeedbackForm } from './src/scripts/feedack-form'
 import { initGalleryField } from './src/scripts/gallery-field'
 
-new MaskInput('[data-maska]')
+new MaskInput('[data-maska]', {
+  eager: true
+})
 const allMaskedInputs = document.querySelectorAll('[data-maska="+ 7 (###) - ### - ## - ##"]') || []
 allMaskedInputs.forEach((el) => {
   el.addEventListener('focus', (e) => {
