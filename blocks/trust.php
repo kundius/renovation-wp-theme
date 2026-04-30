@@ -29,7 +29,7 @@
           <div class="trust-contract__figure">
             <?php echo wp_get_attachment_image($contract_image, 'full'); ?>
             <?php if ($contract_file = $args['fields']['contract_file']): ?>
-            <a href="<?php echo wp_get_attachment_image_url($contract_file, 'full'); ?>" class="primary-button primary-button--small trust-contract__download" download>
+            <a href="<?php echo wp_get_attachment_url($contract_file); ?>" class="primary-button primary-button--small trust-contract__download" download>
               <span><?php echo $args['fields']['contract_action']; ?></span>
               <span class="icon icon-download"></span>
             </a>
