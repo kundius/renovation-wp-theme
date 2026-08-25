@@ -653,7 +653,7 @@ function register_carbon_fields_blocks()
   // ]);
 
   create_block('consultation', 'Консультация', [
-    Field::make('image', 'photo', 'Фото')->set_rows(2),
+    Field::make('image', 'photo', 'Фото'),
     Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
     Field::make('textarea', 'subtitle', 'Подзаголовок')->set_rows(2),
     Field::make('text', 'phone_label', 'Надпись телефона'),
