@@ -1,5 +1,5 @@
 <section class="block-section consultation-section">
-  <?php if ($manager_image = $args['fields']['photo']): ?>
+  <?php if ($photo = $args['fields']['photo']): ?>
   <div class="consultation-section__image">
     <?php echo wp_get_attachment_image($photo, 'full'); ?>
   </div>
