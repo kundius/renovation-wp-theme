@@ -1,4 +1,9 @@
 <section class="block-section consultation-section">
+  <?php if ($manager_image = $args['fields']['photo']): ?>
+  <div class="consultation-section__image">
+    <?php echo wp_get_attachment_image($photo, 'full'); ?>
+  </div>
+  <?php endif; ?>
   <div class="container">
     <div class="consultation-section__layout">
       <div class="consultation-section__layout-content">

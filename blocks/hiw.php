@@ -85,7 +85,7 @@
               Шаг
             </div>
             <div class="hiw-card__num">
-              2
+              3
             </div>
           </div>
           <?php if ($args['fields']['step_3_text_1']): ?>

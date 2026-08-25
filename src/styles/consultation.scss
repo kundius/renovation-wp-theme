@@ -7,6 +7,7 @@
   background-size: auto 100%;
   padding-top: 48px;
   padding-bottom: 20px;
+  position: relative;
 
   @include max-lg {
     background-position: 53% 50%;
@@ -21,9 +22,28 @@
   }
 }
 
+.consultation-section__image {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  @include max-md {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    transform: none;
+  }
+}
+
 .consultation-section__layout {
   display: flex;
   gap: 96px;
+  position: relative;
+  z-index: 20;
 
   @include max-xl {
     gap: 64px;
