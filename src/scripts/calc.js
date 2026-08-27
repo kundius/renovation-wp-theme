@@ -1,73 +1,58 @@
 export function applyCalc(root) {
-  // const resetNodes = Array.from(root.querySelectorAll('[data-calc-reset]'))
-  const inputs = root.querySelectorAll('input')
+  const pricesNode = root.querySelector('[data-calc-prices]')
+  const prices = pricesNode ? JSON.parse(pricesNode.textContent) : []
   const repairCost = root.querySelector('[data-calc-repair-cost]')
   const materialsCost = root.querySelector('[data-calc-materials-cost]')
   const area = root.querySelector('[name="area"]')
 
+  const format = (value) =>
+    value.toLocaleString('ru-RU', {
+      style: 'currency',
+      currency: 'RUB',
+      maximumFractionDigits: 0,
+    }).replace('₽', 'руб.')
+
+  const toNumber = (value) => {
+    const cleaned = String(value).replace(',', '.').replace(/[^\d.]/g, '')
+    return parseFloat(cleaned)
+  }
+
   const updateCosts = () => {
-    const checkeds = root.querySelectorAll('[type="radio"]:checked')
-    const areaValue = parseInt(area.value)
+    const areaValue = parseInt(area.value, 10) || 0
 
-    let repairFixed = 0
-    let repairRelative = 1
-    let materialsFixed = 0
-    let materialsRelative = 1
-
-    checkeds.forEach((checked) => {
-      if (checked.dataset.calcRepairPrice.includes('%')) {
-        repairRelative += parseInt(checked.dataset.calcRepairPrice.replace('%', '')) / 100 - 1
-      } else {
-        repairFixed += parseInt(checked.dataset.calcRepairPrice)
-      }
-      if (checked.dataset.calcMaterialsPrice.includes('%')) {
-        materialsRelative += parseInt(checked.dataset.calcMaterialsPrice.replace('%', '')) / 100 - 1
-      } else {
-        materialsFixed += parseInt(checked.dataset.calcMaterialsPrice)
+    const selected = {}
+    root.querySelectorAll('[data-calc-dimension]').forEach((input) => {
+      if (input.checked) {
+        selected[input.dataset.calcDimension] = input.value.trim()
       }
     })
 
-    repairCost.innerHTML = (areaValue * repairRelative * repairFixed).toLocaleString('ru-RU', {
-      style: 'currency',
-      currency: 'RUB',
-      maximumFractionDigits: 0
-    }).replace('₽', 'руб.')
-
-    materialsCost.innerHTML = (areaValue * materialsRelative * materialsFixed).toLocaleString(
-      'ru-RU',
-      {
-        style: 'currency',
-        currency: 'RUB',
-        maximumFractionDigits: 0
-      }
+    const row = prices.find((r) =>
+      selected.house_type !== undefined &&
+      selected.rooms !== undefined &&
+      selected.repair_type !== undefined &&
+      String(r.house_type).trim() === selected.house_type &&
+      String(r.rooms).trim() === selected.rooms &&
+      String(r.repair_type).trim() === selected.repair_type
     )
+
+    if (row) {
+      const repair = toNumber(row.repair_price) || 0
+      const materials = toNumber(row.materials_price) || 0
+      repairCost.innerHTML = format(areaValue * repair)
+      materialsCost.innerHTML = format(areaValue * materials)
+    } else {
+      repairCost.innerHTML = '—'
+      materialsCost.innerHTML = '—'
+    }
   }
 
   updateCosts()
 
-  inputs.forEach((input) => input.addEventListener('input', updateCosts))
-
-  // resetNodes.forEach((resetNode) => {
-  //   resetNode.addEventListener('click', () => {
-  //     root.removeAttribute('data-calc-success')
-  //     // отключил, потому что прикрепленные файлы нужно удалять вручную, как и обновлять шкалу площади
-  //     // root.reset()
-  //     // updateCosts()
-  //   })
-  // })
-
-  // root.addEventListener('submit', (e) => {
-  //   e.preventDefault()
-  //   var formData = new FormData(root)
-  //   // output as an object
-  //   console.log(Object.fromEntries(formData))
-  //   // ...or iterate through the name-value pairs
-  //   for (var pair of formData.entries()) {
-  //     console.log(pair[0] + ': ' + pair[1])
-  //   }
-
-  //   root.setAttribute('data-calc-success', '')
-  // })
+  root.querySelectorAll('input').forEach((input) => {
+    input.addEventListener('input', updateCosts)
+    input.addEventListener('change', updateCosts)
+  })
 }
 
 export function initCalc() {

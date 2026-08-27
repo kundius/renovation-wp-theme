@@ -18,35 +18,53 @@
       <input type="hidden" name="subject" value="<?php echo esc_html($args['fields']['title']); ?>">
 
       <div class="calc__left">
-        <?php if ($questions = $args['fields']['questions']): ?>
-        <?php foreach ($questions as $n => $question): ?>
+        <?php if ($prices = $args['fields']['price_matrix']): ?>
+        <?php
+          $dimensions = [
+            'house_type'  => ['label' => 'Тип дома', 'values' => []],
+            'rooms'       => ['label' => 'Количество комнат', 'values' => []],
+            'repair_type' => ['label' => 'Тип ремонта', 'values' => []],
+          ];
+          foreach ($prices as $row) {
+            foreach ($dimensions as $key => &$dim) {
+              $value = isset($row[$key]) ? trim((string) $row[$key]) : '';
+              if ($value !== '' && !in_array($value, $dim['values'], true)) {
+                $dim['values'][] = $value;
+              }
+            }
+            unset($dim);
+          }
+        ?>
+        <?php foreach ($dimensions as $dim_key => $dim): ?>
+        <?php if (!empty($dim['values'])): ?>
         <div class="calc__field">
           <div class="calc__field-label">
-            <?php echo ($n + 1); ?>. <?php echo nl2br($question['question']); ?>
+            <?php echo nl2br($dim['label']); ?>
           </div>
-          <?php if ($answers = $question['answers']): ?>
-          <div class="calc__field-control <?php if ($question['type'] === 'box'): ?>calc__field-radio-box<?php else: ?>calc__field-radio-button<?php endif; ?>">
-            <?php foreach ($answers as $k => $answer): ?>
-            <label class="<?php if ($question['type'] === 'box'): ?>radio-field<?php else: ?>radio-button<?php endif; ?>">
+          <div class="calc__field-control calc__field-radio-button">
+            <?php foreach ($dim['values'] as $k => $value): ?>
+            <label class="radio-button">
               <input
                 type="radio"
-                name="question:<?php echo esc_html($question['question']); ?>"
-                data-calc-repair-price="<?php echo $answer['repair_price']; ?>"
-                data-calc-materials-price="<?php echo $answer['materials_price']; ?>"
-                value="<?php echo esc_html($answer['answer']); ?>"
+                name="dimension:<?php echo esc_html($dim_key); ?>"
+                data-calc-dimension="<?php echo esc_html($dim_key); ?>"
+                value="<?php echo esc_html($value); ?>"
                 <?php if ($k === 0): ?>checked<?php endif; ?>
               >
-              <span><?php echo $answer['answer']; ?></span>
+              <span><?php echo esc_html($value); ?></span>
             </label>
             <?php endforeach; ?>
           </div>
-          <?php endif; ?>
         </div>
+        <?php endif; ?>
         <?php endforeach; ?>
+
+        <script type="application/json" data-calc-prices><?php echo json_encode($prices, JSON_UNESCAPED_UNICODE); ?></script>
+        <?php endif; ?>
 
         <div class="calc__field">
           <div class="calc__field-label">
-            <?php echo (count($questions) + 1); ?>. Загрузите план квартиры или дома для получения точной сметы ремонта <span>(в формате .doc, .docx, .xlsx, .pdf, .jpeg, .png)</span>
+            Загрузите план квартиры или дома для получения точной сметы ремонта <span>(в формате .doc, .docx, .xlsx, .pdf, .jpeg, .png)</span>
           </div>
           <div class="calc__field-control">
             <div class="attachments-field" data-attachments-field data-attachments-field-count="1">
@@ -76,7 +94,6 @@
             </div>
           </div>
         </div>
-        <?php endif; ?>
 
         <div class="calc__field calc__field--area">
           <div class="calc__field-label">

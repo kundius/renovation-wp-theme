@@ -486,25 +486,20 @@ function register_carbon_fields_blocks()
     Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
     Field::make('textarea', 'message', 'Сообщение')->set_rows(2),
     Field::make('text', 'goal', 'Цель в метрике'),
-    Field::make('complex', 'questions', 'Вопросы')
+    Field::make('complex', 'price_matrix', 'Таблица цен по сочетаниям')
       ->set_layout('tabbed-horizontal')
       ->add_fields([
-        Field::make('select', 'type', 'Тип')->add_options([
-          'box' => 'Бокс',
-          'button' => 'Кнопка',
-        ]),
-        Field::make('textarea', 'question', 'Вопрос')->set_rows(2),
-        Field::make('complex', 'answers', 'Варианты ответов')->add_fields([
-          Field::make('text', 'answer', 'Ответ')->set_width(100),
-          Field::make('text', 'repair_price', 'Стоимость ремонта')
-            ->set_help_text('Стоимость за кв. м., можно указать в процентах, например: 200%')
-            ->set_width(50),
-          Field::make('text', 'materials_price', 'Стоимость материалов')
-            ->set_help_text('Стоимость за кв. м., можно указать в процентах, например: 200%')
-            ->set_width(50)
-        ])
+        Field::make('text', 'house_type', 'Тип дома')->set_width(20),
+        Field::make('text', 'rooms', 'Количество комнат')->set_width(20),
+        Field::make('text', 'repair_type', 'Тип ремонта')->set_width(20),
+        Field::make('text', 'repair_price', 'Стоимость ремонта за м²')
+          ->set_help_text('Число, например: 5000')
+          ->set_width(20),
+        Field::make('text', 'materials_price', 'Стоимость материалов за м²')
+          ->set_help_text('Число, например: 2000')
+          ->set_width(20),
       ])
-      ->set_header_template('<%= question %>')
+      ->set_header_template('<%= house_type %> / <%= rooms %> / <%= repair_type %>')
   ]);
 
   create_block('actions', 'Акции', [
