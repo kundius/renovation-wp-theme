@@ -31,8 +31,9 @@
         </div>
         <div class="estimate-section__example-wrap">
           <?php if ($example_image = $args['fields']['example_image']): ?>
-          <a href="<?php echo wp_get_attachment_image_url($example_image, 'full'); ?>" class="estimate-section__example-link" data-fslightbox="estimate">
+          <a href="<?php echo wp_get_attachment_image_url($example_image, 'full'); ?>" class="primary-button primary-button--small" data-fslightbox="estimate">
             <span><?php echo $args['fields']['example_action']; ?></span>
+            <span class="icon icon-estimate"></span>
           </a>
           <?php endif; ?>
         </div>

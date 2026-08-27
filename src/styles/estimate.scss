@@ -104,38 +104,6 @@
   }
 }
 
-.estimate-section__example-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  line-height: 20px;
-  color: #fff;
-  padding: 4px 12px;
-  border-radius: 16px;
-  margin: 0 -12px;
-
-  span {
-    border-bottom: 1px dashed currentColor;
-  }
-
-  &::after {
-    content: '';
-    width: 12px;
-    height: 12px;
-    background: currentColor;
-    display: inline-block;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
-    mask-image: var(--icon-estimate);
-  }
-
-  &:hover {
-    background: #7d8798;
-  }
-}
-
 .estimate-form {
   width: 300px;
   max-width: 100%;
