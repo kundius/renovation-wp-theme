@@ -5,24 +5,38 @@
  * Данные приходят с фронта (выбор пользователя) в виде JSON.
  */
 
+if (!defined('CALC_EXPORT_STYLE_DEFAULT')) {
+  define('CALC_EXPORT_STYLE_DEFAULT', 0);
+}
+if (!defined('CALC_EXPORT_STYLE_HEADER')) {
+  define('CALC_EXPORT_STYLE_HEADER', 1); // жирный + серый фон
+}
+if (!defined('CALC_EXPORT_STYLE_BOLD')) {
+  define('CALC_EXPORT_STYLE_BOLD', 2); // жирный
+}
+if (!defined('CALC_EXPORT_STYLE_TITLE')) {
+  define('CALC_EXPORT_STYLE_TITLE', 3); // крупный жирный заголовок
+}
+
 function calc_export_xml_escape($value)
 {
   return htmlspecialchars((string) $value, ENT_XML1 | ENT_QUOTES, 'UTF-8');
 }
 
-function calc_export_cell($col, $row, $value)
+function calc_export_cell($col, $row, $value, $style = 0)
 {
   $ref = $col . $row;
+  $s = $style ? ' s="' . $style . '"' : '';
 
   if ($value === null || $value === '') {
-    return '';
+    return $s ? '<c r="' . $ref . '"' . $s . '/>' : '';
   }
 
   if (is_numeric($value)) {
-    return '<c r="' . $ref . '"><v>' . $value . '</v></c>';
+    return '<c r="' . $ref . '"' . $s . '><v>' . $value . '</v></c>';
   }
 
-  return '<c r="' . $ref . '" t="inlineStr"><is><t xml:space="preserve">' . calc_export_xml_escape($value) . '</t></is></c>';
+  return '<c r="' . $ref . '"' . $s . ' t="inlineStr"><is><t xml:space="preserve">' . calc_export_xml_escape($value) . '</t></is></c>';
 }
 
 function calc_export_row_xml($row_index, $cells)
@@ -30,8 +44,10 @@ function calc_export_row_xml($row_index, $cells)
   $cols = ['A', 'B', 'C', 'D'];
   $xml = '<row r="' . $row_index . '">';
 
-  foreach ($cells as $i => $val) {
-    $xml .= calc_export_cell($cols[$i], $row_index, $val);
+  foreach ($cells as $i => $cell) {
+    $value = $cell[0];
+    $style = isset($cell[1]) ? $cell[1] : 0;
+    $xml .= calc_export_cell($cols[$i], $row_index, $value, $style);
   }
 
   $xml .= '</row>';
@@ -41,38 +57,101 @@ function calc_export_row_xml($row_index, $cells)
 
 function calc_export_build_xlsx($payload)
 {
+  $title = !empty($payload['title'])
+    ? $payload['title']
+    : 'Предварительный расчет от компании «Ремонт-Подключ»';
+
   $rows_xml = '';
   $r = 1;
 
-  $rows_xml .= calc_export_row_xml($r++, $payload['header']);
+  // Строка 1: крупный заголовок на всю ширину (объединение A1:D1)
+  $rows_xml .= '<row r="' . $r . '">' . calc_export_cell('A', $r, $title, CALC_EXPORT_STYLE_TITLE) . '</row>';
+  $r++;
 
+  // Строка 2: заголовки колонок (серый фон + жирный)
+  $rows_xml .= calc_export_row_xml($r, [
+    [$payload['header'][0], CALC_EXPORT_STYLE_HEADER],
+    [$payload['header'][1], CALC_EXPORT_STYLE_HEADER],
+    [$payload['header'][2], CALC_EXPORT_STYLE_HEADER],
+    [$payload['header'][3], CALC_EXPORT_STYLE_HEADER],
+  ]);
+  $r++;
+
+  // Данные с группировкой по категориям
   if (!empty($payload['sections'])) {
     foreach ($payload['sections'] as $section) {
-      $rows_xml .= calc_export_row_xml($r++, [$section['name'], '', '', '']);
+      // Название группы — жирным
+      $rows_xml .= calc_export_row_xml($r, [
+        [$section['name'], CALC_EXPORT_STYLE_BOLD],
+        ['', 0],
+        ['', 0],
+        ['', 0],
+      ]);
+      $r++;
 
       foreach ($section['items'] as $item) {
-        $rows_xml .= calc_export_row_xml($r++, [
-          $item['name'],
-          $item['quantity'],
-          $item['units'],
-          $item['price'],
+        $rows_xml .= calc_export_row_xml($r, [
+          [$item['name'], 0],
+          [$item['quantity'], 0],
+          [$item['units'], 0],
+          [$item['price'], 0],
         ]);
+        $r++;
       }
     }
   }
 
-  $rows_xml .= calc_export_row_xml($r++, ['Итого', '', '', $payload['total']]);
+  // Итог — жирным
+  $rows_xml .= calc_export_row_xml($r, [
+    ['Итого', CALC_EXPORT_STYLE_BOLD],
+    ['', 0],
+    ['', 0],
+    [$payload['total'], CALC_EXPORT_STYLE_BOLD],
+  ]);
+  $r++;
 
   $sheet = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
     . '<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'
+    . '<sheetViews><sheetView workbookViewId="0"/></sheetViews>'
+    . '<cols>'
+    . '<col min="1" max="1" width="42" customWidth="1"/>'
+    . '<col min="2" max="2" width="12" customWidth="1"/>'
+    . '<col min="3" max="3" width="10" customWidth="1"/>'
+    . '<col min="4" max="4" width="16" customWidth="1"/>'
+    . '</cols>'
     . '<sheetData>' . $rows_xml . '</sheetData>'
+    . '<mergeCells count="1"><mergeCell ref="A1:D1"/></mergeCells>'
     . '</worksheet>';
+
+  $styles = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
+    . '<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'
+    . '<fonts count="3">'
+    . '<font><sz val="11"/><name val="Calibri"/></font>'
+    . '<font><b/><sz val="11"/><name val="Calibri"/></font>'
+    . '<font><b/><sz val="16"/><name val="Calibri"/></font>'
+    . '</fonts>'
+    . '<fills count="3">'
+    . '<fill><patternFill patternType="none"/></fill>'
+    . '<fill><patternFill patternType="gray125"/></fill>'
+    . '<fill><patternFill patternType="solid"><fgColor rgb="FFD9D9D9"/><bgColor indexed="64"/></patternFill></fill>'
+    . '</fills>'
+    . '<borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders>'
+    . '<cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs>'
+    . '<cellXfs count="4">'
+    . '<xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/>'
+    . '<xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1"/>'
+    . '<xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/>'
+    . '<xf numFmtId="0" fontId="2" fillId="0" borderId="0" xfId="0" applyFont="1"/>'
+    . '</cellXfs>'
+    . '<cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles>'
+    . '</styleSheet>';
 
   $content_types = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
     . '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'
     . '<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>'
     . '<Default Extension="xml" ContentType="application/xml"/>'
     . '<Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/>'
+    . '<Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>'
     . '<Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>'
     . '</Types>';
 
@@ -89,6 +168,7 @@ function calc_export_build_xlsx($payload)
   $workbook_rels = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
     . '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
     . '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/>'
+    . '<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>'
     . '</Relationships>';
 
   $zip = new ZipArchive();
@@ -102,6 +182,7 @@ function calc_export_build_xlsx($payload)
   $zip->addFromString('_rels/.rels', $rels);
   $zip->addFromString('xl/workbook.xml', $workbook);
   $zip->addFromString('xl/_rels/workbook.xml.rels', $workbook_rels);
+  $zip->addFromString('xl/styles.xml', $styles);
   $zip->addFromString('xl/worksheets/sheet1.xml', $sheet);
   $zip->close();
 
