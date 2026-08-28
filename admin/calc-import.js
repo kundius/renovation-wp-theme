@@ -114,19 +114,23 @@
   }
 
   function clearGroups(complex, context) {
-    var removed = 0;
-    var guard = 0;
-    var trash = complex.querySelector('.cf-complex__group .dashicons-trash');
-    while (trash && guard < 300) {
-      var btn = trash.closest('.cf-complex__group-action') || trash.parentElement;
-      if (btn) {
-        btn.click();
-        removed++;
-      }
-      guard++;
-      trash = complex.querySelector('.cf-complex__group .dashicons-trash');
-    }
-    log('Очистили старых групп: ' + removed, context);
+    var MAX = 500;
+    return new Promise(function (resolve) {
+      var removed = 0;
+      (function step() {
+        var trash = complex.querySelector('.cf-complex__group .dashicons-trash');
+        if (!trash || removed >= MAX) {
+          log('Очистили старых групп: ' + removed, context);
+          return resolve(removed);
+        }
+        var btn = trash.closest('.cf-complex__group-action') || trash.parentElement;
+        if (btn) {
+          btn.click();
+          removed++;
+        }
+        setTimeout(step, 30);
+      })();
+    });
   }
 
   function fillMatrix(fileInput, rows, context) {
@@ -140,13 +144,12 @@
     }
     log('Найдено complex-поле', context, 'ok');
 
-    clearGroups(complex, context);
-
-    var addBtn = complex.querySelector('.cf-complex__inserter-button');
-    if (!addBtn) {
-      log('Не найдена кнопка добавления строк (.cf-complex__inserter-button)', context, 'error');
-      return Promise.reject();
-    }
+    return clearGroups(complex, context).then(function () {
+      var addBtn = complex.querySelector('.cf-complex__inserter-button');
+      if (!addBtn) {
+        log('Не найдена кнопка добавления строк (.cf-complex__inserter-button)', context, 'error');
+        return Promise.reject();
+      }
     log('Найдена кнопка добавления строк', context, 'ok');
 
     var chain = Promise.resolve();
@@ -184,7 +187,8 @@
       }
       note.textContent = 'Импортировано строк: ' + rows.length + '. Сохраните блок/опции.';
     });
-  }
+  });
+}
 
   function handleFile(fileInput, file, context) {
     log('Выбран файл: ' + file.name + ' (' + file.size + ' байт, ' + file.type + ')', context);
