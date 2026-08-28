@@ -1,19 +1,33 @@
-const downloadPriceList = (data) => {
-  // Create a Blob with the CSV data and type
-  const blob = new Blob([data], { type: 'text/csv' })
+const exportPriceList = (payload) => {
+  const fd = new FormData()
+  fd.append('action', 'calc_export_price')
+  fd.append('nonce', window.theme_ajax.calc_export_nonce)
+  fd.append('data', JSON.stringify(payload))
 
-  // Create a URL for the Blob
-  const url = URL.createObjectURL(blob)
-
-  // Create an anchor tag for downloading
-  const a = document.createElement('a')
-
-  // Set the URL and download attribute of the anchor tag
-  a.href = url
-  a.download = 'pricelist.csv'
-
-  // Trigger the download by clicking the anchor tag
-  a.click()
+  fetch(window.theme_ajax.url, {
+    method: 'POST',
+    body: fd,
+    credentials: 'same-origin'
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+      return response.blob()
+    })
+    .then((blob) => {
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = 'pricelist.xlsx'
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      URL.revokeObjectURL(url)
+    })
+    .catch((error) => {
+      console.error('Ошибка выгрузки прайс-листа:', error)
+    })
 }
 
 const formatPrice = (value) => {
@@ -116,17 +130,27 @@ export function applyPrices(root) {
     })
   }
 
-  // собрать массив для csv, запустить загрузку файла
+  // собрать массив для xlsx, запустить выгрузку на сервер
   const download = () => {
-    const data = [['Наименование работ', 'Количество', 'Ед. изм', 'Цена']]
+    const payload = {
+      header: ['Наименование работ', 'Количество', 'Ед. изм', 'Цена'],
+      sections: [],
+      total: cost
+    }
+
     Object.entries(priceList).forEach(([key, values]) => {
-      data.push([key, '', '', ''])
-      values.forEach((value) => {
-        data.push([value.name, value.quantity, value.units, formatPrice(value.price)])
+      payload.sections.push({
+        name: key,
+        items: values.map((v) => ({
+          name: v.name,
+          quantity: (v.quantity === '' || v.quantity == null) ? null : Number(v.quantity),
+          units: v.units,
+          price: (v.price === '' || v.price == null) ? null : Number(v.price)
+        }))
       })
     })
-    data.push(['', '', '', formatPrice(cost)])
-    downloadPriceList(data.join('\n'))
+
+    exportPriceList(payload)
   }
 
   document.addEventListener('DOMContentLoaded', calc)

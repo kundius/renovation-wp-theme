@@ -6,6 +6,7 @@ function ajax_data()
 {
   wp_localize_script('scripts', 'theme_ajax', [
     'url' => admin_url('admin-ajax.php'),
+    'calc_export_nonce' => wp_create_nonce('calc_export_price'),
   ]);
 }
 
