@@ -488,8 +488,15 @@ function register_carbon_fields_blocks()
     Field::make('text', 'goal', 'Цель в метрике'),
     Field::make('html', 'price_import', 'Импорт прайса из XLSX')
       ->set_html(
-        '<button type="button" class="button calc-price-xlsx-btn">Выбрать файл прайса (XLSX/CSV)</button>'
+        '<style>@keyframes calcPriceSpin{to{transform:rotate(360deg)}}'
+        . '.calc-price-xlsx-spinner{display:none;width:14px;height:14px;border:2px solid #c3c4c7;border-top-color:#2271b1;border-radius:50%;animation:calcPriceSpin .8s linear infinite;vertical-align:middle;margin-left:8px}'
+        . '.calc-price-xlsx-spinner.is-active{display:inline-block}'
+        . '.calc-price-xlsx-status{margin-left:8px;color:#2271b1;font-size:12px;vertical-align:middle}'
+        . '.calc-price-xlsx-status--error{color:#c00}</style>'
+        . '<button type="button" class="button calc-price-xlsx-btn">Выбрать файл прайса (XLSX/CSV)</button>'
         . ' <span class="calc-price-xlsx-filename"></span>'
+        . '<span class="calc-price-xlsx-spinner"></span>'
+        . '<span class="calc-price-xlsx-status"></span>'
         . '<input type="file" class="calc-price-xlsx" accept=".xlsx,.csv" style="display:none">'
         . '<p class="description">5 колонок по порядку: Тип дома, Количество комнат, Тип ремонта, Стоимость ремонта за м², Стоимость материалов за м². Первая строка — заголовок, пустые строки игнорируются.</p>'
       ),

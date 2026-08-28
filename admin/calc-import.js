@@ -1,6 +1,29 @@
 (function () {
   'use strict';
 
+  function statusEl(input) {
+    return input.parentNode ? input.parentNode.querySelector('.calc-price-xlsx-status') : null;
+  }
+
+  function spinnerEl(input) {
+    return input.parentNode ? input.parentNode.querySelector('.calc-price-xlsx-spinner') : null;
+  }
+
+  function setStatus(input, text, isError) {
+    var el = statusEl(input);
+    if (el) {
+      el.textContent = text || '';
+      el.classList.toggle('calc-price-xlsx-status--error', !!isError);
+    }
+  }
+
+  function setSpinner(input, on) {
+    var el = spinnerEl(input);
+    if (el) {
+      el.classList.toggle('is-active', !!on);
+    }
+  }
+
   function setReactValue(el, value) {
     if (!el) {
       return;
@@ -98,6 +121,8 @@
       document;
     var complex = blockRoot.querySelector('.cf-complex');
     if (!complex) {
+      setStatus(fileInput, 'Не найдено поле «Таблица цен по сочетаниям»', true);
+      setSpinner(fileInput, false);
       alert('Не найдено поле «Таблица цен по сочетаниям»');
       return Promise.reject();
     }
@@ -106,13 +131,16 @@
 
     var addBtn = complex.querySelector('.cf-complex__inserter-button');
     if (!addBtn) {
+      setStatus(fileInput, 'Не найдена кнопка добавления строк', true);
+      setSpinner(fileInput, false);
       alert('Не найдена кнопка добавления строк');
       return Promise.reject();
     }
 
     var chain = Promise.resolve();
-    rows.forEach(function (row) {
+    rows.forEach(function (row, i) {
       chain = chain.then(function () {
+        setStatus(fileInput, 'Добавлено ' + (i + 1) + ' / ' + rows.length);
         addBtn.click();
         return waitFor('.cf-complex__group:last-child input[name*="house_type"]', complex).then(function (input) {
           var group = input.closest('.cf-complex__group');
@@ -129,26 +157,40 @@
       });
     });
 
-    return chain;
+    return chain.then(function () {
+      setStatus(fileInput, 'Готово. Импортировано строк: ' + rows.length);
+      setSpinner(fileInput, false);
+    });
   }
 
   function handleFile(fileInput, file) {
+    setStatus(fileInput, 'Чтение файла…');
+    setSpinner(fileInput, true);
     var reader = new FileReader();
     reader.onload = function (e) {
       try {
         var rows = parseXlsx(e.target.result);
         if (!rows.length) {
+          setStatus(fileInput, 'В файле не найдено строк для импорта.', true);
+          setSpinner(fileInput, false);
           alert('В файле не найдено строк для импорта.');
           return;
         }
-        fillMatrix(fileInput, rows).catch(function () {});
+        setStatus(fileInput, 'Распознано строк: ' + rows.length);
+        fillMatrix(fileInput, rows).catch(function () {
+          setSpinner(fileInput, false);
+        });
       } catch (err) {
+        setStatus(fileInput, 'Не удалось прочитать файл: ' + err.message, true);
+        setSpinner(fileInput, false);
         alert('Не удалось прочитать файл: ' + err.message);
       } finally {
         fileInput.value = '';
       }
     };
     reader.onerror = function () {
+      setStatus(fileInput, 'Ошибка чтения файла', true);
+      setSpinner(fileInput, false);
       fileInput.value = '';
     };
     reader.readAsArrayBuffer(file);
