@@ -15,7 +15,7 @@ add_action('wp_print_styles', function () {
   wp_enqueue_style('theme-style');
 });
 
-add_action('enqueue_block_editor_assets', function () {
+add_action('admin_enqueue_scripts', function () {
   wp_enqueue_script(
     'calc-import-xlsx',
     'https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js',
