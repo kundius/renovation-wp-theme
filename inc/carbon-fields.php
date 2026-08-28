@@ -486,6 +486,8 @@ function register_carbon_fields_blocks()
     Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
     Field::make('textarea', 'message', 'Сообщение')->set_rows(2),
     Field::make('text', 'goal', 'Цель в метрике'),
+    Field::make('html', 'price_import', 'Импорт прайса из XLSX')
+      ->set_html('<input type="file" class="calc-price-xlsx" accept=".xlsx,.csv"> <p class="description">5 колонок по порядку: Тип дома, Количество комнат, Тип ремонта, Стоимость ремонта за м², Стоимость материалов за м². Первая строка — заголовок, пустые строки игнорируются.</p>'),
     Field::make('complex', 'price_matrix', 'Таблица цен по сочетаниям')
       ->add_fields([
         Field::make('text', 'house_type', 'Тип дома')->set_width(20),
