@@ -43,7 +43,9 @@
         el.value = value;
       }
       el.dispatchEvent(new Event('input', { bubbles: true }));
-      el.dispatchEvent(new Event('change', { bubbles: true }));
+      if (typeof el.blur === 'function') {
+        el.blur();
+      }
     } catch (err) {
       log('Ошибка установки значения: ' + err.message, context, 'error');
     }
@@ -173,6 +175,9 @@
               set('repair_type', row.repair_type);
               set('repair_price', row.repair_price);
               set('materials_price', row.materials_price);
+              return new Promise(function (resolve) {
+                setTimeout(resolve, 80);
+              });
             });
         });
       });
