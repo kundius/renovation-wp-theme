@@ -6,16 +6,28 @@
  */
 
 if (!defined('CALC_EXPORT_STYLE_DEFAULT')) {
-  define('CALC_EXPORT_STYLE_DEFAULT', 0);
+  define('CALC_EXPORT_STYLE_DEFAULT', 0); // пусто
 }
-if (!defined('CALC_EXPORT_STYLE_HEADER')) {
-  define('CALC_EXPORT_STYLE_HEADER', 1); // жирный + серый фон
+if (!defined('CALC_EXPORT_STYLE_HEADER_LEFT')) {
+  define('CALC_EXPORT_STYLE_HEADER_LEFT', 1); // жирный + серый фон + бордер + влево
 }
-if (!defined('CALC_EXPORT_STYLE_BOLD')) {
-  define('CALC_EXPORT_STYLE_BOLD', 2); // жирный
+if (!defined('CALC_EXPORT_STYLE_HEADER_CENTER')) {
+  define('CALC_EXPORT_STYLE_HEADER_CENTER', 2); // жирный + серый фон + бордер + центр
+}
+if (!defined('CALC_EXPORT_STYLE_BOLD_LEFT')) {
+  define('CALC_EXPORT_STYLE_BOLD_LEFT', 3); // жирный + бордер + влево
+}
+if (!defined('CALC_EXPORT_STYLE_BOLD_CENTER')) {
+  define('CALC_EXPORT_STYLE_BOLD_CENTER', 4); // жирный + бордер + центр
+}
+if (!defined('CALC_EXPORT_STYLE_DATA_LEFT')) {
+  define('CALC_EXPORT_STYLE_DATA_LEFT', 5); // бордер + влево
+}
+if (!defined('CALC_EXPORT_STYLE_DATA_CENTER')) {
+  define('CALC_EXPORT_STYLE_DATA_CENTER', 6); // бордер + центр
 }
 if (!defined('CALC_EXPORT_STYLE_TITLE')) {
-  define('CALC_EXPORT_STYLE_TITLE', 3); // крупный жирный заголовок
+  define('CALC_EXPORT_STYLE_TITLE', 7); // крупный жирный заголовок + бордер + центр
 }
 
 function calc_export_xml_escape($value)
@@ -64,16 +76,16 @@ function calc_export_build_xlsx($payload)
   $rows_xml = '';
   $r = 1;
 
-  // Строка 1: крупный заголовок на всю ширину (объединение A1:D1)
-  $rows_xml .= '<row r="' . $r . '">' . calc_export_cell('A', $r, $title, CALC_EXPORT_STYLE_TITLE) . '</row>';
+  // Строка 1: крупный заголовок на всю ширину (объединение A1:D1), по центру
+  $rows_xml .= '<row r="' . $r . '" ht="40" customHeight="1">' . calc_export_cell('A', $r, $title, CALC_EXPORT_STYLE_TITLE) . '</row>';
   $r++;
 
-  // Строка 2: заголовки колонок (серый фон + жирный)
+  // Строка 2: заголовки колонок (серый фон + жирный + бордер)
   $rows_xml .= calc_export_row_xml($r, [
-    [$payload['header'][0], CALC_EXPORT_STYLE_HEADER],
-    [$payload['header'][1], CALC_EXPORT_STYLE_HEADER],
-    [$payload['header'][2], CALC_EXPORT_STYLE_HEADER],
-    [$payload['header'][3], CALC_EXPORT_STYLE_HEADER],
+    [$payload['header'][0], CALC_EXPORT_STYLE_HEADER_LEFT],
+    [$payload['header'][1], CALC_EXPORT_STYLE_HEADER_CENTER],
+    [$payload['header'][2], CALC_EXPORT_STYLE_HEADER_CENTER],
+    [$payload['header'][3], CALC_EXPORT_STYLE_HEADER_CENTER],
   ]);
   $r++;
 
@@ -82,7 +94,7 @@ function calc_export_build_xlsx($payload)
     foreach ($payload['sections'] as $section) {
       // Название группы — жирным
       $rows_xml .= calc_export_row_xml($r, [
-        [$section['name'], CALC_EXPORT_STYLE_BOLD],
+        [$section['name'], CALC_EXPORT_STYLE_BOLD_LEFT],
         ['', 0],
         ['', 0],
         ['', 0],
@@ -91,10 +103,10 @@ function calc_export_build_xlsx($payload)
 
       foreach ($section['items'] as $item) {
         $rows_xml .= calc_export_row_xml($r, [
-          [$item['name'], 0],
-          [$item['quantity'], 0],
-          [$item['units'], 0],
-          [$item['price'], 0],
+          [$item['name'], CALC_EXPORT_STYLE_DATA_LEFT],
+          [$item['quantity'], CALC_EXPORT_STYLE_DATA_CENTER],
+          [$item['units'], CALC_EXPORT_STYLE_DATA_CENTER],
+          [$item['price'], CALC_EXPORT_STYLE_DATA_CENTER],
         ]);
         $r++;
       }
@@ -103,10 +115,10 @@ function calc_export_build_xlsx($payload)
 
   // Итог — жирным
   $rows_xml .= calc_export_row_xml($r, [
-    ['Итого', CALC_EXPORT_STYLE_BOLD],
+    ['Итого', CALC_EXPORT_STYLE_BOLD_LEFT],
     ['', 0],
     ['', 0],
-    [$payload['total'], CALC_EXPORT_STYLE_BOLD],
+    [$payload['total'], CALC_EXPORT_STYLE_BOLD_CENTER],
   ]);
   $r++;
 
@@ -135,13 +147,20 @@ function calc_export_build_xlsx($payload)
     . '<fill><patternFill patternType="gray125"/></fill>'
     . '<fill><patternFill patternType="solid"><fgColor rgb="FFD9D9D9"/><bgColor indexed="64"/></patternFill></fill>'
     . '</fills>'
-    . '<borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders>'
+    . '<borders count="2">'
+    . '<border><left/><right/><top/><bottom/><diagonal/></border>'
+    . '<border><left style="thin"/><right style="thin"/><top style="thin"/><bottom style="thin"/><diagonal/></border>'
+    . '</borders>'
     . '<cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs>'
-    . '<cellXfs count="4">'
+    . '<cellXfs count="8">'
     . '<xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/>'
-    . '<xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1"/>'
-    . '<xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/>'
-    . '<xf numFmtId="0" fontId="2" fillId="0" borderId="0" xfId="0" applyFont="1"/>'
+    . '<xf numFmtId="0" fontId="1" fillId="2" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="left"/></xf>'
+    . '<xf numFmtId="0" fontId="1" fillId="2" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+    . '<xf numFmtId="0" fontId="1" fillId="0" borderId="1" xfId="0" applyFont="1" applyBorder="1" applyAlignment="1"><alignment horizontal="left"/></xf>'
+    . '<xf numFmtId="0" fontId="1" fillId="0" borderId="1" xfId="0" applyFont="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+    . '<xf numFmtId="0" fontId="0" fillId="0" borderId="1" xfId="0" applyBorder="1" applyAlignment="1"><alignment horizontal="left"/></xf>'
+    . '<xf numFmtId="0" fontId="0" fillId="0" borderId="1" xfId="0" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+    . '<xf numFmtId="0" fontId="2" fillId="0" borderId="1" xfId="0" applyFont="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
     . '</cellXfs>'
     . '<cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles>'
     . '</styleSheet>';
