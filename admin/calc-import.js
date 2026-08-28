@@ -1,31 +1,37 @@
 (function () {
   'use strict';
 
-  function statusEl(input) {
-    return input.parentNode ? input.parentNode.querySelector('.calc-price-xlsx-status') : null;
+  function getLogEl(context) {
+    if (!context) {
+      return null;
+    }
+    return context.parentNode
+      ? context.parentNode.querySelector('.calc-price-xlsx-log')
+      : null;
   }
 
-  function spinnerEl(input) {
-    return input.parentNode ? input.parentNode.querySelector('.calc-price-xlsx-spinner') : null;
-  }
-
-  function setStatus(input, text, isError) {
-    var el = statusEl(input);
+  function log(msg, context, type) {
+    var prefix = '[' + new Date().toLocaleTimeString() + '] ';
+    var text = prefix + msg;
+    // eslint-disable-next-line no-console
+    console.log('[calc-import] ' + msg);
+    var el = getLogEl(context);
     if (el) {
-      el.textContent = text || '';
-      el.classList.toggle('calc-price-xlsx-status--error', !!isError);
+      var line = document.createElement('div');
+      line.textContent = text;
+      if (type === 'error') {
+        line.style.color = '#c00';
+      } else if (type === 'ok') {
+        line.style.color = '#080';
+      }
+      el.appendChild(line);
+      el.scrollTop = el.scrollHeight;
     }
   }
 
-  function setSpinner(input, on) {
-    var el = spinnerEl(input);
-    if (el) {
-      el.classList.toggle('is-active', !!on);
-    }
-  }
-
-  function setReactValue(el, value) {
+  function setReactValue(el, value, context) {
     if (!el) {
+      log('setReactValue: input не найден, пропуск значения', context, 'error');
       return;
     }
     try {
@@ -39,11 +45,11 @@
       el.dispatchEvent(new Event('input', { bubbles: true }));
       el.dispatchEvent(new Event('change', { bubbles: true }));
     } catch (err) {
-      /* ignore */
+      log('Ошибка установки значения: ' + err.message, context, 'error');
     }
   }
 
-  function waitFor(selector, root, timeout) {
+  function waitFor(selector, root, timeout, context) {
     timeout = timeout || 5000;
     return new Promise(function (resolve, reject) {
       var start = Date.now();
@@ -53,6 +59,7 @@
           return resolve(el);
         }
         if (Date.now() - start > timeout) {
+          log('Таймаут ожидания селектора: ' + selector, context, 'error');
           return reject(new Error('timeout: ' + selector));
         }
         setTimeout(check, 40);
@@ -60,11 +67,14 @@
     });
   }
 
-  function parseXlsx(arrayBuffer) {
+  function parseXlsx(arrayBuffer, context) {
+    log('XLSX: начинаем разбор файла', context);
     var wb = XLSX.read(arrayBuffer, { type: 'array' });
     var sheetName = wb.SheetNames[0];
+    log('XLSX: лист «' + sheetName + '»', context);
     var sheet = wb.Sheets[sheetName];
     var rows = XLSX.utils.sheet_to_json(sheet, { header: 1, blankrows: false });
+    log('XLSX: всего строк (включая заголовок): ' + rows.length, context);
 
     if (rows.length && Array.isArray(rows[0])) {
       rows.shift();
@@ -99,66 +109,64 @@
       }
       result.push(obj);
     });
+    log('XLSX: строк для импорта после очистки: ' + result.length, context, 'ok');
     return result;
   }
 
-  function clearGroups(complex) {
+  function clearGroups(complex, context) {
     var MAX = 500;
     return new Promise(function (resolve) {
       var removed = 0;
       (function step() {
         var trash = complex.querySelector('.cf-complex__group .dashicons-trash');
         if (!trash || removed >= MAX) {
+          log('Очистили старых групп: ' + removed, context);
           return resolve(removed);
         }
         var btn = trash.closest('.cf-complex__group-action') || trash.parentElement;
         if (btn) {
           btn.click();
+          removed++;
         }
-        removed++;
         setTimeout(step, 50);
       })();
     });
   }
 
-  function fillMatrix(fileInput, rows) {
+  function fillMatrix(fileInput, rows, context) {
     var blockRoot =
       fileInput.closest('.editor-block-list__block, .wp-block, [data-block], .cf-container') ||
       document;
     var complex = blockRoot.querySelector('.cf-complex');
     if (!complex) {
-      setStatus(fileInput, 'Не найдено поле «Таблица цен по сочетаниям»', true);
-      setSpinner(fileInput, false);
-      alert('Не найдено поле «Таблица цен по сочетаниям»');
+      log('Не найдено поле «Таблица цен по сочетаниям» (.cf-complex)', context, 'error');
       return Promise.reject();
     }
+    log('Найдено complex-поле', context, 'ok');
 
-    return clearGroups(complex)
-      .then(function () {
-        var addBtn = complex.querySelector('.cf-complex__inserter-button');
-        if (!addBtn) {
-          setStatus(fileInput, 'Не найдена кнопка добавления строк', true);
-          setSpinner(fileInput, false);
-          alert('Не найдена кнопка добавления строк');
-          return Promise.reject();
-        }
+    return clearGroups(complex, context).then(function () {
+      var addBtn = complex.querySelector('.cf-complex__inserter-button');
+      if (!addBtn) {
+        log('Не найдена кнопка добавления строк (.cf-complex__inserter-button)', context, 'error');
+        return Promise.reject();
+      }
+      log('Найдена кнопка добавления строк', context, 'ok');
 
-        var MAX_ROWS = 2000;
-        if (rows.length > MAX_ROWS) {
-          rows = rows.slice(0, MAX_ROWS);
-          setStatus(fileInput, 'Ограничено ' + MAX_ROWS + ' строками', true);
-        }
-
-        var chain = Promise.resolve();
-        rows.forEach(function (row, i) {
-          chain = chain.then(function () {
-            setStatus(fileInput, 'Добавлено ' + (i + 1) + ' / ' + rows.length);
-            addBtn.click();
-            return waitFor('.cf-complex__group:last-child input[name*="house_type"]', complex).then(function (input) {
+      var chain = Promise.resolve();
+      rows.forEach(function (row, i) {
+        chain = chain.then(function () {
+          log('Строка ' + (i + 1) + ': клик «добавить»', context);
+          addBtn.click();
+          return waitFor('.cf-complex__group:last-child input[name*="house_type"]', complex, 5000, context)
+            .then(function (input) {
               var group = input.closest('.cf-complex__group');
+              log('Строка ' + (i + 1) + ': появилась новая группа, заполняем', context);
               var set = function (name, val) {
                 var el = group.querySelector('input[name*="' + name + '"]');
-                setReactValue(el, val);
+                if (!el) {
+                  log('  нет input для «' + name + '»', context, 'error');
+                }
+                setReactValue(el, val, context);
               };
               set('house_type', row.house_type);
               set('rooms', row.rooms);
@@ -166,55 +174,42 @@
               set('repair_price', row.repair_price);
               set('materials_price', row.materials_price);
             });
-          });
         });
-
-        return chain.then(function () {
-          setStatus(fileInput, 'Готово. Импортировано строк: ' + rows.length);
-          setSpinner(fileInput, false);
-        });
-      })
-      .catch(function (err) {
-        setStatus(fileInput, 'Ошибка импорта: ' + (err && err.message ? err.message : err), true);
-        setSpinner(fileInput, false);
-        return Promise.reject(err);
       });
+
+      return chain.then(function () {
+        log('Импорт завершён. Строк: ' + rows.length + '. Сохраните блок/опции.', context, 'ok');
+        var note = fileInput.parentNode.querySelector('.calc-price-xlsx-note');
+        if (!note) {
+          note = document.createElement('p');
+          note.className = 'calc-price-xlsx-note';
+          fileInput.parentNode.appendChild(note);
+        }
+        note.textContent = 'Импортировано строк: ' + rows.length + '. Сохраните блок/опции.';
+      });
+    });
   }
 
-  function handleFile(fileInput, file) {
-    setStatus(fileInput, 'Чтение файла…');
-    setSpinner(fileInput, true);
-    if (typeof XLSX === 'undefined') {
-      setStatus(fileInput, 'Библиотека XLSX не загружена (проверьте подключение CDN).', true);
-      setSpinner(fileInput, false);
-      alert('Библиотека XLSX не загружена (проверьте подключение CDN).');
-      return;
-    }
+  function handleFile(fileInput, file, context) {
+    log('Выбран файл: ' + file.name + ' (' + file.size + ' байт, ' + file.type + ')', context);
     var reader = new FileReader();
     reader.onload = function (e) {
       try {
-        var rows = parseXlsx(e.target.result);
+        var rows = parseXlsx(e.target.result, context);
         if (!rows.length) {
-          setStatus(fileInput, 'В файле не найдено строк для импорта.', true);
-          setSpinner(fileInput, false);
-          alert('В файле не найдено строк для импорта.');
+          log('В файле не найдено строк для импорта.', context, 'error');
           return;
         }
-        setStatus(fileInput, 'Распознано строк: ' + rows.length);
-        fillMatrix(fileInput, rows).catch(function () {
-          setSpinner(fileInput, false);
-        });
+        fillMatrix(fileInput, rows, context).catch(function () {});
       } catch (err) {
-        setStatus(fileInput, 'Не удалось прочитать файл: ' + err.message, true);
-        setSpinner(fileInput, false);
-        alert('Не удалось прочитать файл: ' + err.message);
+        log('Не удалось прочитать файл: ' + err.message, context, 'error');
       } finally {
         fileInput.value = '';
+        log('Поле выбора файла сброшено (можно выбирать снова).', context);
       }
     };
     reader.onerror = function () {
-      setStatus(fileInput, 'Ошибка чтения файла', true);
-      setSpinner(fileInput, false);
+      log('Ошибка чтения файла', context, 'error');
       fileInput.value = '';
     };
     reader.readAsArrayBuffer(file);
@@ -226,8 +221,12 @@
       if (btn) {
         var wrapper = btn.closest('.cf-container, .editor-block-list__block, .wp-block, [data-block]') || document;
         var input = wrapper.querySelector('.calc-price-xlsx');
+        var context = btn;
+        log('Нажата кнопка выбора файла', context);
         if (input) {
           input.click();
+        } else {
+          log('Скрытый input .calc-price-xlsx не найден рядом с кнопкой', context, 'error');
         }
       }
     });
@@ -242,7 +241,7 @@
           filenameEl.textContent = target.files && target.files[0] ? target.files[0].name : '';
         }
         if (target.files && target.files[0]) {
-          handleFile(target, target.files[0]);
+          handleFile(target, target.files[0], target);
         }
       }
     });
