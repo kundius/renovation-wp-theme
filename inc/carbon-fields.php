@@ -487,7 +487,6 @@ function register_carbon_fields_blocks()
     Field::make('textarea', 'message', 'Сообщение')->set_rows(2),
     Field::make('text', 'goal', 'Цель в метрике'),
     Field::make('complex', 'price_matrix', 'Таблица цен по сочетаниям')
-      ->set_layout('tabbed-horizontal')
       ->add_fields([
         Field::make('text', 'house_type', 'Тип дома')->set_width(20),
         Field::make('text', 'rooms', 'Количество комнат')->set_width(20),
