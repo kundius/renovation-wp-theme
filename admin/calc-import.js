@@ -44,7 +44,7 @@
   }
 
   function waitFor(selector, root, timeout) {
-    timeout = timeout || 3000;
+    timeout = timeout || 5000;
     return new Promise(function (resolve, reject) {
       var start = Date.now();
       (function check() {
@@ -55,7 +55,7 @@
         if (Date.now() - start > timeout) {
           return reject(new Error('timeout: ' + selector));
         }
-        requestAnimationFrame(check);
+        setTimeout(check, 40);
       })();
     });
   }
@@ -103,16 +103,22 @@
   }
 
   function clearGroups(complex) {
-    var guard = 0;
-    var trash = complex.querySelector('.cf-complex__group .dashicons-trash');
-    while (trash && guard < 300) {
-      var btn = trash.closest('.cf-complex__group-action') || trash.parentElement;
-      if (btn) {
-        btn.click();
-      }
-      guard++;
-      trash = complex.querySelector('.cf-complex__group .dashicons-trash');
-    }
+    var MAX = 500;
+    return new Promise(function (resolve) {
+      var removed = 0;
+      (function step() {
+        var trash = complex.querySelector('.cf-complex__group .dashicons-trash');
+        if (!trash || removed >= MAX) {
+          return resolve(removed);
+        }
+        var btn = trash.closest('.cf-complex__group-action') || trash.parentElement;
+        if (btn) {
+          btn.click();
+        }
+        removed++;
+        setTimeout(step, 50);
+      })();
+    });
   }
 
   function fillMatrix(fileInput, rows) {
@@ -127,45 +133,63 @@
       return Promise.reject();
     }
 
-    clearGroups(complex);
+    return clearGroups(complex)
+      .then(function () {
+        var addBtn = complex.querySelector('.cf-complex__inserter-button');
+        if (!addBtn) {
+          setStatus(fileInput, 'Не найдена кнопка добавления строк', true);
+          setSpinner(fileInput, false);
+          alert('Не найдена кнопка добавления строк');
+          return Promise.reject();
+        }
 
-    var addBtn = complex.querySelector('.cf-complex__inserter-button');
-    if (!addBtn) {
-      setStatus(fileInput, 'Не найдена кнопка добавления строк', true);
-      setSpinner(fileInput, false);
-      alert('Не найдена кнопка добавления строк');
-      return Promise.reject();
-    }
+        var MAX_ROWS = 2000;
+        if (rows.length > MAX_ROWS) {
+          rows = rows.slice(0, MAX_ROWS);
+          setStatus(fileInput, 'Ограничено ' + MAX_ROWS + ' строками', true);
+        }
 
-    var chain = Promise.resolve();
-    rows.forEach(function (row, i) {
-      chain = chain.then(function () {
-        setStatus(fileInput, 'Добавлено ' + (i + 1) + ' / ' + rows.length);
-        addBtn.click();
-        return waitFor('.cf-complex__group:last-child input[name*="house_type"]', complex).then(function (input) {
-          var group = input.closest('.cf-complex__group');
-          var set = function (name, val) {
-            var el = group.querySelector('input[name*="' + name + '"]');
-            setReactValue(el, val);
-          };
-          set('house_type', row.house_type);
-          set('rooms', row.rooms);
-          set('repair_type', row.repair_type);
-          set('repair_price', row.repair_price);
-          set('materials_price', row.materials_price);
+        var chain = Promise.resolve();
+        rows.forEach(function (row, i) {
+          chain = chain.then(function () {
+            setStatus(fileInput, 'Добавлено ' + (i + 1) + ' / ' + rows.length);
+            addBtn.click();
+            return waitFor('.cf-complex__group:last-child input[name*="house_type"]', complex).then(function (input) {
+              var group = input.closest('.cf-complex__group');
+              var set = function (name, val) {
+                var el = group.querySelector('input[name*="' + name + '"]');
+                setReactValue(el, val);
+              };
+              set('house_type', row.house_type);
+              set('rooms', row.rooms);
+              set('repair_type', row.repair_type);
+              set('repair_price', row.repair_price);
+              set('materials_price', row.materials_price);
+            });
+          });
         });
-      });
-    });
 
-    return chain.then(function () {
-      setStatus(fileInput, 'Готово. Импортировано строк: ' + rows.length);
-      setSpinner(fileInput, false);
-    });
+        return chain.then(function () {
+          setStatus(fileInput, 'Готово. Импортировано строк: ' + rows.length);
+          setSpinner(fileInput, false);
+        });
+      })
+      .catch(function (err) {
+        setStatus(fileInput, 'Ошибка импорта: ' + (err && err.message ? err.message : err), true);
+        setSpinner(fileInput, false);
+        return Promise.reject(err);
+      });
   }
 
   function handleFile(fileInput, file) {
     setStatus(fileInput, 'Чтение файла…');
     setSpinner(fileInput, true);
+    if (typeof XLSX === 'undefined') {
+      setStatus(fileInput, 'Библиотека XLSX не загружена (проверьте подключение CDN).', true);
+      setSpinner(fileInput, false);
+      alert('Библиотека XLSX не загружена (проверьте подключение CDN).');
+      return;
+    }
     var reader = new FileReader();
     reader.onload = function (e) {
       try {
