@@ -145,7 +145,7 @@ function calc_export_build_xlsx($payload)
     . '<fills count="3">'
     . '<fill><patternFill patternType="none"/></fill>'
     . '<fill><patternFill patternType="gray125"/></fill>'
-    . '<fill><patternFill patternType="solid"><fgColor rgb="FFD9D9D9"/><bgColor indexed="64"/></patternFill></fill>'
+    . '<fill><patternFill patternType="solid"><fgColor rgb="FFF0F0F0"/><bgColor indexed="64"/></patternFill></fill>'
     . '</fills>'
     . '<borders count="2">'
     . '<border><left/><right/><top/><bottom/><diagonal/></border>'
