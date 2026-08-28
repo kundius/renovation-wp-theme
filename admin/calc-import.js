@@ -43,16 +43,14 @@
         el.value = value;
       }
       el.dispatchEvent(new Event('input', { bubbles: true }));
-      if (typeof el.blur === 'function') {
-        el.blur();
-      }
+      el.dispatchEvent(new Event('change', { bubbles: true }));
     } catch (err) {
       log('Ошибка установки значения: ' + err.message, context, 'error');
     }
   }
 
   function waitFor(selector, root, timeout, context) {
-    timeout = timeout || 5000;
+    timeout = timeout || 3000;
     return new Promise(function (resolve, reject) {
       var start = Date.now();
       (function check() {
@@ -64,7 +62,7 @@
           log('Таймаут ожидания селектора: ' + selector, context, 'error');
           return reject(new Error('timeout: ' + selector));
         }
-        setTimeout(check, 40);
+        requestAnimationFrame(check);
       })();
     });
   }
@@ -116,23 +114,19 @@
   }
 
   function clearGroups(complex, context) {
-    var MAX = 500;
-    return new Promise(function (resolve) {
-      var removed = 0;
-      (function step() {
-        var trash = complex.querySelector('.cf-complex__group .dashicons-trash');
-        if (!trash || removed >= MAX) {
-          log('Очистили старых групп: ' + removed, context);
-          return resolve(removed);
-        }
-        var btn = trash.closest('.cf-complex__group-action') || trash.parentElement;
-        if (btn) {
-          btn.click();
-          removed++;
-        }
-        setTimeout(step, 50);
-      })();
-    });
+    var removed = 0;
+    var guard = 0;
+    var trash = complex.querySelector('.cf-complex__group .dashicons-trash');
+    while (trash && guard < 300) {
+      var btn = trash.closest('.cf-complex__group-action') || trash.parentElement;
+      if (btn) {
+        btn.click();
+        removed++;
+      }
+      guard++;
+      trash = complex.querySelector('.cf-complex__group .dashicons-trash');
+    }
+    log('Очистили старых групп: ' + removed, context);
   }
 
   function fillMatrix(fileInput, rows, context) {
@@ -146,52 +140,49 @@
     }
     log('Найдено complex-поле', context, 'ok');
 
-    return clearGroups(complex, context).then(function () {
-      var addBtn = complex.querySelector('.cf-complex__inserter-button');
-      if (!addBtn) {
-        log('Не найдена кнопка добавления строк (.cf-complex__inserter-button)', context, 'error');
-        return Promise.reject();
+    clearGroups(complex, context);
+
+    var addBtn = complex.querySelector('.cf-complex__inserter-button');
+    if (!addBtn) {
+      log('Не найдена кнопка добавления строк (.cf-complex__inserter-button)', context, 'error');
+      return Promise.reject();
+    }
+    log('Найдена кнопка добавления строк', context, 'ok');
+
+    var chain = Promise.resolve();
+    rows.forEach(function (row, i) {
+      chain = chain.then(function () {
+        log('Строка ' + (i + 1) + ': клик «добавить»', context);
+        addBtn.click();
+        return waitFor('.cf-complex__group:last-child input[name*="house_type"]', complex, 3000, context)
+          .then(function (input) {
+            var group = input.closest('.cf-complex__group');
+            log('Строка ' + (i + 1) + ': появилась новая группа, заполняем', context);
+            var set = function (name, val) {
+              var el = group.querySelector('input[name*="' + name + '"]');
+              if (!el) {
+                log('  нет input для «' + name + '»', context, 'error');
+              }
+              setReactValue(el, val, context);
+            };
+            set('house_type', row.house_type);
+            set('rooms', row.rooms);
+            set('repair_type', row.repair_type);
+            set('repair_price', row.repair_price);
+            set('materials_price', row.materials_price);
+          });
+      });
+    });
+
+    return chain.then(function () {
+      log('Импорт завершён. Строк: ' + rows.length + '. Сохраните блок/опции.', context, 'ok');
+      var note = fileInput.parentNode.querySelector('.calc-price-xlsx-note');
+      if (!note) {
+        note = document.createElement('p');
+        note.className = 'calc-price-xlsx-note';
+        fileInput.parentNode.appendChild(note);
       }
-      log('Найдена кнопка добавления строк', context, 'ok');
-
-      var chain = Promise.resolve();
-      rows.forEach(function (row, i) {
-        chain = chain.then(function () {
-          log('Строка ' + (i + 1) + ': клик «добавить»', context);
-          addBtn.click();
-          return waitFor('.cf-complex__group:last-child input[name*="house_type"]', complex, 5000, context)
-            .then(function (input) {
-              var group = input.closest('.cf-complex__group');
-              log('Строка ' + (i + 1) + ': появилась новая группа, заполняем', context);
-              var set = function (name, val) {
-                var el = group.querySelector('input[name*="' + name + '"]');
-                if (!el) {
-                  log('  нет input для «' + name + '»', context, 'error');
-                }
-                setReactValue(el, val, context);
-              };
-              set('house_type', row.house_type);
-              set('rooms', row.rooms);
-              set('repair_type', row.repair_type);
-              set('repair_price', row.repair_price);
-              set('materials_price', row.materials_price);
-              return new Promise(function (resolve) {
-                setTimeout(resolve, 80);
-              });
-            });
-        });
-      });
-
-      return chain.then(function () {
-        log('Импорт завершён. Строк: ' + rows.length + '. Сохраните блок/опции.', context, 'ok');
-        var note = fileInput.parentNode.querySelector('.calc-price-xlsx-note');
-        if (!note) {
-          note = document.createElement('p');
-          note.className = 'calc-price-xlsx-note';
-          fileInput.parentNode.appendChild(note);
-        }
-        note.textContent = 'Импортировано строк: ' + rows.length + '. Сохраните блок/опции.';
-      });
+      note.textContent = 'Импортировано строк: ' + rows.length + '. Сохраните блок/опции.';
     });
   }
 
