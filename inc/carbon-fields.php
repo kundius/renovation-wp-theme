@@ -148,7 +148,8 @@ function create_block($key, $name, $fields) {
 
       foreach ($fields as $field_key => $field_value) {
         $short_key = str_replace($key . '_', '', $field_key);
-        if (in_array($field_key, $block_fields)) {
+        // price_matrix импортируется на сервере в theme option — всегда берём оттуда
+        if (in_array($field_key, $block_fields) && $short_key !== 'price_matrix') {
           $args_fields[$short_key] = $field_value;
         } else {
           $args_fields[$short_key] = carbon_get_theme_option($field_key);
@@ -491,6 +492,7 @@ function register_carbon_fields_blocks()
         '<button type="button" class="button calc-price-xlsx-btn">Выбрать файл прайса (XLSX/CSV)</button>'
         . ' <span class="calc-price-xlsx-filename"></span>'
         . '<input type="file" class="calc-price-xlsx" accept=".xlsx,.csv" style="display:none">'
+        . '<input type="hidden" class="calc-price-xlsx-nonce" value="' . wp_create_nonce('calc_import_price') . '">'
         . '<p class="description">5 колонок по порядку: Тип дома, Количество комнат, Тип ремонта, Стоимость ремонта за м², Стоимость материалов за м². Первая строка — заголовок, пустые строки игнорируются.</p>'
         . '<div class="calc-price-xlsx-log" style="white-space:pre-wrap;font-family:monospace;font-size:11px;max-height:220px;overflow:auto;background:#f6f6f6;border:1px solid #ddd;padding:8px;margin-top:8px"></div>'
       ),

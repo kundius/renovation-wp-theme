@@ -17,17 +17,13 @@ add_action('wp_print_styles', function () {
 
 add_action('admin_enqueue_scripts', function () {
   wp_enqueue_script(
-    'calc-import-xlsx',
-    'https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js',
+    'calc-import',
+    get_theme_file_uri('admin/calc-import.js'),
     [],
     null,
     true
   );
-  wp_enqueue_script(
-    'calc-import',
-    get_theme_file_uri('admin/calc-import.js'),
-    ['calc-import-xlsx'],
-    null,
-    true
-  );
+  wp_localize_script('calc-import', 'calcImport', [
+    'url' => admin_url('admin-ajax.php'),
+  ]);
 });
