@@ -165,6 +165,8 @@
   width: 100%;
   display: block;
   z-index: 10;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 
 @include min-md {
