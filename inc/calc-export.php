@@ -77,7 +77,7 @@ function calc_export_build_xlsx($payload)
   $r = 1;
 
   // Строка 1: крупный заголовок на всю ширину (объединение A1:D1), по центру
-  $rows_xml .= '<row r="' . $r . '" ht="40" customHeight="1">' . calc_export_cell('A', $r, $title, CALC_EXPORT_STYLE_TITLE) . '</row>';
+  $rows_xml .= '<row r="' . $r . '" ht="30" customHeight="1">' . calc_export_cell('A', $r, $title, CALC_EXPORT_STYLE_TITLE) . '</row>';
   $r++;
 
   // Строка 2: заголовки колонок (серый фон + жирный + бордер)
@@ -95,9 +95,9 @@ function calc_export_build_xlsx($payload)
       // Название группы — жирным
       $rows_xml .= calc_export_row_xml($r, [
         [$section['name'], CALC_EXPORT_STYLE_BOLD_LEFT],
-        ['', 0],
-        ['', 0],
-        ['', 0],
+        ['', CALC_EXPORT_STYLE_DATA_CENTER],
+        ['', CALC_EXPORT_STYLE_DATA_CENTER],
+        ['', CALC_EXPORT_STYLE_DATA_CENTER],
       ]);
       $r++;
 
@@ -116,8 +116,8 @@ function calc_export_build_xlsx($payload)
   // Итог — жирным
   $rows_xml .= calc_export_row_xml($r, [
     ['Итого', CALC_EXPORT_STYLE_BOLD_LEFT],
-    ['', 0],
-    ['', 0],
+    ['', CALC_EXPORT_STYLE_DATA_CENTER],
+    ['', CALC_EXPORT_STYLE_DATA_CENTER],
     [$payload['total'], CALC_EXPORT_STYLE_BOLD_CENTER],
   ]);
   $r++;
@@ -160,7 +160,7 @@ function calc_export_build_xlsx($payload)
     . '<xf numFmtId="0" fontId="1" fillId="0" borderId="1" xfId="0" applyFont="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
     . '<xf numFmtId="0" fontId="0" fillId="0" borderId="1" xfId="0" applyBorder="1" applyAlignment="1"><alignment horizontal="left"/></xf>'
     . '<xf numFmtId="0" fontId="0" fillId="0" borderId="1" xfId="0" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
-    . '<xf numFmtId="0" fontId="2" fillId="0" borderId="1" xfId="0" applyFont="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+    . '<xf numFmtId="0" fontId="2" fillId="0" borderId="1" xfId="0" applyFont="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center"/></xf>'
     . '</cellXfs>'
     . '<cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles>'
     . '</styleSheet>';
