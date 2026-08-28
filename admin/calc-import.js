@@ -43,7 +43,7 @@
       })
       .then(function (res) {
         if (res && res.success) {
-          log('Готово. Импортировано строк: ' + res.data.count, context, 'ok');
+          log('Файл загружен. Найдено строк: ' + res.data.count + '. Сохраните опции темы, чтобы применить импорт.', context, 'ok');
         } else {
           var err = (res && res.data && res.data.error) ? res.data.error : 'неизвестная ошибка';
           log('Ошибка: ' + err, context, 'error');
