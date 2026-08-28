@@ -10,6 +10,29 @@ function ajax_data()
   ]);
 }
 
+function calc_mail_attachment_path($tmp_name, $original_name)
+{
+  $safe = preg_replace('/[\/\\\\\\x00]/', '_', $original_name);
+  $safe = trim($safe, ' .');
+  if ($safe === '') {
+    $safe = 'file';
+  }
+
+  $dir = sys_get_temp_dir();
+  $dest = $dir . DIRECTORY_SEPARATOR . $safe;
+  $i = 1;
+
+  while (file_exists($dest)) {
+    $p = pathinfo($safe);
+    $base = $p['filename'] ?? 'file';
+    $ext = isset($p['extension']) ? '.' . $p['extension'] : '';
+    $dest = $dir . DIRECTORY_SEPARATOR . $base . '_' . $i . $ext;
+    $i++;
+  }
+
+  return copy($tmp_name, $dest) ? $dest : $tmp_name;
+}
+
 function portfolio_list_load_callback()
 {
     $posts_query = new WP_Query([
@@ -253,11 +276,16 @@ function calc_form_callback()
   } else {
     $files = $_FILES['attachments'];
     $attachments = [];
+    $tmp_copies = [];
     foreach ($files['name'] as $key => $name) {
       if ($files['error'][$key] === UPLOAD_ERR_OK) {
         $tmp_name = $files['tmp_name'][$key];
         if (is_uploaded_file($tmp_name)) {
-          $attachments[] = $tmp_name;
+          $dest = calc_mail_attachment_path($tmp_name, $name);
+          $attachments[] = $dest;
+          if ($dest !== $tmp_name) {
+            $tmp_copies[] = $dest;
+          }
         }
       }
     }
@@ -275,6 +303,9 @@ function calc_form_callback()
     $body = implode("\n", $rows);
     $subject = $_POST['subject'];
     wp_mail($email_to, $subject, $body, $headers, $attachments);
+    foreach ($tmp_copies as $tmp_copy) {
+      @unlink($tmp_copy);
+    }
     wp_send_json_success();
   }
   wp_die();
@@ -312,6 +343,8 @@ function review_form_callback()
     carbon_set_post_meta($post_id, 'date', date('Y-m-d', time()));
 
     $files = $_FILES['gallery'];
+    $attachments = [];
+    $tmp_copies = [];
     if ($files) {
       $files_flat = [];
       $count = count($files['name']);
@@ -326,11 +359,14 @@ function review_form_callback()
         ];
       }
       $gallery = [];
-      $attachments = [];
       foreach ($files_flat as $file) {
         if ($file['error'] === UPLOAD_ERR_OK) {
           if (is_uploaded_file($file['tmp_name'])) {
-            $attachments[] = $file['tmp_name'];
+            $dest = calc_mail_attachment_path($file['tmp_name'], $file['name']);
+            $attachments[] = $dest;
+            if ($dest !== $file['tmp_name']) {
+              $tmp_copies[] = $dest;
+            }
             $gallery[] = create_attachment_from_upload($file, $post_id);
           }
         }
@@ -350,6 +386,9 @@ function review_form_callback()
     $body = implode("\n", $rows);
     $subject = $_POST['subject'];
     wp_mail($email_to, $subject, $body, $headers, $attachments);
+    foreach ($tmp_copies as $tmp_copy) {
+      @unlink($tmp_copy);
+    }
     wp_send_json_success();
   }
   wp_die();
