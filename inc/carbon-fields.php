@@ -492,7 +492,6 @@ function register_carbon_fields_blocks()
         . ' <span class="calc-price-xlsx-filename"></span>'
         . '<input type="file" class="calc-price-xlsx" accept=".xlsx,.csv" style="display:none">'
         . '<p class="description">5 колонок по порядку: Тип дома, Количество комнат, Тип ремонта, Стоимость ремонта за м², Стоимость материалов за м². Первая строка — заголовок, пустые строки игнорируются.</p>'
-        . '<div class="calc-price-xlsx-log" style="white-space:pre-wrap;font-family:monospace;font-size:11px;max-height:220px;overflow:auto;background:#f6f6f6;border:1px solid #ddd;padding:8px;margin-top:8px"></div>'
       ),
     Field::make('complex', 'price_matrix', 'Таблица цен по сочетаниям')
       ->add_fields([
